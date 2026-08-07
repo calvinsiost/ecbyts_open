@@ -1,0 +1,52 @@
+[
+    {
+        "codigo_ibge": "06010",
+        "nome": "Anaheim",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06009",
+        "nome": "Bakersfield",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06005",
+        "nome": "Fresno",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06007",
+        "nome": "Long Beach",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06001",
+        "nome": "Los Angeles",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06008",
+        "nome": "Oakland",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06006",
+        "nome": "Sacramento",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06002",
+        "nome": "San Diego",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06004",
+        "nome": "San Francisco",
+        "uf": "CA"
+    },
+    {
+        "codigo_ibge": "06003",
+        "nome": "San Jose",
+        "uf": "CA"
+    }
+]

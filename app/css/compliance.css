@@ -1,0 +1,659 @@
+/* ================================================================
+   COMPLIANCE — Compliance monitoring styles
+   Estilos para monitoramento de conformidade regulatoria
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   VALIDATION BADGES
+   Badges de validacao nas observacoes
+   ---------------------------------------------------------------- */
+
+/* Intervention (VI/CMA) — vermelho, remediacao obrigatoria */
+.compliance-intervention,
+.compliance-critical {
+    background: var(--accent-red);
+    color: #fff;
+    font-weight: 600;
+    font-size: var(--text-xs, 10px);
+    padding: 1px 6px;
+    border-radius: var(--radius-xl);
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    vertical-align: middle;
+}
+
+/* Prevention (VP) — amarelo, monitoramento necessario */
+.compliance-prevention,
+.compliance-warning {
+    background: var(--accent-yellow);
+    color: var(--neutral-900);
+    font-weight: 500;
+    font-size: var(--text-xs, 10px);
+    padding: 1px 6px;
+    border-radius: var(--radius-xl);
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    vertical-align: middle;
+}
+
+[data-theme="dark"] .compliance-prevention,
+[data-theme="dark"] .compliance-warning {
+    color: var(--text);
+    background: rgba(251, 191, 36, 0.7);
+}
+
+/* Reference (VR) — azul, acima do background natural */
+.compliance-reference {
+    background: rgba(96, 165, 250, 0.3);
+    color: #1e40af;
+    font-weight: 500;
+    font-size: var(--text-xs, 10px);
+    padding: 1px 6px;
+    border-radius: var(--radius-xl);
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    vertical-align: middle;
+}
+
+[data-theme="dark"] .compliance-reference {
+    background: rgba(96, 165, 250, 0.35);
+    color: #93bbfd;
+}
+
+/* Uncertain — faixa de incerteza cruza threshold (laranja, nao confirmado) */
+.compliance-uncertain {
+    background: rgba(251, 146, 60, 0.3);
+    color: #c2410c;
+    font-weight: 500;
+    font-size: var(--text-xs, 10px);
+    padding: 1px 6px;
+    border-radius: var(--radius-xl);
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    vertical-align: middle;
+    border: 1px dashed rgba(251, 146, 60, 0.6);
+}
+
+[data-theme="dark"] .compliance-uncertain {
+    background: rgba(251, 146, 60, 0.25);
+    color: #fb923c;
+    border-color: rgba(251, 146, 60, 0.4);
+}
+
+/* ----------------------------------------------------------------
+   CROSS-TABULATION TABLE
+   Matriz de conformidade (wells × parameters)
+   ---------------------------------------------------------------- */
+
+.crosstab-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.crosstab-toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--neutral-200);
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .crosstab-toolbar {
+    border-color: var(--neutral-700);
+}
+
+.crosstab-toolbar select,
+.crosstab-toolbar button {
+    font-size: var(--text-sm);
+}
+
+.crosstab-toolbar-sep {
+    width: 1px;
+    height: 16px;
+    background: var(--neutral-200);
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .crosstab-toolbar-sep {
+    background: var(--neutral-700);
+}
+
+.crosstab-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    color: var(--neutral-500);
+    white-space: nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.crosstab-toggle-label input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    accent-color: var(--accent-primary);
+    cursor: pointer;
+}
+
+.crosstab-toggle-label span {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.crosstab-search {
+    font-size: var(--text-xs);
+    padding: 3px var(--space-2);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    background: var(--neutral-0, #fff);
+    color: var(--primary-text, #222);
+    outline: none;
+}
+
+.crosstab-search:focus {
+    border-color: var(--accent-primary);
+}
+
+[data-theme="dark"] .crosstab-search {
+    background: var(--neutral-800);
+    border-color: var(--neutral-700);
+    color: var(--primary-text);
+}
+
+.crosstab-tab-bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--neutral-200);
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .crosstab-tab-bar {
+    border-color: var(--neutral-700);
+}
+
+.crosstab-tab {
+    padding: 6px var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--neutral-500);
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.crosstab-tab:hover {
+    color: var(--neutral-700);
+}
+
+[data-theme="dark"] .crosstab-tab:hover {
+    color: var(--text-muted);
+}
+
+.crosstab-tab.active {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+}
+
+.crosstab-tab-content {
+    flex: 1;
+    overflow: auto;
+}
+
+.crosstab-container {
+    overflow: auto;
+    flex: 1;
+    padding: 0;
+    scrollbar-width: thin;
+}
+
+/* Scrollbars — barras de rolagem visiveis */
+.crosstab-container::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.crosstab-container::-webkit-scrollbar-track {
+    background: var(--neutral-100, #eef0f2);
+}
+
+.crosstab-container::-webkit-scrollbar-thumb {
+    background: var(--neutral-400, #8a96a0);
+    border-radius: 3px;
+}
+
+.crosstab-container::-webkit-scrollbar-thumb:hover {
+    background: var(--neutral-500, #5d6b76);
+}
+
+[data-theme="dark"] .crosstab-container::-webkit-scrollbar-track {
+    background: var(--neutral-800, #1e2128);
+}
+
+[data-theme="dark"] .crosstab-container::-webkit-scrollbar-thumb {
+    background: var(--neutral-600, #4b5563);
+}
+
+[data-theme="dark"] .crosstab-container::-webkit-scrollbar-thumb:hover {
+    background: var(--neutral-500, #6b7280);
+}
+
+.crosstab-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+    color: var(--primary-text);
+}
+
+.crosstab-table thead th {
+    position: sticky;
+    top: 0;
+    background: var(--neutral-100);
+    border: 1px solid var(--neutral-200);
+    padding: var(--space-1) 6px;
+    font-weight: 600;
+    text-align: center;
+    font-size: var(--text-xs);
+    white-space: nowrap;
+    z-index: 10;
+    vertical-align: bottom;
+}
+
+[data-theme="dark"] .crosstab-table thead th {
+    background: var(--neutral-800);
+    border-color: var(--neutral-700);
+}
+
+/* Corner cell — sticky both directions */
+.crosstab-corner {
+    position: sticky;
+    left: 0;
+    z-index: 15;
+}
+
+/* Parameter name in header */
+.crosstab-param-name {
+    display: block;
+    font-size: var(--text-xs);
+    line-height: 1.2;
+    color: var(--primary-text-muted, #666);
+}
+
+.crosstab-param-name.regulated {
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+/* Regulatory limit value shown under param name */
+.crosstab-param-limit {
+    display: block;
+    font-size: var(--text-xs, 10px);
+    font-weight: 400;
+    color: var(--neutral-400);
+    line-height: 1.1;
+    margin-top: 1px;
+}
+
+/* Column tint when violations exist */
+.crosstab-col-interv,
+.crosstab-col-crit {
+    border-bottom: 2px solid rgba(239, 68, 68, 0.6);
+}
+
+.crosstab-col-prev,
+.crosstab-col-warn {
+    border-bottom: 2px solid rgba(251, 191, 36, 0.6);
+}
+
+.crosstab-col-ref {
+    border-bottom: 2px solid rgba(96, 165, 250, 0.5);
+}
+
+/* Row tint when violations exist */
+.crosstab-row-interv .crosstab-row-header,
+.crosstab-row-crit .crosstab-row-header {
+    border-left: 3px solid rgba(239, 68, 68, 0.7);
+}
+
+.crosstab-row-prev .crosstab-row-header,
+.crosstab-row-warn .crosstab-row-header {
+    border-left: 3px solid rgba(251, 191, 36, 0.6);
+}
+
+.crosstab-row-ref .crosstab-row-header {
+    border-left: 3px solid rgba(96, 165, 250, 0.5);
+}
+
+.crosstab-row-header {
+    position: sticky;
+    left: 0;
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    border: 1px solid var(--neutral-200);
+    padding: 3px var(--space-2);
+    font-weight: 500;
+    text-align: left;
+    font-size: var(--text-xs);
+    white-space: nowrap;
+    z-index: 5;
+    max-width: clamp(140px, 50vw, 200px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--primary-text);
+}
+
+[data-theme="dark"] .crosstab-row-header {
+    background: var(--neutral-800);
+    border-color: var(--neutral-700);
+}
+
+.crosstab-cell {
+    border: 1px solid var(--neutral-200);
+    padding: 3px 5px;
+    text-align: right;
+    white-space: nowrap;
+    font-size: var(--text-xs);
+    cursor: default;
+    transition: filter 0.1s;
+    color: var(--primary-text);
+}
+
+[data-theme="dark"] .crosstab-cell {
+    border-color: var(--neutral-700);
+}
+
+.crosstab-cell:hover {
+    filter: brightness(0.92);
+}
+
+.crosstab-cell-empty {
+    border: 1px solid var(--neutral-200);
+    padding: var(--space-1) 6px;
+    text-align: center;
+    color: var(--text-muted, #ccc);
+    font-size: var(--text-xs);
+}
+
+[data-theme="dark"] .crosstab-cell-empty {
+    color: var(--neutral-600, #4b5563);
+    border-color: var(--neutral-700);
+}
+
+/* Compliance cell colors — 4 tiers + sem limite */
+.crosstab-ok {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--primary-text);
+}
+
+[data-theme="dark"] .crosstab-ok {
+    background: rgba(34, 197, 94, 0.18);
+}
+
+/* Reference (VR) — azul sutil */
+.crosstab-reference {
+    background: rgba(96, 165, 250, 0.15);
+    color: #1d4ed8;
+}
+
+[data-theme="dark"] .crosstab-reference {
+    background: rgba(96, 165, 250, 0.22);
+    color: #93bbfd;
+}
+
+/* Prevention (VP) — amarelo */
+.crosstab-prevention,
+.crosstab-warning {
+    background: rgba(251, 191, 36, 0.2);
+    color: #92400e;
+}
+
+[data-theme="dark"] .crosstab-prevention,
+[data-theme="dark"] .crosstab-warning {
+    background: rgba(251, 191, 36, 0.25);
+    color: #fbbf24;
+}
+
+/* Intervention (VI/CMA) — vermelho */
+.crosstab-intervention,
+.crosstab-violation {
+    background: rgba(239, 68, 68, 0.2);
+    font-weight: 600;
+    color: #dc2626;
+}
+
+[data-theme="dark"] .crosstab-intervention,
+[data-theme="dark"] .crosstab-violation {
+    background: rgba(239, 68, 68, 0.28);
+    color: #f87171;
+}
+
+.crosstab-no-limit {
+    background: transparent;
+}
+
+/* ---- Summary column + row ---- */
+.crosstab-summary-col-header {
+    position: sticky;
+    right: 0;
+    background: var(--neutral-100);
+    z-index: 10;
+    font-size: var(--text-xs, 10px);
+    min-width: 60px;
+}
+
+[data-theme="dark"] .crosstab-summary-col-header {
+    background: var(--neutral-800);
+}
+
+.crosstab-summary-cell {
+    border: 1px solid var(--neutral-200);
+    padding: 3px var(--space-1);
+    text-align: center;
+    white-space: nowrap;
+    font-size: var(--text-xs);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    position: sticky;
+    right: 0;
+    z-index: 4;
+}
+
+[data-theme="dark"] .crosstab-summary-cell {
+    background: var(--neutral-800);
+    border-color: var(--neutral-700);
+}
+
+.crosstab-summary-row {
+    position: sticky;
+    bottom: 0;
+}
+
+.crosstab-summary-row .crosstab-summary-cell {
+    background: var(--neutral-100);
+    border-top: 2px solid var(--neutral-300);
+}
+
+[data-theme="dark"] .crosstab-summary-row .crosstab-summary-cell {
+    background: var(--neutral-800);
+    border-top-color: var(--neutral-600);
+}
+
+.crosstab-summary-row-header {
+    font-weight: 600;
+    font-size: var(--text-xs, 10px);
+    text-transform: uppercase;
+    color: var(--neutral-500);
+    letter-spacing: 0.5px;
+    border-top: 2px solid var(--neutral-300);
+}
+
+[data-theme="dark"] .crosstab-summary-row-header {
+    border-top-color: var(--neutral-600);
+}
+
+/* Violation count badges */
+.crosstab-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 var(--space-1);
+    border-radius: var(--radius-xl);
+    font-size: var(--text-xs, 10px);
+    font-weight: 600;
+    margin: 0 1px;
+    line-height: 1;
+}
+
+.crosstab-badge.interv,
+.crosstab-badge.crit {
+    background: rgba(239, 68, 68, 0.2);
+    color: #dc2626;
+}
+
+.crosstab-badge.prev,
+.crosstab-badge.warn {
+    background: rgba(251, 191, 36, 0.2);
+    color: #d97706;
+}
+
+.crosstab-badge.ref {
+    background: rgba(96, 165, 250, 0.15);
+    color: var(--accent-primary);
+}
+
+.crosstab-badge.ok {
+    background: rgba(34, 197, 94, 0.15);
+    color: #16a34a;
+}
+
+[data-theme="dark"] .crosstab-badge.interv,
+[data-theme="dark"] .crosstab-badge.crit {
+    background: rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+[data-theme="dark"] .crosstab-badge.prev,
+[data-theme="dark"] .crosstab-badge.warn {
+    background: rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+}
+
+[data-theme="dark"] .crosstab-badge.ref {
+    background: rgba(96, 165, 250, 0.25);
+    color: #93bbfd;
+}
+
+[data-theme="dark"] .crosstab-badge.ok {
+    background: rgba(34, 197, 94, 0.25);
+    color: #4ade80;
+}
+
+.crosstab-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    border-top: 1px solid var(--neutral-200);
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .crosstab-footer {
+    border-color: var(--neutral-700);
+}
+
+.crosstab-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--neutral-500);
+    font-size: var(--text-base);
+}
+
+/* Summary stats in footer */
+.crosstab-stats {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.crosstab-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.crosstab-stat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.crosstab-stat-dot.ok { background: var(--accent-green); }
+.crosstab-stat-dot.ref { background: #60a5fa; }
+.crosstab-stat-dot.prev,
+.crosstab-stat-dot.warn { background: #fbbf24; }
+.crosstab-stat-dot.interv,
+.crosstab-stat-dot.crit { background: var(--accent-red); }
+
+/* ----------------------------------------------------------------
+   VIOLATIONS TIMELINE
+   Grafico de violacoes ao longo do tempo
+   ---------------------------------------------------------------- */
+
+.violations-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--neutral-500);
+    font-size: var(--text-base);
+}
+
+.violations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--neutral-200);
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .violations-header {
+    border-color: var(--neutral-700);
+}
+
+.violations-stat {
+    font-weight: 600;
+    color: var(--accent-red);
+}
+
+.violations-canvas-wrapper {
+    flex: 1;
+    position: relative;
+    min-height: 180px;
+    padding: 0;
+}
+
+.violations-canvas-wrapper canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

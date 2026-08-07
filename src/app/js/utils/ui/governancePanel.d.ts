@@ -1,0 +1,12 @@
+export function renderGovernanceTab(...args: any[]): any;
+export function setContractFilter(...args: any[]): any;
+export function renderContractForm(...args: any[]): any;
+export function renderRegulatoryCalendarSection(...args: any[]): any;
+export function hydrateRegulatoryCalendar(...args: any[]): Promise<any>;
+export function renderDecisionLogSection(...args: any[]): any;
+export function hydrateDecisionLog(...args: any[]): Promise<any>;
+export function renderCostCentersSection(...args: any[]): any;
+export function bindCostCenterTreeListeners(...args: any[]): any;
+export function renderCostCenterForm(...args: any[]): any;
+export function renderCostAllocationForm(...args: any[]): any;
+export function formatCurrency(...args: any[]): string;

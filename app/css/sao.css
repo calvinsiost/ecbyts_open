@@ -1,0 +1,183 @@
+/* ================================================================
+   SAO PROTOCOL — Scenario, Matrix & Tier Styles
+   ================================================================ */
+
+/* --- Tier dots in parameter dropdown --- */
+.sao-tier-dot {
+    font-size: var(--text-xs, 10px);
+    margin-right: var(--space-1);
+    vertical-align: middle;
+}
+.sao-tier-dot.sao-tier-essential { color: var(--accent-red); }
+.sao-tier-dot.sao-tier-recommended { color: var(--accent-orange); }
+.sao-tier-dot.sao-tier-specialized { color: var(--accent-green); }
+
+/* --- Hierarchical parameter dropdown --- */
+.sao-matrix-label {
+    font-weight: 700;
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: var(--space-2) 10px var(--space-1);
+    color: var(--neutral-800);
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    -webkit-user-select: none;
+    user-select: none;
+}
+.sao-matrix-label:hover {
+    background: color-mix(in srgb, var(--bg-tertiary) 80%, var(--accent-color));
+}
+.sao-subcat-label {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    padding: var(--space-1) 10px 2px 22px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    -webkit-user-select: none;
+    user-select: none;
+}
+.sao-subcat-label:hover {
+    color: var(--neutral-800);
+}
+.sao-matrix-group {
+    border-bottom: 1px solid var(--border-color);
+}
+/* Collapsed states for SAO hierarchy */
+.sao-matrix-group.collapsed .sao-matrix-content {
+    display: none;
+}
+.sao-subcat-group.collapsed .sao-subcat-content {
+    display: none;
+}
+
+/* --- Scenario selection modal --- */
+.modal-lg .modal-body { max-height: 70vh; overflow-y: auto; }
+.sao-scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+}
+.sao-scenario-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: var(--bg-secondary);
+}
+.sao-scenario-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.sao-scenario-active {
+    border-color: var(--accent-color);
+    background: color-mix(in srgb, var(--accent-color) 8%, var(--bg-secondary));
+}
+.sao-scenario-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: 6px;
+}
+.sao-scenario-header strong { font-size: var(--text-lg); }
+.sao-scenario-desc {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-2);
+    line-height: 1.4;
+}
+.sao-scenario-matrices {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+.sao-scenario-matrices small { display: block; margin-top: 2px; }
+
+/* --- Matrix panel modal --- */
+.sao-tier-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+.sao-tier-group {
+    display: flex;
+    gap: var(--space-1);
+}
+.sao-tier-btn {
+    padding: var(--space-1) var(--space-3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    font-size: var(--text-base);
+    transition: all 0.2s;
+}
+.sao-tier-btn:hover { border-color: var(--accent-color); }
+.sao-tier-essential.sao-tier-active { background: var(--accent-red); color: #fff; border-color: var(--accent-red); }
+.sao-tier-recommended.sao-tier-active { background: var(--accent-orange); color: #fff; border-color: var(--accent-orange); }
+.sao-tier-specialized.sao-tier-active { background: var(--accent-green); color: #fff; border-color: var(--accent-green); }
+
+.sao-status-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-base);
+    margin-bottom: var(--space-3);
+    padding: 6px 10px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+.sao-matrix-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.sao-matrix-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: var(--space-2) 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.sao-matrix-toggle:hover { background: var(--bg-tertiary); }
+.sao-matrix-active { border-color: var(--accent-color); background: color-mix(in srgb, var(--accent-color) 5%, var(--bg-secondary)); }
+.sao-matrix-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    flex-shrink: 0;
+}
+.sao-matrix-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.sao-matrix-info strong { font-size: var(--text-md); }
+.sao-matrix-info small { font-size: var(--text-xs); color: var(--text-secondary); }
+.sao-matrix-switch { flex-shrink: 0; }
+
+/* --- SAO status badge in status bar --- */
+.sao-status-badge {
+    background: var(--accent-color);
+    color: #fff;
+    padding: 0 6px;
+    border-radius: 3px;
+    font-size: var(--text-xs);
+    font-weight: 600;
+}
+

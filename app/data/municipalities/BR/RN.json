@@ -1,0 +1,837 @@
+[
+    {
+        "codigo_ibge": "2400109",
+        "nome": "Acari",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2400307",
+        "nome": "Afonso Bezerra",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2400406",
+        "nome": "Água Nova",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2400505",
+        "nome": "Alexandria",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2400604",
+        "nome": "Almino Afonso",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2400703",
+        "nome": "Alto do Rodrigues",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2400802",
+        "nome": "Angicos",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2400901",
+        "nome": "Antônio Martins",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401008",
+        "nome": "Apodi",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401107",
+        "nome": "Areia Branca",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401206",
+        "nome": "Arez",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2400208",
+        "nome": "Assú",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401404",
+        "nome": "Baía Formosa",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401453",
+        "nome": "Baraúna",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401503",
+        "nome": "Barcelona",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401602",
+        "nome": "Bento Fernandes",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401651",
+        "nome": "Bodó",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401701",
+        "nome": "Bom Jesus",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401800",
+        "nome": "Brejinho",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401859",
+        "nome": "Caiçara do Norte",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401909",
+        "nome": "Caiçara do Rio do Vento",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402006",
+        "nome": "Caicó",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2401305",
+        "nome": "Campo Grande",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402105",
+        "nome": "Campo Redondo",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402204",
+        "nome": "Canguaretama",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402303",
+        "nome": "Caraúbas",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402402",
+        "nome": "Carnaúba dos Dantas",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402501",
+        "nome": "Carnaubais",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402600",
+        "nome": "Ceará-Mirim",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402709",
+        "nome": "Cerro Corá",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402808",
+        "nome": "Coronel Ezequiel",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2402907",
+        "nome": "Coronel João Pessoa",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403004",
+        "nome": "Cruzeta",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403103",
+        "nome": "Currais Novos",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403202",
+        "nome": "Doutor Severiano",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403301",
+        "nome": "Encanto",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403400",
+        "nome": "Equador",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403509",
+        "nome": "Espírito Santo",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403608",
+        "nome": "Extremoz",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403707",
+        "nome": "Felipe Guerra",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403756",
+        "nome": "Fernando Pedroza",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403806",
+        "nome": "Florânia",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403905",
+        "nome": "Francisco Dantas",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404002",
+        "nome": "Frutuoso Gomes",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404101",
+        "nome": "Galinhos",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404200",
+        "nome": "Goianinha",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404309",
+        "nome": "Governador Dix-Sept Rosado",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404408",
+        "nome": "Grossos",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404507",
+        "nome": "Guamaré",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404606",
+        "nome": "Ielmo Marinho",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404705",
+        "nome": "Ipanguaçu",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404804",
+        "nome": "Ipueira",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404853",
+        "nome": "Itajá",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2404903",
+        "nome": "Itaú",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405009",
+        "nome": "Jaçanã",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405108",
+        "nome": "Jandaíra",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405207",
+        "nome": "Janduís",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405306",
+        "nome": "Januário Cicco",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405405",
+        "nome": "Japi",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405504",
+        "nome": "Jardim de Angicos",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405603",
+        "nome": "Jardim de Piranhas",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405702",
+        "nome": "Jardim do Seridó",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405801",
+        "nome": "João Câmara",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2405900",
+        "nome": "João Dias",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406007",
+        "nome": "José da Penha",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406106",
+        "nome": "Jucurutu",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406155",
+        "nome": "Jundiá",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406205",
+        "nome": "Lagoa d'Anta",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406304",
+        "nome": "Lagoa de Pedras",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406403",
+        "nome": "Lagoa de Velhos",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406502",
+        "nome": "Lagoa Nova",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406601",
+        "nome": "Lagoa Salgada",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406700",
+        "nome": "Lajes",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406809",
+        "nome": "Lajes Pintadas",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2406908",
+        "nome": "Lucrécia",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407005",
+        "nome": "Luís Gomes",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407104",
+        "nome": "Macaíba",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407203",
+        "nome": "Macau",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407252",
+        "nome": "Major Sales",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407302",
+        "nome": "Marcelino Vieira",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407401",
+        "nome": "Martins",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407500",
+        "nome": "Maxaranguape",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407609",
+        "nome": "Messias Targino",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407708",
+        "nome": "Montanhas",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407807",
+        "nome": "Monte Alegre",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2407906",
+        "nome": "Monte das Gameleiras",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408003",
+        "nome": "Mossoró",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408102",
+        "nome": "Natal",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408201",
+        "nome": "Nísia Floresta",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408300",
+        "nome": "Nova Cruz",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408409",
+        "nome": "Olho d'Água do Borges",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408508",
+        "nome": "Ouro Branco",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408607",
+        "nome": "Paraná",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408706",
+        "nome": "Paraú",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408805",
+        "nome": "Parazinho",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408904",
+        "nome": "Parelhas",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2403251",
+        "nome": "Parnamirim",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409100",
+        "nome": "Passa e Fica",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409209",
+        "nome": "Passagem",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409308",
+        "nome": "Patu",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409407",
+        "nome": "Pau dos Ferros",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409506",
+        "nome": "Pedra Grande",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409605",
+        "nome": "Pedra Preta",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409704",
+        "nome": "Pedro Avelino",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409803",
+        "nome": "Pedro Velho",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409902",
+        "nome": "Pendências",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410009",
+        "nome": "Pilões",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410108",
+        "nome": "Poço Branco",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410207",
+        "nome": "Portalegre",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410256",
+        "nome": "Porto do Mangue",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410405",
+        "nome": "Pureza",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410504",
+        "nome": "Rafael Fernandes",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410603",
+        "nome": "Rafael Godeiro",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410702",
+        "nome": "Riacho da Cruz",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410801",
+        "nome": "Riacho de Santana",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410900",
+        "nome": "Riachuelo",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2408953",
+        "nome": "Rio do Fogo",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411007",
+        "nome": "Rodolfo Fernandes",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411106",
+        "nome": "Ruy Barbosa",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411205",
+        "nome": "Santa Cruz",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2409332",
+        "nome": "Santa Maria",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411403",
+        "nome": "Santana do Matos",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411429",
+        "nome": "Santana do Seridó",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411502",
+        "nome": "Santo Antônio",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411601",
+        "nome": "São Bento do Norte",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411700",
+        "nome": "São Bento do Trairí",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411809",
+        "nome": "São Fernando",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411908",
+        "nome": "São Francisco do Oeste",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412005",
+        "nome": "São Gonçalo do Amarante",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412104",
+        "nome": "São João do Sabugi",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412203",
+        "nome": "São José de Mipibu",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412302",
+        "nome": "São José do Campestre",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412401",
+        "nome": "São José do Seridó",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412500",
+        "nome": "São Miguel",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412559",
+        "nome": "São Miguel do Gostoso",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412609",
+        "nome": "São Paulo do Potengi",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412708",
+        "nome": "São Pedro",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412807",
+        "nome": "São Rafael",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2412906",
+        "nome": "São Tomé",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413003",
+        "nome": "São Vicente",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413102",
+        "nome": "Senador Elói de Souza",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413201",
+        "nome": "Senador Georgino Avelino",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2410306",
+        "nome": "Serra Caiada",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413300",
+        "nome": "Serra de São Bento",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413359",
+        "nome": "Serra do Mel",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413409",
+        "nome": "Serra Negra do Norte",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413508",
+        "nome": "Serrinha",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413557",
+        "nome": "Serrinha dos Pintos",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413607",
+        "nome": "Severiano Melo",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413706",
+        "nome": "Sítio Novo",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413805",
+        "nome": "Taboleiro Grande",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2413904",
+        "nome": "Taipu",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414001",
+        "nome": "Tangará",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414100",
+        "nome": "Tenente Ananias",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414159",
+        "nome": "Tenente Laurentino Cruz",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2411056",
+        "nome": "Tibau",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414209",
+        "nome": "Tibau do Sul",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414308",
+        "nome": "Timbaúba dos Batistas",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414407",
+        "nome": "Touros",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414456",
+        "nome": "Triunfo Potiguar",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414506",
+        "nome": "Umarizal",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414605",
+        "nome": "Upanema",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414704",
+        "nome": "Várzea",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414753",
+        "nome": "Venha-Ver",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414803",
+        "nome": "Vera Cruz",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2414902",
+        "nome": "Viçosa",
+        "uf": "RN"
+    },
+    {
+        "codigo_ibge": "2415008",
+        "nome": "Vila Flor",
+        "uf": "RN"
+    }
+]

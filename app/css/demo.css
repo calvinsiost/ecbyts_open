@@ -1,0 +1,753 @@
+/* ================================================================
+   DEMO MODE — Interactive demo controller and navigation styles
+   Estilos do modo de demonstração interativa
+
+   This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0.
+   ================================================================ */
+
+/* --- Demo Panel Container --- */
+
+#demo-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Tokens canonicos via clamp() — design-tokens.css (audit 2026-05-13).
+       width fluido entre 640px e 920px conforme viewport; vertical clamp via
+       --ecbt-modal-max-h/min-h. Sem hardcoded 760/920/88vh/92vh. */
+    width: var(--ecbt-modal-xl);
+    max-height: var(--ecbt-modal-max-h);
+    min-height: var(--ecbt-modal-min-h);
+    background: linear-gradient(135deg, #1a1d2e 0%, #1e1e2e 50%, #1a1d2e 100%);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 16px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    z-index: 9000;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: demoSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(10px);
+}
+
+#demo-panel.active {
+    display: flex;
+}
+
+@keyframes demoSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%) scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* --- Panel Header --- */
+
+.demo-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-6) 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+    position: relative;
+}
+
+.demo-panel-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 28px;
+    right: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+}
+
+.demo-panel-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.3px;
+}
+
+.demo-panel-close {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary, #a0a0a8);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.demo-panel-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-primary, #e1e1e6);
+}
+
+/* --- Panel Body (scrollable) --- */
+
+#demo-panel > div:not(.demo-panel-header) {
+    overflow-y: auto;
+    padding: var(--space-5) var(--space-6);
+}
+
+/* --- Demo Section --- */
+
+.demo-section {
+    margin-bottom: 28px;
+}
+
+.demo-section:last-child {
+    margin-bottom: 0;
+}
+
+.demo-section-label {
+    font-size: var(--text-md);
+    font-weight: 700;
+    color: rgba(59, 130, 246, 1);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.demo-section-label::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary));
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+/* --- Grid Layout for Cards --- */
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-3);
+}
+
+.demo-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+/* --- Demo Card (Vertical/Module) --- */
+
+.demo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-6) 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, var(--card-color, #3b82f6), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.demo-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--card-color, #3b82f6), transparent);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.demo-card:hover::before {
+    opacity: 0.12;
+}
+
+.demo-card:hover::after {
+    opacity: 0.3;
+}
+
+.demo-card:hover {
+    border-color: var(--card-color, #3b82f6);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(var(--card-color-rgb, 59, 130, 246), 0.3);
+}
+
+.demo-card.selected {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-color: var(--card-color, #3b82f6);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        0 0 0 3px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: scale(1.03);
+}
+
+.demo-card.selected::before {
+    opacity: 0.2;
+}
+
+.demo-card.selected::after {
+    opacity: 0.5;
+}
+
+.demo-card-icon {
+    font-size: 36px;
+    color: var(--card-color, #3b82f6);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.demo-card:hover .demo-card-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.demo-card.selected .demo-card-icon {
+    transform: scale(1.1);
+}
+
+.demo-card-label {
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--text-primary, #ffffff);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+}
+
+/* --- Case List --- */
+
+.demo-case-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Sem max-height/overflow interno — modal body (#demo-panel > div) ja faz o scroll.
+       Scroll aninhado criava bottleneck: 13 cases x ~80px = 1040px so ~4 visiveis em 320px.
+       Calvin reportou UX "telas muito pequenas para rolar e ver conteudo". */
+    padding-right: 4px;
+}
+
+/* Custom scrollbar */
+.demo-case-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.demo-case-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.demo-case-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+}
+
+.demo-case-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* --- Case Card --- */
+
+.demo-case-card {
+    padding: var(--space-4) 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-case-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.demo-case-card:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border-color: rgba(59, 130, 246, 0.3);
+    /* Removido translateX(6px) — causava clipping na borda direita do modal
+       e dava sensacao de "card pulando". Hover via cor/shadow apenas. */
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        -4px 0 12px rgba(59, 130, 246, 0.2);
+}
+
+.demo-case-card:hover::before {
+    opacity: 1;
+}
+
+.demo-case-card.selected {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.15) 100%);
+    border-color: var(--accent-bright, #3b82f6);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        0 0 0 2px rgba(59, 130, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    /* Removido translateX(8px) — mantém alinhamento com border esquerda; selected
+       indicado por border + box-shadow ring, nao por offset que cortava na direita. */
+}
+
+.demo-case-card.selected::before {
+    opacity: 1;
+    width: 5px;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+}
+
+.demo-case-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+}
+
+.demo-case-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    flex: 1;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.demo-case-risk {
+    padding: var(--space-1) 10px;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-xs);
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.demo-case-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    color: var(--text-secondary, #a0a0a8);
+    margin-bottom: 6px;
+}
+
+.demo-case-desc {
+    font-size: var(--text-md);
+    color: var(--text-secondary, #a0a0a8);
+    line-height: 1.5;
+    margin: var(--space-2) 0 0 0;
+}
+
+/* --- Actions Section --- */
+
+.demo-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    padding-top: var(--space-2);
+}
+
+.demo-start-btn {
+    width: 100%;
+    max-width: var(--ecbt-modal-xs, clamp(280px, 90vw, 360px));
+    padding: var(--space-4) 28px;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary) 100%);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-start-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.demo-start-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.demo-start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+}
+
+.demo-start-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.demo-start-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.demo-start-btn .icon {
+    font-size: 20px;
+}
+
+.demo-hint {
+    font-size: var(--text-base);
+    color: var(--text-secondary, #a0a0a8);
+    text-align: center;
+}
+
+/* --- Demo Overlay (bottom bar during walkthrough) --- */
+
+#demo-overlay {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9500;
+    /* Token: barra de navegacao flutuante usa mesma escala dos modais lg. */
+    width: var(--ecbt-modal-lg);
+    display: none;
+}
+
+#demo-overlay.active {
+    display: block;
+}
+
+.demo-overlay-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    background: rgba(20, 20, 35, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+}
+
+.demo-overlay-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-width: 0;
+}
+
+.demo-step-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.demo-step-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.demo-step-desc {
+    font-size: var(--text-base);
+    color: var(--text-secondary, #a0a0a8);
+}
+
+.demo-progress-track {
+    width: 120px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.demo-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary));
+    border-radius: var(--radius-sm);
+    transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+.demo-step-counter {
+    font-size: var(--text-base);
+    color: var(--text-secondary, #a0a0a8);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.demo-nav-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-xl);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.demo-nav-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.demo-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.demo-exit-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: var(--space-2) 14px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-xl);
+    color: var(--accent-red);
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.demo-exit-btn:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* --- Tooltip / Spotlight --- */
+
+.demo-spotlight {
+    position: absolute;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7), 0 0 20px rgba(59, 130, 246, 0.5);
+    pointer-events: none;
+    z-index: 9400;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.demo-tooltip {
+    position: absolute;
+    background: rgba(20, 20, 35, 0.98);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 10px;
+    padding: var(--space-4) var(--space-5);
+    /* Token: tooltip usa escala xs (modais compactos). */
+    max-width: var(--ecbt-modal-xs);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 9401;
+    animation: tooltipIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes tooltipIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.demo-tooltip-title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.demo-tooltip-body {
+    font-size: var(--text-md);
+    color: var(--text-secondary, #a0a0a8);
+    line-height: 1.5;
+}
+
+/* --- Risk Badges --- */
+
+.demo-risk-low {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.demo-risk-medium {
+    background: rgba(234, 179, 8, 0.2);
+    color: #facc15;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.demo-risk-high {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* --- Animations --- */
+
+@keyframes demoPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+}
+
+.demo-pulse {
+    animation: demoPulse 2s infinite;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 640px) {
+    #demo-panel {
+        width: 96%;
+        max-height: 92vh;
+        border-radius: 12px;
+    }
+
+    .demo-panel-header {
+        padding: 18px var(--space-5);
+    }
+
+    .demo-panel-header h3 {
+        font-size: var(--text-2xl);
+    }
+
+    #demo-panel > div:not(.demo-panel-header) {
+        padding: var(--space-4) 18px;
+    }
+
+    .demo-card {
+        padding: 18px var(--space-3);
+    }
+
+    .demo-card-icon {
+        font-size: 28px;
+    }
+
+    .demo-card-label {
+        font-size: var(--text-base);
+    }
+
+    .demo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .demo-case-card {
+        padding: var(--space-3) 14px;
+    }
+
+    .demo-case-title {
+        font-size: var(--text-lg);
+    }
+
+    #demo-overlay {
+        min-width: 320px;
+        max-width: calc(100vw - 40px);
+        padding: 14px var(--space-4);
+    }
+
+    .demo-overlay-bar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .demo-step-title {
+        font-size: var(--text-md);
+    }
+
+    .demo-step-desc {
+        font-size: var(--text-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .demo-start-btn {
+        font-size: var(--text-lg);
+        padding: var(--space-3) var(--space-5);
+    }
+}
+
+/* ================================================================
+   LEGACY RESET — Ensure #demo-panel overrides old .demo-panel styles
+   from styles.css (lines ~7927–8186) that leak into the new modal.
+   ================================================================ */
+
+#demo-panel .demo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+#demo-panel .demo-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+#demo-panel .demo-case-title {
+    white-space: normal;
+    max-width: none;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+#demo-panel .demo-section {
+    padding: 0;
+    border-top: none;
+}

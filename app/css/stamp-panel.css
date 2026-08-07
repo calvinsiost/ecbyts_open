@@ -1,0 +1,717 @@
+/* ================================================================
+   STAMP PANEL — Painel de Estampas
+   ================================================================
+   Styles for the stamp (connection) panel, stamp items, filters,
+   classification badges, governance status, and the add-stamp modal.
+
+   Owner: .stamp-*, .governance-badge
+   Must NOT define: .btn-* base, .modal-* base, .form-* base
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   PANEL HEADER
+   ---------------------------------------------------------------- */
+
+.stamp-panel-header {
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--neutral-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stamp-element-name {
+    font-weight: 600;
+    font-size: var(--text-md);
+}
+
+.stamp-element-family {
+    font-size: var(--text-sm);
+    color: var(--neutral-500);
+    background: var(--neutral-100);
+    padding: 2px 6px;
+    border-radius: var(--radius-md);
+}
+
+/* ----------------------------------------------------------------
+   EMPTY STATE
+   ---------------------------------------------------------------- */
+
+.stamp-panel-empty-msg {
+    color: var(--neutral-500);
+    font-size: var(--text-sm);
+    padding: var(--space-3);
+}
+
+/* ----------------------------------------------------------------
+   GOVERNANCE STATUS
+   ---------------------------------------------------------------- */
+
+.stamp-governance-status {
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.governance-badge {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+    background: var(--neutral-200);
+    color: var(--neutral-600);
+}
+
+.governance-badge.active {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+/* ----------------------------------------------------------------
+   CLASSIFICATION SUMMARY & BADGES
+   ---------------------------------------------------------------- */
+
+.stamp-classification-summary {
+    display: flex;
+    gap: var(--space-2);
+    padding: 6px var(--space-3);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.stamp-class-badge {
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stamp-class-badge.passive {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.stamp-class-badge.active {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
+/* ----------------------------------------------------------------
+   CATEGORY FILTERS
+   ---------------------------------------------------------------- */
+
+.stamp-category-filters {
+    display: flex;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--neutral-200);
+    overflow-x: auto;
+}
+
+.stamp-filter-btn {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    background: white;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.stamp-filter-btn:hover {
+    background: var(--neutral-100);
+}
+
+.stamp-filter-btn.active {
+    background: var(--cat-color, var(--primary));
+    color: white;
+    border-color: transparent;
+}
+
+.stamp-filter-divider {
+    width: 1px;
+    background: var(--neutral-300);
+    margin: 2px var(--space-1);
+}
+
+.stamp-filter-passive.active {
+    background: #dc2626 !important;
+    color: white;
+    border-color: transparent;
+}
+
+.stamp-filter-active.active {
+    background: #16a34a !important;
+    color: white;
+    border-color: transparent;
+}
+
+/* ----------------------------------------------------------------
+   CATEGORY SECTIONS
+   ---------------------------------------------------------------- */
+
+.stamp-category-section {
+    margin: var(--space-2);
+}
+
+.stamp-category-header {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--cat-color, var(--neutral-600));
+    padding: var(--space-1) 0;
+    border-bottom: 2px solid var(--cat-color, var(--neutral-300));
+    margin-bottom: var(--space-2);
+}
+
+/* ----------------------------------------------------------------
+   STAMP LIST & ITEMS
+   ---------------------------------------------------------------- */
+
+.stamp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stamp-item {
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2);
+}
+
+.stamp-item:hover {
+    border-color: var(--primary);
+}
+
+.stamp-item-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: var(--space-1);
+}
+
+.stamp-icon {
+    font-size: var(--text-lg);
+}
+
+.stamp-name {
+    font-weight: 500;
+    font-size: var(--text-sm);
+    flex: 1;
+}
+
+.stamp-remove-btn {
+    width: 18px;
+    height: 18px;
+    border: none;
+    background: var(--neutral-100);
+    color: var(--neutral-500);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: var(--text-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stamp-remove-btn:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.stamp-item-value {
+    font-size: var(--text-xs);
+    color: var(--neutral-700);
+    line-height: 1.4;
+}
+
+.stamp-item-meta {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: 6px;
+    font-size: 9px;
+    color: var(--neutral-500);
+}
+
+.stamp-signed {
+    color: var(--success);
+}
+
+/* ----------------------------------------------------------------
+   EMPTY STATE (stamp list)
+   ---------------------------------------------------------------- */
+
+.stamp-empty {
+    padding: var(--space-6);
+    text-align: center;
+    color: var(--neutral-500);
+    font-size: var(--text-sm);
+}
+
+/* ----------------------------------------------------------------
+   QUICK ACTIONS (Passivo / Ativo buttons)
+   ---------------------------------------------------------------- */
+
+.stamp-quick-actions {
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    border-top: 1px solid var(--neutral-200);
+}
+
+.stamp-quick-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px var(--space-3);
+    border-radius: var(--radius-lg);
+    border: 2px solid;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.stamp-quick-btn.passive {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #dc2626;
+}
+
+.stamp-quick-btn.passive:hover {
+    background: #dc2626;
+    color: white;
+    border-color: #dc2626;
+}
+
+.stamp-quick-btn.active {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #16a34a;
+}
+
+.stamp-quick-btn.active:hover {
+    background: #16a34a;
+    color: white;
+    border-color: #16a34a;
+}
+
+/* ----------------------------------------------------------------
+   ACTIONS (bottom bar)
+   ---------------------------------------------------------------- */
+
+.stamp-actions {
+    padding: var(--space-3);
+    border-top: 1px solid var(--neutral-200);
+}
+
+/* ----------------------------------------------------------------
+   ADD-STAMP MODAL
+   ---------------------------------------------------------------- */
+
+.stamp-modal-header {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.stamp-modal-header h3 {
+    margin: 0 0 var(--space-1) 0;
+    font-size: var(--text-xl);
+}
+
+.stamp-modal-header p {
+    margin: 0;
+    font-size: var(--text-base);
+    color: var(--neutral-600);
+}
+
+.stamp-back-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: var(--text-base);
+    padding: 0;
+    margin-bottom: var(--space-2);
+}
+
+.stamp-category-badge {
+    display: inline-block;
+    font-size: var(--text-xs);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-md);
+    background: var(--cat-color, var(--neutral-200));
+    color: white;
+    margin-top: var(--space-2);
+}
+
+/* ----------------------------------------------------------------
+   TYPE GRID (stamp type selector in modal)
+   ---------------------------------------------------------------- */
+
+.stamp-type-grid {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.stamp-type-category-header {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--cat-color);
+    margin-bottom: var(--space-2);
+}
+
+.stamp-type-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+}
+
+.stamp-type-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-2);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    background: white;
+    cursor: pointer;
+}
+
+.stamp-type-btn:hover {
+    border-color: var(--primary);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+}
+
+.stamp-type-icon {
+    font-size: 20px;
+}
+
+.stamp-type-name {
+    font-size: var(--text-xs);
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------
+   STAMP FORM (fields inside modal)
+   ---------------------------------------------------------------- */
+
+.stamp-form {
+    padding: var(--space-4);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.stamp-form .form-group {
+    margin-bottom: var(--space-3);
+}
+
+.stamp-form .form-label {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    margin-bottom: var(--space-1);
+    display: block;
+}
+
+.stamp-form .required {
+    color: var(--danger);
+}
+
+.stamp-form .form-input {
+    width: 100%;
+    padding: var(--space-2);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+}
+
+/* ----------------------------------------------------------------
+   MODAL ACTIONS (Cancel / Save buttons)
+   ---------------------------------------------------------------- */
+
+.stamp-modal-actions {
+    padding: var(--space-3) var(--space-4);
+    border-top: 1px solid var(--neutral-200);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+}
+
+/* ----------------------------------------------------------------
+   CLASSIFICATION TOGGLE (radio buttons in form)
+   ---------------------------------------------------------------- */
+
+.stamp-classification-toggle {
+    display: flex;
+    gap: 0;
+    border: 2px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.stamp-class-option {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    cursor: pointer;
+    font-size: var(--text-base);
+    flex: 1;
+}
+
+.stamp-class-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.stamp-class-label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-2) var(--space-4);
+    transition: all 0.15s;
+}
+
+.stamp-class-label.passive {
+    color: #dc2626;
+    background: white;
+}
+
+.stamp-class-label.active {
+    color: #16a34a;
+    background: white;
+}
+
+.stamp-class-option input[type="radio"]:checked + .stamp-class-label.passive {
+    background: #dc2626;
+    color: white;
+}
+
+.stamp-class-option input[type="radio"]:checked + .stamp-class-label.active {
+    background: #16a34a;
+    color: white;
+}
+
+/* ----------------------------------------------------------------
+   CLASSIFICATION SELECTOR (in type-picker screen)
+   ---------------------------------------------------------------- */
+
+.stamp-class-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 10px var(--space-4);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.stamp-class-selector-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--neutral-600);
+}
+
+.stamp-class-select-btn {
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: 6px var(--space-4);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--neutral-200);
+    background: white;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.stamp-class-select-btn.passive {
+    color: #dc2626;
+}
+
+.stamp-class-select-btn.active {
+    color: #16a34a;
+}
+
+.stamp-class-select-btn.passive.selected {
+    background: #fef2f2;
+    border-color: #dc2626;
+}
+
+.stamp-class-select-btn.active.selected {
+    background: #f0fdf4;
+    border-color: #16a34a;
+}
+
+/* ================================================================
+   CERT-STAMPS-001 RF-5 — GATE ANTI-GREENWASHING
+   ================================================================
+
+   Selo de certificação (stamp type=certification) ganha renderização
+   DISTINTA conforme o tier devolvido por classifyCertificationStamp():
+
+     - stamp-cert--certified          (ISO 14024, 3ª parte acreditada)
+       => borda verde sólida + badge "CERTIFICADO" verde. Único tier
+          que pode usar verde "selo".
+
+     - stamp-cert--verified_statement (EPD/ISO 14025, ou type_I sem acreditação)
+       => borda azul tracejada + badge "DECLARAÇÃO VERIFICADA" azul.
+          Sem o selo verde, mas sem o rodapé forte de autodeclarado.
+
+     - stamp-cert--self_declared      (ISO 14021 / 1ª parte / sem acreditador)
+       => borda cinza tracejada + badge "AUTODECLARADO" cinza + rodapé
+          "Este registro não constitui certificação." NUNCA verde.
+
+   Referências: SPEC_ENVIRONMENTAL_CERTIFICATION_STAMPS.md §8 RF-5;
+                EmpCo (Dir. UE 2024/825) — prática desleal per se a
+                partir de 27/09/2026.
+   ================================================================ */
+
+/* Tier badge — rótulo curto ao lado do nome da estampa */
+.stamp-cert-tier-badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* CERTIFIED — verde "selo" (único tier permitido a usar verde forte) */
+.stamp-cert--certified {
+    border: 2px solid #16a34a;
+    background: #f0fdf4;
+}
+
+.stamp-cert--certified .stamp-cert-tier-badge {
+    background: #16a34a;
+    color: #fff;
+}
+
+/* VERIFIED STATEMENT — azul declarativo (nem selo, nem autodeclarado) */
+.stamp-cert--verified_statement {
+    border: 2px dashed #2563eb;
+    background: #eff6ff;
+}
+
+.stamp-cert--verified_statement .stamp-cert-tier-badge {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* SELF DECLARED — cinza degradado, NUNCA verde (RF-5a anti-promoção) */
+.stamp-cert--self_declared {
+    border: 2px dashed #9ca3af;
+    background: #f9fafb;
+}
+
+.stamp-cert--self_declared .stamp-cert-tier-badge {
+    background: #6b7280;
+    color: #fff;
+}
+
+/* Escopo visível (RF-5b) — chip abaixo do valor */
+.stamp-cert-scope {
+    margin-top: 4px;
+}
+
+.stamp-cert-scope-chip {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--neutral-100, #f3f4f6);
+    color: var(--neutral-700, #374151);
+    border: 1px solid var(--neutral-200, #e5e7eb);
+}
+
+/* Rodapé "este registro não constitui certificação" (RF-5c) */
+.stamp-cert-disclaimer {
+    margin-top: 6px;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-style: italic;
+    color: #6b7280;
+    background: #f3f4f6;
+    border-left: 3px solid #9ca3af;
+    border-radius: 2px;
+}
+
+/* Aviso de mismatch de escopo (org vs ativo físico — armadilha B Corp/AQUA) */
+.stamp-cert-scope-warning {
+    margin-top: 6px;
+    padding: 4px 8px;
+    font-size: 10px;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+    border-radius: 3px;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    line-height: 1.3;
+}
+
+/* ================================================================
+   ATTEST-001 RF-5 — GATE UNIVERSAL (attestation--*)
+   ================================================================
+
+   As 4 classes do gate universal classifyAttestation() para QUALQUER
+   natureza (não só ambiental). Espelham semanticamente as stamp-cert--*
+   mas com 4 tiers (acrescenta "adverse" para estado revogado/vencido).
+
+     - attestation--attested       terceira parte acreditada + verificável.
+                                   Único tier que pode usar verde "selo".
+
+     - attestation--declared       terceira/segunda parte sem acreditação ou
+                                   não verificável. Azul declarativo.
+
+     - attestation--self_declared  autodeclarado (first_party). Cinza tracejado
+                                   + rodapé obrigatório. NUNCA verde.
+
+     - attestation--adverse        estado publicado adverso (revogado/vencido/
+                                   recusado/retirado). Vermelho — fato negativo
+                                   que DEVE aparecer, não ausência.
+
+   Referências: docs/specs/features/SPEC_ATTESTATION_MODEL.md § RF-5;
+                EmpCo (Dir. UE 2024/825); BGH "klimaneutral" (27/06/2024).
+   ================================================================ */
+
+/* ATTESTED — verde "selo" (mesma régua do stamp-cert--certified) */
+.attestation--attested {
+    border: 2px solid #16a34a;
+    background: #f0fdf4;
+}
+
+/* DECLARED — azul declarativo (nem selo, nem autodeclarado) */
+.attestation--declared {
+    border: 2px dashed #2563eb;
+    background: #eff6ff;
+}
+
+/* SELF DECLARED — cinza degradado, NUNCA verde */
+.attestation--self_declared {
+    border: 2px dashed #9ca3af;
+    background: #f9fafb;
+}
+
+/* ADVERSE — vermelho de estado negativo (revogado/vencido/recusado) */
+.attestation--adverse {
+    border: 2px solid #b91c1c;
+    background: #fef2f2;
+}

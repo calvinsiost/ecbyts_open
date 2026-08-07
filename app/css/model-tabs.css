@@ -1,0 +1,136 @@
+/* ================================================================
+   MULTI-MODEL TABS - tab bar styling
+   Ativa apenas quando CONFIG.FEATURES.MULTI_MODEL === true.
+   Posição: abaixo do #menubar, altura 40px.
+   ================================================================ */
+
+.model-tab-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    height: 40px;
+    padding: 0 var(--space-2);
+    background: var(--neutral-900, #0f1419);
+    border-bottom: 1px solid var(--neutral-700, #2a3038);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    flex-shrink: 0;
+    z-index: 15;
+    position: relative;
+}
+
+.model-tab-bar::-webkit-scrollbar {
+    height: 4px;
+}
+
+.model-tab-bar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+}
+
+.model-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 30px;
+    padding: 0 var(--space-2) 0 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    color: var(--text-muted, #d0d5db);
+    font-size: var(--text-base);
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 120ms,
+        border-color 120ms;
+    max-width: clamp(140px, 50vw, 200px);
+}
+
+.model-tab:hover:not(.is-active) {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.model-tab.is-active {
+    background: rgba(79, 195, 247, 0.15);
+    border-color: rgba(79, 195, 247, 0.5);
+    color: #fff;
+    font-weight: 500;
+}
+
+.model-tab-icon {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.model-tab-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: clamp(100px, 35vw, 140px);
+}
+
+.model-tab-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    font-size: var(--text-lg);
+    line-height: 1;
+    opacity: 0.5;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    margin-left: var(--space-1);
+    flex-shrink: 0;
+}
+
+.model-tab-close:hover {
+    opacity: 1;
+    background: rgba(239, 83, 80, 0.3);
+    color: #fff;
+}
+
+.model-tab-new {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 120ms,
+        color 120ms,
+        border-color 120ms;
+    flex-shrink: 0;
+}
+
+.model-tab-new:hover {
+    background: rgba(79, 195, 247, 0.1);
+    color: #4fc3f7;
+    border-color: rgba(79, 195, 247, 0.4);
+}
+
+/* Banner read-only quando modelo aberto em outra aba (Phase 5) */
+.model-tab-readonly-banner {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 193, 7, 0.15);
+    border-top: 1px solid rgba(255, 193, 7, 0.3);
+    padding: 6px var(--space-3);
+    color: #ffc107;
+    font-size: var(--text-sm);
+    text-align: center;
+    z-index: 16;
+}

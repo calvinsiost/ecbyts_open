@@ -1,0 +1,1477 @@
+[
+    {
+        "codigo_ibge": "4200051",
+        "nome": "Abdon Batista",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200101",
+        "nome": "Abelardo Luz",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200200",
+        "nome": "Agrolândia",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200309",
+        "nome": "Agronômica",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200408",
+        "nome": "Água Doce",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200507",
+        "nome": "Águas de Chapecó",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200556",
+        "nome": "Águas Frias",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200606",
+        "nome": "Águas Mornas",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200705",
+        "nome": "Alfredo Wagner",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200754",
+        "nome": "Alto Bela Vista",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200804",
+        "nome": "Anchieta",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4200903",
+        "nome": "Angelina",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201000",
+        "nome": "Anita Garibaldi",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201109",
+        "nome": "Anitápolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201208",
+        "nome": "Antônio Carlos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201257",
+        "nome": "Apiúna",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201273",
+        "nome": "Arabutã",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201307",
+        "nome": "Araquari",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201406",
+        "nome": "Araranguá",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201505",
+        "nome": "Armazém",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201604",
+        "nome": "Arroio Trinta",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201653",
+        "nome": "Arvoredo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201703",
+        "nome": "Ascurra",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201802",
+        "nome": "Atalanta",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201901",
+        "nome": "Aurora",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4201950",
+        "nome": "Balneário Arroio do Silva",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202057",
+        "nome": "Balneário Barra do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202008",
+        "nome": "Balneário Camboriú",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202073",
+        "nome": "Balneário Gaivota",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212809",
+        "nome": "Balneário Piçarras",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4220000",
+        "nome": "Balneário Rincão",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202081",
+        "nome": "Bandeirante",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202099",
+        "nome": "Barra Bonita",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202107",
+        "nome": "Barra Velha",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202131",
+        "nome": "Bela Vista do Toldo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202156",
+        "nome": "Belmonte",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202206",
+        "nome": "Benedito Novo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202305",
+        "nome": "Biguaçu",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202404",
+        "nome": "Blumenau",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202438",
+        "nome": "Bocaina do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202503",
+        "nome": "Bom Jardim da Serra",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202537",
+        "nome": "Bom Jesus",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202578",
+        "nome": "Bom Jesus do Oeste",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202602",
+        "nome": "Bom Retiro",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202453",
+        "nome": "Bombinhas",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202701",
+        "nome": "Botuverá",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202800",
+        "nome": "Braço do Norte",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202859",
+        "nome": "Braço do Trombudo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202875",
+        "nome": "Brunópolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4202909",
+        "nome": "Brusque",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203006",
+        "nome": "Caçador",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203105",
+        "nome": "Caibi",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203154",
+        "nome": "Calmon",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203204",
+        "nome": "Camboriú",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203303",
+        "nome": "Campo Alegre",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203402",
+        "nome": "Campo Belo do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203501",
+        "nome": "Campo Erê",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203600",
+        "nome": "Campos Novos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203709",
+        "nome": "Canelinha",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203808",
+        "nome": "Canoinhas",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203253",
+        "nome": "Capão Alto",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203907",
+        "nome": "Capinzal",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4203956",
+        "nome": "Capivari de Baixo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204004",
+        "nome": "Catanduvas",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204103",
+        "nome": "Caxambu do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204152",
+        "nome": "Celso Ramos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204178",
+        "nome": "Cerro Negro",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204194",
+        "nome": "Chapadão do Lageado",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204202",
+        "nome": "Chapecó",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204251",
+        "nome": "Cocal do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204301",
+        "nome": "Concórdia",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204350",
+        "nome": "Cordilheira Alta",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204400",
+        "nome": "Coronel Freitas",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204459",
+        "nome": "Coronel Martins",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204558",
+        "nome": "Correia Pinto",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204509",
+        "nome": "Corupá",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204608",
+        "nome": "Criciúma",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204707",
+        "nome": "Cunha Porã",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204756",
+        "nome": "Cunhataí",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204806",
+        "nome": "Curitibanos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4204905",
+        "nome": "Descanso",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205001",
+        "nome": "Dionísio Cerqueira",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205100",
+        "nome": "Dona Emma",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205159",
+        "nome": "Doutor Pedrinho",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205175",
+        "nome": "Entre Rios",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205191",
+        "nome": "Ermo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205209",
+        "nome": "Erval Velho",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205308",
+        "nome": "Faxinal dos Guedes",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205357",
+        "nome": "Flor do Sertão",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205407",
+        "nome": "Florianópolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205431",
+        "nome": "Formosa do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205456",
+        "nome": "Forquilhinha",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205506",
+        "nome": "Fraiburgo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205555",
+        "nome": "Frei Rogério",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205605",
+        "nome": "Galvão",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205704",
+        "nome": "Garopaba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205803",
+        "nome": "Garuva",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4205902",
+        "nome": "Gaspar",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206009",
+        "nome": "Governador Celso Ramos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206108",
+        "nome": "Grão-Pará",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206207",
+        "nome": "Gravatal",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206306",
+        "nome": "Guabiruba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206405",
+        "nome": "Guaraciaba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206504",
+        "nome": "Guaramirim",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206603",
+        "nome": "Guarujá do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206652",
+        "nome": "Guatambú",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206702",
+        "nome": "Herval d'Oeste",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206751",
+        "nome": "Ibiam",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206801",
+        "nome": "Ibicaré",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4206900",
+        "nome": "Ibirama",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207007",
+        "nome": "Içara",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207106",
+        "nome": "Ilhota",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207205",
+        "nome": "Imaruí",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207304",
+        "nome": "Imbituba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207403",
+        "nome": "Imbuia",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207502",
+        "nome": "Indaial",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207577",
+        "nome": "Iomerê",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207601",
+        "nome": "Ipira",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207650",
+        "nome": "Iporã do Oeste",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207684",
+        "nome": "Ipuaçu",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207700",
+        "nome": "Ipumirim",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207759",
+        "nome": "Iraceminha",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207809",
+        "nome": "Irani",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207858",
+        "nome": "Irati",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4207908",
+        "nome": "Irineópolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208005",
+        "nome": "Itá",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208104",
+        "nome": "Itaiópolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208203",
+        "nome": "Itajaí",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208302",
+        "nome": "Itapema",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208401",
+        "nome": "Itapiranga",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208450",
+        "nome": "Itapoá",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208500",
+        "nome": "Ituporanga",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208609",
+        "nome": "Jaborá",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208708",
+        "nome": "Jacinto Machado",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208807",
+        "nome": "Jaguaruna",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208906",
+        "nome": "Jaraguá do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4208955",
+        "nome": "Jardinópolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209003",
+        "nome": "Joaçaba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209102",
+        "nome": "Joinville",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209151",
+        "nome": "José Boiteux",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209177",
+        "nome": "Jupiá",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209201",
+        "nome": "Lacerdópolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209300",
+        "nome": "Lages",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209409",
+        "nome": "Laguna",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209458",
+        "nome": "Lajeado Grande",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209508",
+        "nome": "Laurentino",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209607",
+        "nome": "Lauro Müller",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209706",
+        "nome": "Lebon Régis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209805",
+        "nome": "Leoberto Leal",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209854",
+        "nome": "Lindóia do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4209904",
+        "nome": "Lontras",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210001",
+        "nome": "Luiz Alves",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210035",
+        "nome": "Luzerna",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210050",
+        "nome": "Macieira",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210100",
+        "nome": "Mafra",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210209",
+        "nome": "Major Gercino",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210308",
+        "nome": "Major Vieira",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210407",
+        "nome": "Maracajá",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210506",
+        "nome": "Maravilha",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210555",
+        "nome": "Marema",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210605",
+        "nome": "Massaranduba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210704",
+        "nome": "Matos Costa",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210803",
+        "nome": "Meleiro",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210852",
+        "nome": "Mirim Doce",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4210902",
+        "nome": "Modelo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211009",
+        "nome": "Mondaí",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211058",
+        "nome": "Monte Carlo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211108",
+        "nome": "Monte Castelo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211207",
+        "nome": "Morro da Fumaça",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211256",
+        "nome": "Morro Grande",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211306",
+        "nome": "Navegantes",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211405",
+        "nome": "Nova Erechim",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211454",
+        "nome": "Nova Itaberaba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211504",
+        "nome": "Nova Trento",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211603",
+        "nome": "Nova Veneza",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211652",
+        "nome": "Novo Horizonte",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211702",
+        "nome": "Orleans",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211751",
+        "nome": "Otacílio Costa",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211801",
+        "nome": "Ouro",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211850",
+        "nome": "Ouro Verde",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211876",
+        "nome": "Paial",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211892",
+        "nome": "Painel",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4211900",
+        "nome": "Palhoça",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212007",
+        "nome": "Palma Sola",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212056",
+        "nome": "Palmeira",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212106",
+        "nome": "Palmitos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212205",
+        "nome": "Papanduva",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212239",
+        "nome": "Paraíso",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212254",
+        "nome": "Passo de Torres",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212270",
+        "nome": "Passos Maia",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212304",
+        "nome": "Paulo Lopes",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212403",
+        "nome": "Pedras Grandes",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212502",
+        "nome": "Penha",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212601",
+        "nome": "Peritiba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212650",
+        "nome": "Pescaria Brava",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212700",
+        "nome": "Petrolândia",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4212908",
+        "nome": "Pinhalzinho",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213005",
+        "nome": "Pinheiro Preto",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213104",
+        "nome": "Piratuba",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213153",
+        "nome": "Planalto Alegre",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213203",
+        "nome": "Pomerode",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213302",
+        "nome": "Ponte Alta",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213351",
+        "nome": "Ponte Alta do Norte",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213401",
+        "nome": "Ponte Serrada",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213500",
+        "nome": "Porto Belo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213609",
+        "nome": "Porto União",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213708",
+        "nome": "Pouso Redondo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213807",
+        "nome": "Praia Grande",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4213906",
+        "nome": "Presidente Castello Branco",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214003",
+        "nome": "Presidente Getúlio",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214102",
+        "nome": "Presidente Nereu",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214151",
+        "nome": "Princesa",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214201",
+        "nome": "Quilombo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214300",
+        "nome": "Rancho Queimado",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214409",
+        "nome": "Rio das Antas",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214508",
+        "nome": "Rio do Campo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214607",
+        "nome": "Rio do Oeste",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214805",
+        "nome": "Rio do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214706",
+        "nome": "Rio dos Cedros",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4214904",
+        "nome": "Rio Fortuna",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215000",
+        "nome": "Rio Negrinho",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215059",
+        "nome": "Rio Rufino",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215075",
+        "nome": "Riqueza",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215109",
+        "nome": "Rodeio",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215208",
+        "nome": "Romelândia",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215307",
+        "nome": "Salete",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215356",
+        "nome": "Saltinho",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215406",
+        "nome": "Salto Veloso",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215455",
+        "nome": "Sangão",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215505",
+        "nome": "Santa Cecília",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215554",
+        "nome": "Santa Helena",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215604",
+        "nome": "Santa Rosa de Lima",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215653",
+        "nome": "Santa Rosa do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215679",
+        "nome": "Santa Terezinha",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215687",
+        "nome": "Santa Terezinha do Progresso",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215695",
+        "nome": "Santiago do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215703",
+        "nome": "Santo Amaro da Imperatriz",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215802",
+        "nome": "São Bento do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215752",
+        "nome": "São Bernardino",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4215901",
+        "nome": "São Bonifácio",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216008",
+        "nome": "São Carlos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216057",
+        "nome": "São Cristóvão do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216107",
+        "nome": "São Domingos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216206",
+        "nome": "São Francisco do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216305",
+        "nome": "São João Batista",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216354",
+        "nome": "São João do Itaperiú",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216255",
+        "nome": "São João do Oeste",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216404",
+        "nome": "São João do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216503",
+        "nome": "São Joaquim",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216602",
+        "nome": "São José",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216701",
+        "nome": "São José do Cedro",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216800",
+        "nome": "São José do Cerrito",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4216909",
+        "nome": "São Lourenço do Oeste",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217006",
+        "nome": "São Ludgero",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217105",
+        "nome": "São Martinho",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217154",
+        "nome": "São Miguel da Boa Vista",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217204",
+        "nome": "São Miguel do Oeste",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217253",
+        "nome": "São Pedro de Alcântara",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217303",
+        "nome": "Saudades",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217402",
+        "nome": "Schroeder",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217501",
+        "nome": "Seara",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217550",
+        "nome": "Serra Alta",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217600",
+        "nome": "Siderópolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217709",
+        "nome": "Sombrio",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217758",
+        "nome": "Sul Brasil",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217808",
+        "nome": "Taió",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217907",
+        "nome": "Tangará",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4217956",
+        "nome": "Tigrinhos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218004",
+        "nome": "Tijucas",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218103",
+        "nome": "Timbé do Sul",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218202",
+        "nome": "Timbó",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218251",
+        "nome": "Timbó Grande",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218301",
+        "nome": "Três Barras",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218350",
+        "nome": "Treviso",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218400",
+        "nome": "Treze de Maio",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218509",
+        "nome": "Treze Tílias",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218608",
+        "nome": "Trombudo Central",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218707",
+        "nome": "Tubarão",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218756",
+        "nome": "Tunápolis",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218806",
+        "nome": "Turvo",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218855",
+        "nome": "União do Oeste",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218905",
+        "nome": "Urubici",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4218954",
+        "nome": "Urupema",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219002",
+        "nome": "Urussanga",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219101",
+        "nome": "Vargeão",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219150",
+        "nome": "Vargem",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219176",
+        "nome": "Vargem Bonita",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219200",
+        "nome": "Vidal Ramos",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219309",
+        "nome": "Videira",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219358",
+        "nome": "Vitor Meireles",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219408",
+        "nome": "Witmarsum",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219507",
+        "nome": "Xanxerê",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219606",
+        "nome": "Xavantina",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219705",
+        "nome": "Xaxim",
+        "uf": "SC"
+    },
+    {
+        "codigo_ibge": "4219853",
+        "nome": "Zortéa",
+        "uf": "SC"
+    }
+]

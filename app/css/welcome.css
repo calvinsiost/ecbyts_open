@@ -1,0 +1,662 @@
+/* ================================================================
+   WELCOME SCREEN — First-visit onboarding overlay
+   Tela de boas-vindas na primeira visita: Tour destacado + 4 cards
+
+   This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0.
+   ================================================================ */
+
+/* --- Overlay fullscreen --- */
+
+.welcome-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.welcome-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Main card container --- */
+
+.welcome-container {
+    width: 92%;
+    max-width: var(--ecbt-modal-lg, 680px);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 36px 32px 28px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px) scale(0.96);
+    transition: transform 0.35s ease;
+    color: #e2e8f0;
+}
+
+.welcome-overlay.active .welcome-container {
+    transform: translateY(0) scale(1);
+}
+
+/* --- Brand header --- */
+
+.welcome-brand {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.welcome-brand-name {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #f1f5f9;
+}
+
+.welcome-brand-dot {
+    color: #38bdf8;
+}
+
+.welcome-subtitle {
+    text-align: center;
+    font-size: var(--text-md);
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.5px;
+}
+
+/* --- Mission statement --- */
+
+.welcome-mission {
+    text-align: center;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.45);
+    max-width: clamp(360px, 88vw, 500px);
+    margin: 0 auto var(--space-6);
+    padding: 0 var(--space-4);
+    font-style: italic;
+}
+
+/* --- Persona selector --- */
+
+.welcome-persona-section {
+    margin-bottom: var(--space-5);
+}
+
+.welcome-persona-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.welcome-persona-card {
+    display: grid;
+    grid-template-rows: 32px auto 1fr;
+    gap: 7px;
+    min-height: 132px;
+    padding: 14px var(--space-3);
+    text-align: left;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.welcome-persona-card:hover,
+.welcome-persona-card:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(56, 189, 248, 0.55);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.welcome-persona-card.selected {
+    background: rgba(34, 197, 94, 0.13);
+    border-color: rgba(34, 197, 94, 0.75);
+}
+
+.welcome-persona-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: var(--text-md);
+    font-weight: 800;
+    color: #0f172a;
+    background: #7dd3fc;
+    border-radius: 10px;
+}
+
+.welcome-persona-title {
+    font-size: var(--text-md);
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.welcome-persona-desc {
+    font-size: var(--text-sm);
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.48);
+    overflow-wrap: anywhere;
+}
+
+.welcome-persona-note {
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.38);
+}
+
+/* --- Tour highlight card --- */
+
+.welcome-tour-card {
+    background: rgba(59, 130, 246, 0.12);
+    border: 1.5px solid rgba(59, 130, 246, 0.35);
+    border-radius: 14px;
+    padding: var(--space-5) var(--space-6);
+    margin-bottom: var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.welcome-tour-card:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.55);
+    transform: translateY(-1px);
+}
+
+.welcome-tour-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #60a5fa;
+}
+
+.welcome-tour-body {
+    flex: 1;
+}
+
+.welcome-tour-title {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: var(--space-1);
+}
+
+.welcome-tour-desc {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+}
+
+.welcome-tour-meta {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: var(--space-1);
+}
+
+.welcome-tour-btn {
+    flex-shrink: 0;
+    background: var(--accent-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-xl);
+    padding: var(--space-2) 18px;
+    font-size: var(--text-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+
+.welcome-tour-btn:hover {
+    background: var(--accent-primary);
+}
+
+/* --- Section label --- */
+
+.welcome-section-label {
+    font-size: var(--text-md);
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+
+/* --- Mode cards grid --- */
+
+.welcome-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+}
+
+.welcome-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.welcome-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.welcome-card-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    color: #94a3b8;
+}
+
+.welcome-card-title {
+    display: block;
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.welcome-card-desc {
+    display: block;
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.45;
+}
+
+/* --- Card accent colors on hover --- */
+
+.welcome-card[data-mode="blank"]:hover {
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+.welcome-card[data-mode="blank"] .welcome-card-icon {
+    color: #4ade80;
+}
+
+.welcome-card[data-mode="random"]:hover {
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+.welcome-card[data-mode="random"] .welcome-card-icon {
+    color: #c084fc;
+}
+
+.welcome-card[data-mode="mapPicker"]:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+.welcome-card[data-mode="mapPicker"] .welcome-card-icon {
+    color: #fbbf24;
+}
+
+.welcome-card[data-mode="lastProject"]:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+.welcome-card[data-mode="lastProject"] .welcome-card-icon {
+    color: #38bdf8;
+}
+
+/* --- Footer checkbox --- */
+
+.welcome-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.welcome-footer-check {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.welcome-footer input[type="checkbox"] {
+    accent-color: var(--accent-primary);
+}
+
+.welcome-skip-btn {
+    min-height: 34px;
+    padding: 6px 14px;
+    color: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.welcome-skip-btn:hover,
+.welcome-skip-btn:focus-visible {
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+}
+
+/* ================================================================
+   INVITE-ONLY MODE (INV-2 + INV-3)
+   Tela de acesso exclusivo por convite
+   ================================================================ */
+
+/* --- Invite container --- */
+
+.welcome-invite-container {
+    max-width: var(--ecbt-modal-sm, clamp(320px, 90vw, 480px));
+    text-align: center;
+}
+
+/* --- Invite code section --- */
+
+.invite-code-section {
+    margin: var(--space-6) 0 var(--space-4);
+}
+
+.invite-code-label {
+    display: block;
+    font-size: var(--text-md);
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: var(--space-3);
+}
+
+.invite-code-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+.invite-code-field {
+    width: 120px;
+    padding: var(--space-3) var(--space-4);
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: #f1f5f9;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.invite-code-field:focus {
+    border-color: var(--accent-primary);
+}
+
+.invite-code-field::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 2px;
+}
+
+.invite-code-dash {
+    font-size: var(--text-3xl);
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.invite-code-error {
+    font-size: var(--text-base);
+    color: #f87171;
+    margin-bottom: var(--space-2);
+}
+
+.invite-submit-btn {
+    display: block;
+    width: 100%;
+    max-width: clamp(200px, 80vw, 280px);
+    margin: var(--space-4) auto 0;
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent-primary);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s;
+}
+
+.invite-submit-btn:hover {
+    background: var(--accent-primary);
+}
+
+.invite-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- Shake animation for invalid code --- */
+
+.invite-shake {
+    animation: inviteShake 0.4s ease;
+}
+
+@keyframes inviteShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+}
+
+/* --- Login section (existing users) --- */
+
+.invite-login-section {
+    margin-top: var(--space-4);
+    text-align: center;
+}
+
+.invite-login-link {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--text-md);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.invite-login-link:hover {
+    color: #38bdf8;
+}
+
+.invite-demo-btn {
+    display: block;
+    width: 100%;
+    max-width: clamp(200px, 80vw, 280px);
+    margin: var(--space-3) auto 0;
+    min-height: 44px;
+    padding: 10px var(--space-4);
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.invite-demo-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #f8fafc;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* --- Waitlist section (INV-3) --- */
+
+.invite-waitlist-section {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.invite-waitlist-link {
+    color: #38bdf8;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: color 0.15s, transform 0.15s;
+    animation: waitlist-pulse 2.5s ease-in-out infinite;
+}
+
+.invite-waitlist-link::before {
+    content: "\2794  ";
+}
+
+.invite-waitlist-link:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+    transform: translateX(2px);
+}
+
+@keyframes waitlist-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.65; }
+}
+
+.invite-back-link {
+    display: inline-block;
+    margin-top: var(--space-3);
+    font-size: var(--text-base);
+}
+
+.invite-waitlist-title {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 14px;
+}
+
+.invite-waitlist-form {
+    text-align: left;
+}
+
+.invite-waitlist-input {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-size: var(--text-md);
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-xl);
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.invite-waitlist-input:focus {
+    border-color: var(--accent-primary);
+}
+
+.invite-waitlist-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.invite-waitlist-textarea {
+    resize: vertical;
+    min-height: 48px;
+}
+
+.invite-waitlist-submit-btn {
+    margin-top: 6px;
+}
+
+.invite-waitlist-done {
+    text-align: center;
+    color: #4ade80;
+    font-size: var(--text-lg);
+    padding: var(--space-4) 0;
+}
+
+.invite-waitlist-done span {
+    font-size: 20px;
+}
+
+/* --- Responsive: stack cards on narrow screens --- */
+
+@media (max-width: 600px) {
+    .welcome-container {
+        padding: var(--space-6) 18px var(--space-5);
+    }
+
+    .welcome-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-persona-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-persona-card {
+        grid-template-columns: 32px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        min-height: 78px;
+    }
+
+    .welcome-persona-icon {
+        grid-row: 1 / span 2;
+    }
+
+    .welcome-tour-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-tour-btn {
+        width: 100%;
+    }
+
+    .welcome-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .invite-code-field {
+        width: 90px;
+        font-size: var(--text-xl);
+        padding: 10px var(--space-3);
+    }
+}

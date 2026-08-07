@@ -1,0 +1,294 @@
+/* ================================================================
+   CLIP PLANES MODULE — Styles for modal and element picker
+   Estilos do modulo de planos de corte 3D: modal, cards, picker
+   ================================================================ */
+
+/* --- Modal overlay --- */
+#clipplanes-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal, 3200);
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#clipplanes-modal.visible {
+    display: flex;
+}
+
+.clipplanes-modal-content {
+    background: var(--neutral-50, #f8f9fa);
+    border-radius: 12px;
+    width: min(660px, 85vw);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.clipplanes-modal-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--neutral-200, #e2e4e6);
+}
+
+.clipplanes-modal-header h3 {
+    flex: 1;
+    margin: 0;
+    font-size: var(--text-xl);
+    color: var(--primary-text, #222);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.clipplanes-header-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.clipplanes-modal-header button {
+    background: var(--neutral-100, #eef0f2);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-lg);
+    padding: var(--space-1) 10px;
+    font-size: var(--text-base);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--primary-text, #222);
+}
+
+.clipplanes-modal-header button:hover {
+    background: var(--neutral-200, #e2e4e6);
+}
+
+.clipplanes-modal-header .modal-close {
+    font-size: 20px;
+    line-height: 1;
+    padding: 2px var(--space-2);
+}
+
+#clipplanes-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-3) var(--space-5);
+}
+
+/* --- Empty state --- */
+.clipplanes-empty {
+    text-align: center;
+    padding: 40px var(--space-5);
+    color: var(--primary-text-muted, #888);
+    font-size: var(--text-lg);
+}
+
+/* --- Item card --- */
+.clipplane-item {
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-xl);
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.clipplane-disabled {
+    opacity: 0.5;
+}
+
+.clipplane-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--neutral-50, #f8f9fa);
+    border-bottom: 1px solid var(--neutral-100, #eef0f2);
+}
+
+.clipplane-name {
+    flex: 1;
+    border: 1px solid transparent;
+    background: transparent;
+    font-size: var(--text-md);
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: var(--radius-md);
+    color: var(--primary-text, #222);
+}
+
+.clipplane-name:focus {
+    border-color: var(--accent-primary, #2d8a7a);
+    outline: none;
+    background: var(--neutral-0, #fff);
+}
+
+.clipplane-actions {
+    display: flex;
+    gap: var(--space-1);
+}
+
+.clipplane-actions button {
+    background: var(--neutral-100, #eef0f2);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-md);
+    padding: 3px 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--primary-text, #222);
+}
+
+.clipplane-actions button:hover {
+    background: var(--neutral-200, #e2e4e6);
+}
+
+.clipplane-actions .btn-danger:hover {
+    background: #ffe0e0;
+    border-color: #ffb0b0;
+    color: #c62828;
+}
+
+/* --- Body controls --- */
+.clipplane-body {
+    padding: 10px var(--space-3);
+}
+
+.clipplane-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.clipplane-slider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.clipplane-slider .viz-slider-label {
+    font-size: var(--text-sm);
+    color: var(--primary-text-muted, #888);
+    white-space: nowrap;
+    min-width: 32px;
+}
+
+.clipplane-slider input[type="range"] {
+    width: 100px;
+    height: 3px;
+    accent-color: var(--accent-primary, #2d8a7a);
+}
+
+.clipplane-slider .viz-slider-value {
+    font-size: var(--text-sm);
+    color: var(--primary-text-muted, #888);
+    min-width: 28px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.clipplane-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+/* --- Scope row --- */
+.clipplane-scope {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--neutral-100, #eef0f2);
+}
+
+.clipplane-scope-label {
+    font-size: var(--text-sm);
+    color: var(--primary-text-muted, #888);
+    white-space: nowrap;
+}
+
+.clipplane-scope-select {
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-md);
+    padding: 3px var(--space-2);
+    font-size: var(--text-base);
+    color: var(--primary-text, #222);
+    cursor: pointer;
+}
+
+/* --- Element picker --- */
+.clipplane-element-picker {
+    max-height: 160px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-top: var(--space-2);
+    padding: 6px;
+    background: var(--neutral-50, #f8f9fa);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--neutral-100, #eef0f2);
+}
+
+.clipplane-el-check {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-base);
+    padding: 3px var(--space-2);
+    border-radius: var(--radius-md);
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--primary-text, #222);
+}
+
+.clipplane-el-check:hover {
+    background: var(--neutral-100, #eef0f2);
+}
+
+.clipplane-el-active {
+    background: #e0f2f1;
+    border-color: var(--accent-primary, #2d8a7a);
+}
+
+.clipplane-el-check small {
+    color: var(--primary-text-muted, #888);
+}
+
+.clipplane-el-check input[type="checkbox"] {
+    margin: 0;
+    accent-color: var(--accent-primary, #2d8a7a);
+}
+
+.clipplane-picker-empty {
+    font-size: var(--text-base);
+    color: var(--primary-text-muted, #888);
+    padding: var(--space-2);
+}
+
+/* --- Badge no botao VizSettings bar --- */
+.viz-clip-badge {
+    background: var(--accent-primary, #2d8a7a);
+    color: #fff;
+    border-radius: var(--radius-xl);
+    padding: 0 5px;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    margin-left: var(--space-1);
+    line-height: 16px;
+    display: inline-block;
+}
+
+.viz-clip-btn {
+    white-space: nowrap;
+}

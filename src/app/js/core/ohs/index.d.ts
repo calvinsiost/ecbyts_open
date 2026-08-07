@@ -1,0 +1,15 @@
+export const PROBABILITY_LEVELS: readonly any[];
+export const SEVERITY_LEVELS: readonly any[];
+export const RISK_CLASS_THRESHOLDS: Readonly<Record<string, any>>;
+export const CONTROL_HIERARCHY: readonly string[];
+export const OHS_ROLES: readonly string[];
+export const TWA_DEFAULT_WORKDAY_HOURS: number;
+export function riskScore(...args: any[]): any;
+export function classifyRisk(...args: any[]): any;
+export function summarizeRiskInventory(...args: any[]): any;
+export function isValidControlType(...args: any[]): boolean;
+export function controlRank(...args: any[]): any;
+export function recommendControls(...args: any[]): any[];
+export function computeTWA(...args: any[]): any;
+export function classifyTWACompliance(...args: any[]): any;
+export function isValidOHSRole(...args: any[]): boolean;

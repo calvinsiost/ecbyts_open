@@ -1,0 +1,9 @@
+export function enqueueSync(...args: any[]): Promise<any>;
+export function flushSyncQueue(...args: any[]): Promise<any>;
+export function getSyncQueueItems(...args: any[]): Promise<any[]>;
+export function getSyncQueueSize(...args: any[]): Promise<number>;
+export function clearSyncQueue(...args: any[]): Promise<any>;
+export function setSyncQueueClientProvider(...args: any[]): any;
+export function setSyncQueueStorageAdapter(...args: any[]): any;
+export function __resetSyncQueueForTests(...args: any[]): any;
+export function getDisabledSyncTables(...args: any[]): any[];

@@ -1,0 +1,118 @@
+/* ============================================================
+   HUD-UX-PAIN-DRAIN-001 W2 (F5) — tooltips dos 6 HUD cards.
+   Ownership: .hud-tooltip-* / .hud-tooltip__* (este arquivo).
+   Popup criado por hudCardTooltipsRuntime.ts (#hud-card-tooltip).
+   z-index 1050: acima de GLOBE_CONTEXT_MENU (1000), abaixo de
+   EXCEPTION_AERIAL_ANNOTATION_MENU (1100) — tooltip de hover não
+   precisa cobrir modais (eles o escondem por interação).
+   ============================================================ */
+
+.hud-tooltip {
+    position: fixed;
+    z-index: 1050;
+    width: 280px;
+    max-width: 86vw;
+    padding: 10px var(--space-3);
+    background: rgba(15, 20, 30, 0.97);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    color: rgba(226, 232, 240, 0.95);
+    font-size: var(--text-sm);
+    line-height: 1.45;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.12s ease-out, transform 0.12s ease-out;
+}
+
+.hud-tooltip--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hud-tooltip__title {
+    font-weight: 700;
+    font-size: var(--text-base);
+    color: #fff;
+    margin-bottom: var(--space-1);
+}
+
+.hud-tooltip__desc {
+    color: rgba(203, 213, 225, 0.9);
+}
+
+.hud-tooltip__formula {
+    display: block;
+    margin-top: 6px;
+    padding: var(--space-1) 6px;
+    background: rgba(148, 163, 184, 0.12);
+    border-radius: var(--radius-md);
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: var(--text-xs);
+    color: rgba(186, 230, 253, 0.92);
+    white-space: pre-wrap;
+}
+
+.hud-tooltip__thresholds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-top: 6px;
+}
+
+.hud-tooltip__chip {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 999px;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.hud-tooltip__chip--green {
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.5);
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.hud-tooltip__chip--yellow {
+    color: #facc15;
+    border-color: rgba(234, 179, 8, 0.5);
+    background: rgba(234, 179, 8, 0.12);
+}
+
+.hud-tooltip__chip--red {
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.5);
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.hud-tooltip__chip--neutral {
+    color: #cbd5e1;
+    border-color: rgba(148, 163, 184, 0.5);
+    background: rgba(148, 163, 184, 0.12);
+}
+
+/* D09 — CTA acionável (EIS vermelho): destaque âmbar */
+.hud-tooltip__cta {
+    margin-top: 6px;
+    padding: 5px 7px;
+    border-left: 3px solid var(--accent-orange);
+    background: rgba(245, 158, 11, 0.1);
+    color: #fcd34d;
+    font-weight: 600;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* G7 — reduced motion: sem transição/transform animado */
+@media (prefers-reduced-motion: reduce) {
+    .hud-tooltip {
+        transition: none;
+        transform: none;
+    }
+
+    .hud-tooltip--visible {
+        transform: none;
+    }
+}

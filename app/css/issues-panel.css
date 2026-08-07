@@ -1,0 +1,143 @@
+/* ================================================================
+   ISSUES PANEL — Styles for the dockable issues list panel
+   ================================================================
+
+   Painel de issues 3D no right panel: toolbar com filtros,
+   lista de issues com indicadores de severidade e status,
+   estados de selecao e hover.
+
+   Usa design tokens de design-tokens.css (.ecbt-*) onde possivel.
+   ================================================================ */
+
+/* === TOOLBAR (filter bar) === */
+.issues-toolbar {
+    display: flex;
+    gap: 6px;
+    padding: 6px var(--space-2);
+    border-bottom: 1px solid var(--border-color, #333);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.issues-toolbar select {
+    flex: 1;
+    min-width: 80px;
+    font-size: var(--text-sm);
+    background: var(--bg-primary, #121220);
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-md);
+    color: var(--text-primary, #e0e0e0);
+    padding: 3px 6px;
+}
+
+.issues-toolbar select:focus {
+    border-color: var(--accent-bright, #60a5fa);
+    outline: none;
+}
+
+/* === COUNT BADGE === */
+.issues-count {
+    font-size: var(--text-sm);
+    color: var(--text-muted, #888);
+    white-space: nowrap;
+}
+
+/* === LIST CONTAINER === */
+.issues-list {
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* === EMPTY STATE === */
+.issues-list__empty {
+    padding: var(--space-5);
+    text-align: center;
+    color: var(--text-muted, #888);
+    font-size: var(--text-base);
+}
+
+/* === ISSUE ROW === */
+.issue-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px var(--space-2);
+    border-bottom: 1px solid var(--border-color, #222);
+    cursor: pointer;
+    font-size: var(--text-base);
+    transition: background 0.15s;
+}
+
+.issue-row:hover {
+    background: var(--hover-bg, rgba(255, 255, 255, 0.04));
+}
+
+/* === SELECTED STATE === */
+.issue-row--selected {
+    background: var(--selection-bg, rgba(52, 152, 219, 0.15));
+}
+
+/* === SEVERITY DOT === */
+.issue-row__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.issue-sev--low      .issue-row__dot { background: #3498db; }
+.issue-sev--medium   .issue-row__dot { background: #f39c12; }
+.issue-sev--high     .issue-row__dot { background: #e74c3c; }
+.issue-sev--critical .issue-row__dot { background: #8e44ad; }
+
+/* Resolved / Won't Fix → muted dot */
+.issue-sev--resolved .issue-row__dot,
+.issue-sev--wontfix  .issue-row__dot {
+    background: #95a5a6;
+}
+
+/* === INFO COLUMN === */
+.issue-row__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.issue-row__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-primary, #e0e0e0);
+}
+
+.issue-row__element {
+    font-size: var(--text-xs);
+    color: var(--text-muted, #888);
+}
+
+/* === STATUS CHIP === */
+.issue-status {
+    font-size: var(--text-xs);
+    padding: 1px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.issue-status--open {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+}
+
+.issue-status--in_progress {
+    background: rgba(243, 156, 18, 0.15);
+    color: #f39c12;
+}
+
+.issue-status--resolved {
+    background: rgba(149, 165, 166, 0.15);
+    color: #95a5a6;
+}
+
+.issue-status--wontfix {
+    background: rgba(149, 165, 166, 0.15);
+    color: #95a5a6;
+}

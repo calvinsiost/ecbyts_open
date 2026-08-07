@@ -1,0 +1,2298 @@
+{
+    "meta": {
+        "standard": "ISO 3166-1",
+        "count": 241,
+        "movedToJSON": "2026-04-11",
+        "note": "Moved from countries.js (~2200 lines JS data) to JSON for parse-time savings. Helpers + lazy loader live in countries.js still."
+    },
+    "countries": [
+        {
+            "code": "AR",
+            "name_pt": "Argentina",
+            "name_en": "Argentina",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Argentina/Buenos_Aires",
+            "timezones": [
+                "America/Argentina/Buenos_Aires",
+                "America/Argentina/Cordoba",
+                "America/Argentina/Salta",
+                "America/Argentina/Jujuy",
+                "America/Argentina/Tucuman",
+                "America/Argentina/Catamarca",
+                "America/Argentina/La_Rioja",
+                "America/Argentina/San_Juan",
+                "America/Argentina/Mendoza",
+                "America/Argentina/San_Luis",
+                "America/Argentina/Rio_Gallegos",
+                "America/Argentina/Ushuaia"
+            ]
+        },
+        {
+            "code": "AW",
+            "name_pt": "Aruba",
+            "name_en": "Aruba",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Aruba",
+            "timezones": ["America/Aruba"]
+        },
+        {
+            "code": "BS",
+            "name_pt": "Bahamas",
+            "name_en": "Bahamas",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Nassau",
+            "timezones": ["America/Nassau"]
+        },
+        {
+            "code": "BB",
+            "name_pt": "Barbados",
+            "name_en": "Barbados",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Barbados",
+            "timezones": ["America/Barbados"]
+        },
+        {
+            "code": "BZ",
+            "name_pt": "Belize",
+            "name_en": "Belize",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Belize",
+            "timezones": ["America/Belize"]
+        },
+        {
+            "code": "BM",
+            "name_pt": "Bermudas",
+            "name_en": "Bermuda",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "Atlantic/Bermuda",
+            "timezones": ["Atlantic/Bermuda"]
+        },
+        {
+            "code": "BO",
+            "name_pt": "Bolívia",
+            "name_en": "Bolivia",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/La_Paz",
+            "timezones": ["America/La_Paz"]
+        },
+        {
+            "code": "BR",
+            "name_pt": "Brasil",
+            "name_en": "Brazil",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Sao_Paulo",
+            "timezones": [
+                "America/Sao_Paulo",
+                "America/Rio_Branco",
+                "America/Manaus",
+                "America/Bahia",
+                "America/Fortaleza",
+                "America/Recife",
+                "America/Belem",
+                "America/Maceio",
+                "America/Cuiaba",
+                "America/Campo_Grande",
+                "America/Porto_Velho",
+                "America/Boa_Vista",
+                "America/Araguaia"
+            ]
+        },
+        {
+            "code": "CA",
+            "name_pt": "Canadá",
+            "name_en": "Canada",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Toronto",
+            "timezones": [
+                "America/Toronto",
+                "America/Vancouver",
+                "America/Edmonton",
+                "America/Winnipeg",
+                "America/Halifax",
+                "America/St_Johns",
+                "America/Regina",
+                "America/Whitehorse",
+                "America/Yellowknife",
+                "America/Iqaluit",
+                "America/Atikokan",
+                "America/Blanc-Sablon",
+                "America/Cambridge_Bay",
+                "America/Creston",
+                "America/Dawson",
+                "America/Dawson_Creek",
+                "America/Fort_Nelson",
+                "America/Glace_Bay",
+                "America/Goose_Bay",
+                "America/Inuvik",
+                "America/Moncton",
+                "America/Pangnirtung",
+                "America/Rankin_Inlet",
+                "America/Resolute",
+                "America/Swift_Current"
+            ]
+        },
+        {
+            "code": "KY",
+            "name_pt": "Ilhas Cayman",
+            "name_en": "Cayman Islands",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Cayman",
+            "timezones": ["America/Cayman"]
+        },
+        {
+            "code": "CL",
+            "name_pt": "Chile",
+            "name_en": "Chile",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Santiago",
+            "timezones": ["America/Santiago", "Pacific/Easter"]
+        },
+        {
+            "code": "CO",
+            "name_pt": "Colômbia",
+            "name_en": "Colombia",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Bogota",
+            "timezones": ["America/Bogota"]
+        },
+        {
+            "code": "CR",
+            "name_pt": "Costa Rica",
+            "name_en": "Costa Rica",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Costa_Rica",
+            "timezones": ["America/Costa_Rica"]
+        },
+        {
+            "code": "CU",
+            "name_pt": "Cuba",
+            "name_en": "Cuba",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Havana",
+            "timezones": ["America/Havana"]
+        },
+        {
+            "code": "CW",
+            "name_pt": "Curaçao",
+            "name_en": "Curaçao",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Curacao",
+            "timezones": ["America/Curacao"]
+        },
+        {
+            "code": "DM",
+            "name_pt": "Dominica",
+            "name_en": "Dominica",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Dominica",
+            "timezones": ["America/Dominica"]
+        },
+        {
+            "code": "DO",
+            "name_pt": "República Dominicana",
+            "name_en": "Dominican Republic",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Santo_Domingo",
+            "timezones": ["America/Santo_Domingo"]
+        },
+        {
+            "code": "EC",
+            "name_pt": "Equador",
+            "name_en": "Ecuador",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Guayaquil",
+            "timezones": ["America/Guayaquil", "Pacific/Galapagos"]
+        },
+        {
+            "code": "SV",
+            "name_pt": "El Salvador",
+            "name_en": "El Salvador",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/El_Salvador",
+            "timezones": ["America/El_Salvador"]
+        },
+        {
+            "code": "FK",
+            "name_pt": "Ilhas Malvinas",
+            "name_en": "Falkland Islands",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "Atlantic/Stanley",
+            "timezones": ["Atlantic/Stanley"]
+        },
+        {
+            "code": "GF",
+            "name_pt": "Guiana Francesa",
+            "name_en": "French Guiana",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Cayenne",
+            "timezones": ["America/Cayenne"]
+        },
+        {
+            "code": "GL",
+            "name_pt": "Groenlândia",
+            "name_en": "Greenland",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Nuuk",
+            "timezones": ["America/Nuuk", "America/Thule", "America/Danmarkshavn", "America/Scoresbysund"]
+        },
+        {
+            "code": "GD",
+            "name_pt": "Granada",
+            "name_en": "Grenada",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Grenada",
+            "timezones": ["America/Grenada"]
+        },
+        {
+            "code": "GP",
+            "name_pt": "Guadalupe",
+            "name_en": "Guadeloupe",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Guadeloupe",
+            "timezones": ["America/Guadeloupe"]
+        },
+        {
+            "code": "GT",
+            "name_pt": "Guatemala",
+            "name_en": "Guatemala",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Guatemala",
+            "timezones": ["America/Guatemala"]
+        },
+        {
+            "code": "GY",
+            "name_pt": "Guiana",
+            "name_en": "Guyana",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Guyana",
+            "timezones": ["America/Guyana"]
+        },
+        {
+            "code": "HT",
+            "name_pt": "Haiti",
+            "name_en": "Haiti",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Port-au-Prince",
+            "timezones": ["America/Port-au-Prince"]
+        },
+        {
+            "code": "HN",
+            "name_pt": "Honduras",
+            "name_en": "Honduras",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Tegucigalpa",
+            "timezones": ["America/Tegucigalpa"]
+        },
+        {
+            "code": "JM",
+            "name_pt": "Jamaica",
+            "name_en": "Jamaica",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Jamaica",
+            "timezones": ["America/Jamaica"]
+        },
+        {
+            "code": "MQ",
+            "name_pt": "Martinica",
+            "name_en": "Martinique",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Martinique",
+            "timezones": ["America/Martinique"]
+        },
+        {
+            "code": "MX",
+            "name_pt": "México",
+            "name_en": "Mexico",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Mexico_City",
+            "timezones": [
+                "America/Mexico_City",
+                "America/Cancun",
+                "America/Chihuahua",
+                "America/Tijuana",
+                "America/Hermosillo",
+                "America/Mazatlan",
+                "America/Monterrey",
+                "America/Merida",
+                "America/Ojinaga",
+                "America/Matamoros"
+            ]
+        },
+        {
+            "code": "MS",
+            "name_pt": "Montserrat",
+            "name_en": "Montserrat",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Montserrat",
+            "timezones": ["America/Montserrat"]
+        },
+        {
+            "code": "NI",
+            "name_pt": "Nicarágua",
+            "name_en": "Nicaragua",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Managua",
+            "timezones": ["America/Managua"]
+        },
+        {
+            "code": "PA",
+            "name_pt": "Panamá",
+            "name_en": "Panama",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Panama",
+            "timezones": ["America/Panama"]
+        },
+        {
+            "code": "PY",
+            "name_pt": "Paraguai",
+            "name_en": "Paraguay",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Asuncion",
+            "timezones": ["America/Asuncion"]
+        },
+        {
+            "code": "PE",
+            "name_pt": "Peru",
+            "name_en": "Peru",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Lima",
+            "timezones": ["America/Lima"]
+        },
+        {
+            "code": "PR",
+            "name_pt": "Porto Rico",
+            "name_en": "Puerto Rico",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Puerto_Rico",
+            "timezones": ["America/Puerto_Rico"]
+        },
+        {
+            "code": "BL",
+            "name_pt": "São Bartolomeu",
+            "name_en": "Saint Barthélemy",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/St_Barthelemy",
+            "timezones": ["America/St_Barthelemy"]
+        },
+        {
+            "code": "KN",
+            "name_pt": "São Cristóvão e Nevis",
+            "name_en": "Saint Kitts and Nevis",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/St_Kitts",
+            "timezones": ["America/St_Kitts"]
+        },
+        {
+            "code": "LC",
+            "name_pt": "Santa Lúcia",
+            "name_en": "Saint Lucia",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/St_Lucia",
+            "timezones": ["America/St_Lucia"]
+        },
+        {
+            "code": "MF",
+            "name_pt": "São Martinho",
+            "name_en": "Saint Martin",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Marigot",
+            "timezones": ["America/Marigot"]
+        },
+        {
+            "code": "PM",
+            "name_pt": "São Pedro e Miquelão",
+            "name_en": "Saint Pierre and Miquelon",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Miquelon",
+            "timezones": ["America/Miquelon"]
+        },
+        {
+            "code": "VC",
+            "name_pt": "São Vicente e Granadinas",
+            "name_en": "Saint Vincent and the Grenadines",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/St_Vincent",
+            "timezones": ["America/St_Vincent"]
+        },
+        {
+            "code": "SX",
+            "name_pt": "Sint Maarten",
+            "name_en": "Sint Maarten",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Lower_Princes",
+            "timezones": ["America/Lower_Princes"]
+        },
+        {
+            "code": "SR",
+            "name_pt": "Suriname",
+            "name_en": "Suriname",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Paramaribo",
+            "timezones": ["America/Paramaribo"]
+        },
+        {
+            "code": "TT",
+            "name_pt": "Trinidad e Tobago",
+            "name_en": "Trinidad and Tobago",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Port_of_Spain",
+            "timezones": ["America/Port_of_Spain"]
+        },
+        {
+            "code": "TC",
+            "name_pt": "Ilhas Turks e Caicos",
+            "name_en": "Turks and Caicos Islands",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Grand_Turk",
+            "timezones": ["America/Grand_Turk"]
+        },
+        {
+            "code": "US",
+            "name_pt": "Estados Unidos",
+            "name_en": "United States",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/New_York",
+            "timezones": [
+                "America/New_York",
+                "America/Chicago",
+                "America/Denver",
+                "America/Los_Angeles",
+                "America/Anchorage",
+                "Pacific/Honolulu",
+                "America/Phoenix",
+                "America/Detroit",
+                "America/Indianapolis",
+                "America/Boise",
+                "America/Juneau"
+            ]
+        },
+        {
+            "code": "UY",
+            "name_pt": "Uruguai",
+            "name_en": "Uruguay",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Montevideo",
+            "timezones": ["America/Montevideo"]
+        },
+        {
+            "code": "VE",
+            "name_pt": "Venezuela",
+            "name_en": "Venezuela",
+            "region": "Americas",
+            "has_subdivisions": true,
+            "default_timezone": "America/Caracas",
+            "timezones": ["America/Caracas"]
+        },
+        {
+            "code": "VG",
+            "name_pt": "Ilhas Virgens Britânicas",
+            "name_en": "Virgin Islands (British)",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Tortola",
+            "timezones": ["America/Tortola"]
+        },
+        {
+            "code": "VI",
+            "name_pt": "Ilhas Virgens Americanas",
+            "name_en": "Virgin Islands (U.S.)",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/St_Thomas",
+            "timezones": ["America/St_Thomas"]
+        },
+        {
+            "code": "AG",
+            "name_pt": "Antígua e Barbuda",
+            "name_en": "Antigua and Barbuda",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Antigua",
+            "timezones": ["America/Antigua"]
+        },
+        {
+            "code": "AI",
+            "name_pt": "Anguilla",
+            "name_en": "Anguilla",
+            "region": "Americas",
+            "has_subdivisions": false,
+            "default_timezone": "America/Anguilla",
+            "timezones": ["America/Anguilla"]
+        },
+        {
+            "code": "AL",
+            "name_pt": "Albânia",
+            "name_en": "Albania",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Tirane",
+            "timezones": ["Europe/Tirane"]
+        },
+        {
+            "code": "AD",
+            "name_pt": "Andorra",
+            "name_en": "Andorra",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Andorra",
+            "timezones": ["Europe/Andorra"]
+        },
+        {
+            "code": "AT",
+            "name_pt": "Áustria",
+            "name_en": "Austria",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Vienna",
+            "timezones": ["Europe/Vienna"]
+        },
+        {
+            "code": "BY",
+            "name_pt": "Bielorrússia",
+            "name_en": "Belarus",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Minsk",
+            "timezones": ["Europe/Minsk"]
+        },
+        {
+            "code": "BE",
+            "name_pt": "Bélgica",
+            "name_en": "Belgium",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Brussels",
+            "timezones": ["Europe/Brussels"]
+        },
+        {
+            "code": "BA",
+            "name_pt": "Bósnia e Herzegovina",
+            "name_en": "Bosnia and Herzegovina",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Sarajevo",
+            "timezones": ["Europe/Sarajevo"]
+        },
+        {
+            "code": "BG",
+            "name_pt": "Bulgária",
+            "name_en": "Bulgaria",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Sofia",
+            "timezones": ["Europe/Sofia"]
+        },
+        {
+            "code": "HR",
+            "name_pt": "Croácia",
+            "name_en": "Croatia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Zagreb",
+            "timezones": ["Europe/Zagreb"]
+        },
+        {
+            "code": "CY",
+            "name_pt": "Chipre",
+            "name_en": "Cyprus",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Nicosia",
+            "timezones": ["Asia/Nicosia", "Asia/Famagusta"]
+        },
+        {
+            "code": "CZ",
+            "name_pt": "Tchéquia",
+            "name_en": "Czechia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Prague",
+            "timezones": ["Europe/Prague"]
+        },
+        {
+            "code": "DK",
+            "name_pt": "Dinamarca",
+            "name_en": "Denmark",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Copenhagen",
+            "timezones": ["Europe/Copenhagen"]
+        },
+        {
+            "code": "EE",
+            "name_pt": "Estônia",
+            "name_en": "Estonia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Tallinn",
+            "timezones": ["Europe/Tallinn"]
+        },
+        {
+            "code": "FO",
+            "name_pt": "Ilhas Faroé",
+            "name_en": "Faroe Islands",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Atlantic/Faroe",
+            "timezones": ["Atlantic/Faroe"]
+        },
+        {
+            "code": "FI",
+            "name_pt": "Finlândia",
+            "name_en": "Finland",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Helsinki",
+            "timezones": ["Europe/Helsinki", "Europe/Mariehamn"]
+        },
+        {
+            "code": "FR",
+            "name_pt": "França",
+            "name_en": "France",
+            "region": "Europe",
+            "has_subdivisions": true,
+            "default_timezone": "Europe/Paris",
+            "timezones": [
+                "Europe/Paris",
+                "Indian/Reunion",
+                "Pacific/Noumea",
+                "Pacific/Tahiti",
+                "Pacific/Marquesas",
+                "Pacific/Gambier",
+                "Indian/Mayotte",
+                "Indian/Kerguelen",
+                "Antarctica/DumontDUrville"
+            ]
+        },
+        {
+            "code": "DE",
+            "name_pt": "Alemanha",
+            "name_en": "Germany",
+            "region": "Europe",
+            "has_subdivisions": true,
+            "default_timezone": "Europe/Berlin",
+            "timezones": ["Europe/Berlin", "Europe/Zurich"]
+        },
+        {
+            "code": "GI",
+            "name_pt": "Gibraltar",
+            "name_en": "Gibraltar",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Gibraltar",
+            "timezones": ["Europe/Gibraltar"]
+        },
+        {
+            "code": "GR",
+            "name_pt": "Grécia",
+            "name_en": "Greece",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Athens",
+            "timezones": ["Europe/Athens"]
+        },
+        {
+            "code": "GG",
+            "name_pt": "Guernsey",
+            "name_en": "Guernsey",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Guernsey",
+            "timezones": ["Europe/Guernsey"]
+        },
+        {
+            "code": "HU",
+            "name_pt": "Hungria",
+            "name_en": "Hungary",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Budapest",
+            "timezones": ["Europe/Budapest"]
+        },
+        {
+            "code": "IS",
+            "name_pt": "Islândia",
+            "name_en": "Iceland",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Atlantic/Reykjavik",
+            "timezones": ["Atlantic/Reykjavik"]
+        },
+        {
+            "code": "IE",
+            "name_pt": "Irlanda",
+            "name_en": "Ireland",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Dublin",
+            "timezones": ["Europe/Dublin"]
+        },
+        {
+            "code": "IM",
+            "name_pt": "Ilha de Man",
+            "name_en": "Isle of Man",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Isle_of_Man",
+            "timezones": ["Europe/Isle_of_Man"]
+        },
+        {
+            "code": "IT",
+            "name_pt": "Itália",
+            "name_en": "Italy",
+            "region": "Europe",
+            "has_subdivisions": true,
+            "default_timezone": "Europe/Rome",
+            "timezones": ["Europe/Rome"]
+        },
+        {
+            "code": "JE",
+            "name_pt": "Jersey",
+            "name_en": "Jersey",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Jersey",
+            "timezones": ["Europe/Jersey"]
+        },
+        {
+            "code": "XK",
+            "name_pt": "Kosovo",
+            "name_en": "Kosovo",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Belgrade",
+            "timezones": ["Europe/Belgrade"]
+        },
+        {
+            "code": "LV",
+            "name_pt": "Letônia",
+            "name_en": "Latvia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Riga",
+            "timezones": ["Europe/Riga"]
+        },
+        {
+            "code": "LI",
+            "name_pt": "Liechtenstein",
+            "name_en": "Liechtenstein",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Vaduz",
+            "timezones": ["Europe/Vaduz"]
+        },
+        {
+            "code": "LT",
+            "name_pt": "Lituânia",
+            "name_en": "Lithuania",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Vilnius",
+            "timezones": ["Europe/Vilnius"]
+        },
+        {
+            "code": "LU",
+            "name_pt": "Luxemburgo",
+            "name_en": "Luxembourg",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Luxembourg",
+            "timezones": ["Europe/Luxembourg"]
+        },
+        {
+            "code": "MT",
+            "name_pt": "Malta",
+            "name_en": "Malta",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Malta",
+            "timezones": ["Europe/Malta"]
+        },
+        {
+            "code": "MD",
+            "name_pt": "Moldávia",
+            "name_en": "Moldova",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Chisinau",
+            "timezones": ["Europe/Chisinau"]
+        },
+        {
+            "code": "MC",
+            "name_pt": "Mônaco",
+            "name_en": "Monaco",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Monaco",
+            "timezones": ["Europe/Monaco"]
+        },
+        {
+            "code": "ME",
+            "name_pt": "Montenegro",
+            "name_en": "Montenegro",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Podgorica",
+            "timezones": ["Europe/Podgorica"]
+        },
+        {
+            "code": "NL",
+            "name_pt": "Países Baixos",
+            "name_en": "Netherlands",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Amsterdam",
+            "timezones": ["Europe/Amsterdam", "America/Curacao", "America/Kralendijk"]
+        },
+        {
+            "code": "MK",
+            "name_pt": "Macedônia do Norte",
+            "name_en": "North Macedonia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Skopje",
+            "timezones": ["Europe/Skopje"]
+        },
+        {
+            "code": "NO",
+            "name_pt": "Noruega",
+            "name_en": "Norway",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Oslo",
+            "timezones": ["Europe/Oslo", "Europe/Berlin"]
+        },
+        {
+            "code": "PL",
+            "name_pt": "Polônia",
+            "name_en": "Poland",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Warsaw",
+            "timezones": ["Europe/Warsaw"]
+        },
+        {
+            "code": "PT",
+            "name_pt": "Portugal",
+            "name_en": "Portugal",
+            "region": "Europe",
+            "has_subdivisions": true,
+            "default_timezone": "Europe/Lisbon",
+            "timezones": ["Europe/Lisbon", "Atlantic/Azores", "Atlantic/Madeira"]
+        },
+        {
+            "code": "RO",
+            "name_pt": "Romênia",
+            "name_en": "Romania",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Bucharest",
+            "timezones": ["Europe/Bucharest"]
+        },
+        {
+            "code": "RU",
+            "name_pt": "Rússia",
+            "name_en": "Russia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Moscow",
+            "timezones": [
+                "Europe/Moscow",
+                "Europe/Kaliningrad",
+                "Europe/Samara",
+                "Asia/Yekaterinburg",
+                "Asia/Omsk",
+                "Asia/Krasnoyarsk",
+                "Asia/Irkutsk",
+                "Asia/Yakutsk",
+                "Asia/Vladivostok",
+                "Asia/Magadan",
+                "Asia/Kamchatka"
+            ]
+        },
+        {
+            "code": "SM",
+            "name_pt": "San Marino",
+            "name_en": "San Marino",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/San_Marino",
+            "timezones": ["Europe/San_Marino"]
+        },
+        {
+            "code": "RS",
+            "name_pt": "Sérvia",
+            "name_en": "Serbia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Belgrade",
+            "timezones": ["Europe/Belgrade"]
+        },
+        {
+            "code": "SK",
+            "name_pt": "Eslováquia",
+            "name_en": "Slovakia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Bratislava",
+            "timezones": ["Europe/Bratislava"]
+        },
+        {
+            "code": "SI",
+            "name_pt": "Eslovênia",
+            "name_en": "Slovenia",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Ljubljana",
+            "timezones": ["Europe/Ljubljana"]
+        },
+        {
+            "code": "ES",
+            "name_pt": "Espanha",
+            "name_en": "Spain",
+            "region": "Europe",
+            "has_subdivisions": true,
+            "default_timezone": "Europe/Madrid",
+            "timezones": ["Europe/Madrid", "Atlantic/Canary", "Africa/Ceuta"]
+        },
+        {
+            "code": "SJ",
+            "name_pt": "Svalbard e Jan Mayen",
+            "name_en": "Svalbard and Jan Mayen",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Arctic/Longyearbyen",
+            "timezones": ["Arctic/Longyearbyen"]
+        },
+        {
+            "code": "SE",
+            "name_pt": "Suécia",
+            "name_en": "Sweden",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Stockholm",
+            "timezones": ["Europe/Stockholm"]
+        },
+        {
+            "code": "CH",
+            "name_pt": "Suíça",
+            "name_en": "Switzerland",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Zurich",
+            "timezones": ["Europe/Zurich"]
+        },
+        {
+            "code": "UA",
+            "name_pt": "Ucrânia",
+            "name_en": "Ukraine",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Kiev",
+            "timezones": ["Europe/Kiev", "Europe/Uzhgorod", "Europe/Zaporozhye"]
+        },
+        {
+            "code": "GB",
+            "name_pt": "Reino Unido",
+            "name_en": "United Kingdom",
+            "region": "Europe",
+            "has_subdivisions": true,
+            "default_timezone": "Europe/London",
+            "timezones": ["Europe/London", "Europe/Guernsey", "Europe/Isle_of_Man", "Europe/Jersey"]
+        },
+        {
+            "code": "VA",
+            "name_pt": "Vaticano",
+            "name_en": "Vatican City",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Vatican",
+            "timezones": ["Europe/Vatican"]
+        },
+        {
+            "code": "AX",
+            "name_pt": "Ilhas Aland",
+            "name_en": "Åland Islands",
+            "region": "Europe",
+            "has_subdivisions": false,
+            "default_timezone": "Europe/Mariehamn",
+            "timezones": ["Europe/Mariehamn"]
+        },
+        {
+            "code": "AF",
+            "name_pt": "Afeganistão",
+            "name_en": "Afghanistan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Kabul",
+            "timezones": ["Asia/Kabul"]
+        },
+        {
+            "code": "AM",
+            "name_pt": "Armênia",
+            "name_en": "Armenia",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Yerevan",
+            "timezones": ["Asia/Yerevan"]
+        },
+        {
+            "code": "AZ",
+            "name_pt": "Azerbaijão",
+            "name_en": "Azerbaijan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Baku",
+            "timezones": ["Asia/Baku"]
+        },
+        {
+            "code": "BH",
+            "name_pt": "Bahrein",
+            "name_en": "Bahrain",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Bahrain",
+            "timezones": ["Asia/Bahrain"]
+        },
+        {
+            "code": "BD",
+            "name_pt": "Bangladesh",
+            "name_en": "Bangladesh",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Dhaka",
+            "timezones": ["Asia/Dhaka"]
+        },
+        {
+            "code": "BT",
+            "name_pt": "Butão",
+            "name_en": "Bhutan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Thimphu",
+            "timezones": ["Asia/Thimphu"]
+        },
+        {
+            "code": "BN",
+            "name_pt": "Brunei",
+            "name_en": "Brunei",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Brunei",
+            "timezones": ["Asia/Brunei"]
+        },
+        {
+            "code": "KH",
+            "name_pt": "Camboja",
+            "name_en": "Cambodia",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Phnom_Penh",
+            "timezones": ["Asia/Phnom_Penh"]
+        },
+        {
+            "code": "CN",
+            "name_pt": "China",
+            "name_en": "China",
+            "region": "Asia",
+            "has_subdivisions": true,
+            "default_timezone": "Asia/Shanghai",
+            "timezones": ["Asia/Shanghai", "Asia/Urumqi", "Asia/Hong_Kong", "Asia/Macau"]
+        },
+        {
+            "code": "GE",
+            "name_pt": "Geórgia",
+            "name_en": "Georgia",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Tbilisi",
+            "timezones": ["Asia/Tbilisi"]
+        },
+        {
+            "code": "HK",
+            "name_pt": "Hong Kong",
+            "name_en": "Hong Kong",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Hong_Kong",
+            "timezones": ["Asia/Hong_Kong"]
+        },
+        {
+            "code": "IN",
+            "name_pt": "Índia",
+            "name_en": "India",
+            "region": "Asia",
+            "has_subdivisions": true,
+            "default_timezone": "Asia/Kolkata",
+            "timezones": ["Asia/Kolkata"]
+        },
+        {
+            "code": "ID",
+            "name_pt": "Indonésia",
+            "name_en": "Indonesia",
+            "region": "Asia",
+            "has_subdivisions": true,
+            "default_timezone": "Asia/Jakarta",
+            "timezones": ["Asia/Jakarta", "Asia/Pontianak", "Asia/Makassar", "Asia/Jayapura"]
+        },
+        {
+            "code": "IR",
+            "name_pt": "Irã",
+            "name_en": "Iran",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Tehran",
+            "timezones": ["Asia/Tehran"]
+        },
+        {
+            "code": "IQ",
+            "name_pt": "Iraque",
+            "name_en": "Iraq",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Baghdad",
+            "timezones": ["Asia/Baghdad"]
+        },
+        {
+            "code": "IL",
+            "name_pt": "Israel",
+            "name_en": "Israel",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Jerusalem",
+            "timezones": ["Asia/Jerusalem"]
+        },
+        {
+            "code": "JP",
+            "name_pt": "Japão",
+            "name_en": "Japan",
+            "region": "Asia",
+            "has_subdivisions": true,
+            "default_timezone": "Asia/Tokyo",
+            "timezones": ["Asia/Tokyo"]
+        },
+        {
+            "code": "JO",
+            "name_pt": "Jordânia",
+            "name_en": "Jordan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Amman",
+            "timezones": ["Asia/Amman"]
+        },
+        {
+            "code": "KZ",
+            "name_pt": "Cazaquistão",
+            "name_en": "Kazakhstan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Almaty",
+            "timezones": ["Asia/Almaty", "Asia/Qyzylorda", "Asia/Aqtobe", "Asia/Aqtau", "Asia/Oral"]
+        },
+        {
+            "code": "KW",
+            "name_pt": "Kuwait",
+            "name_en": "Kuwait",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Kuwait",
+            "timezones": ["Asia/Kuwait"]
+        },
+        {
+            "code": "KG",
+            "name_pt": "Quirguistão",
+            "name_en": "Kyrgyzstan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Bishkek",
+            "timezones": ["Asia/Bishkek"]
+        },
+        {
+            "code": "LA",
+            "name_pt": "Laos",
+            "name_en": "Laos",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Vientiane",
+            "timezones": ["Asia/Vientiane"]
+        },
+        {
+            "code": "LB",
+            "name_pt": "Líbano",
+            "name_en": "Lebanon",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Beirut",
+            "timezones": ["Asia/Beirut"]
+        },
+        {
+            "code": "MO",
+            "name_pt": "Macau",
+            "name_en": "Macao",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Macau",
+            "timezones": ["Asia/Macau"]
+        },
+        {
+            "code": "MY",
+            "name_pt": "Malásia",
+            "name_en": "Malaysia",
+            "region": "Asia",
+            "has_subdivisions": true,
+            "default_timezone": "Asia/Kuala_Lumpur",
+            "timezones": ["Asia/Kuala_Lumpur", "Asia/Kuching"]
+        },
+        {
+            "code": "MV",
+            "name_pt": "Maldivas",
+            "name_en": "Maldives",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Maldives",
+            "timezones": ["Indian/Maldives"]
+        },
+        {
+            "code": "MN",
+            "name_pt": "Mongólia",
+            "name_en": "Mongolia",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Ulaanbaatar",
+            "timezones": ["Asia/Ulaanbaatar", "Asia/Hovd", "Asia/Choibalsan"]
+        },
+        {
+            "code": "MM",
+            "name_pt": "Mianmar",
+            "name_en": "Myanmar",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Yangon",
+            "timezones": ["Asia/Yangon"]
+        },
+        {
+            "code": "NP",
+            "name_pt": "Nepal",
+            "name_en": "Nepal",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Kathmandu",
+            "timezones": ["Asia/Kathmandu"]
+        },
+        {
+            "code": "KP",
+            "name_pt": "Coreia do Norte",
+            "name_en": "North Korea",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Pyongyang",
+            "timezones": ["Asia/Pyongyang"]
+        },
+        {
+            "code": "OM",
+            "name_pt": "Omã",
+            "name_en": "Oman",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Muscat",
+            "timezones": ["Asia/Muscat"]
+        },
+        {
+            "code": "PK",
+            "name_pt": "Paquistão",
+            "name_en": "Pakistan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Karachi",
+            "timezones": ["Asia/Karachi"]
+        },
+        {
+            "code": "PS",
+            "name_pt": "Palestina",
+            "name_en": "Palestine",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Gaza",
+            "timezones": ["Asia/Gaza", "Asia/Hebron"]
+        },
+        {
+            "code": "PH",
+            "name_pt": "Filipinas",
+            "name_en": "Philippines",
+            "region": "Asia",
+            "has_subdivisions": true,
+            "default_timezone": "Asia/Manila",
+            "timezones": ["Asia/Manila"]
+        },
+        {
+            "code": "QA",
+            "name_pt": "Catar",
+            "name_en": "Qatar",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Qatar",
+            "timezones": ["Asia/Qatar"]
+        },
+        {
+            "code": "SA",
+            "name_pt": "Arábia Saudita",
+            "name_en": "Saudi Arabia",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Riyadh",
+            "timezones": ["Asia/Riyadh"]
+        },
+        {
+            "code": "SG",
+            "name_pt": "Singapura",
+            "name_en": "Singapore",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Singapore",
+            "timezones": ["Asia/Singapore"]
+        },
+        {
+            "code": "KR",
+            "name_pt": "Coreia do Sul",
+            "name_en": "South Korea",
+            "region": "Asia",
+            "has_subdivisions": true,
+            "default_timezone": "Asia/Seoul",
+            "timezones": ["Asia/Seoul"]
+        },
+        {
+            "code": "LK",
+            "name_pt": "Sri Lanka",
+            "name_en": "Sri Lanka",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Colombo",
+            "timezones": ["Asia/Colombo"]
+        },
+        {
+            "code": "SY",
+            "name_pt": "Síria",
+            "name_en": "Syria",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Damascus",
+            "timezones": ["Asia/Damascus"]
+        },
+        {
+            "code": "TW",
+            "name_pt": "Taiwan",
+            "name_en": "Taiwan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Taipei",
+            "timezones": ["Asia/Taipei"]
+        },
+        {
+            "code": "TJ",
+            "name_pt": "Tajiquistão",
+            "name_en": "Tajikistan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Dushanbe",
+            "timezones": ["Asia/Dushanbe"]
+        },
+        {
+            "code": "TH",
+            "name_pt": "Tailândia",
+            "name_en": "Thailand",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Bangkok",
+            "timezones": ["Asia/Bangkok"]
+        },
+        {
+            "code": "TL",
+            "name_pt": "Timor-Leste",
+            "name_en": "Timor-Leste",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Dili",
+            "timezones": ["Asia/Dili"]
+        },
+        {
+            "code": "TM",
+            "name_pt": "Turcomenistão",
+            "name_en": "Turkmenistan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Ashgabat",
+            "timezones": ["Asia/Ashgabat"]
+        },
+        {
+            "code": "AE",
+            "name_pt": "Emirados Árabes Unidos",
+            "name_en": "United Arab Emirates",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Dubai",
+            "timezones": ["Asia/Dubai"]
+        },
+        {
+            "code": "UZ",
+            "name_pt": "Uzbequistão",
+            "name_en": "Uzbekistan",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Tashkent",
+            "timezones": ["Asia/Tashkent"]
+        },
+        {
+            "code": "VN",
+            "name_pt": "Vietnã",
+            "name_en": "Vietnam",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Ho_Chi_Minh",
+            "timezones": ["Asia/Ho_Chi_Minh"]
+        },
+        {
+            "code": "YE",
+            "name_pt": "Iêmen",
+            "name_en": "Yemen",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Asia/Aden",
+            "timezones": ["Asia/Aden", "Asia/Sanaa"]
+        },
+        {
+            "code": "DZ",
+            "name_pt": "Argélia",
+            "name_en": "Algeria",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Algiers",
+            "timezones": ["Africa/Algiers"]
+        },
+        {
+            "code": "AO",
+            "name_pt": "Angola",
+            "name_en": "Angola",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Luanda",
+            "timezones": ["Africa/Luanda"]
+        },
+        {
+            "code": "BJ",
+            "name_pt": "Benin",
+            "name_en": "Benin",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Porto-Novo",
+            "timezones": ["Africa/Porto-Novo"]
+        },
+        {
+            "code": "BW",
+            "name_pt": "Botswana",
+            "name_en": "Botswana",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Gaborone",
+            "timezones": ["Africa/Gaborone"]
+        },
+        {
+            "code": "BF",
+            "name_pt": "Burkina Faso",
+            "name_en": "Burkina Faso",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Ouagadougou",
+            "timezones": ["Africa/Ouagadougou"]
+        },
+        {
+            "code": "BI",
+            "name_pt": "Burundi",
+            "name_en": "Burundi",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Bujumbura",
+            "timezones": ["Africa/Bujumbura"]
+        },
+        {
+            "code": "CV",
+            "name_pt": "Cabo Verde",
+            "name_en": "Cabo Verde",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Atlantic/Cape_Verde",
+            "timezones": ["Atlantic/Cape_Verde"]
+        },
+        {
+            "code": "CM",
+            "name_pt": "Camarões",
+            "name_en": "Cameroon",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Douala",
+            "timezones": ["Africa/Douala"]
+        },
+        {
+            "code": "CF",
+            "name_pt": "República Centro-Africana",
+            "name_en": "Central African Republic",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Bangui",
+            "timezones": ["Africa/Bangui"]
+        },
+        {
+            "code": "TD",
+            "name_pt": "Chade",
+            "name_en": "Chad",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Ndjamena",
+            "timezones": ["Africa/Ndjamena"]
+        },
+        {
+            "code": "KM",
+            "name_pt": "Comores",
+            "name_en": "Comoros",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Comoro",
+            "timezones": ["Indian/Comoro"]
+        },
+        {
+            "code": "CG",
+            "name_pt": "Congo",
+            "name_en": "Congo",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Brazzaville",
+            "timezones": ["Africa/Brazzaville"]
+        },
+        {
+            "code": "CD",
+            "name_pt": "Congo (Rep. Dem.)",
+            "name_en": "Congo (DRC)",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Kinshasa",
+            "timezones": ["Africa/Kinshasa", "Africa/Lubumbashi"]
+        },
+        {
+            "code": "CI",
+            "name_pt": "Costa do Marfim",
+            "name_en": "Côte d'Ivoire",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Abidjan",
+            "timezones": ["Africa/Abidjan"]
+        },
+        {
+            "code": "DJ",
+            "name_pt": "Djibouti",
+            "name_en": "Djibouti",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Djibouti",
+            "timezones": ["Africa/Djibouti"]
+        },
+        {
+            "code": "EG",
+            "name_pt": "Egito",
+            "name_en": "Egypt",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Cairo",
+            "timezones": ["Africa/Cairo"]
+        },
+        {
+            "code": "GQ",
+            "name_pt": "Guiné Equatorial",
+            "name_en": "Equatorial Guinea",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Malabo",
+            "timezones": ["Africa/Malabo"]
+        },
+        {
+            "code": "ER",
+            "name_pt": "Eritreia",
+            "name_en": "Eritrea",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Asmara",
+            "timezones": ["Africa/Asmara"]
+        },
+        {
+            "code": "SZ",
+            "name_pt": "Eswatini",
+            "name_en": "Eswatini",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Mbabane",
+            "timezones": ["Africa/Mbabane"]
+        },
+        {
+            "code": "ET",
+            "name_pt": "Etiópia",
+            "name_en": "Ethiopia",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Addis_Ababa",
+            "timezones": ["Africa/Addis_Ababa"]
+        },
+        {
+            "code": "GA",
+            "name_pt": "Gabão",
+            "name_en": "Gabon",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Libreville",
+            "timezones": ["Africa/Libreville"]
+        },
+        {
+            "code": "GM",
+            "name_pt": "Gâmbia",
+            "name_en": "Gambia",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Banjul",
+            "timezones": ["Africa/Banjul"]
+        },
+        {
+            "code": "GH",
+            "name_pt": "Gana",
+            "name_en": "Ghana",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Accra",
+            "timezones": ["Africa/Accra"]
+        },
+        {
+            "code": "GN",
+            "name_pt": "Guiné",
+            "name_en": "Guinea",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Conakry",
+            "timezones": ["Africa/Conakry"]
+        },
+        {
+            "code": "GW",
+            "name_pt": "Guiné-Bissau",
+            "name_en": "Guinea-Bissau",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Bissau",
+            "timezones": ["Africa/Bissau"]
+        },
+        {
+            "code": "KE",
+            "name_pt": "Quênia",
+            "name_en": "Kenya",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Nairobi",
+            "timezones": ["Africa/Nairobi"]
+        },
+        {
+            "code": "LS",
+            "name_pt": "Lesoto",
+            "name_en": "Lesotho",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Maseru",
+            "timezones": ["Africa/Maseru"]
+        },
+        {
+            "code": "LR",
+            "name_pt": "Libéria",
+            "name_en": "Liberia",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Monrovia",
+            "timezones": ["Africa/Monrovia"]
+        },
+        {
+            "code": "LY",
+            "name_pt": "Líbia",
+            "name_en": "Libya",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Tripoli",
+            "timezones": ["Africa/Tripoli"]
+        },
+        {
+            "code": "MG",
+            "name_pt": "Madagascar",
+            "name_en": "Madagascar",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Antananarivo",
+            "timezones": ["Indian/Antananarivo"]
+        },
+        {
+            "code": "MW",
+            "name_pt": "Malawi",
+            "name_en": "Malawi",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Blantyre",
+            "timezones": ["Africa/Blantyre"]
+        },
+        {
+            "code": "ML",
+            "name_pt": "Mali",
+            "name_en": "Mali",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Bamako",
+            "timezones": ["Africa/Bamako"]
+        },
+        {
+            "code": "MR",
+            "name_pt": "Mauritânia",
+            "name_en": "Mauritania",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Nouakchott",
+            "timezones": ["Africa/Nouakchott"]
+        },
+        {
+            "code": "MU",
+            "name_pt": "Maurício",
+            "name_en": "Mauritius",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Mauritius",
+            "timezones": ["Indian/Mauritius"]
+        },
+        {
+            "code": "MA",
+            "name_pt": "Marrocos",
+            "name_en": "Morocco",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Casablanca",
+            "timezones": ["Africa/Casablanca"]
+        },
+        {
+            "code": "MZ",
+            "name_pt": "Moçambique",
+            "name_en": "Mozambique",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Maputo",
+            "timezones": ["Africa/Maputo"]
+        },
+        {
+            "code": "NA",
+            "name_pt": "Namíbia",
+            "name_en": "Namibia",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Windhoek",
+            "timezones": ["Africa/Windhoek"]
+        },
+        {
+            "code": "NE",
+            "name_pt": "Níger",
+            "name_en": "Niger",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Niamey",
+            "timezones": ["Africa/Niamey"]
+        },
+        {
+            "code": "NG",
+            "name_pt": "Nigéria",
+            "name_en": "Nigeria",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Lagos",
+            "timezones": ["Africa/Lagos"]
+        },
+        {
+            "code": "RW",
+            "name_pt": "Ruanda",
+            "name_en": "Rwanda",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Kigali",
+            "timezones": ["Africa/Kigali"]
+        },
+        {
+            "code": "ST",
+            "name_pt": "São Tomé e Príncipe",
+            "name_en": "São Tomé and Príncipe",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Sao_Tome",
+            "timezones": ["Africa/Sao_Tome"]
+        },
+        {
+            "code": "SN",
+            "name_pt": "Senegal",
+            "name_en": "Senegal",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Dakar",
+            "timezones": ["Africa/Dakar"]
+        },
+        {
+            "code": "SC",
+            "name_pt": "Seychelles",
+            "name_en": "Seychelles",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Mahe",
+            "timezones": ["Indian/Mahe"]
+        },
+        {
+            "code": "SL",
+            "name_pt": "Serra Leoa",
+            "name_en": "Sierra Leone",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Freetown",
+            "timezones": ["Africa/Freetown"]
+        },
+        {
+            "code": "SO",
+            "name_pt": "Somália",
+            "name_en": "Somalia",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Mogadishu",
+            "timezones": ["Africa/Mogadishu"]
+        },
+        {
+            "code": "ZA",
+            "name_pt": "África do Sul",
+            "name_en": "South Africa",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Johannesburg",
+            "timezones": ["Africa/Johannesburg"]
+        },
+        {
+            "code": "SS",
+            "name_pt": "Sudão do Sul",
+            "name_en": "South Sudan",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Juba",
+            "timezones": ["Africa/Juba"]
+        },
+        {
+            "code": "SD",
+            "name_pt": "Sudão",
+            "name_en": "Sudan",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Khartoum",
+            "timezones": ["Africa/Khartoum"]
+        },
+        {
+            "code": "TZ",
+            "name_pt": "Tanzânia",
+            "name_en": "Tanzania",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Dar_es_Salaam",
+            "timezones": ["Africa/Dar_es_Salaam"]
+        },
+        {
+            "code": "TG",
+            "name_pt": "Togo",
+            "name_en": "Togo",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Lome",
+            "timezones": ["Africa/Lome"]
+        },
+        {
+            "code": "TN",
+            "name_pt": "Tunísia",
+            "name_en": "Tunisia",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Tunis",
+            "timezones": ["Africa/Tunis"]
+        },
+        {
+            "code": "UG",
+            "name_pt": "Uganda",
+            "name_en": "Uganda",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Kampala",
+            "timezones": ["Africa/Kampala"]
+        },
+        {
+            "code": "EH",
+            "name_pt": "Saara Ocidental",
+            "name_en": "Western Sahara",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/El_Aaiun",
+            "timezones": ["Africa/El_Aaiun"]
+        },
+        {
+            "code": "ZM",
+            "name_pt": "Zâmbia",
+            "name_en": "Zambia",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Lusaka",
+            "timezones": ["Africa/Lusaka"]
+        },
+        {
+            "code": "ZW",
+            "name_pt": "Zimbábue",
+            "name_en": "Zimbabwe",
+            "region": "Africa",
+            "has_subdivisions": false,
+            "default_timezone": "Africa/Harare",
+            "timezones": ["Africa/Harare"]
+        },
+        {
+            "code": "AU",
+            "name_pt": "Austrália",
+            "name_en": "Australia",
+            "region": "Oceania",
+            "has_subdivisions": true,
+            "default_timezone": "Australia/Sydney",
+            "timezones": [
+                "Australia/Sydney",
+                "Australia/Melbourne",
+                "Australia/Brisbane",
+                "Australia/Perth",
+                "Australia/Adelaide",
+                "Australia/Darwin",
+                "Australia/Hobart",
+                "Australia/Canberra"
+            ]
+        },
+        {
+            "code": "FJ",
+            "name_pt": "Fiji",
+            "name_en": "Fiji",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Fiji",
+            "timezones": ["Pacific/Fiji"]
+        },
+        {
+            "code": "KI",
+            "name_pt": "Kiribati",
+            "name_en": "Kiribati",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Tarawa",
+            "timezones": ["Pacific/Tarawa", "Pacific/Kiritimati", "Pacific/Enderbury"]
+        },
+        {
+            "code": "MH",
+            "name_pt": "Ilhas Marshall",
+            "name_en": "Marshall Islands",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Majuro",
+            "timezones": ["Pacific/Majuro", "Pacific/Kwajalein"]
+        },
+        {
+            "code": "FM",
+            "name_pt": "Micronésia",
+            "name_en": "Micronesia",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Pohnpei",
+            "timezones": ["Pacific/Pohnpei", "Pacific/Chuuk", "Pacific/Kosrae"]
+        },
+        {
+            "code": "NR",
+            "name_pt": "Nauru",
+            "name_en": "Nauru",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Nauru",
+            "timezones": ["Pacific/Nauru"]
+        },
+        {
+            "code": "NZ",
+            "name_pt": "Nova Zelândia",
+            "name_en": "New Zealand",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Auckland",
+            "timezones": ["Pacific/Auckland", "Pacific/Chatham"]
+        },
+        {
+            "code": "PW",
+            "name_pt": "Palau",
+            "name_en": "Palau",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Palau",
+            "timezones": ["Pacific/Palau"]
+        },
+        {
+            "code": "PG",
+            "name_pt": "Papua-Nova Guiné",
+            "name_en": "Papua New Guinea",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Port_Moresby",
+            "timezones": ["Pacific/Port_Moresby", "Pacific/Bougainville"]
+        },
+        {
+            "code": "WS",
+            "name_pt": "Samoa",
+            "name_en": "Samoa",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Apia",
+            "timezones": ["Pacific/Apia"]
+        },
+        {
+            "code": "SB",
+            "name_pt": "Ilhas Salomão",
+            "name_en": "Solomon Islands",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Guadalcanal",
+            "timezones": ["Pacific/Guadalcanal"]
+        },
+        {
+            "code": "TO",
+            "name_pt": "Tonga",
+            "name_en": "Tonga",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Tongatapu",
+            "timezones": ["Pacific/Tongatapu"]
+        },
+        {
+            "code": "TV",
+            "name_pt": "Tuvalu",
+            "name_en": "Tuvalu",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Funafuti",
+            "timezones": ["Pacific/Funafuti"]
+        },
+        {
+            "code": "VU",
+            "name_pt": "Vanuatu",
+            "name_en": "Vanuatu",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Efate",
+            "timezones": ["Pacific/Efate"]
+        },
+        {
+            "code": "NU",
+            "name_pt": "Niue",
+            "name_en": "Niue",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Niue",
+            "timezones": ["Pacific/Niue"]
+        },
+        {
+            "code": "NF",
+            "name_pt": "Ilha Norfolk",
+            "name_en": "Norfolk Island",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Norfolk",
+            "timezones": ["Pacific/Norfolk"]
+        },
+        {
+            "code": "NC",
+            "name_pt": "Nova Caledônia",
+            "name_en": "New Caledonia",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Noumea",
+            "timezones": ["Pacific/Noumea"]
+        },
+        {
+            "code": "PF",
+            "name_pt": "Polinésia Francesa",
+            "name_en": "French Polynesia",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Tahiti",
+            "timezones": ["Pacific/Tahiti", "Pacific/Marquesas", "Pacific/Gambier"]
+        },
+        {
+            "code": "AS",
+            "name_pt": "Samoa Americana",
+            "name_en": "American Samoa",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Pago_Pago",
+            "timezones": ["Pacific/Pago_Pago"]
+        },
+        {
+            "code": "CK",
+            "name_pt": "Ilhas Cook",
+            "name_en": "Cook Islands",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Rarotonga",
+            "timezones": ["Pacific/Rarotonga"]
+        },
+        {
+            "code": "AQ",
+            "name_pt": "Antártica",
+            "name_en": "Antarctica",
+            "region": "Antarctica",
+            "has_subdivisions": false,
+            "default_timezone": "Antarctica/McMurdo",
+            "timezones": [
+                "Antarctica/McMurdo",
+                "Antarctica/South_Pole",
+                "Antarctica/Davis",
+                "Antarctica/Mawson",
+                "Antarctica/Casey",
+                "Antarctica/DumontDUrville",
+                "Antarctica/Syowa",
+                "Antarctica/Troll",
+                "Antarctica/Vostok",
+                "Antarctica/Rothera",
+                "Antarctica/Palmer"
+            ]
+        },
+        {
+            "code": "BV",
+            "name_pt": "Ilha Bouvet",
+            "name_en": "Bouvet Island",
+            "region": "Antarctica",
+            "has_subdivisions": false,
+            "default_timezone": "UTC",
+            "timezones": ["UTC"]
+        },
+        {
+            "code": "TF",
+            "name_pt": "Territórios Franceses do Sul",
+            "name_en": "French Southern Territories",
+            "region": "Antarctica",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Kerguelen",
+            "timezones": ["Indian/Kerguelen", "Indian/Reunion"]
+        },
+        {
+            "code": "HM",
+            "name_pt": "Ilhas Heard e McDonald",
+            "name_en": "Heard Island and McDonald Islands",
+            "region": "Antarctica",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Kerguelen",
+            "timezones": ["Indian/Kerguelen"]
+        },
+        {
+            "code": "GS",
+            "name_pt": "Geórgia do Sul e Ilhas Sandwich do Sul",
+            "name_en": "South Georgia and the South Sandwich Islands",
+            "region": "Antarctica",
+            "has_subdivisions": false,
+            "default_timezone": "Atlantic/South_Georgia",
+            "timezones": ["Atlantic/South_Georgia"]
+        },
+        {
+            "code": "CC",
+            "name_pt": "Ilhas Cocos (Keeling)",
+            "name_en": "Cocos (Keeling) Islands",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Cocos",
+            "timezones": ["Indian/Cocos"]
+        },
+        {
+            "code": "CX",
+            "name_pt": "Ilha Christmas",
+            "name_en": "Christmas Island",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Christmas",
+            "timezones": ["Indian/Christmas"]
+        },
+        {
+            "code": "IO",
+            "name_pt": "Território Britânico do Oceano Índico",
+            "name_en": "British Indian Ocean Territory",
+            "region": "Asia",
+            "has_subdivisions": false,
+            "default_timezone": "Indian/Chagos",
+            "timezones": ["Indian/Chagos"]
+        },
+        {
+            "code": "PN",
+            "name_pt": "Ilhas Pitcairn",
+            "name_en": "Pitcairn Islands",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Pitcairn",
+            "timezones": ["Pacific/Pitcairn"]
+        },
+        {
+            "code": "UM",
+            "name_pt": "Ilhas Menores Distantes dos EUA",
+            "name_en": "United States Minor Outlying Islands",
+            "region": "Oceania",
+            "has_subdivisions": false,
+            "default_timezone": "Pacific/Wake",
+            "timezones": ["Pacific/Wake", "Pacific/Midway", "Pacific/Johnston"]
+        }
+    ]
+}

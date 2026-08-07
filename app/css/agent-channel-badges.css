@@ -1,0 +1,46 @@
+/* Agent Channel Badges — stub (Wave TTTT1 console-log 404 hotfix)
+ *
+ * The link in app/index.html line 228 referenced this file but it was never
+ * committed (claimed in 2b1f9bcf but file missing). This minimal stub
+ * eliminates the 404 in console.
+ *
+ * Replace with full implementation when agent channel UI ships its badge
+ * styles. Keep tokens .ecbt-* canonical (design-tokens.css).
+ */
+
+.agent-channel-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 2px var(--space-2);
+    border-radius: 10px;
+    font-size: var(--text-sm);
+    line-height: 1;
+    font-weight: 500;
+    background: var(--ecbt-surface-muted, #2a2a30);
+    color: var(--ecbt-text-secondary, #b0b0b8);
+    border: 1px solid var(--ecbt-border-subtle, #3a3a42);
+}
+
+.agent-channel-badge--active {
+    background: var(--ecbt-accent-bg, rgba(56, 189, 248, 0.15));
+    color: var(--ecbt-accent-fg, #38bdf8);
+    border-color: var(--ecbt-accent-border, rgba(56, 189, 248, 0.3));
+}
+
+.agent-channel-badge--stale {
+    background: var(--ecbt-warn-bg, rgba(245, 158, 11, 0.15));
+    color: var(--ecbt-warn-fg, #f59e0b);
+    border-color: var(--ecbt-warn-border, rgba(245, 158, 11, 0.3));
+}
+
+.agent-channel-badge--blocked {
+    background: var(--ecbt-danger-bg, rgba(239, 68, 68, 0.15));
+    color: var(--ecbt-danger-fg, #ef4444);
+    border-color: var(--ecbt-danger-border, rgba(239, 68, 68, 0.3));
+}
+
+.agent-channel-badge__count {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}

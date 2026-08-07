@@ -1,0 +1,181 @@
+/* budget-panel.css — Painel de Orçamento Cotado (RF-7, orcamento-cotado-001#08).
+   ZERO hex hardcoded — tudo via design-tokens / var(). */
+
+.bp-dialog { display: flex; flex-direction: column; }
+
+.bp-body { padding: 16px; }
+
+.bp-funder-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--ecbt-surface-muted, var(--neutral-50, rgba(255,255,255,0.06)));
+    color: var(--text-secondary, #aaa);
+    border: 1px solid var(--border-color, #333);
+}
+
+.bp-section { margin-bottom: 20px; }
+
+.bp-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-subtle, rgba(255,255,255,0.05));
+    color: var(--text-primary, #e0e0e0);
+}
+
+.bp-count { font-weight: 400; color: var(--text-tertiary, #666); font-size: 12px; }
+
+/* Resumo */
+.bp-resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+    margin: 0;
+}
+
+.bp-resumo-item {
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: var(--ecbt-surface-raised, var(--window-dark-2, rgba(255,255,255,0.04)));
+    border: 1px solid var(--border-color, #333);
+}
+
+.bp-resumo-item dt {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-tertiary, #666);
+    margin-bottom: 2px;
+}
+
+.bp-resumo-value { font-size: 15px; font-weight: 600; color: var(--text-primary, #e0e0e0); margin: 0; }
+
+.bp-pct { font-size: 12px; font-weight: 400; color: var(--text-secondary, #aaa); }
+
+/* Rubricas */
+.bp-rubrica-header {
+    display: grid;
+    grid-template-columns: 28px 72px 1fr 100px 52px;
+    gap: 4px;
+    padding: 4px 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-tertiary, #666);
+    border-bottom: 1px solid var(--border-color, #333);
+}
+
+.bp-rubrica-row { border-bottom: 1px solid var(--border-subtle, rgba(255,255,255,0.05)); }
+
+.bp-rubrica-toggle {
+    display: grid;
+    grid-template-columns: 28px 72px 1fr 100px 52px;
+    gap: 4px;
+    align-items: center;
+    width: 100%;
+    padding: 6px 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    color: var(--text-primary, #e0e0e0);
+    text-align: left;
+}
+
+.bp-rubrica-toggle:hover { background: var(--ecbt-surface-sunken, rgba(255,255,255,0.04)); }
+.bp-rubrica-toggle:focus-visible { outline: 2px solid var(--accent-bright, #60a5fa); outline-offset: -2px; }
+
+.bp-rubrica-arrow { font-size: 10px; color: var(--text-tertiary, #666); transition: transform 0.15s; }
+
+.bp-rubrica-cat {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.bp-cat--capex { background: color-mix(in srgb, var(--accent-bright, #60a5fa) 20%, transparent); color: var(--accent-bright, #60a5fa); }
+.bp-cat--opex { background: color-mix(in srgb, var(--success, #4ade80) 20%, transparent); color: var(--success, #4ade80); }
+.bp-cat--contrapartida { background: color-mix(in srgb, var(--warning, #fbbf24) 20%, transparent); color: var(--warning, #fbbf24); }
+.bp-cat--outros { background: var(--ecbt-surface-muted, rgba(255,255,255,0.06)); color: var(--text-secondary, #aaa); }
+
+.bp-rubrica-valor { text-align: right; font-variant-numeric: tabular-nums; }
+.bp-rubrica-pct { text-align: right; color: var(--text-secondary, #aaa); font-size: 12px; }
+
+.bp-rubrica-detail {
+    padding: 6px 8px 10px 40px;
+    font-size: 12px;
+    color: var(--text-secondary, #aaa);
+}
+
+.bp-rubrica-just { line-height: 1.5; }
+.bp-rubrica-nojust { font-style: italic; color: var(--text-tertiary, #666); margin: 0; }
+
+/* Cronograma */
+.bp-cronograma { display: flex; flex-direction: column; gap: 6px; }
+
+.bp-cron-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px;
+    gap: 8px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.bp-cron-label { color: var(--text-secondary, #aaa); text-align: right; }
+
+.bp-cron-track {
+    height: 16px;
+    border-radius: 3px;
+    background: var(--ecbt-surface-sunken, rgba(255,255,255,0.04));
+    overflow: hidden;
+}
+
+.bp-cron-bar {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--accent-bright, #60a5fa);
+    min-width: 2px;
+}
+
+.bp-cron-valor { font-variant-numeric: tabular-nums; color: var(--text-primary, #e0e0e0); }
+
+/* Checagens */
+.bp-check-summary {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 1px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+}
+
+.bp-check-summary--ok { background: color-mix(in srgb, var(--success, #4ade80) 20%, transparent); color: var(--success, #4ade80); }
+.bp-check-summary--fail { background: color-mix(in srgb, var(--error, #ef4444) 20%, transparent); color: var(--error, #ef4444); }
+
+.bp-checks-list { list-style: none; margin: 0; padding: 0; }
+
+.bp-check-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 8px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border-subtle, rgba(255,255,255,0.05));
+}
+
+.bp-check-icon { flex-shrink: 0; font-size: 14px; }
+.bp-check--pass .bp-check-icon { color: var(--success, #4ade80); }
+.bp-check--error .bp-check-icon { color: var(--error, #ef4444); }
+.bp-check--warning .bp-check-icon { color: var(--warning, #fbbf24); }
+
+.bp-check-msg { flex: 1; color: var(--text-primary, #e0e0e0); }
+.bp-check-rule { font-size: 11px; color: var(--text-tertiary, #666); font-family: monospace; }
+
+.bp-empty { font-style: italic; color: var(--text-tertiary, #666); font-size: 13px; }

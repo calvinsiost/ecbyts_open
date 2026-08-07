@@ -1,0 +1,776 @@
+/* ================================================================
+   GOVERNANCE PANEL — Styles for contracts, WBS, EVA tab
+   Estilos do painel de governanca: contratos, EAP, Valor Agregado
+
+   Ownership: .gov-*, .wbs-*, .cc-*, .ins-badge-*, .ca-alloc-*
+   Moved from injectGovernanceStyles() in governancePanel.js
+   ================================================================ */
+
+/* --- Actions bar --- */
+.gov-actions {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.gov-template-select {
+    max-width: clamp(140px, 45vw, 180px);
+    font-size: 0.8rem;
+}
+
+/* --- Empty state --- */
+.gov-empty {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+.gov-empty-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+/* --- Card layout --- */
+.gov-card {
+    margin-bottom: 0.5rem;
+}
+.gov-card-title {
+    font-weight: 600;
+}
+.gov-card-body {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+}
+.gov-card-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.2rem;
+}
+.gov-card-type {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+.gov-card-financial {
+    display: flex;
+    gap: 0.75rem;
+}
+.gov-card-actions {
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.3rem 0.75rem 0.4rem;
+    justify-content: flex-end;
+}
+
+/* --- Badges --- */
+.gov-badge {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+.gov-status-draft { background: #e0e0e0; }
+.gov-status-active { background: #d9edf7; color: #31708f; }
+.gov-status-completed { background: #dff0d8; color: #3c763d; }
+.gov-status-terminated { background: #f2dede; color: #a94442; }
+
+/* --- Subsections (form areas) --- */
+.gov-subsection {
+    margin: 0.5rem 0;
+}
+.gov-subsection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+/* --- Party rows --- */
+.gov-party-row {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+    align-items: center;
+}
+.gov-party-row select { max-width: clamp(80px, 30vw, 110px); }
+.gov-party-row input { flex: 1; }
+
+/* --- WBS tree --- */
+.wbs-tree {
+    margin: 0.3rem 0;
+}
+.wbs-node {
+    border: 1px solid var(--border-color, #eee);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.3rem;
+    padding: 0.4rem 0.5rem;
+}
+.wbs-node-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.wbs-code {
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--accent-bright, #3b6bff);
+    min-width: 2rem;
+}
+.wbs-name {
+    flex: 1;
+    font-size: 0.85rem;
+}
+.wbs-delete-btn {
+    padding: 0 0.3rem;
+    font-size: 0.7rem;
+}
+.wbs-progress-bar {
+    height: 6px;
+    background: var(--bg-tertiary, #eee);
+    border-radius: 3px;
+    margin: 0.2rem 0;
+    position: relative;
+    overflow: visible;
+}
+.wbs-progress-fill {
+    height: 100%;
+    background: var(--accent-bright, #3b6bff);
+    border-radius: 3px;
+    transition: width 0.3s;
+}
+.wbs-progress-label {
+    position: absolute;
+    right: 0;
+    top: -0.1rem;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+.wbs-node-fields {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+}
+.wbs-node-fields label {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+.wbs-field-input {
+    width: 70px;
+    font-size: 0.8rem;
+    padding: 0.1rem 0.3rem;
+}
+
+/* --- Disbursement rows --- */
+.gov-disbursement-card {
+    margin-bottom: 0.4rem;
+    border: 1px solid var(--border-color, #eee);
+    border-radius: var(--radius-md);
+    padding: 0.4rem;
+}
+.gov-disbursement-row1,
+.gov-disbursement-row2 {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+.gov-disbursement-row2 { margin-top: 0.3rem; }
+.gov-disbursement-row1 input[type="date"] { max-width: clamp(100px, 35vw, 140px); }
+.gov-disbursement-row1 input[type="number"] { max-width: var(--ecbt-input-sm); }
+.gov-disbursement-row1 select { max-width: clamp(80px, 30vw, 110px); }
+.gov-disbursement-row2 input[type="text"] { flex: 1; }
+.gov-evidence-select { max-width: clamp(140px, 50vw, 200px); }
+
+/* --- Evidence badges --- */
+.gov-evidence-badge {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+.gov-evidence-pending { background: #fef3cd; color: #856404; }
+.gov-evidence-delivered { background: #d4edda; color: #155724; }
+.gov-card-evidence {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+}
+
+/* --- Insurance badges --- */
+.gov-card-insurance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+/* --- Filter tabs --- */
+.gov-filter-tabs {
+    margin-bottom: 6px;
+}
+
+/* --- EVA snapshot count --- */
+.gov-snapshot-count {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-left: 0.3rem;
+}
+
+/* --- Cost center tree helpers --- */
+.gov-card-inactive {
+    opacity: 0.5;
+}
+.gov-cc-name {
+    margin-left: 6px;
+}
+.gov-cc-type-badge {
+    font-size: 0.7rem;
+    margin-left: 6px;
+}
+.gov-cc-inactive-badge {
+    font-size: 0.7rem;
+    margin-left: var(--space-1);
+}
+.gov-cc-detail {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- Budget row (cost center form) --- */
+.cc-budget-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: var(--space-1);
+    align-items: center;
+}
+.cc-budget-fy { width: 70px; }
+.cc-budget-capex { width: 80px; }
+.cc-budget-opex { width: 80px; }
+.cc-budget-total { width: 90px; }
+.cc-budget-notes { flex: 1; }
+.cc-add-budget-btn { margin-top: var(--space-1); }
+
+/* --- Cost allocation rows --- */
+.ca-alloc-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: var(--space-1);
+    align-items: center;
+}
+.ca-alloc-row .ca-cc-select { flex: 1; }
+.ca-alloc-row .ca-pct-input { width: 70px; }
+.ca-alloc-pct-label { font-size: 0.8rem; }
+.ca-alloc-row .ca-notes-input { flex: 1; }
+
+/* --- No-data / fallback info --- */
+.gov-no-budgets {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* --- Scurve / EVA empty state --- */
+.gov-scurve-empty {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-secondary);
+}
+
+/* --- Form footer alignment --- */
+.gov-form-footer {
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* --- Add allocation bar --- */
+.gov-add-alloc-bar {
+    margin-bottom: var(--space-2);
+}
+
+/* ================================================================
+   DARK THEME — governance overrides
+   ================================================================ */
+
+[data-theme="dark"] .gov-status-draft { background: #3a3a4e; color: #b0b0c0; }
+[data-theme="dark"] .gov-status-active { background: #1a3a5c; color: #7cb9e8; }
+[data-theme="dark"] .gov-status-completed { background: #1a3c1a; color: #7cd47c; }
+[data-theme="dark"] .gov-status-terminated { background: #3c1a1a; color: #d47c7c; }
+[data-theme="dark"] .gov-evidence-pending { background: #3d3520; color: #f0c040; }
+[data-theme="dark"] .gov-evidence-delivered { background: #1a3c1a; color: #7cd47c; }
+[data-theme="dark"] .gov-disbursement-card { border-color: var(--border-color, #444); }
+
+/* ================================================================
+   G4 — REGULATORY CALENDAR
+   ================================================================ */
+
+.reg-cal-summary {
+    margin: var(--space-3) 0;
+}
+
+.reg-cal-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-2);
+}
+
+.reg-cal-stat {
+    background: var(--panel-bg, #1e2030);
+    border: 1px solid var(--border-color, #2a2d3e);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2) 6px;
+    text-align: center;
+}
+
+.reg-cal-stat.critical { border-color: #f93e3e; background: rgba(249, 62, 62, 0.08); }
+.reg-cal-stat.urgent { border-color: #ff6b35; background: rgba(255, 107, 53, 0.08); }
+.reg-cal-stat.attention { border-color: var(--accent-orange); background: rgba(245, 158, 11, 0.08); }
+.reg-cal-stat.ok { border-color: #49cc90; background: rgba(73, 204, 144, 0.05); }
+
+.reg-cal-stat-value {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary, #e0e0e0);
+}
+
+.reg-cal-stat-label {
+    display: block;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--text-secondary, #888);
+    margin-top: 2px;
+}
+
+.reg-cal-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.reg-cal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--panel-bg, #1e2030);
+    border: 1px solid var(--border-color, #2a2d3e);
+    border-left: 4px solid #49cc90;
+    border-radius: var(--radius-lg);
+    padding: 10px var(--space-3);
+    gap: var(--space-3);
+}
+
+.reg-cal-item-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.reg-cal-item-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary, #e0e0e0);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.reg-cal-regulator {
+    font-size: var(--text-xs);
+    background: var(--tag-bg, #2a2d3e);
+    color: var(--text-secondary, #888);
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.reg-cal-item-meta {
+    display: flex;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #888);
+    margin-top: var(--space-1);
+}
+
+.reg-cal-due {
+    font-family: monospace;
+}
+
+.reg-cal-urgency {
+    font-weight: 600;
+}
+
+.reg-cal-ref {
+    font-family: monospace;
+    opacity: 0.7;
+}
+
+.reg-cal-item-actions {
+    display: flex;
+    gap: var(--space-1);
+    flex-shrink: 0;
+}
+
+.reg-cal-item-actions .btn {
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-base);
+}
+
+.gov-badge {
+    display: inline-block;
+    background: var(--accent-bright, #4a9eff);
+    color: #fff;
+    font-size: var(--text-xs);
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-left: var(--space-1);
+    min-width: 18px;
+    text-align: center;
+}
+
+/* ================================================================
+   DECISION LOG SECTION (G6)
+   ================================================================ */
+
+.decision-log-summary {
+    margin: var(--space-2) 0;
+}
+
+.decision-log-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.decision-log-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px var(--space-1);
+    background: var(--panel-bg-secondary, rgba(255, 255, 255, 0.04));
+    border-radius: var(--radius-lg);
+    border-left: 3px solid transparent;
+}
+
+.decision-log-stat.technical {
+    border-left-color: #4a9eff;
+}
+
+.decision-log-stat.regulatory {
+    border-left-color: var(--accent-orange);
+}
+
+.decision-log-stat.financial {
+    border-left-color: #49cc90;
+}
+
+.decision-log-stat.operational {
+    border-left-color: #9ca3af;
+}
+
+.decision-log-stat-value {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary, #e8eaed);
+    line-height: 1;
+}
+
+.decision-log-stat-label {
+    font-size: var(--text-xs);
+    color: var(--text-secondary, #9ca3af);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: var(--space-1);
+}
+
+.decision-log-filter {
+    background: var(--panel-bg-secondary, rgba(255, 255, 255, 0.04));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    color: var(--text-primary, #e8eaed);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    cursor: pointer;
+}
+
+.decision-log-filter:hover {
+    background: var(--panel-bg-hover, rgba(255, 255, 255, 0.08));
+}
+
+.decision-log-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.decision-log-item {
+    padding: 10px;
+    background: var(--panel-bg-secondary, rgba(255, 255, 255, 0.04));
+    border-radius: var(--radius-lg);
+    border-left: 3px solid transparent;
+    transition: background 0.15s;
+}
+
+.decision-log-item:hover {
+    background: var(--panel-bg-hover, rgba(255, 255, 255, 0.08));
+}
+
+.decision-log-item[data-category="technical"] {
+    border-left-color: #4a9eff;
+}
+
+.decision-log-item[data-category="regulatory"] {
+    border-left-color: var(--accent-orange);
+}
+
+.decision-log-item[data-category="financial"] {
+    border-left-color: #49cc90;
+}
+
+.decision-log-item[data-category="operational"] {
+    border-left-color: #9ca3af;
+}
+
+.decision-log-item-header {
+    display: flex;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--text-secondary, #9ca3af);
+    margin-bottom: var(--space-1);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.decision-log-category {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+}
+
+.decision-log-category-technical {
+    background: rgba(74, 158, 255, 0.15);
+    color: #4a9eff;
+}
+
+.decision-log-category-regulatory {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-orange);
+}
+
+.decision-log-category-financial {
+    background: rgba(73, 204, 144, 0.15);
+    color: #49cc90;
+}
+
+.decision-log-category-operational {
+    background: rgba(156, 163, 175, 0.15);
+    color: #9ca3af;
+}
+
+.decision-log-date {
+    color: var(--text-secondary, #9ca3af);
+}
+
+.decision-log-actor {
+    color: var(--text-secondary, #9ca3af);
+    font-style: italic;
+    margin-left: auto;
+}
+
+.decision-log-item-title {
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--text-primary, #e8eaed);
+    line-height: 1.3;
+    margin-bottom: var(--space-1);
+}
+
+.decision-log-rationale {
+    font-size: var(--text-base);
+    color: var(--text-primary, #e8eaed);
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+.decision-log-alts {
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #9ca3af);
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    line-height: 1.4;
+}
+
+.decision-log-alts strong {
+    color: var(--text-primary, #e8eaed);
+}
+
+.decision-log-ref {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: var(--text-sm);
+    color: #4a9eff;
+    background: rgba(74, 158, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.gov-empty-hint {
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #9ca3af);
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ====================================================================
+   ESG Governance G5-G10 — Export / Share / Provenance / Retention
+   ==================================================================== */
+
+.gov-esg-subsection {
+    margin-top: var(--space-3);
+    padding: var(--space-2) 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid rgba(74, 158, 255, 0.4);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.gov-esg-subsection-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: var(--text-primary, #e5e7eb);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.gov-hint {
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #9ca3af);
+    margin-top: var(--space-1);
+    font-style: italic;
+}
+
+.gov-empty-compact {
+    padding: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #9ca3af);
+    text-align: center;
+}
+
+.gov-list {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+/* G8 Stakeholder share items */
+.gov-share-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px var(--space-2);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+}
+
+.gov-share-item.expired {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.gov-share-item.revoked {
+    opacity: 0.4;
+}
+
+.gov-share-id {
+    font-family: var(--font-mono, monospace);
+    font-size: var(--text-xs);
+    color: var(--text-secondary, #9ca3af);
+    white-space: nowrap;
+}
+
+.gov-share-meta {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2px;
+    min-width: 0;
+}
+
+.gov-share-role {
+    font-weight: 600;
+    color: #4a9eff;
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
+.gov-share-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text-primary, #e5e7eb);
+}
+
+.gov-share-exp {
+    color: var(--text-secondary, #9ca3af);
+    font-size: var(--text-xs);
+}
+
+.gov-share-revoked-label {
+    font-size: var(--text-xs);
+    color: #f44336;
+    font-style: italic;
+}
+
+/* G9 Provenance graph preview */
+.gov-graph-container {
+    margin-top: 6px;
+    padding: var(--space-1);
+    background: #1a1a1a;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    min-height: 80px;
+}
+
+.gov-graph-container svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* G10 Retention policy items */
+.gov-retention-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 6px var(--space-2);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+}
+
+.gov-retention-type {
+    font-family: var(--font-mono, monospace);
+    color: var(--text-primary, #e5e7eb);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gov-retention-days {
+    font-weight: 600;
+    color: #4a9eff;
+    min-width: 40px;
+    text-align: right;
+}

@@ -1,0 +1,77 @@
+/* ============================================================
+   EC Mascot — AI Bot Visual Identity
+   ============================================================ */
+
+.ec-mascot {
+    width: 32px;
+    height: 32px;
+    transition: transform 200ms ease, opacity 150ms ease;
+    color: #fff;
+}
+
+.ec-mascot--lg {
+    width: 64px;
+    height: 64px;
+}
+
+.ec-mascot--xl {
+    width: 128px;
+    height: 128px;
+}
+
+/* FAB specific: slightly larger to fill the 56px button */
+.ai-widget-fab .ec-mascot {
+    width: 36px;
+    height: 36px;
+}
+
+/* Estados animados */
+.ec-mascot[data-state="thinking"] {
+    animation: ec-bounce 1.5s ease-in-out infinite;
+}
+
+.ec-mascot[data-state="success"] {
+    animation: ec-pop 300ms ease-out;
+}
+
+/* Hover no FAB */
+.ai-widget-fab:hover .ec-mascot {
+    transform: scale(1.1);
+}
+
+/* Dark mode — gradiente ja claro via --ec-body-*; glow sutil para destaque */
+[data-theme="dark"] .ec-mascot {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 6px rgba(94, 234, 212, 0.35));
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .ec-mascot,
+    .ec-mascot[data-state="thinking"],
+    .ec-mascot[data-state="success"] {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Keyframes */
+@keyframes ec-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+@keyframes ec-pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* Pulse do elemento flutuante durante notificação */
+.ec-mascot[data-pulse="true"] {
+    animation: ec-float-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ec-float-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}

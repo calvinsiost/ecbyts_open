@@ -1,0 +1,103 @@
+/* uncertainty-badge.css — UNC-001 Phase 1 MVP
+ * Styles for the data quality badge rendered next to user-visible metrics
+ * (EIS Score, future Cost Analysis, Impact Estimator).
+ *
+ * Status colors are scoped to .uncertainty-badge-{class} so the same DOM
+ * markup can be reused across surfaces. Owned by this file per CLAUDE.md
+ * "CSS File Ownership" rule — never define .uncertainty-* outside here.
+ *
+ * Tokens: uses --border-1, --text-2, --primary-500 from design-tokens.css
+ * with safe fallbacks for legacy contexts that don't load tokens.
+ */
+
+:root {
+    --uncertainty-green: var(--accent-green);
+    --uncertainty-yellow: var(--accent-yellow);
+    --uncertainty-red: var(--accent-red);
+    --uncertainty-grey: #6b7280;
+}
+
+.uncertainty-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-left: var(--space-2);
+    padding: 2px 6px;
+    border: 1px solid var(--border-1, #3a3a3a);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-2, #d4d4d4);
+    font-size: var(--text-sm);
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.uncertainty-badge:hover {
+    background: rgba(0, 0, 0, 0.32);
+}
+
+.uncertainty-badge:focus-visible {
+    outline: 2px solid var(--primary-500, #3b82f6);
+    outline-offset: 1px;
+}
+
+.uncertainty-badge-dot {
+    font-size: var(--text-base);
+    line-height: 1;
+}
+
+.uncertainty-badge-label {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Status colors — drive both border and dot color */
+.uncertainty-badge-green {
+    border-color: var(--uncertainty-green);
+}
+.uncertainty-badge-green .uncertainty-badge-dot {
+    color: var(--uncertainty-green);
+}
+
+.uncertainty-badge-yellow {
+    border-color: var(--uncertainty-yellow);
+}
+.uncertainty-badge-yellow .uncertainty-badge-dot {
+    color: var(--uncertainty-yellow);
+}
+
+.uncertainty-badge-red {
+    border-color: var(--uncertainty-red);
+}
+.uncertainty-badge-red .uncertainty-badge-dot {
+    color: var(--uncertainty-red);
+}
+
+.uncertainty-badge-grey {
+    border-color: var(--uncertainty-grey);
+}
+.uncertainty-badge-grey .uncertainty-badge-dot {
+    color: var(--uncertainty-grey);
+}
+
+/* Popover — opened by clicking the badge or pressing Enter/Space */
+.uncertainty-popover {
+    margin-top: 6px;
+    padding: var(--space-2) 10px;
+    border: 1px solid var(--border-1, #3a3a3a);
+    border-radius: var(--radius-xl);
+    background: rgba(10, 12, 18, 0.96);
+    color: var(--text-2, #d4d4d4);
+    font-size: var(--text-base);
+    line-height: 1.4;
+    max-width: clamp(200px, 80vw, 280px);
+}
+
+.uncertainty-popover[hidden] {
+    display: none;
+}
+
+.uncertainty-popover strong {
+    color: var(--text-1, #f5f5f5);
+}

@@ -1,0 +1,175 @@
+/* ================================================================
+   PLUME ANIMATION DIALOG — plumeAnimationDialog.js
+   Namespace: .pa-*, #plume-anim-dialog*
+   ================================================================ */
+
+#plume-anim-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#plume-anim-dialog {
+    background: var(--surface-color, #1e1e2e);
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-xl);
+    width: min(480px, 94vw);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color, #e0e0e0);
+    font-size: var(--text-md);
+}
+
+.pa-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px var(--space-4) 10px;
+    border-bottom: 1px solid var(--border-color, #333);
+}
+
+.pa-dialog-title {
+    margin: 0;
+    font-size: var(--text-lg);
+    font-weight: 600;
+}
+
+.pa-dialog-close {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: var(--text-xl);
+    padding: 2px 6px;
+    opacity: 0.7;
+}
+
+.pa-dialog-close:hover {
+    opacity: 1;
+}
+
+.pa-dialog-body {
+    padding: 14px var(--space-4);
+    overflow-y: auto;
+    flex: 1;
+}
+
+.pa-info-row {
+    font-size: var(--text-base);
+    opacity: 0.7;
+    margin-bottom: var(--space-3);
+}
+
+.pa-field-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: var(--space-3);
+}
+
+.pa-field-label,
+label.pa-field-row > label {
+    min-width: 100px;
+    font-size: var(--text-base);
+    opacity: 0.85;
+}
+
+.pa-select {
+    flex: 1;
+    background: var(--input-bg, #2a2a3e);
+    border: 1px solid var(--border-color, #444);
+    color: inherit;
+    border-radius: var(--radius-md);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-base);
+}
+
+.pa-radio-group {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.pa-radio-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    cursor: pointer;
+    font-size: var(--text-base);
+}
+
+.pa-preview-label {
+    font-size: var(--text-base);
+    opacity: 0.8;
+    margin-bottom: 6px;
+}
+
+.pa-campaign-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 160px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-md);
+}
+
+.pa-campaign-item {
+    padding: 5px 10px;
+    font-size: var(--text-sm);
+    border-bottom: 1px solid var(--border-color, #2a2a3a);
+}
+
+.pa-campaign-item:last-child {
+    border-bottom: none;
+}
+
+.pa-warning {
+    color: var(--warning-color, #f59e0b);
+    font-size: var(--text-base);
+    padding: var(--space-2);
+    border: 1px solid var(--warning-color, #f59e0b);
+    border-radius: var(--radius-md);
+    background: rgba(245, 158, 11, 0.08);
+}
+
+.pa-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    padding: 10px var(--space-4) 14px;
+    border-top: 1px solid var(--border-color, #333);
+}
+
+.pa-btn {
+    padding: 6px var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: var(--text-base);
+    font-weight: 500;
+}
+
+.pa-btn-secondary {
+    background: transparent;
+    border-color: var(--border-color, #444);
+    color: inherit;
+}
+
+.pa-btn-primary {
+    background: var(--accent-color, #3b82f6);
+    color: #fff;
+}
+
+.pa-btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pa-campaign-preview {
+    margin-top: var(--space-2);
+}

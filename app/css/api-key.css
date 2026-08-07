@@ -1,0 +1,172 @@
+/* ================================================================
+   API KEY MODAL — apiKeyModal.js
+   Namespace: .api-key-*
+   ================================================================ */
+
+.api-key-modal-content {
+    width: 560px;
+    max-width: 95vw;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.api-key-description {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.api-key-generate-form {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.api-key-new-box {
+    background: var(--surface-elevated, var(--bg-secondary));
+    border: 1px solid var(--warning-400, #f59e0b);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.api-key-new-warning {
+    font-size: var(--text-base);
+    color: var(--warning-600, #d97706);
+    margin: 0;
+}
+
+.api-key-new-row {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.api-key-value-input {
+    flex: 1;
+    font-family: monospace;
+    font-size: var(--text-base);
+    letter-spacing: 0.02em;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.api-key-confirm-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-base);
+    cursor: pointer;
+    user-select: none;
+}
+
+.api-key-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.api-key-list {
+    overflow-y: auto;
+    max-height: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.api-key-empty {
+    text-align: center;
+    padding: var(--space-4);
+    color: var(--text-muted);
+    font-size: var(--text-base);
+}
+
+.api-key-error {
+    color: var(--danger-500, #ef4444);
+}
+
+.api-key-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-2) 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+}
+
+.api-key-row--revoked {
+    opacity: 0.55;
+}
+
+.api-key-row-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.api-key-name {
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: var(--text-primary);
+}
+
+.api-key-prefix {
+    font-family: monospace;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    padding: 1px var(--space-1);
+    border-radius: 3px;
+}
+
+.api-key-badge {
+    font-size: var(--text-xs);
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.api-key-badge--active {
+    background: var(--success-100, #d1fae5);
+    color: var(--success-700, #065f46);
+}
+
+.api-key-badge--revoked {
+    background: var(--neutral-200, #e5e7eb);
+    color: var(--neutral-600, #4b5563);
+}
+
+.api-key-row-meta {
+    display: flex;
+    gap: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.api-key-row-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ---- Link (moved from styles.css) ---- */
+
+.api-key-link {
+    display: inline-block;
+    margin-top: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--accent-500);
+    text-decoration: none;
+}
+
+.api-key-link:hover {
+    text-decoration: underline;
+    color: var(--accent-600, var(--accent-500));
+}

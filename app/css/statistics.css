@@ -1,0 +1,963 @@
+/* ================================================================
+   STATISTICS — Styles for standalone statistical analysis modules
+   Hypothesis Test, Background Analysis, MAC Curve modals
+   Alinhado com estetica do calculator modal (cards, borders, badges)
+   ================================================================ */
+
+/* --- Modal base (shared by all 3) --- */
+#hypothesis-test-modal,
+#background-analysis-modal,
+#mac-curve-modal {
+    display: none; position: fixed; inset: 0; z-index: var(--z-modal, 3200);
+    background: rgba(0,0,0,0.5);
+    justify-content: center; align-items: center;
+}
+#hypothesis-test-modal.visible,
+#background-analysis-modal.visible,
+#mac-curve-modal.visible { display: flex; }
+
+.stats-modal-content {
+    background: var(--neutral-50, #f8f9fa);
+    border-radius: 12px;
+    width: min(860px, 92vw);
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.stats-modal-header {
+    display: flex; align-items: center; gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--neutral-200, #e2e4e6);
+}
+.stats-modal-header h3 {
+    flex: 1; margin: 0; font-size: var(--text-xl);
+    color: var(--primary-text, #222);
+    display: flex; align-items: center; gap: var(--space-2);
+}
+.stats-modal-header .modal-close {
+    background: none; border: none; font-size: 22px; cursor: pointer;
+    color: var(--primary-text-muted, #888); padding: var(--space-1) var(--space-2); line-height: 1;
+}
+.stats-modal-header .modal-close:hover { color: var(--primary-text, #222); }
+
+.stats-modal-body {
+    flex: 1; overflow-y: auto;
+    padding: 14px var(--space-5);
+}
+
+/* --- Disclaimer / info banner --- */
+.stats-disclaimer {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: var(--space-3) var(--space-4); margin-bottom: var(--space-4);
+    background: var(--neutral-100, #eef0f2); border-radius: var(--radius-xl);
+    border-left: 3px solid var(--accent, #2d8a7a);
+    font-size: var(--text-sm); line-height: 1.55; color: var(--primary-text-muted, #555);
+}
+.stats-disclaimer-icon {
+    font-size: var(--text-xl); font-weight: 700; color: var(--accent, #2d8a7a);
+    flex-shrink: 0; margin-top: 1px;
+}
+.stats-disclaimer p { margin: 0; }
+.stats-disclaimer strong { color: var(--primary-text, #222); }
+
+/* ================================================================
+   SHARED CONFIG / FILTER / BUTTON STYLES
+   Aplicados via stats-*, hypothesis-*, bg-analysis-*, mac-* prefixos
+   ================================================================ */
+
+/* --- Config rows (all prefixes) --- */
+.stats-config-row,
+.hypothesis-config-row,
+.bg-analysis-config-row,
+.mac-config-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px; flex-wrap: wrap;
+}
+
+.stats-config-row label,
+.hypothesis-config-row label,
+.bg-analysis-config-row label,
+.mac-config-row label {
+    font-size: var(--text-base); font-weight: 600;
+    color: var(--primary-text-muted, #666);
+    white-space: nowrap; min-width: 50px;
+}
+
+.stats-config-row select,
+.stats-config-row input[type="text"],
+.stats-config-row input[type="number"],
+.hypothesis-config-row select,
+.hypothesis-config-row input[type="text"],
+.hypothesis-config-row input[type="number"],
+.bg-analysis-config-row select,
+.bg-analysis-config-row input[type="text"],
+.bg-analysis-config-row input[type="number"],
+.mac-config-row select,
+.mac-config-row input[type="text"],
+.mac-config-row input[type="number"] {
+    padding: 5px 10px;
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-lg); font-size: var(--text-base);
+    background: var(--neutral-0, #fff);
+    color: var(--primary-text, #222);
+}
+
+.hypothesis-config-row select,
+.bg-analysis-config-row select,
+.mac-config-row select { min-width: 160px; }
+
+/* --- Config container --- */
+.hypothesis-config,
+.bg-analysis-config {
+    margin-bottom: var(--space-3);
+}
+
+/* --- Filter section (all prefixes) --- */
+.stats-filters,
+.hypothesis-filters,
+.bg-analysis-filters {
+    margin: 10px 0;
+    padding: 10px var(--space-3);
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-100, #eef0f2);
+    border-radius: var(--radius-xl);
+}
+
+.stats-filters-label,
+.hypothesis-filters-label,
+.bg-analysis-filters-label {
+    font-size: var(--text-sm); font-weight: 600;
+    color: var(--primary-text-muted, #666);
+    display: flex; align-items: center; gap: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+.stats-filter-row,
+.hypothesis-filter-row,
+.bg-analysis-filter-row {
+    display: flex; align-items: center; gap: 6px;
+    margin-bottom: 5px;
+}
+
+.stats-filter-row select,
+.stats-filter-row input,
+.hypothesis-filter-row select,
+.hypothesis-filter-row input,
+.bg-analysis-filter-row select,
+.bg-analysis-filter-row input {
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: 5px; font-size: var(--text-sm);
+    background: var(--neutral-50, #f8f9fa);
+    color: var(--primary-text, #222);
+}
+
+/* --- Run button (all prefixes) --- */
+.stats-run-btn,
+.hypothesis-run .stats-run-btn,
+.bg-analysis-run .stats-run-btn {
+    background: var(--accent, #2d8a7a); color: #fff;
+    border: none; border-radius: var(--radius-lg); padding: var(--space-2) var(--space-6);
+    font-size: var(--text-md); font-weight: 600; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px;
+}
+.stats-run-btn:hover { filter: brightness(1.1); }
+.stats-run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.hypothesis-run,
+.bg-analysis-run {
+    margin: 14px 0; display: flex; align-items: center; gap: var(--space-3);
+}
+
+/* --- Small buttons (filter add/remove) --- */
+.stats-filters .btn-sm,
+.hypothesis-filters .btn-sm,
+.bg-analysis-filters .btn-sm,
+.hypothesis-filter-row .btn-sm,
+.bg-analysis-filter-row .btn-sm {
+    background: var(--neutral-100, #eef0f2);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-md); padding: 2px 6px;
+    font-size: var(--text-xs); cursor: pointer;
+    color: var(--primary-text, #222);
+    display: inline-flex; align-items: center; gap: 3px;
+}
+.btn-sm:hover { background: var(--neutral-200, #e2e4e6); }
+.btn-sm.btn-danger { color: #c62828; border-color: #ef9a9a; }
+.btn-sm.btn-danger:hover { background: #ffebee; }
+
+/* ================================================================
+   HYPOTHESIS TEST — Results
+   ================================================================ */
+
+.hypothesis-results {
+    margin-top: 14px;
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-xl); padding: 14px var(--space-4);
+}
+
+.hypothesis-verdict {
+    display: flex; align-items: center; gap: 10px;
+    padding: var(--space-3) var(--space-4); border-radius: var(--radius-xl);
+    font-size: var(--text-md); margin-bottom: var(--space-3);
+}
+.hypothesis-verdict-accept { background: #e8f5e9; color: #1b5e20; }
+.hypothesis-verdict-reject { background: #ffebee; color: #b71c1c; }
+.hypothesis-verdict-icon { font-size: 20px; font-weight: 700; }
+.hypothesis-verdict-text { font-weight: 600; flex: 1; }
+.hypothesis-verdict-pval { font-size: var(--text-sm); opacity: 0.75; font-family: monospace; }
+
+/* Interpretation section */
+.hypothesis-interpretation {
+    padding: 10px 14px; margin: 10px 0;
+    background: var(--neutral-50, #f8f9fa);
+    border-radius: var(--radius-lg); font-size: var(--text-base); line-height: 1.6;
+    color: var(--primary-text, #222);
+}
+.hypothesis-interpretation ul {
+    margin: var(--space-1) 0 0 var(--space-4); padding: 0;
+}
+.hypothesis-interpretation li { margin-bottom: 3px; }
+
+/* Stats table */
+.hypothesis-stats { margin-top: 10px; }
+.hypothesis-stats summary {
+    font-size: var(--text-sm); font-weight: 600; cursor: pointer;
+    color: var(--primary-text-muted, #666); padding: var(--space-1) 0;
+}
+.hypothesis-stats-table {
+    width: 100%; border-collapse: collapse;
+    margin: 6px 0; font-size: var(--text-sm);
+}
+.hypothesis-stats-table tr { border-bottom: 1px solid var(--neutral-100, #f0f0f0); }
+.hypothesis-stat-label {
+    padding: 3px var(--space-2); font-weight: 600;
+    color: var(--primary-text-muted, #666); width: 45%;
+}
+.hypothesis-stat-value {
+    padding: 3px var(--space-2); font-family: 'JetBrains Mono', monospace;
+    color: var(--primary-text, #222);
+}
+
+/* Pairs table */
+.hypothesis-pairs { margin-top: var(--space-3); }
+.hypothesis-pairs-label {
+    font-size: var(--text-sm); font-weight: 600; margin-bottom: 6px;
+    color: var(--primary-text-muted, #666);
+}
+.hypothesis-pairs-scroll {
+    max-height: 260px; overflow-y: auto;
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-lg);
+}
+.hypothesis-pairs-table {
+    width: 100%; border-collapse: collapse; font-size: var(--text-sm);
+}
+.hypothesis-pairs-table th {
+    background: var(--neutral-100, #eef0f2);
+    padding: 5px var(--space-2); text-align: left;
+    font-weight: 600; font-size: var(--text-xs);
+    border-bottom: 1px solid var(--neutral-200, #e2e4e6);
+    position: sticky; top: 0;
+}
+.hypothesis-pairs-table td {
+    padding: var(--space-1) var(--space-2);
+    border-bottom: 1px solid var(--neutral-100, #f5f5f5);
+}
+.hypothesis-pairs-table tr.pair-increase td:nth-child(4) { color: #c62828; font-weight: 600; }
+.hypothesis-pairs-table tr.pair-decrease td:nth-child(4) { color: #2e7d32; font-weight: 600; }
+
+/* ================================================================
+   BACKGROUND ANALYSIS — Element columns + Results
+   ================================================================ */
+
+.bg-analysis-columns {
+    display: flex; gap: 14px; margin: var(--space-3) 0;
+}
+.bg-analysis-column {
+    flex: 1;
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-xl); padding: 10px var(--space-3);
+}
+.bg-analysis-column-header {
+    font-size: var(--text-sm); font-weight: 600;
+    color: var(--primary-text-muted, #666);
+    padding-bottom: var(--space-2); margin-bottom: 6px;
+    border-bottom: 1px solid var(--neutral-100, #eef0f2);
+}
+.bg-analysis-column-body {
+    max-height: 160px; overflow-y: auto;
+}
+.bg-analysis-checkbox {
+    display: flex; align-items: center; gap: 6px;
+    margin: 3px 0; cursor: pointer; font-size: var(--text-base);
+}
+.bg-analysis-checkbox input[type="checkbox"] { margin: 0; cursor: pointer; }
+.bg-analysis-el-name { color: var(--primary-text, #222); }
+.bg-analysis-el-family {
+    font-size: var(--text-xs, 10px); padding: 1px 5px; border-radius: 3px;
+    background: var(--neutral-100, #eef0f2);
+    color: var(--primary-text-muted, #888);
+}
+.bg-analysis-empty {
+    font-size: var(--text-sm); color: var(--primary-text-muted, #999);
+    font-style: italic; padding: var(--space-2) 0;
+}
+
+.bg-analysis-counts {
+    font-size: var(--text-sm); color: var(--primary-text-muted, #888);
+    margin-left: var(--space-2);
+}
+
+/* Background results */
+.bg-analysis-results {
+    margin-top: 14px;
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-xl); padding: 14px var(--space-4);
+}
+
+.bg-analysis-banner {
+    display: flex; align-items: center; gap: 10px;
+    padding: var(--space-3) var(--space-4); border-radius: var(--radius-xl);
+    font-size: var(--text-md); margin-bottom: var(--space-3);
+}
+.bg-analysis-banner-clean { background: #e8f5e9; color: #1b5e20; }
+.bg-analysis-banner-contaminated { background: #ffebee; color: #b71c1c; }
+.bg-analysis-banner-icon { font-size: 20px; }
+.bg-analysis-banner-text { font-weight: 600; flex: 1; }
+.bg-analysis-pval { font-size: var(--text-sm); opacity: 0.75; font-family: monospace; }
+
+.bg-analysis-interpretation {
+    padding: 10px 14px; margin: 10px 0;
+    background: var(--neutral-50, #f8f9fa);
+    border-radius: var(--radius-lg); font-size: var(--text-base); line-height: 1.6;
+    color: var(--primary-text, #222);
+}
+
+.bg-analysis-stats { margin-top: 10px; }
+.bg-analysis-stats summary {
+    font-size: var(--text-sm); font-weight: 600; cursor: pointer;
+    color: var(--primary-text-muted, #666); padding: var(--space-1) 0;
+}
+.bg-analysis-stats-table {
+    width: 100%; border-collapse: collapse;
+    margin: 6px 0; font-size: var(--text-sm);
+}
+.bg-analysis-stats-table tr { border-bottom: 1px solid var(--neutral-100, #f0f0f0); }
+.bg-analysis-stats-table .stat-label {
+    padding: 3px var(--space-2); font-weight: 600;
+    color: var(--primary-text-muted, #666); width: 45%;
+}
+.bg-analysis-stats-table .stat-value {
+    padding: 3px var(--space-2); font-family: 'JetBrains Mono', monospace;
+    color: var(--primary-text, #222);
+}
+
+/* ================================================================
+   MAC CURVE — Table + Totals + Chart
+   ================================================================ */
+
+.mac-table {
+    width: 100%; border-collapse: collapse;
+    margin: 10px 0; font-size: var(--text-base);
+}
+.mac-table th {
+    background: var(--neutral-100, #eef0f2);
+    padding: 6px 10px; text-align: left;
+    font-weight: 600; font-size: var(--text-xs); text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-bottom: 2px solid var(--neutral-200, #e2e4e6);
+    color: var(--primary-text-muted, #666);
+}
+.mac-table td {
+    padding: 5px 10px;
+    border-bottom: 1px solid var(--neutral-100, #f5f5f5);
+}
+.mac-table td input[type="text"],
+.mac-table td input[type="number"] {
+    width: 100%; padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: 5px; font-size: var(--text-base);
+    background: var(--neutral-0, #fff);
+    color: var(--primary-text, #222);
+    box-sizing: border-box;
+}
+.mac-table td input[type="checkbox"] { margin: 0; cursor: pointer; }
+.mac-table tr.mac-zero-row { opacity: 0.45; }
+.mac-table .mac-zero-label { font-size: var(--text-xs, 10px); color: #999; font-style: italic; }
+
+.mac-metric-select {
+    padding: 3px 6px; border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-md); font-size: var(--text-sm);
+    background: var(--neutral-50, #f8f9fa);
+    color: var(--primary-text, #222);
+    max-width: clamp(110px, 40vw, 160px);
+}
+
+.mac-totals {
+    margin: 10px 0; padding: 10px 14px;
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-xl);
+    font-size: var(--text-base); color: var(--primary-text-muted, #555);
+    display: flex; gap: var(--space-5); flex-wrap: wrap;
+}
+.mac-totals strong { color: var(--primary-text, #222); }
+
+.mac-interpretation {
+    padding: 10px 14px; margin: var(--space-2) 0;
+    background: var(--neutral-50, #f8f9fa);
+    border-radius: var(--radius-lg); font-size: var(--text-base); line-height: 1.6;
+    color: var(--primary-text, #222);
+}
+
+.mac-chart-wrap {
+    position: relative; height: 280px;
+    margin-top: 14px;
+    background: var(--neutral-0, #fff);
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-xl); padding: 10px;
+}
+.mac-chart-wrap canvas { width: 100% !important; }
+
+.mac-no-data {
+    text-align: center; padding: 30px var(--space-5);
+    color: var(--primary-text-muted, #888);
+    font-size: var(--text-base); font-style: italic;
+}
+
+/* Add measure button */
+.mac-add-btn {
+    background: var(--neutral-100, #eef0f2);
+    border: 1px dashed var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-lg); padding: 6px 14px;
+    font-size: var(--text-sm); cursor: pointer;
+    color: var(--primary-text-muted, #666);
+    display: inline-flex; align-items: center; gap: var(--space-1);
+    margin: var(--space-2) 0;
+}
+.mac-add-btn:hover { background: var(--neutral-200, #e2e4e6); }
+
+/* --- Metric link button --- */
+.stats-metric-link,
+.mac-link-btn {
+    background: none; border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-md); padding: 2px var(--space-1); cursor: pointer; font-size: var(--text-xs);
+    color: var(--primary-text-muted, #888);
+}
+.stats-metric-link:hover,
+.mac-link-btn:hover { background: var(--neutral-100, #eef0f2); }
+.stats-metric-linked,
+.mac-linked-value {
+    font-size: var(--text-xs); padding: 2px 6px; border-radius: var(--radius-md);
+    background: #e3f2fd; color: #1565c0;
+    display: inline-flex; align-items: center; gap: var(--space-1);
+}
+
+/* ================================================================
+   DARK THEME OVERRIDES
+   ================================================================ */
+
+[data-theme="dark"] .stats-modal-content {
+    background: var(--neutral-50, #1e2128);
+}
+[data-theme="dark"] .stats-modal-header {
+    border-color: #3a3f4a;
+}
+[data-theme="dark"] .stats-modal-header h3 {
+    color: #e0e0e0;
+}
+[data-theme="dark"] .stats-modal-header .modal-close {
+    color: #aaa;
+}
+[data-theme="dark"] .stats-modal-header .modal-close:hover {
+    color: #e0e0e0;
+}
+
+/* GLOBAL: Force light text on ALL elements inside modal body in dark mode
+   Isso resolve o problema de inline styles sem cor nos handlers */
+[data-theme="dark"] .stats-modal-body {
+    color: #d4d4d4 !important;
+}
+[data-theme="dark"] .stats-modal-body label,
+[data-theme="dark"] .stats-modal-body span,
+[data-theme="dark"] .stats-modal-body th,
+[data-theme="dark"] .stats-modal-body td,
+[data-theme="dark"] .stats-modal-body div,
+[data-theme="dark"] .stats-modal-body p,
+[data-theme="dark"] .stats-modal-body summary,
+[data-theme="dark"] .stats-modal-body li {
+    color: #d4d4d4 !important;
+}
+[data-theme="dark"] .stats-modal-body strong,
+[data-theme="dark"] .stats-modal-body b {
+    color: #e8e8e8 !important;
+}
+[data-theme="dark"] .stats-modal-body select,
+[data-theme="dark"] .stats-modal-body input[type="text"],
+[data-theme="dark"] .stats-modal-body input[type="number"] {
+    background: #282c34 !important;
+    border-color: #3a3f4a !important;
+    color: #e0e0e0 !important;
+}
+[data-theme="dark"] .stats-modal-body button {
+    color: #d4d4d4 !important;
+}
+[data-theme="dark"] .stats-modal-body .btn-primary,
+[data-theme="dark"] .stats-modal-body .stats-run-btn {
+    color: #fff !important;
+}
+[data-theme="dark"] .stats-modal-body table {
+    color: #d4d4d4 !important;
+}
+[data-theme="dark"] .stats-modal-body th {
+    background: #282c34 !important;
+    border-color: #3a3f4a !important;
+    color: #aaa !important;
+}
+[data-theme="dark"] .stats-modal-body td {
+    border-color: #2a2e36 !important;
+}
+/* Override verdict/banner colors (need specific override to not be overwritten) */
+[data-theme="dark"] .stats-modal-body .hypothesis-verdict-accept,
+[data-theme="dark"] .stats-modal-body .hypothesis-verdict-accept * { color: #66bb6a !important; }
+[data-theme="dark"] .stats-modal-body .hypothesis-verdict-reject,
+[data-theme="dark"] .stats-modal-body .hypothesis-verdict-reject * { color: #ef9a9a !important; }
+[data-theme="dark"] .stats-modal-body .bg-analysis-banner-pass,
+[data-theme="dark"] .stats-modal-body .bg-analysis-banner-pass * { color: #66bb6a !important; }
+[data-theme="dark"] .stats-modal-body .bg-analysis-banner-fail,
+[data-theme="dark"] .stats-modal-body .bg-analysis-banner-fail * { color: #ef9a9a !important; }
+
+/* Config + filter inputs (all prefixes) */
+[data-theme="dark"] .stats-config-row select,
+[data-theme="dark"] .stats-config-row input,
+[data-theme="dark"] .hypothesis-config-row select,
+[data-theme="dark"] .hypothesis-config-row input,
+[data-theme="dark"] .bg-analysis-config-row select,
+[data-theme="dark"] .bg-analysis-config-row input,
+[data-theme="dark"] .mac-config-row select,
+[data-theme="dark"] .mac-config-row input,
+[data-theme="dark"] .stats-filter-row select,
+[data-theme="dark"] .stats-filter-row input,
+[data-theme="dark"] .hypothesis-filter-row select,
+[data-theme="dark"] .hypothesis-filter-row input,
+[data-theme="dark"] .bg-analysis-filter-row select,
+[data-theme="dark"] .bg-analysis-filter-row input {
+    background: var(--neutral-100, #282c34);
+    border-color: var(--neutral-300, #3a3f4a);
+    color: var(--primary-text, #e0e0e0);
+}
+
+/* Filter containers */
+[data-theme="dark"] .stats-filters,
+[data-theme="dark"] .hypothesis-filters,
+[data-theme="dark"] .bg-analysis-filters {
+    background: var(--neutral-100, #282c34);
+    border-color: var(--neutral-300, #3a3f4a);
+}
+
+/* Result cards */
+[data-theme="dark"] .hypothesis-results,
+[data-theme="dark"] .bg-analysis-results {
+    background: var(--neutral-100, #282c34);
+    border-color: var(--neutral-300, #3a3f4a);
+}
+
+/* Verdicts */
+[data-theme="dark"] .hypothesis-verdict-accept,
+[data-theme="dark"] .bg-analysis-banner-clean { background: #1b3a1b; color: #66bb6a; }
+[data-theme="dark"] .hypothesis-verdict-reject,
+[data-theme="dark"] .bg-analysis-banner-contaminated { background: #3a1010; color: #ef9a9a; }
+
+/* Interpretation */
+[data-theme="dark"] .hypothesis-interpretation,
+[data-theme="dark"] .bg-analysis-interpretation,
+[data-theme="dark"] .mac-interpretation {
+    background: var(--neutral-100, #282c34);
+    color: var(--primary-text, #e0e0e0);
+}
+
+/* Tables */
+[data-theme="dark"] .hypothesis-stats-table tr,
+[data-theme="dark"] .bg-analysis-stats-table tr { border-color: var(--neutral-300, #3a3f4a); }
+[data-theme="dark"] .hypothesis-pairs-table th,
+[data-theme="dark"] .mac-table th {
+    background: var(--neutral-100, #282c34);
+    border-color: var(--neutral-300, #3a3f4a);
+}
+[data-theme="dark"] .hypothesis-pairs-scroll,
+[data-theme="dark"] .bg-analysis-column {
+    background: var(--neutral-100, #282c34);
+    border-color: var(--neutral-300, #3a3f4a);
+}
+
+/* MAC specific */
+[data-theme="dark"] .mac-table td input {
+    background: var(--neutral-100, #282c34);
+    border-color: var(--neutral-300, #3a3f4a);
+    color: var(--primary-text, #e0e0e0);
+}
+[data-theme="dark"] .mac-totals {
+    background: var(--neutral-100, #282c34);
+    border-color: var(--neutral-300, #3a3f4a);
+}
+[data-theme="dark"] .mac-chart-wrap {
+    background: var(--neutral-100, #282c34);
+    border-color: var(--neutral-300, #3a3f4a);
+}
+
+/* Disclaimer */
+[data-theme="dark"] .stats-disclaimer {
+    background: var(--neutral-100, #282c34);
+    border-left-color: var(--accent, #2d8a7a);
+    color: var(--primary-text-muted, #aaa);
+}
+[data-theme="dark"] .stats-disclaimer strong { color: var(--primary-text, #e0e0e0); }
+
+/* Metric link */
+[data-theme="dark"] .stats-metric-linked,
+[data-theme="dark"] .mac-linked-value { background: #0d2744; color: #64b5f6; }
+
+/* ================================================================
+   MAC CURVE — Per-period cashflow table
+   Tabela de fluxo de caixa por periodo (modo variavel)
+   ================================================================ */
+
+.mac-cashflow-wrap {
+    max-height: min(300px, 35vh);
+    overflow-y: auto;
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-lg);
+    margin-top: 6px;
+}
+
+.mac-cashflow-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.mac-cashflow-table th {
+    position: sticky;
+    top: 0;
+    background: var(--neutral-100, #eef0f2);
+    padding: var(--space-1) 6px;
+    text-align: right;
+    font-weight: 600;
+    font-size: var(--text-xs);
+    border-bottom: 2px solid var(--neutral-200, #e2e4e6);
+    z-index: 1;
+}
+
+.mac-cashflow-table th:first-child {
+    text-align: left;
+    width: 60px;
+}
+
+.mac-cashflow-table td {
+    padding: 2px var(--space-1);
+    border-bottom: 1px solid var(--neutral-100, #f5f5f5);
+}
+
+.mac-cashflow-table td input[type="number"] {
+    width: 100%;
+    padding: 3px 6px;
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-family: 'JetBrains Mono', monospace;
+    text-align: right;
+    background: var(--neutral-0, #fff);
+    color: var(--primary-text, #222);
+    box-sizing: border-box;
+}
+
+.mac-cashflow-table td input[type="number"]:focus {
+    outline: 2px solid var(--accent, #2d8a7a);
+    outline-offset: -1px;
+}
+
+.mac-cashflow-table .mac-cashflow-year {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--primary-text-muted, #666);
+    padding-left: 6px;
+}
+
+.mac-cashflow-table tfoot td {
+    font-weight: 700;
+    padding: var(--space-1) 6px;
+    border-top: 2px solid var(--neutral-200, #e2e4e6);
+    font-family: 'JetBrains Mono', monospace;
+    text-align: right;
+    font-size: var(--text-sm);
+}
+
+/* Mode toggle (constant vs per-period) */
+.mac-mode-toggle {
+    display: inline-flex;
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    font-size: var(--text-xs);
+    margin-bottom: 6px;
+}
+
+.mac-mode-toggle button {
+    padding: 3px 10px;
+    border: none;
+    background: var(--neutral-50, #f8f9fa);
+    color: var(--primary-text-muted, #666);
+    cursor: pointer;
+    font-size: var(--text-xs);
+}
+
+.mac-mode-toggle button.active {
+    background: var(--accent, #2d8a7a);
+    color: #fff;
+    font-weight: 600;
+}
+
+.mac-mode-toggle button:hover:not(.active) {
+    background: var(--neutral-100, #eef0f2);
+}
+
+/* Fill toolbar */
+.mac-fill-toolbar {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin: var(--space-1) 0;
+    font-size: var(--text-xs);
+}
+
+.mac-fill-toolbar select,
+.mac-fill-toolbar input {
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-md);
+    padding: 2px 6px;
+    background: var(--neutral-0, #fff);
+    color: var(--primary-text, #222);
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] .mac-cashflow-wrap {
+    border-color: var(--neutral-300, #3a3f4a);
+}
+
+[data-theme="dark"] .mac-cashflow-table th {
+    background: #282c34;
+    border-color: #3a3f4a;
+    color: #aaa;
+}
+
+[data-theme="dark"] .mac-cashflow-table td {
+    border-color: #333;
+}
+
+[data-theme="dark"] .mac-cashflow-table td input[type="number"] {
+    background: #282c34;
+    border-color: #3a3f4a;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .mac-cashflow-table tfoot td {
+    border-color: #3a3f4a;
+}
+
+[data-theme="dark"] .mac-cashflow-table .mac-cashflow-year {
+    color: #aaa;
+}
+
+[data-theme="dark"] .mac-mode-toggle {
+    border-color: #3a3f4a;
+}
+
+[data-theme="dark"] .mac-mode-toggle button {
+    background: #282c34;
+    color: #aaa;
+}
+
+[data-theme="dark"] .mac-mode-toggle button.active {
+    background: var(--accent, #2d8a7a);
+    color: #fff;
+}
+
+[data-theme="dark"] .mac-mode-toggle button:hover:not(.active) {
+    background: #333;
+}
+
+[data-theme="dark"] .mac-fill-toolbar select,
+[data-theme="dark"] .mac-fill-toolbar input {
+    background: #282c34;
+    border-color: #3a3f4a;
+    color: #e0e0e0;
+}
+
+/* ================================================================
+   MAC CURVE — View Toggle + Temporal Evaluation
+   Toggle MAC/Temporal + tabelas de reducao acumulada + details
+   ================================================================ */
+
+/* View toggle (MAC vs Temporal) */
+.mac-view-toggle {
+    display: inline-flex;
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.mac-view-toggle button {
+    padding: 5px var(--space-4);
+    border: none;
+    background: var(--neutral-50, #f8f9fa);
+    color: var(--primary-text-muted, #666);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+}
+
+.mac-view-toggle button.active {
+    background: var(--accent, #2d8a7a);
+    color: #fff;
+}
+
+.mac-view-toggle button:hover:not(.active) {
+    background: var(--neutral-100, #eef0f2);
+}
+
+/* Temporal tables */
+.mac-temporal-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--neutral-200, #e2e4e6);
+    border-radius: var(--radius-lg);
+    margin-top: 6px;
+}
+
+.mac-temporal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+}
+
+.mac-temporal-table th {
+    position: sticky;
+    top: 0;
+    background: var(--neutral-100, #eef0f2);
+    padding: var(--space-1) var(--space-2);
+    text-align: right;
+    font-weight: 600;
+    font-size: var(--text-xs);
+    border-bottom: 2px solid var(--neutral-200, #e2e4e6);
+    z-index: 1;
+}
+
+.mac-temporal-table td {
+    padding: 3px var(--space-2);
+    text-align: right;
+    border-bottom: 1px solid var(--neutral-100, #f5f5f5);
+}
+
+.mac-temporal-table td:first-child,
+.mac-temporal-table th:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--neutral-50, #f8f9fa);
+    z-index: 2;
+    text-align: left;
+}
+
+.mac-temporal-total-row {
+    background: var(--neutral-100, #eef0f2);
+    border-bottom: 2px solid var(--neutral-200, #e2e4e6) !important;
+}
+
+.mac-temporal-total-row td {
+    border-bottom: 2px solid var(--neutral-200, #e2e4e6);
+}
+
+.mac-temporal-total-row td:first-child {
+    background: var(--neutral-100, #eef0f2);
+}
+
+/* Details/summary for temporal tables */
+.mac-temporal-details summary {
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primary-text-muted, #666);
+    padding: 6px 0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.mac-temporal-details summary:hover {
+    color: var(--primary-text, #222);
+}
+
+/* Dark theme: temporal */
+[data-theme="dark"] .mac-view-toggle {
+    border-color: #3a3f4a;
+}
+
+[data-theme="dark"] .mac-view-toggle button {
+    background: #282c34;
+    color: #aaa;
+}
+
+[data-theme="dark"] .mac-view-toggle button.active {
+    background: var(--accent, #2d8a7a);
+    color: #fff;
+}
+
+[data-theme="dark"] .mac-view-toggle button:hover:not(.active) {
+    background: #333;
+}
+
+[data-theme="dark"] .mac-temporal-table-wrap {
+    border-color: #3a3f4a;
+}
+
+[data-theme="dark"] .mac-temporal-table th {
+    background: #282c34;
+    border-color: #3a3f4a;
+    color: #aaa;
+}
+
+[data-theme="dark"] .mac-temporal-table td {
+    border-color: #333;
+}
+
+[data-theme="dark"] .mac-temporal-table td:first-child,
+[data-theme="dark"] .mac-temporal-table th:first-child {
+    background: #1e2128;
+}
+
+[data-theme="dark"] .mac-temporal-total-row {
+    background: #282c34;
+}
+
+[data-theme="dark"] .mac-temporal-total-row td {
+    border-color: #3a3f4a;
+}
+
+[data-theme="dark"] .mac-temporal-total-row td:first-child {
+    background: #282c34;
+}
+
+[data-theme="dark"] .mac-temporal-details summary {
+    color: #aaa;
+}
+
+[data-theme="dark"] .mac-temporal-details summary:hover {
+    color: #e0e0e0;
+}

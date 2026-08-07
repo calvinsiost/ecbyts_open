@@ -1,0 +1,276 @@
+/* ================================================================
+   DISCLAIMER — Footer persistente + ajustes do modal de termos
+   Rodape com credito academico sempre visivel; modal de consentimento
+   no primeiro acesso e consultavel via link no footer.
+   ================================================================ */
+
+/* ---------- Disclaimer credit (inside #statusbar) ---------- */
+.status-divider {
+    width: 1px;
+    height: 14px;
+    background: var(--border, #333);
+    opacity: 0.5;
+    margin: 0 var(--space-1);
+}
+
+.status-disclaimer {
+    color: var(--text-secondary, #aaa);
+    opacity: 0.7;
+    font-size: var(--text-xs);
+}
+
+.status-disclaimer-link {
+    color: var(--accent-blue, #4fc3f7);
+    text-decoration: none;
+    font-size: var(--text-xs);
+    opacity: 0.8;
+    transition: opacity 0.15s;
+}
+
+.status-disclaimer-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ---------- Disclaimer modal body ---------- */
+.disclaimer-body {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-md);
+    line-height: 1.65;
+    color: var(--primary-text, #333);
+}
+
+.disclaimer-body p {
+    margin: 0 0 var(--space-3);
+}
+
+.disclaimer-body ul {
+    margin: 0 0 14px;
+    padding-left: var(--space-5);
+    list-style: disc;
+}
+
+.disclaimer-body ul li {
+    margin-bottom: 10px;
+}
+
+.disclaimer-body strong {
+    font-weight: 600;
+}
+
+.disclaimer-body em {
+    font-style: italic;
+}
+
+/* ---------- Disclaimer modal footer buttons ---------- */
+#disclaimer-footer-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--neutral-50, #f8f9fa);
+    border-top: 1px solid var(--neutral-200, #e9ecef);
+    border-radius: 0 0 var(--radius-lg, 12px) var(--radius-lg, 12px);
+}
+
+.disclaimer-agree-btn {
+    background: var(--accent-blue, #4fc3f7);
+    color: #fff;
+    border: none;
+    padding: var(--space-2) var(--space-6);
+    border-radius: var(--radius-sm, 6px);
+    font-size: var(--text-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.disclaimer-agree-btn:hover {
+    background: #039be5;
+}
+
+.disclaimer-close-btn {
+    background: var(--neutral-200, #e9ecef);
+    color: var(--primary-text, #333);
+    border: none;
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-sm, 6px);
+    font-size: var(--text-md);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.disclaimer-close-btn:hover {
+    background: var(--neutral-300, #dee2e6);
+}
+
+/* ---------- Compliance banner (non-dismissible, regulatory modals) ---------- */
+.compliance-banner {
+    background: var(--neutral-100, #f1f3f5);
+    border: 1px solid var(--neutral-300, #dee2e6);
+    border-left: 3px solid var(--accent-amber, #f59e0b);
+    border-radius: var(--radius-sm, 6px);
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    font-size: var(--text-base);
+    line-height: 1.55;
+    color: var(--text-secondary, #555);
+}
+
+/* ---------- Cookie Consent Banner (LGPD) ---------- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Keep cookie banner above app chrome but below blocking modals. */
+    z-index: 9100;
+    background: var(--neutral-900, #1a1c2e);
+    border-top: 1px solid var(--border, #2a2d3e);
+    padding: 14px var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-banner-visible {
+    transform: translateY(0);
+}
+
+.cookie-banner-text {
+    color: var(--text-secondary, #aaa);
+    font-size: var(--text-md);
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+}
+
+.cookie-banner-link {
+    color: var(--accent-blue, #4fc3f7);
+    text-decoration: none;
+    margin-left: 6px;
+}
+
+.cookie-banner-link:hover {
+    text-decoration: underline;
+}
+
+.cookie-banner-actions {
+    display: flex;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    border: none;
+    padding: var(--space-2) 18px;
+    border-radius: var(--radius-sm, 6px);
+    font-size: var(--text-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s;
+    white-space: nowrap;
+}
+
+.cookie-btn-accept {
+    background: var(--accent-blue, #4fc3f7);
+    color: #fff;
+}
+
+.cookie-btn-accept:hover {
+    background: #039be5;
+}
+
+.cookie-btn-essential {
+    background: var(--neutral-700, #3a3d50);
+    color: var(--text-primary, #e1e4ed);
+}
+
+.cookie-btn-essential:hover {
+    background: var(--neutral-600, #4a4d60);
+}
+
+/* ---------- Legal links in footer / statusbar ---------- */
+.status-legal-links {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: var(--text-xs);
+}
+
+.status-legal-link {
+    color: var(--text-secondary, #888);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.15s;
+}
+
+.status-legal-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ---------- Terms checkbox in auth modal ---------- */
+.auth-terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin: var(--space-3) 0 var(--space-1);
+    font-size: var(--text-base);
+    color: var(--text-secondary, #aaa);
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.auth-terms-checkbox input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--accent-blue, #4fc3f7);
+}
+
+/* WCAG 2.5.5/2.5.8: expand touch target to >=24px on mobile without
+   changing the visual checkbox size (hit-area overlay). */
+@media (max-width: 768px) {
+    .auth-terms-checkbox input[type="checkbox"] {
+        position: relative;
+    }
+
+    .auth-terms-checkbox input[type="checkbox"]::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.auth-terms-checkbox a {
+    color: var(--accent-blue, #4fc3f7);
+    text-decoration: none;
+}
+
+.auth-terms-checkbox a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .cookie-banner {
+        flex-direction: column;
+        padding: var(--space-3) var(--space-4);
+        gap: 10px;
+    }
+    .cookie-banner-actions {
+        width: 100%;
+    }
+    .cookie-btn {
+        flex: 1;
+    }
+}

@@ -1,0 +1,54 @@
+/* Portfolio panel (P4-3, FRIEND-SCORE-001) — visão multi-site consolidada.
+   Owns .pf-* (CSS File Ownership). Modal base via design-tokens .ecbt-*. */
+
+.portfolio-dialog .pf-summary {
+    display: flex;
+    gap: var(--space-6);
+    padding: var(--space-1) 0 var(--space-4);
+    border-bottom: 1px solid var(--border, rgba(148, 163, 184, 0.2));
+    margin-bottom: var(--space-3);
+}
+.pf-kpi { display: flex; flex-direction: column; }
+.pf-kpi-value { font-size: 22px; font-weight: 700; line-height: 1; }
+.pf-kpi-label { font-size: var(--text-sm); color: var(--text-dim, #94a3b8); text-transform: uppercase; letter-spacing: 0.03em; margin-top: 3px; }
+
+.pf-table { width: 100%; border-collapse: collapse; font-size: var(--text-md); }
+.pf-table thead th {
+    text-align: left;
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-dim, #94a3b8);
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border, rgba(148, 163, 184, 0.25));
+}
+.pf-row { cursor: pointer; transition: background 0.12s ease; }
+.pf-row:hover { background: rgba(148, 163, 184, 0.08); }
+.pf-row:focus-visible { outline: 2px solid var(--primary-300, #5eead4); outline-offset: -2px; }
+.pf-row td { padding: var(--space-2) 10px; border-bottom: 1px solid rgba(148, 163, 184, 0.12); }
+.pf-row--active { background: rgba(94, 234, 212, 0.08); }
+.pf-name { font-weight: 600; }
+.pf-active-badge {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: var(--radius-xl);
+    background: rgba(94, 234, 212, 0.18);
+    color: #5eead4;
+    margin-left: 6px;
+    text-transform: uppercase;
+}
+.pf-eis { font-weight: 700; font-variant-numeric: tabular-nums; }
+.pf-eis-high { color: var(--accent-green); }
+.pf-eis-medium { color: var(--accent-yellow); }
+.pf-eis-low { color: var(--accent-red); }
+.pf-eis-na { color: #94a3b8; }
+.pf-ecbt { font-variant-numeric: tabular-nums; color: var(--text-dim, #cbd5e1); }
+.pf-compliance { text-align: center; font-size: var(--text-lg); }
+.pf-compliance--ok { color: var(--accent-green); }
+.pf-compliance--attention { color: var(--accent-yellow); }
+.pf-compliance--critical { color: var(--accent-red); }
+.pf-compliance--na { color: #94a3b8; }
+.pf-count, .pf-date { font-variant-numeric: tabular-nums; color: var(--text-dim, #94a3b8); }
+.pf-empty, .pf-note { color: var(--text-dim, #94a3b8); font-size: var(--text-base); margin-top: 10px; }
+.pf-note { font-style: italic; }

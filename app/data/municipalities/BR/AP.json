@@ -1,0 +1,82 @@
+[
+    {
+        "codigo_ibge": "1600105",
+        "nome": "Amapá",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600204",
+        "nome": "Calçoene",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600212",
+        "nome": "Cutias",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600238",
+        "nome": "Ferreira Gomes",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600253",
+        "nome": "Itaubal",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600279",
+        "nome": "Laranjal do Jari",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600303",
+        "nome": "Macapá",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600402",
+        "nome": "Mazagão",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600501",
+        "nome": "Oiapoque",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600154",
+        "nome": "Pedra Branca do Amapari",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600535",
+        "nome": "Porto Grande",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600550",
+        "nome": "Pracuúba",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600600",
+        "nome": "Santana",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600055",
+        "nome": "Serra do Navio",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600709",
+        "nome": "Tartarugalzinho",
+        "uf": "AP"
+    },
+    {
+        "codigo_ibge": "1600808",
+        "nome": "Vitória do Jari",
+        "uf": "AP"
+    }
+]

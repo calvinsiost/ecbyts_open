@@ -1,0 +1,117 @@
+.regional-pref-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.regional-pref-banner,
+.regional-pref-preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--window-border, #334155);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--surface-2, #101827) 88%, var(--accent, #38bdf8) 12%);
+    padding: 10px 12px;
+}
+
+.regional-pref-banner > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.regional-pref-banner span,
+.regional-pref-preview span {
+    color: var(--text-muted, #94a3b8);
+    font-size: 12px;
+}
+
+.regional-pref-section {
+    border: 1px solid var(--window-border, #334155);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.regional-pref-section-title {
+    margin-bottom: 10px;
+    color: var(--text-color, #e2e8f0);
+    font-weight: 700;
+}
+
+.regional-pref-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.regional-pref-field,
+.regional-pref-check {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.regional-pref-field span,
+.regional-pref-check span {
+    color: var(--text-muted, #94a3b8);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.regional-pref-field select {
+    width: 100%;
+    min-height: 36px;
+    border: 1px solid var(--window-border, #334155);
+    border-radius: 6px;
+    background: var(--input-bg, #0f172a);
+    color: var(--text-color, #e2e8f0);
+    padding: 0 10px;
+}
+
+.regional-pref-field select:disabled,
+.regional-pref-check input:disabled + span {
+    opacity: 0.55;
+}
+
+.regional-pref-check {
+    justify-content: end;
+    flex-direction: row;
+    align-items: center;
+    min-height: 36px;
+}
+
+.regional-pref-preview {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.regional-pref-preview strong {
+    text-align: right;
+    font-weight: 700;
+}
+
+.lang-dropdown-divider {
+    height: 1px;
+    margin: 6px 8px;
+    background: var(--window-border, #334155);
+}
+
+.lang-option-settings {
+    border-top: 0;
+}
+
+@media (max-width: 720px) {
+    .regional-pref-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .regional-pref-preview {
+        flex-direction: column;
+    }
+
+    .regional-pref-preview strong {
+        text-align: left;
+    }
+}

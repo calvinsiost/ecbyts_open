@@ -1,0 +1,77 @@
+[
+    {
+        "codigo_ibge": "1400050",
+        "nome": "Alto Alegre",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400027",
+        "nome": "Amajari",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400100",
+        "nome": "Boa Vista",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400159",
+        "nome": "Bonfim",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400175",
+        "nome": "Cantá",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400209",
+        "nome": "Caracaraí",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400233",
+        "nome": "Caroebe",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400282",
+        "nome": "Iracema",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400308",
+        "nome": "Mucajaí",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400407",
+        "nome": "Normandia",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400456",
+        "nome": "Pacaraima",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400472",
+        "nome": "Rorainópolis",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400506",
+        "nome": "São João da Baliza",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400605",
+        "nome": "São Luiz do Anauá",
+        "uf": "RR"
+    },
+    {
+        "codigo_ibge": "1400704",
+        "nome": "Uiramutã",
+        "uf": "RR"
+    }
+]

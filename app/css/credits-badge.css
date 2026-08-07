@@ -1,0 +1,559 @@
+/* ================================================================
+   CREDITS BADGE — Indicador de saldo no statusbar + popup
+   Namespace: .credits-*
+   Ownership: app/js/utils/ui/creditsBadge.js
+   ================================================================ */
+
+/* ---------- Badge no statusbar ---------- */
+.status-credits {
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.status-credits:hover {
+    opacity: 0.85;
+}
+
+.credits-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #aaa);
+    padding: 1px 6px;
+    border-radius: var(--radius-sm, 4px);
+    /* Fix UI-BARS: a escala de neutros do tema é INVERTIDA (0=escuro, 900=claro,
+       ver styles.css:308) — --neutral-800 é CLARO (#c5cdd5). Usar --neutral-200
+       (escuro) para o chip não ficar com fundo claro na statusbar escura. */
+    background: var(--neutral-200, #252738);
+    border: 1px solid var(--border, #333);
+}
+
+.credits-badge.credits-warning {
+    border-color: var(--accent-amber, #f59e0b);
+    color: var(--accent-amber, #f59e0b);
+}
+
+.credits-badge.credits-critical {
+    border-color: var(--accent-red, #f93e3e);
+    color: var(--accent-red, #f93e3e);
+    animation: credits-pulse 1.5s ease infinite;
+}
+
+@keyframes credits-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.credits-bar-mini {
+    display: inline-block;
+    width: 32px;
+    height: 4px;
+    /* --neutral-700 é CLARO na escala invertida (ver .credits-badge) — usar
+       --neutral-300 (escuro) para o trilho da barra. */
+    background: var(--neutral-300, #3a3d50);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.credits-bar-fill {
+    display: block;
+    height: 100%;
+    border-radius: var(--radius-sm);
+    transition: width 0.3s ease;
+    background: var(--accent-green, #49cc90);
+}
+
+.credits-count {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.credits-label {
+    font-size: var(--text-xs);
+    opacity: 0.7;
+}
+
+/* ---------- Popup de creditos ---------- */
+.credits-popup {
+    z-index: 300;
+    /* escala invertida: --neutral-900 é CLARO — usar --neutral-100 (escuro) */
+    background: var(--neutral-100, #1a1c2e);
+    border: 1px solid var(--border, #2a2d3e);
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    width: 280px;
+    overflow: hidden;
+    animation: credits-popup-in 0.15s ease;
+}
+
+@keyframes credits-popup-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.credits-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border, #2a2d3e);
+    font-size: var(--text-md);
+    color: var(--text-primary, #e1e4ed);
+}
+
+.credits-popup-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary, #888);
+    font-size: var(--text-xl);
+    cursor: pointer;
+    padding: 0 var(--space-1);
+    line-height: 1;
+}
+
+.credits-popup-close:hover {
+    color: var(--text-primary, #e1e4ed);
+}
+
+.credits-popup-body {
+    padding: 14px;
+}
+
+/* Saldo grande */
+.credits-summary {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.credits-big {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary, #e1e4ed);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+}
+
+.credits-total {
+    font-size: var(--text-lg);
+    font-weight: 400;
+    color: var(--text-secondary, #888);
+}
+
+.credits-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--neutral-300, #3a3d50);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: var(--space-2) 0;
+}
+
+.credits-meta {
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #888);
+}
+
+/* Breakdown por categoria */
+.credits-breakdown {
+    border-top: 1px solid var(--border, #2a2d3e);
+    padding-top: 10px;
+}
+
+.credits-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 0;
+    font-size: var(--text-base);
+    color: var(--text-secondary, #aaa);
+}
+
+.credits-row-icon {
+    width: 14px;
+    text-align: center;
+    font-size: var(--text-xs);
+    color: var(--accent-blue, #4fc3f7);
+}
+
+.credits-row-label {
+    flex: 1;
+}
+
+.credits-row-value {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-primary, #e1e4ed);
+}
+
+/* Footer com botao */
+.credits-popup-footer {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border, #2a2d3e);
+    background: var(--neutral-850, #161822);
+}
+
+.credits-btn-topup {
+    width: 100%;
+    padding: var(--space-2) 0;
+    border: none;
+    border-radius: var(--radius-sm, 6px);
+    background: var(--accent-blue, #4fc3f7);
+    color: #fff;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.credits-btn-topup:hover {
+    background: #039be5;
+}
+
+/* ================================================================
+   CREDITS TOKENS — F1 (CREDITS_TOKEN_METERING_EVALUATION_2026_06_02)
+   Span adicional ao lado do saldo de créditos mostrando token progress
+   por mês (gap G1: "previa do tamanho do token gasto até o momento").
+   ================================================================ */
+.credits-tokens {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1, 4px);
+    padding: 2px var(--space-2, 8px);
+    margin-left: var(--space-2, 8px);
+    border-radius: var(--radius-sm, 6px);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.credits-tokens--green {
+    color: var(--accent-green, #49cc90);
+}
+
+.credits-tokens--amber {
+    color: var(--accent-amber, #f59e0b);
+    background: rgba(245, 158, 11, 0.12);
+}
+
+.credits-tokens--red {
+    color: var(--accent-red, #f93e3e);
+    background: rgba(249, 62, 62, 0.15);
+}
+
+.credits-tokens--muted {
+    color: var(--text-muted, rgba(255, 255, 255, 0.45));
+}
+
+/* ================================================================
+   CREDITS PROJECTION — F3 (CREDITS_TOKEN_METERING_EVALUATION_2026_06_02)
+   Bloco de projeção mensal no popup do badge (gap G2: simulador
+   "se você continuar nesse ritmo, gastará R$ Y no fim do mês").
+   ================================================================ */
+.credits-projection {
+    margin-top: var(--space-3, 12px);
+    padding: var(--space-3, 12px);
+    border-radius: var(--radius-md, 8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--text-muted, rgba(255, 255, 255, 0.3));
+    font-size: var(--text-base);
+    line-height: 1.4;
+}
+
+.credits-projection-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2, 8px);
+    margin-bottom: var(--space-2, 8px);
+    font-size: var(--text-md);
+    color: var(--text-primary, #fff);
+}
+
+.credits-projection-icon {
+    font-size: var(--text-lg);
+    line-height: 1;
+}
+
+.credits-projection-message {
+    color: var(--text-secondary, rgba(255, 255, 255, 0.75));
+    word-break: break-word;
+}
+
+.credits-projection-warning {
+    margin-top: var(--space-2, 8px);
+    padding: var(--space-2, 8px);
+    background: rgba(249, 62, 62, 0.1);
+    border-radius: var(--radius-sm, 6px);
+    color: var(--accent-red, #f93e3e);
+    font-weight: 500;
+    font-size: var(--text-sm);
+}
+
+.credits-projection--ok {
+    border-left-color: var(--accent-green, #49cc90);
+}
+
+.credits-projection--warn {
+    border-left-color: var(--accent-amber, #f59e0b);
+    background: rgba(245, 158, 11, 0.06);
+}
+
+.credits-projection--exceed {
+    border-left-color: var(--accent-red, #f93e3e);
+    background: rgba(249, 62, 62, 0.08);
+}
+
+.credits-projection--unlimited {
+    border-left-color: var(--accent-blue, #4fc3f7);
+}
+
+/* ================================================================
+   CREDITS HISTORY — F4b (CREDITS_TOKEN_METERING_EVALUATION_2026_06_02)
+   Tabela 6 meses no popup do badge + botão download CSV.
+   ================================================================ */
+.credits-history {
+    margin-top: var(--space-3, 12px);
+    padding: var(--space-3, 12px);
+    border-radius: var(--radius-md, 8px);
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid var(--accent-blue, #4fc3f7);
+    font-size: var(--text-base);
+}
+
+.credits-history-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1, 4px);
+    margin-bottom: var(--space-2, 8px);
+}
+
+.credits-history-header strong {
+    color: var(--text-primary, #fff);
+    font-size: var(--text-md);
+}
+
+.credits-history-summary {
+    color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+    font-size: var(--text-sm);
+}
+
+.credits-history-loading,
+.credits-history-empty,
+.credits-history-error {
+    color: var(--text-muted, rgba(255, 255, 255, 0.5));
+    font-size: var(--text-sm);
+    text-align: center;
+    padding: var(--space-2, 8px) 0;
+}
+
+.credits-history-error {
+    color: var(--accent-red, #f93e3e);
+}
+
+.credits-history-delta {
+    margin-bottom: var(--space-2, 8px);
+    padding: var(--space-2, 8px);
+    border-radius: var(--radius-sm, 6px);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+.credits-history-delta--up {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--accent-amber, #f59e0b);
+}
+
+.credits-history-delta--down {
+    background: rgba(73, 204, 144, 0.1);
+    color: var(--accent-green, #49cc90);
+}
+
+.credits-history-delta--flat {
+    color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+.credits-history-table {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.credits-history-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: var(--space-2, 8px);
+    padding: var(--space-1) var(--space-2, 8px);
+    border-radius: var(--radius-sm, 6px);
+    background: rgba(255, 255, 255, 0.03);
+    font-size: var(--text-sm);
+    align-items: center;
+}
+
+.credits-history-row--empty {
+    opacity: 0.4;
+}
+
+.credits-history-month {
+    color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+    font-family: monospace;
+}
+
+.credits-history-tokens {
+    color: var(--text-primary, #fff);
+    text-align: center;
+}
+
+.credits-history-brl {
+    color: var(--accent-blue, #4fc3f7);
+    text-align: right;
+    font-weight: 500;
+}
+
+/* Botão download CSV */
+.credits-btn-csv {
+    flex: 1;
+    padding: 6px var(--space-3, 12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-sm, 6px);
+    background: transparent;
+    color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+    font-size: var(--text-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.credits-btn-csv:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-primary, #fff);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.credits-btn-csv:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ================================================================
+   CREDITS RECOMMENDATION — F6 (CREDITS_TOKEN_METERING_EVALUATION_2026_06_02)
+   Sugestão automática de plano ótimo baseado em projeção mensal.
+   Gap G6: comparativo PAYG vs Subscription que Calvin pediu.
+   ================================================================ */
+.credits-recommendation {
+    display: flex;
+    gap: var(--space-2, 8px);
+    margin-top: var(--space-2, 8px);
+    padding: var(--space-3, 12px);
+    border-radius: var(--radius-md, 8px);
+    background: rgba(79, 195, 247, 0.08);
+    border-left: 3px solid var(--accent-blue, #4fc3f7);
+    font-size: var(--text-base);
+    align-items: flex-start;
+}
+
+.credits-recommendation-icon {
+    font-size: var(--text-xl);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.credits-recommendation-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1, 4px);
+}
+
+.credits-recommendation-content strong {
+    color: var(--accent-blue, #4fc3f7);
+    font-size: var(--text-md);
+}
+
+.credits-recommendation-message {
+    color: var(--text-secondary, rgba(255, 255, 255, 0.85));
+    line-height: 1.4;
+}
+
+.credits-recommendation--switch {
+    background: rgba(73, 204, 144, 0.08);
+    border-left-color: var(--accent-green, #49cc90);
+}
+
+.credits-recommendation--switch strong {
+    color: var(--accent-green, #49cc90);
+}
+
+/* ============================================================
+   CBMD-001 F3.2 (claude - ui 2026-06-11) — balance badge statusbar.
+   Namespace .credits-balance-* (ownership .credits-* deste arquivo).
+   Flag CONFIG.FEATURES.BALANCE_BADGE (default OFF até D1 GO).
+   ============================================================ */
+.credits-balance-badge {
+    cursor: pointer;
+    font-variant-numeric: tabular-nums;
+    padding: 0 var(--space-2);
+    border-left: 1px solid rgba(148, 163, 184, 0.25);
+    white-space: nowrap;
+}
+
+/* D1 ON 2026-06-11: ícone ● via ::before (no-emoji rule) — SÓ o ponto leva a
+   cor semântica do tier (paleta canônica HUD); o valor fica neutro legível. */
+.credits-balance-badge::before {
+    content: '● ';
+}
+
+.credits-balance-badge[data-tier='unknown']::before {
+    content: '◌ ';
+    color: #94a3b8;
+}
+
+.credits-balance-badge[data-tier='ok']::before {
+    color: var(--accent-green);
+}
+
+.credits-balance-badge[data-tier='info']::before {
+    color: var(--accent-yellow);
+}
+
+.credits-balance-badge[data-tier='warn']::before {
+    color: var(--accent-yellow);
+}
+
+/* WCAG 1.4.11 (não-texto ≥3:1): o ponto ● do tier crit usa vermelho claro —
+   --accent-red (#b91c1c, calibrado p/ fundo CLARO) mede 2.76:1 no statusbar
+   escuro (--window-dark #0f172a); #f87171 mede 6.45:1. */
+.credits-balance-badge[data-tier='crit']::before,
+.credits-balance-badge[data-tier='blocked']::before {
+    color: #f87171;
+}
+
+/* WCAG 1.4.3 (texto ≥4.5:1, fonte 11px): --accent-orange (#b45309) mede
+   3.56:1 no statusbar escuro; #fbbf24 mede 10.69:1. */
+.credits-balance-badge[data-tier='warn'] {
+    color: #fbbf24;
+}
+
+/* WCAG 1.4.3: --accent-red (#b91c1c) mede 2.76:1 no statusbar escuro;
+   #f87171 mede 6.45:1. */
+.credits-balance-badge[data-tier='crit'],
+.credits-balance-badge[data-tier='blocked'] {
+    color: #f87171;
+    font-weight: 700;
+}
+
+/* WCAG 2.4.7 — foco visível no badge (agora role="button" tabindex="0"). */
+.credits-balance-badge:focus-visible {
+    outline: 2px solid var(--accent-bright, #60a5fa);
+    outline-offset: 1px;
+    border-radius: 4px;
+}
+
+.credits-balance-badge[data-freshness='stale'],
+.credits-balance-badge[data-freshness='outdated'] {
+    opacity: 0.75;
+    font-style: italic;
+}

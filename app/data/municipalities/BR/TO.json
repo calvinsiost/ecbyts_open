@@ -1,0 +1,697 @@
+[
+    {
+        "codigo_ibge": "1700251",
+        "nome": "Abreulândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1700301",
+        "nome": "Aguiarnópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1700350",
+        "nome": "Aliança do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1700400",
+        "nome": "Almas",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1700707",
+        "nome": "Alvorada",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1701002",
+        "nome": "Ananás",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1701051",
+        "nome": "Angico",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1701101",
+        "nome": "Aparecida do Rio Negro",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1701309",
+        "nome": "Aragominas",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1701903",
+        "nome": "Araguacema",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702000",
+        "nome": "Araguaçu",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702109",
+        "nome": "Araguaína",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702158",
+        "nome": "Araguanã",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702208",
+        "nome": "Araguatins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702307",
+        "nome": "Arapoema",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702406",
+        "nome": "Arraias",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702554",
+        "nome": "Augustinópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702703",
+        "nome": "Aurora do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1702901",
+        "nome": "Axixá do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703008",
+        "nome": "Babaçulândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703057",
+        "nome": "Bandeirantes do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703073",
+        "nome": "Barra do Ouro",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703107",
+        "nome": "Barrolândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703206",
+        "nome": "Bernardo Sayão",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703305",
+        "nome": "Bom Jesus do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703602",
+        "nome": "Brasilândia do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703701",
+        "nome": "Brejinho de Nazaré",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703800",
+        "nome": "Buriti do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703826",
+        "nome": "Cachoeirinha",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703842",
+        "nome": "Campos Lindos",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703867",
+        "nome": "Cariri do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703883",
+        "nome": "Carmolândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703891",
+        "nome": "Carrasco Bonito",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1703909",
+        "nome": "Caseara",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1704105",
+        "nome": "Centenário",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1705102",
+        "nome": "Chapada da Natividade",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1704600",
+        "nome": "Chapada de Areia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1705508",
+        "nome": "Colinas do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1716703",
+        "nome": "Colméia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1705557",
+        "nome": "Combinado",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1705607",
+        "nome": "Conceição do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1706001",
+        "nome": "Couto Magalhães",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1706100",
+        "nome": "Cristalândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1706258",
+        "nome": "Crixás do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1706506",
+        "nome": "Darcinópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1707009",
+        "nome": "Dianópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1707108",
+        "nome": "Divinópolis do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1707207",
+        "nome": "Dois Irmãos do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1707306",
+        "nome": "Dueré",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1707405",
+        "nome": "Esperantina",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1707553",
+        "nome": "Fátima",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1707652",
+        "nome": "Figueirópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1707702",
+        "nome": "Filadélfia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1708205",
+        "nome": "Formoso do Araguaia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1708304",
+        "nome": "Goianorte",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1709005",
+        "nome": "Goiatins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1709302",
+        "nome": "Guaraí",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1709500",
+        "nome": "Gurupi",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1709807",
+        "nome": "Ipueiras",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1710508",
+        "nome": "Itacajá",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1710706",
+        "nome": "Itaguatins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1710904",
+        "nome": "Itapiratins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1711100",
+        "nome": "Itaporã do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1711506",
+        "nome": "Jaú do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1711803",
+        "nome": "Juarina",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1711902",
+        "nome": "Lagoa da Confusão",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1711951",
+        "nome": "Lagoa do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1712009",
+        "nome": "Lajeado",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1712157",
+        "nome": "Lavandeira",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1712405",
+        "nome": "Lizarda",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1712454",
+        "nome": "Luzinópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1712504",
+        "nome": "Marianópolis do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1712702",
+        "nome": "Mateiros",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1712801",
+        "nome": "Maurilândia do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1713205",
+        "nome": "Miracema do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1713304",
+        "nome": "Miranorte",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1713601",
+        "nome": "Monte do Carmo",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1713700",
+        "nome": "Monte Santo do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1713957",
+        "nome": "Muricilândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1714203",
+        "nome": "Natividade",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1714302",
+        "nome": "Nazaré",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1714880",
+        "nome": "Nova Olinda",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1715002",
+        "nome": "Nova Rosalândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1715101",
+        "nome": "Novo Acordo",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1715150",
+        "nome": "Novo Alegre",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1715259",
+        "nome": "Novo Jardim",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1715507",
+        "nome": "Oliveira de Fátima",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1721000",
+        "nome": "Palmas",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1715705",
+        "nome": "Palmeirante",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1713809",
+        "nome": "Palmeiras do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1715754",
+        "nome": "Palmeirópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1716109",
+        "nome": "Paraíso do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1716208",
+        "nome": "Paranã",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1716307",
+        "nome": "Pau D'Arco",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1716505",
+        "nome": "Pedro Afonso",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1716604",
+        "nome": "Peixe",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1716653",
+        "nome": "Pequizeiro",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1717008",
+        "nome": "Pindorama do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1717206",
+        "nome": "Piraquê",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1717503",
+        "nome": "Pium",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1717800",
+        "nome": "Ponte Alta do Bom Jesus",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1717909",
+        "nome": "Ponte Alta do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718006",
+        "nome": "Porto Alegre do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718204",
+        "nome": "Porto Nacional",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718303",
+        "nome": "Praia Norte",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718402",
+        "nome": "Presidente Kennedy",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718451",
+        "nome": "Pugmil",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718501",
+        "nome": "Recursolândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718550",
+        "nome": "Riachinho",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718659",
+        "nome": "Rio da Conceição",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718709",
+        "nome": "Rio dos Bois",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718758",
+        "nome": "Rio Sono",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718808",
+        "nome": "Sampaio",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718840",
+        "nome": "Sandolândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718865",
+        "nome": "Santa Fé do Araguaia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718881",
+        "nome": "Santa Maria do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718899",
+        "nome": "Santa Rita do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1718907",
+        "nome": "Santa Rosa do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1719004",
+        "nome": "Santa Tereza do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720002",
+        "nome": "Santa Terezinha do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720101",
+        "nome": "São Bento do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720150",
+        "nome": "São Félix do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720200",
+        "nome": "São Miguel do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720259",
+        "nome": "São Salvador do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720309",
+        "nome": "São Sebastião do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720499",
+        "nome": "São Valério",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720655",
+        "nome": "Silvanópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720804",
+        "nome": "Sítio Novo do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720853",
+        "nome": "Sucupira",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1708254",
+        "nome": "Tabocão",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720903",
+        "nome": "Taguatinga",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720937",
+        "nome": "Taipas do Tocantins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1720978",
+        "nome": "Talismã",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1721109",
+        "nome": "Tocantínia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1721208",
+        "nome": "Tocantinópolis",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1721257",
+        "nome": "Tupirama",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1721307",
+        "nome": "Tupiratins",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1722081",
+        "nome": "Wanderlândia",
+        "uf": "TO"
+    },
+    {
+        "codigo_ibge": "1722107",
+        "nome": "Xambioá",
+        "uf": "TO"
+    }
+]

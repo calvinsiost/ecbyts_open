@@ -1,0 +1,197 @@
+/* EcoTools Modal — C1 */
+
+/* ── Modal sizing ─────────────────────────────────────────── */
+#eco-tools-modal .modal-dialog {
+    width: min(680px, 92vw);
+    max-height: 84vh;
+}
+
+#eco-tools-modal .modal-body {
+    max-height: clamp(280px, 60vh, 560px);
+    padding: var(--space-4) var(--space-5);
+}
+
+/* ── Hint banner ──────────────────────────────────────────── */
+.eco-tools-hint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-50);
+    border: 1px solid var(--primary-100);
+    border-radius: var(--radius-lg);
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    font-size: var(--text-base);
+    color: var(--neutral-600);
+    line-height: 1.45;
+}
+
+.eco-tools-hint-icon {
+    font-size: var(--text-xl);
+    flex-shrink: 0;
+    color: var(--primary-500);
+}
+
+.eco-tools-hint em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--primary-600);
+    background: var(--primary-100);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: var(--text-sm);
+}
+
+/* ── Empty state ──────────────────────────────────────────── */
+.eco-tools-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px var(--space-5) 32px;
+    gap: 10px;
+    text-align: center;
+}
+
+.eco-tools-empty-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-xl);
+    background: var(--neutral-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--neutral-400);
+    margin-bottom: var(--space-1);
+}
+
+.eco-tools-empty-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--neutral-700);
+}
+
+.eco-tools-empty-sub {
+    font-size: var(--text-base);
+    color: var(--neutral-500);
+    max-width: var(--ecbt-content-narrow, 340px);
+    line-height: 1.5;
+}
+
+.eco-tools-empty-cmd {
+    font-family: 'Courier New', monospace;
+    font-size: var(--text-sm);
+    background: var(--neutral-100);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    padding: 6px var(--space-3);
+    color: var(--neutral-700);
+    margin-top: var(--space-1);
+}
+
+/* ── Tools grid ───────────────────────────────────────────── */
+.eco-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+/* ── Tool card ────────────────────────────────────────────── */
+.eco-tool-card {
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    padding: 13px 14px;
+    background: var(--neutral-0);
+    transition: box-shadow 0.15s, border-color 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.eco-tool-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--neutral-300);
+}
+
+.eco-tool-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-2);
+}
+
+.eco-tool-name {
+    font-weight: 600;
+    font-size: var(--text-md);
+    color: var(--neutral-800);
+    line-height: 1.3;
+    flex: 1;
+}
+
+.eco-tool-date {
+    font-size: var(--text-xs);
+    color: var(--neutral-400);
+    white-space: nowrap;
+    padding-top: 2px;
+}
+
+.eco-tool-description {
+    font-size: var(--text-base);
+    color: var(--neutral-500);
+    line-height: 1.45;
+    flex: 1;
+}
+
+.eco-tool-actions {
+    display: flex;
+    gap: 6px;
+    padding-top: 2px;
+}
+
+/* ── Preview area ─────────────────────────────────────────── */
+.eco-tools-preview-wrap {
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    margin-top: 14px;
+}
+
+.eco-tools-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 14px;
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.eco-tools-preview-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--neutral-500);
+}
+
+.eco-tools-preview-frame {
+    border: none;
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    background: var(--neutral-0);
+}
+
+/* .btn-xs — canonical definition in styles.css */
+
+/* ── Modal dialog base (sem .modal class) ─────────────────── */
+#eco-tools-modal .modal-dialog {
+    background: var(--neutral-0);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: modalSlideIn 0.2s ease;
+}

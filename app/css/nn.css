@@ -1,0 +1,286 @@
+/* ================================================================
+   NEURAL NETWORK MANAGER — Panel styles
+   Estilos para o modal de gerenciamento de redes neurais
+   ================================================================ */
+
+.nn-empty {
+    text-align: center;
+    padding: 40px var(--space-5);
+    color: var(--window-muted);
+}
+
+.nn-empty-hint {
+    font-size: var(--text-base);
+    margin: var(--space-2) 0 var(--space-4);
+    opacity: 0.7;
+}
+
+.nn-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--space-3);
+}
+
+.nn-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nn-card {
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.nn-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--neutral-100);
+}
+
+.nn-card-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    font-size: var(--text-md);
+}
+
+.nn-card-id {
+    font-family: monospace;
+    color: var(--primary-text);
+}
+
+.nn-badge {
+    font-size: var(--text-xs);
+    padding: 2px var(--space-2);
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.nn-status-trained {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--accent-green);
+}
+
+.nn-status-untrained {
+    background: rgba(250, 204, 21, 0.15);
+    color: var(--accent-yellow);
+}
+
+.nn-card-actions {
+    display: flex;
+    gap: var(--space-1);
+}
+
+.nn-card-body {
+    padding: 10px 14px;
+}
+
+.nn-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 3px 0;
+    font-size: var(--text-base);
+}
+
+.nn-card-label {
+    color: var(--window-muted);
+    flex-shrink: 0;
+}
+
+.nn-card-value {
+    color: var(--window-text);
+    text-align: right;
+    font-family: monospace;
+    font-size: var(--text-sm);
+}
+
+.nn-card-classes {
+    max-width: clamp(200px, 80vw, 280px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ----------------------------------------------------------------
+   Create form — Formulario de criacao modernizado
+   ---------------------------------------------------------------- */
+
+.nn-form {
+    padding: var(--space-2) 0;
+}
+
+.nn-form h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-4);
+    font-size: var(--text-lg);
+}
+
+.nn-form .form-group label {
+    display: block;
+    font-size: var(--text-base);
+    color: var(--window-muted);
+    margin-bottom: 6px;
+}
+
+.nn-form .form-control {
+    border-radius: var(--radius-xl);
+    padding: 10px 14px;
+    border: 1px solid var(--neutral-300);
+    background: var(--neutral-0);
+    color: var(--window-text);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.nn-form .form-control:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-primary) 25%, transparent);
+    outline: none;
+}
+
+/* Topology group — agrupamento visual Input→Hidden→Output */
+.nn-topology-group {
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3) 14px 14px;
+    margin: var(--space-3) 0;
+}
+
+.nn-topology-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--window-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.nn-topology-row {
+    display: flex;
+    gap: var(--space-2);
+    align-items: flex-end;
+}
+
+.nn-topology-row .form-group {
+    flex: 1;
+}
+
+.nn-topology-arrow {
+    flex: 0 0 auto;
+    font-size: var(--text-2xl);
+    color: var(--neutral-400);
+    padding-bottom: 10px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.nn-form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.nn-form-row .form-group {
+    flex: 1;
+}
+
+.nn-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--neutral-200);
+}
+
+/* ----------------------------------------------------------------
+   Dynamic hidden layers builder — Construtor de camadas ocultas
+   ---------------------------------------------------------------- */
+
+.nn-topology-fixed {
+    flex: 0 0 auto;
+    min-width: 70px;
+}
+
+#nn-hidden-layers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    align-items: flex-end;
+    flex: 1;
+}
+
+.nn-hidden-layer-row {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-1);
+}
+
+.nn-hidden-layer-row .form-group {
+    min-width: 60px;
+    max-width: clamp(60px, 22vw, 85px);
+}
+
+.nn-remove-layer-btn {
+    padding: var(--space-1) 6px;
+    margin-bottom: var(--space-2);
+    color: var(--accent-red);
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: background 0.15s;
+}
+
+.nn-remove-layer-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.nn-topology-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-2);
+}
+
+.nn-param-count {
+    font-size: var(--text-sm);
+    font-family: monospace;
+    color: var(--neutral-400);
+}
+
+/* Compact panel variant — Variante compacta para o side panel */
+#nn-panel-hidden-layers {
+    display: inline-flex;
+    gap: 2px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nn-panel-hidden-input,
+.nn-topo-hidden-input {
+    width: 48px;
+}
+
+.nn-panel-remove-layer {
+    cursor: pointer;
+    color: var(--accent-red);
+    font-size: var(--text-base);
+    line-height: 1;
+    padding: 0 2px;
+    opacity: 0.7;
+    transition: opacity 0.15s;
+}
+
+.nn-panel-remove-layer:hover {
+    opacity: 1;
+}

@@ -1,0 +1,11 @@
+export declare function listSavedDomains(...args: any[]): Promise<any>;
+export declare function getDomain(...args: any[]): Promise<any>;
+export declare function saveDomain(...args: any[]): Promise<any>;
+export declare function deleteDomain(...args: any[]): Promise<any>;
+export declare function duplicateDomain(...args: any[]): Promise<any>;
+export declare function setActiveDomainIds(...args: any[]): Promise<any>;
+export declare function getActiveDomainIds(...args: any[]): Promise<any>;
+export declare function mapIngestionToEntities(...args: any[]): any;
+export declare function mapEngineResultsToViolations(...args: any[]): any;
+export declare function runActiveDomainValidation(...args: any[]): Promise<any>;
+export declare function testDomainAgainstData(...args: any[]): any;

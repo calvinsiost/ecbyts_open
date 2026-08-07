@@ -1,0 +1,473 @@
+/* compliance-banner.css — SPEC_MODEL_BASELINE_COMPLIANCE_PRESET §5.1
+ * Banner persistente acima do statusbar, sempre visível em TODAS as views.
+ * Owned by core/compliance/_bannerMarkupPure.ts (BANNER_*_CSS_CLASS canonical).
+ */
+
+#compliance-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* VISION-UX-001 RF-2 (claude - adm 2026-06-11): padding-right 88px reserva
+       o slot do mascot FAB (.ai-widget-fab: right 20px + 56px largura + folga)
+       — em 1400×900 o FAB cobria o botão "Detalhes" (WCAG 2.5.8 alvo de
+       clique). Evidência: tests/screenshots/journey/01c-pos-termos.png. */
+    padding: 6px 88px 6px 12px;
+    background: var(--cb-bg, #0b1220);
+    border-top: 1px solid var(--cb-border, #1f2937);
+    color: var(--cb-fg, #e5e7eb);
+    font-size: var(--text-base);
+    line-height: 1.4;
+    user-select: none;
+    z-index: 15;
+}
+
+#compliance-banner .cb-chips {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+#compliance-banner .cb-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 2px var(--space-2);
+    background: rgba(20, 184, 166, 0.08);
+    border: 1px solid var(--cb-border, #1f2937);
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+}
+
+#compliance-banner .cb-flag {
+    font-size: var(--text-lg);
+    line-height: 1;
+}
+
+#compliance-banner .cb-label {
+    font-weight: 600;
+}
+
+#compliance-banner .cb-trust {
+    color: var(--cb-trust-ok, #10b981);
+    font-weight: 700;
+    font-size: var(--text-sm);
+}
+
+#compliance-banner .cb-chip-sep {
+    color: var(--cb-sep, #6b7280);
+    font-size: var(--text-xs);
+    margin: 0 2px;
+}
+
+#compliance-banner .cb-flyout {
+    background: var(--cb-flyout-bg, #1f2937);
+    border: 1px solid var(--cb-border, #1f2937);
+    color: var(--cb-fg, #e5e7eb);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: var(--text-sm);
+}
+#compliance-banner .cb-flyout:hover { background: #374151; }
+
+#compliance-banner .cb-separator {
+    color: var(--cb-sep, #4b5563);
+    margin: 0 var(--space-1);
+}
+
+#compliance-banner .cb-indicator-pair {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#compliance-banner .cb-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+}
+
+#compliance-banner .cb-icon { font-size: var(--text-md); }
+
+#compliance-banner .cb-details {
+    background: transparent;
+    border: 1px solid var(--cb-border, #374151);
+    color: var(--cb-fg, #93c5fd);
+    padding: var(--space-1) 10px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    transition: background 0.15s;
+}
+#compliance-banner .cb-details:hover { background: rgba(147, 197, 253, 0.08); }
+
+/* ── 5 estados visuais (B7 / RF8) ─────────────────────────────────────── */
+
+#compliance-banner.cb-state-none { background: #111827; color: #9ca3af; }
+#compliance-banner.cb-state-active { background: #0b1220; }
+#compliance-banner.cb-state-mismatch {
+    background: #451a03;
+    border-top-color: var(--accent-orange);
+    color: #fde68a;
+}
+#compliance-banner.cb-state-outdated {
+    background: #422006;
+    border-top-color: #d97706;
+    color: #fed7aa;
+}
+#compliance-banner.cb-state-revoked {
+    background: #4b1d1d;
+    border-top-color: var(--accent-red);
+    color: #fca5a5;
+}
+
+/* Indicator pair: preset chip + conformity chip (RF9 / B1 / ADR A6) */
+#compliance-banner .cb-preset-active { background: rgba(20, 184, 166, 0.12); color: #5eead4; }
+#compliance-banner .cb-conformity-ok { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; }
+#compliance-banner .cb-conformity-warnings { background: rgba(245, 158, 11, 0.15); color: #fde68a; }
+#compliance-banner .cb-conformity-viola { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
+#compliance-banner .cb-conformity-nao_calculado { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
+
+/* Trust badge variantes */
+#compliance-banner .cb-trust:not(:empty) { /* default cb-trust-ok cor */ }
+
+/* ── 3 tiers responsive (B10 / RF17) ──────────────────────────────────── */
+
+/* VISION-UX-001 RF-2: padding-right 88px em TODOS os tiers — os tiers
+   sobrescreviam o padding base e o mascot FAB (56px + right 20px) voltava
+   a cobrir o botão "Detalhes" (WCAG 2.5.8). */
+#compliance-banner.cb-tier-full { padding: var(--space-2) 88px var(--space-2) 14px; font-size: var(--text-base); }
+#compliance-banner.cb-tier-medium { padding: 6px 88px 6px 10px; font-size: var(--text-sm); }
+#compliance-banner.cb-tier-medium .cb-label { max-width: var(--ecbt-input-md); overflow: hidden; text-overflow: ellipsis; }
+#compliance-banner.cb-tier-mini { padding: var(--space-1) 88px var(--space-1) var(--space-2); font-size: var(--text-xs); }
+#compliance-banner.cb-tier-mini .cb-label { max-width: var(--ecbt-input-xs); overflow: hidden; text-overflow: ellipsis; }
+#compliance-banner.cb-tier-mini .cb-indicator-label { display: none; } /* só ícone */
+#compliance-banner.cb-tier-mini .cb-details { padding: 3px 6px; font-size: var(--text-xs); }
+
+/* ── Empty state ─────────────────────────────────────────────────────── */
+#compliance-banner .cb-none-msg {
+    flex: 1;
+    color: var(--cb-fg-muted, #9ca3af);
+    font-style: italic;
+}
+
+/* ── Mobile @media (B10 final fallback) ──────────────────────────────── */
+@media (max-width: 768px) {
+    #compliance-banner { font-size: var(--text-sm); padding: 5px 10px; }
+    #compliance-banner .cb-chip { padding: 2px 6px; }
+}
+@media (max-width: 480px) {
+    #compliance-banner { font-size: var(--text-xs); padding: var(--space-1) var(--space-2); gap: 6px; }
+    #compliance-banner .cb-indicator-label { display: none; }
+    #compliance-banner .cb-details { padding: 2px 6px; }
+}
+
+/* ── B3 fix: Modal Detalhes — sections + footer buttons ─────────────── */
+.compliance-details-dialog {
+    padding: var(--space-6) 28px 22px;
+    color: var(--cb-fg, #e5e7eb);
+}
+.compliance-details-dialog .cb-details-header {
+    margin: 0 0 18px;
+    padding: 0 0 var(--space-3);
+    border-bottom: 1px solid var(--cb-border, #1f2937);
+}
+.compliance-details-dialog .cb-details-title {
+    margin: 0 0 var(--space-1);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+}
+.compliance-details-dialog .cb-details-subtitle {
+    margin: 0;
+    font-size: var(--text-base);
+    opacity: 0.7;
+}
+.compliance-details-dialog .cb-details-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0 0 22px;
+}
+.compliance-details-dialog .cb-details-section {
+    background: rgba(16, 185, 129, 0.04);
+    border: 1px solid var(--cb-border, #1f2937);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+}
+.compliance-details-dialog .cb-details-section-title {
+    margin: 0 0 10px;
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--cb-trust-ok, #10b981);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.compliance-details-dialog .cb-details-section-rows {
+    margin: 0;
+    display: grid;
+    grid-template-columns: minmax(140px, max-content) 1fr;
+    gap: 6px 14px;
+    font-size: var(--text-base);
+}
+.compliance-details-dialog .cb-details-section-rows dt {
+    opacity: 0.65;
+    font-weight: 500;
+}
+.compliance-details-dialog .cb-details-section-rows dd {
+    margin: 0;
+    word-break: break-word;
+}
+.compliance-details-dialog .cb-details-row-mono {
+    font-family: 'SF Mono', Consolas, Menlo, monospace;
+    font-size: 11.5px;
+    color: var(--cb-fg, #e5e7eb);
+}
+.compliance-details-dialog .cb-details-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--cb-border, #1f2937);
+}
+.compliance-details-dialog .cb-details-btn {
+    padding: 6px 14px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+.compliance-details-dialog .cb-details-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.compliance-details-dialog .cb-details-btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+.compliance-details-dialog .cb-details-btn--primary {
+    background: var(--cb-trust-ok, #10b981);
+    color: #0b1220;
+    border: 1px solid var(--cb-trust-ok, #10b981);
+    font-weight: 600;
+}
+.compliance-details-dialog .cb-details-btn--primary:hover:not(:disabled) {
+    background: #34d399;
+    border-color: #34d399;
+}
+.compliance-details-dialog .cb-details-btn--secondary {
+    background: transparent;
+    color: var(--cb-fg, #e5e7eb);
+    border: 1px solid #374151;
+}
+.compliance-details-dialog .cb-details-btn--secondary:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #6b7280;
+}
+.compliance-details-dialog .cb-details-btn--danger {
+    background: transparent;
+    color: #f87171;
+    border: 1px solid var(--accent-red);
+}
+.compliance-details-dialog .cb-details-btn--danger:hover:not(:disabled) {
+    background: rgba(248, 113, 113, 0.1);
+    border-color: var(--accent-red);
+}
+
+/* ================================================================
+ * AR-2 (HUD-UX-PAIN-DRAINAGE #1) — banner render unificado
+ * complianceUiBootstrap.ts (PRESET-IN-CONSTELLATION) aderindo ao
+ * contrato de classes .cb-* da §5.1 — zero style inline no banner.
+ * ================================================================ */
+
+/* Variante in-view: banner mora DENTRO de #constellation-view-preset
+ * (não é a faixa fixed acima do statusbar). padding-left 96px reserva
+ * o slot do FAB ⌘K (.cmd-palette-fab). */
+#compliance-banner.cb-in-view {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 14px 8px 96px;
+    color: var(--cb-fg, #e5e7eb);
+    font-size: var(--text-base, 12px);
+    font-family: inherit;
+    user-select: none;
+    overflow-y: auto;
+    max-height: 100%;
+    background: transparent;
+    border-top: none;
+    z-index: auto;
+}
+
+/* Linha de chips (grupos por binding + indicador de conformidade) */
+#compliance-banner .cb-chips-row {
+    display: flex;
+    gap: var(--space-1, 4px);
+    flex: 1;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+
+#compliance-banner .cb-group {
+    display: inline-flex;
+    gap: var(--space-1, 4px);
+    align-items: center;
+    padding: 2px var(--space-1, 4px);
+    border-radius: var(--radius-md, 4px);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+#compliance-banner .cb-group-sep {
+    opacity: 0.3;
+    font-size: var(--text-lg, 14px);
+    margin: 0 2px;
+}
+
+/* Chip cabeçalho do preset (clicável → Gerenciador) */
+#compliance-banner .cb-chip-preset {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: var(--radius-md, 4px);
+    font-size: var(--text-base, 12px);
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+}
+
+#compliance-banner .cb-chip-flag {
+    display: inline-flex;
+    align-items: center;
+}
+
+#compliance-banner .cb-scope-tag {
+    opacity: 0.7;
+    font-style: normal;
+    font-size: var(--text-xs, 10px);
+}
+
+/* Chip de componente do preset (norma/GWP/taxonomia/…) — cor por kind */
+#compliance-banner .cb-component-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1, 4px);
+    padding: 2px var(--space-2, 8px);
+    border-radius: var(--radius-sm, 3px);
+    font-size: var(--text-sm, 11px);
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: inherit;
+    background: rgba(148, 163, 184, 0.12);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    color: var(--text-secondary, #94a3b8);
+}
+#compliance-banner .cb-component-chip .cb-comp-icon { font-size: var(--text-xs, 10px); line-height: 1; }
+#compliance-banner .cb-kind-legal             { background: color-mix(in srgb, var(--cb-kind-legal, #10b981) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-legal, #10b981) 40%, transparent); color: var(--cb-kind-legal, #10b981); }
+#compliance-banner .cb-kind-gwp               { background: color-mix(in srgb, var(--cb-kind-gwp, #f59e0b) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-gwp, #f59e0b) 40%, transparent); color: var(--cb-kind-gwp, #f59e0b); }
+#compliance-banner .cb-kind-emission-registry { background: color-mix(in srgb, var(--cb-kind-emission-registry, #f97316) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-emission-registry, #f97316) 40%, transparent); color: var(--cb-kind-emission-registry, #f97316); }
+#compliance-banner .cb-kind-taxonomy          { background: color-mix(in srgb, var(--cb-kind-taxonomy, #8b5cf6) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-taxonomy, #8b5cf6) 40%, transparent); color: var(--cb-kind-taxonomy, #8b5cf6); }
+#compliance-banner .cb-kind-validation        { background: color-mix(in srgb, var(--cb-kind-validation, #3b82f6) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-validation, #3b82f6) 40%, transparent); color: var(--cb-kind-validation, #3b82f6); }
+#compliance-banner .cb-kind-report-template   { background: color-mix(in srgb, var(--cb-kind-report-template, #06b6d4) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-report-template, #06b6d4) 40%, transparent); color: var(--cb-kind-report-template, #06b6d4); }
+#compliance-banner .cb-kind-eis-weights       { background: color-mix(in srgb, var(--cb-kind-eis-weights, #a855f7) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-eis-weights, #a855f7) 40%, transparent); color: var(--cb-kind-eis-weights, #a855f7); }
+#compliance-banner .cb-kind-crs               { background: color-mix(in srgb, var(--cb-kind-crs, #0ea5e9) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-crs, #0ea5e9) 40%, transparent); color: var(--cb-kind-crs, #0ea5e9); }
+#compliance-banner .cb-kind-retention         { background: color-mix(in srgb, var(--cb-kind-retention, #6366f1) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-retention, #6366f1) 40%, transparent); color: var(--cb-kind-retention, #6366f1); }
+#compliance-banner .cb-kind-currency          { background: color-mix(in srgb, var(--cb-kind-currency, #22c55e) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-currency, #22c55e) 40%, transparent); color: var(--cb-kind-currency, #22c55e); }
+#compliance-banner .cb-kind-lang              { background: color-mix(in srgb, var(--cb-kind-lang, #94a3b8) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-lang, #94a3b8) 40%, transparent); color: var(--cb-kind-lang, #94a3b8); }
+#compliance-banner .cb-kind-exposure-limit    { background: color-mix(in srgb, var(--cb-kind-exposure-limit, #dc2626) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-exposure-limit, #dc2626) 50%, transparent); color: var(--cb-kind-exposure-limit, #dc2626); }
+#compliance-banner .cb-kind-health-protocol   { background: color-mix(in srgb, var(--cb-kind-health-protocol, #e11d48) 12%, transparent); border-color: color-mix(in srgb, var(--cb-kind-health-protocol, #e11d48) 50%, transparent); color: var(--cb-kind-health-protocol, #e11d48); }
+
+/* "+N" overflow de chips + grupo colapsável */
+#compliance-banner .cb-chip-overflow {
+    padding: 2px var(--space-2, 8px);
+    background: rgba(148, 163, 184, 0.12);
+    color: rgba(203, 213, 225, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 10px;
+    font-size: var(--text-sm, 11px);
+    cursor: pointer;
+    font-family: inherit;
+}
+#compliance-banner .cb-overflow-group {
+    display: none;
+    gap: var(--space-1, 4px);
+    align-items: center;
+}
+#compliance-banner .cb-overflow-group.cb-open { display: inline-flex; }
+
+/* Indicador de conformidade (auto-cálculo P1-7) — cor por tone */
+#compliance-banner .cb-indicator-dot { opacity: 0.6; font-size: var(--text-sm, 11px); }
+#compliance-banner .cb-conformity { font-size: var(--text-sm, 11px); }
+#compliance-banner .cb-tone-green   { color: #22c55e; }
+#compliance-banner .cb-tone-red     { color: #ef4444; }
+#compliance-banner .cb-tone-muted   { color: rgba(148, 163, 184, 0.7); }
+#compliance-banner .cb-tone-neutral { color: rgba(255, 255, 255, 0.8); }
+
+/* Botões do banner (Detalhes / Gerenciar / Escolher preset) */
+#compliance-banner .cb-btn {
+    padding: 4px 12px;
+    border-radius: var(--radius-md, 4px);
+    font-size: var(--text-base, 12px);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+#compliance-banner .cb-btn:active { transform: translateY(1px); }
+#compliance-banner .cb-btn--primary {
+    background: var(--cb-trust-ok, #10b981);
+    color: #0b1220;
+    border: 1px solid var(--cb-trust-ok, #10b981);
+    font-weight: 600;
+}
+#compliance-banner .cb-btn--primary:hover { background: #34d399; border-color: #34d399; }
+#compliance-banner .cb-btn--secondary {
+    background: transparent;
+    color: var(--cb-fg, #e5e7eb);
+    border: 1px solid #374151;
+    font-weight: 500;
+}
+#compliance-banner .cb-btn--secondary:hover { background: rgba(255, 255, 255, 0.06); border-color: #6b7280; }
+
+/* Toggle "Realçar violações" — amarelo canônico HUD (#eab308) */
+#compliance-banner .cb-violations-toggle {
+    padding: 4px 12px;
+    background: transparent;
+    color: #eab308;
+    border: 1px solid #eab308;
+    border-radius: var(--radius-md, 4px);
+    font-size: var(--text-base, 12px);
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+}
+#compliance-banner .cb-violations-toggle:hover { background: rgba(234, 179, 8, 0.12); }
+#compliance-banner .cb-violations-toggle.cb-on {
+    background: #eab308;
+    color: #0f141e;
+    font-weight: 700;
+}
+#compliance-banner .cb-violations-toggle.cb-on:hover { background: #ca9a06; }
+
+/* Empty state — aviso inteiro clicável (W4.2/D05) */
+#compliance-banner .cb-empty-msg {
+    flex: 1;
+    opacity: 0.85;
+    cursor: pointer;
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+}

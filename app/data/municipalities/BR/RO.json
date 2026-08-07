@@ -1,0 +1,262 @@
+[
+    {
+        "codigo_ibge": "1100015",
+        "nome": "Alta Floresta D'Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100379",
+        "nome": "Alto Alegre dos Parecis",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100403",
+        "nome": "Alto Paraíso",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100346",
+        "nome": "Alvorada D'Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100023",
+        "nome": "Ariquemes",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100452",
+        "nome": "Buritis",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100031",
+        "nome": "Cabixi",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100601",
+        "nome": "Cacaulândia",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100049",
+        "nome": "Cacoal",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100700",
+        "nome": "Campo Novo de Rondônia",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100809",
+        "nome": "Candeias do Jamari",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100908",
+        "nome": "Castanheiras",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100056",
+        "nome": "Cerejeiras",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100924",
+        "nome": "Chupinguaia",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100064",
+        "nome": "Colorado do Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100072",
+        "nome": "Corumbiara",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100080",
+        "nome": "Costa Marques",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100940",
+        "nome": "Cujubim",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100098",
+        "nome": "Espigão D'Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101005",
+        "nome": "Governador Jorge Teixeira",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100106",
+        "nome": "Guajará-Mirim",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101104",
+        "nome": "Itapuã do Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100114",
+        "nome": "Jaru",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100122",
+        "nome": "Ji-Paraná",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100130",
+        "nome": "Machadinho D'Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101203",
+        "nome": "Ministro Andreazza",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101302",
+        "nome": "Mirante da Serra",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101401",
+        "nome": "Monte Negro",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100148",
+        "nome": "Nova Brasilândia D'Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100338",
+        "nome": "Nova Mamoré",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101435",
+        "nome": "Nova União",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100502",
+        "nome": "Novo Horizonte do Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100155",
+        "nome": "Ouro Preto do Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101450",
+        "nome": "Parecis",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100189",
+        "nome": "Pimenta Bueno",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101468",
+        "nome": "Pimenteiras do Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100205",
+        "nome": "Porto Velho",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100254",
+        "nome": "Presidente Médici",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101476",
+        "nome": "Primavera de Rondônia",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100262",
+        "nome": "Rio Crespo",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100288",
+        "nome": "Rolim de Moura",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100296",
+        "nome": "Santa Luzia D'Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101484",
+        "nome": "São Felipe D'Oeste",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101492",
+        "nome": "São Francisco do Guaporé",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100320",
+        "nome": "São Miguel do Guaporé",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101500",
+        "nome": "Seringueiras",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101559",
+        "nome": "Teixeirópolis",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101609",
+        "nome": "Theobroma",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101708",
+        "nome": "Urupá",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101757",
+        "nome": "Vale do Anari",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1101807",
+        "nome": "Vale do Paraíso",
+        "uf": "RO"
+    },
+    {
+        "codigo_ibge": "1100304",
+        "nome": "Vilhena",
+        "uf": "RO"
+    }
+]

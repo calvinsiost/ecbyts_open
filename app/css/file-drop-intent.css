@@ -1,0 +1,95 @@
+/* This file is part of ecbyts/ECBT (Environmental & Occupational Core Byte Tools).
+ * Copyright (C) 2026 Calvin Stefan Iost
+ * Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0-only).
+ *
+ * FILE-DROP-INTENT-001 — dialog de intenção de drop (.fdi-*).
+ * Base estrutural vem dos design tokens (.ecbt-overlay/.ecbt-dialog--sm);
+ * aqui só o conteúdo específico do dialog + highlight do dropzone ecby.
+ * Spec: docs/specs/features/SPEC_FILE_DROP_INTENT_DIALOG.md
+ */
+
+.fdi-body {
+    padding: var(--space-4) var(--space-5) 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fdi-file-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.fdi-file-name {
+    font-weight: 600;
+    font-size: var(--text-md);
+    word-break: break-all;
+}
+
+.fdi-file-meta {
+    font-size: var(--text-base);
+    color: var(--text-secondary, #9aa3b2);
+    white-space: nowrap;
+}
+
+/* M2 — linha de preview "~N linhas × M colunas" (async, pode ficar vazia) */
+.fdi-preview {
+    font-size: var(--text-base);
+    color: var(--text-secondary, #9aa3b2);
+    min-height: 16px;
+}
+
+.fdi-multi-note {
+    font-size: var(--text-sm);
+    color: var(--warning-500, #e5a50a);
+}
+
+.fdi-choices {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: 6px 0 2px;
+}
+
+.fdi-choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: var(--text-md);
+    line-height: 1.4;
+}
+
+.fdi-choice input[type='checkbox'] {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.fdi-choice-hint {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #8b93a3);
+    margin-top: 2px;
+}
+
+.fdi-choice--disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.fdi-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color, #333);
+}
+
+/* M4 — highlight do painel ecby durante dragover com arquivos (WCAG: não
+ * depende só de cor — borda tracejada é mudança de forma). */
+.fdi-drop-hover {
+    outline: 2px dashed var(--accent-color, #4f8cff);
+    outline-offset: -2px;
+}

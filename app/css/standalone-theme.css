@@ -1,0 +1,27 @@
+/* ================================================================
+   STANDALONE THEME — COMMERCIAL-READINESS-DOD T8.6.
+
+   Overrides CLAROS das variáveis das páginas standalone
+   (terms/privacy/pricing/landing). O tema escuro (default) continua
+   vindo do bloco :root inline de cada página; este arquivo só define
+   o par [data-theme="light"], aplicado por js/boot/standalone-theme.js
+   conforme a preferência do usuário (localStorage 'ecbyts-theme' —
+   o mesmo sistema de temas do app).
+
+   Paleta clara MEDIDA WCAG AA (ratio calculado, 2026-07-17):
+     --text-primary  #1b1e2c = 15.3:1 sobre --bg-primary (16.6:1 branco)
+     --text-secondary #565b70 = 6.7:1 sobre branco (6.2:1 --bg-primary)
+     --accent #3b5bdb = 5.7:1 sobre branco · branco sobre --accent = 5.7:1
+     --accent-green #15803d = 5.0:1 sobre branco · branco = 5.0:1
+   ================================================================ */
+:root[data-theme='light'] {
+    --bg-primary: #f4f6fb;
+    --bg-card: #ffffff;
+    --bg-card-highlight: #eceff7;
+    --border: #d4d9e5;
+    --text-primary: #1b1e2c;
+    --text-secondary: #565b70;
+    --accent: #3b5bdb;
+    --accent-hover: #2f49b8;
+    --accent-green: #15803d;
+}

@@ -1,0 +1,1928 @@
+{
+    "sourceDoc": "E/CN.3/2026/12",
+    "sourceTitle": "Global indicator framework for the Sustainable Development Goals and targets of the 2030 Agenda for Sustainable Development (after 2026 refinement)",
+    "sourceUrl": "unstats.un.org/sdgs/indicators/Global-Indicator-Framework-after-2026-refinement_Eng.pdf",
+    "extractedAt": "2026-07-08",
+    "totalIndicators": 251,
+    "domainRelevantCount": 23,
+    "indicators": [
+        {
+            "code": "1.1.1",
+            "goal": 1,
+            "target": "1.1",
+            "titleEn": "Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.2.1",
+            "goal": 1,
+            "target": "1.2",
+            "titleEn": "Proportion of population living below the national poverty line, by sex and age",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.2.2",
+            "goal": 1,
+            "target": "1.2",
+            "titleEn": "Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.3.1",
+            "goal": 1,
+            "target": "1.3",
+            "titleEn": "Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.4.1",
+            "goal": 1,
+            "target": "1.4",
+            "titleEn": "Proportion of population living in households with access to basic services",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.4.2",
+            "goal": 1,
+            "target": "1.4",
+            "titleEn": "Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.5.1",
+            "goal": 1,
+            "target": "1.5",
+            "titleEn": "Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.5.2",
+            "goal": 1,
+            "target": "1.5",
+            "titleEn": "Direct economic loss attributed to disasters in relation to global gross domestic product (GDP)",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.5.3",
+            "goal": 1,
+            "target": "1.5",
+            "titleEn": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.5.4",
+            "goal": 1,
+            "target": "1.5",
+            "titleEn": "Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.a.1",
+            "goal": 1,
+            "target": "1.a",
+            "titleEn": "Total official development assistance grants that focus on poverty reduction as a share of the recipient country’s gross national income",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.a.2",
+            "goal": 1,
+            "target": "1.a",
+            "titleEn": "Proportion of total government spending on essential services (education, health and social protection)",
+            "domainRelevant": false
+        },
+        {
+            "code": "1.b.1",
+            "goal": 1,
+            "target": "1.b",
+            "titleEn": "Pro-poor public social spending",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.1.1",
+            "goal": 2,
+            "target": "2.1",
+            "titleEn": "Prevalence of undernourishment",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.1.2",
+            "goal": 2,
+            "target": "2.1",
+            "titleEn": "Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.2.1",
+            "goal": 2,
+            "target": "2.2",
+            "titleEn": "Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.2.2",
+            "goal": 2,
+            "target": "2.2",
+            "titleEn": "Prevalence of malnutrition (weight for height >+2 or <-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.2.3",
+            "goal": 2,
+            "target": "2.2",
+            "titleEn": "Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.2.4",
+            "goal": 2,
+            "target": "2.2",
+            "titleEn": "Prevalence of minimum dietary diversity, by population group (children aged 6 to 23 months and non- pregnant women aged 15 to 49 years)",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.3.1",
+            "goal": 2,
+            "target": "2.3",
+            "titleEn": "Volume of production per labour unit by classes of farming/pastoral/forestry enterprise size",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.3.2",
+            "goal": 2,
+            "target": "2.3",
+            "titleEn": "Average income of small-scale food producers, by sex and indigenous status",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.4.1",
+            "goal": 2,
+            "target": "2.4",
+            "titleEn": "Proportion of agricultural area under productive and sustainable agriculture",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.5.1",
+            "goal": 2,
+            "target": "2.5",
+            "titleEn": "Number of (a) plant and (b) animal genetic resources for food and agriculture secured in either medium- or long-term conservation facilities",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.5.2",
+            "goal": 2,
+            "target": "2.5",
+            "titleEn": "Proportion of local and transboundary breeds classified as being at risk of extinction",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.a.1",
+            "goal": 2,
+            "target": "2.a",
+            "titleEn": "The agriculture orientation index for government expenditures",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.a.2",
+            "goal": 2,
+            "target": "2.a",
+            "titleEn": "Total official flows (official development assistance plus other official flows) to the agriculture sector",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.b.1",
+            "goal": 2,
+            "target": "2.b",
+            "titleEn": "Agricultural export subsidies",
+            "domainRelevant": false
+        },
+        {
+            "code": "2.c.1",
+            "goal": 2,
+            "target": "2.c",
+            "titleEn": "Indicator of food price anomalies",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.1.1",
+            "goal": 3,
+            "target": "3.1",
+            "titleEn": "Maternal mortality ratio",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.1.2",
+            "goal": 3,
+            "target": "3.1",
+            "titleEn": "Proportion of births attended by skilled health personnel",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.2.1",
+            "goal": 3,
+            "target": "3.2",
+            "titleEn": "Under-5 mortality rate",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.2.2",
+            "goal": 3,
+            "target": "3.2",
+            "titleEn": "Neonatal mortality rate",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.3.1",
+            "goal": 3,
+            "target": "3.3",
+            "titleEn": "Number of new HIV infections per 1,000 uninfected population, by sex, age and key populations",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.3.2",
+            "goal": 3,
+            "target": "3.3",
+            "titleEn": "Tuberculosis incidence per 100,000 population",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.3.3",
+            "goal": 3,
+            "target": "3.3",
+            "titleEn": "Malaria incidence per 1,000 population",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.3.4",
+            "goal": 3,
+            "target": "3.3",
+            "titleEn": "Hepatitis B incidence per 100,000 population",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.3.5",
+            "goal": 3,
+            "target": "3.3",
+            "titleEn": "Number of people requiring interventions against neglected tropical diseases",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.4.1",
+            "goal": 3,
+            "target": "3.4",
+            "titleEn": "Mortality rate attributed to cardiovascular disease, cancer, diabetes or chronic respiratory disease",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.4.2",
+            "goal": 3,
+            "target": "3.4",
+            "titleEn": "Suicide mortality rate",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.5.1",
+            "goal": 3,
+            "target": "3.5",
+            "titleEn": "Coverage of treatment interventions (pharmacological, psychosocial and rehabilitation and aftercare services) for substance use disorders",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.5.2",
+            "goal": 3,
+            "target": "3.5",
+            "titleEn": "Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.6.1",
+            "goal": 3,
+            "target": "3.6",
+            "titleEn": "Death rate due to road traffic injuries",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.7.1",
+            "goal": 3,
+            "target": "3.7",
+            "titleEn": "Proportion of women of reproductive age (aged 15–49 years) who have their need for family planning satisfied with modern methods",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.7.2",
+            "goal": 3,
+            "target": "3.7",
+            "titleEn": "Adolescent birth rate (aged 10 –14 years; aged 15–19 years) per 1,000 women in that age group",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.8.1",
+            "goal": 3,
+            "target": "3.8",
+            "titleEn": "Coverage of essential health services",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.8.2",
+            "goal": 3,
+            "target": "3.8",
+            "titleEn": "Proportion of population with positive out-of- pocket household expenditures on health exceeding 40 per cent of household discretionary budget",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.9.1",
+            "goal": 3,
+            "target": "3.9",
+            "titleEn": "Mortality rate attributed to household and ambient air pollution",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "index_normalized",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "3.9.2",
+            "goal": 3,
+            "target": "3.9",
+            "titleEn": "Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (exposure to unsafe Water, Sanitation and Hygiene for All (WASH) services)",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "index_normalized",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "3.9.3",
+            "goal": 3,
+            "target": "3.9",
+            "titleEn": "Mortality rate attributed to unintentional poisoning",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "index_normalized",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "3.a.1",
+            "goal": 3,
+            "target": "3.a",
+            "titleEn": "Age-standardized prevalence of current tobacco use among persons aged 15 years and older",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.b.1",
+            "goal": 3,
+            "target": "3.b",
+            "titleEn": "Proportion of the target population covered by all vaccines included in their national programme",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.b.2",
+            "goal": 3,
+            "target": "3.b",
+            "titleEn": "Total net official development assistance to medical research and basic health sectors developing countries to use to the full the provisions in the Agreement on Trade-Related Aspects of Intellectual Property Rights regarding flexibilities to protect public health, and, in particular, provide access to medicines for all",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.b.3",
+            "goal": 3,
+            "target": "3.b",
+            "titleEn": "Health product access index",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.c.1",
+            "goal": 3,
+            "target": "3.c",
+            "titleEn": "Health worker density and distribution",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.d.1",
+            "goal": 3,
+            "target": "3.d",
+            "titleEn": "International Health Regulations (IHR) capacity and health emergency preparedness",
+            "domainRelevant": false
+        },
+        {
+            "code": "3.d.2",
+            "goal": 3,
+            "target": "3.d",
+            "titleEn": "Percentage of bloodstream infections due to selected antimicrobial-resistant organisms",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.1.1",
+            "goal": 4,
+            "target": "4.1",
+            "titleEn": "Proportion of children and young people (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.1.2",
+            "goal": 4,
+            "target": "4.1",
+            "titleEn": "Completion rate (primary education, lower secondary education, upper secondary education)",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.2.1",
+            "goal": 4,
+            "target": "4.2",
+            "titleEn": "Proportion of children aged 24–59 months who are developmentally on track in health, learning and psychosocial well-being, by sex",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.2.2",
+            "goal": 4,
+            "target": "4.2",
+            "titleEn": "Participation rate in organized learning (one year before the official primary entry age), by sex",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.3.1",
+            "goal": 4,
+            "target": "4.3",
+            "titleEn": "Participation rate of youth and adults in formal and non-formal education and training in the previous 12 months, by sex",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.4.1",
+            "goal": 4,
+            "target": "4.4",
+            "titleEn": "Proportion of youth and adults with information and communications technology (ICT) skills, by type of skill",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.5.1",
+            "goal": 4,
+            "target": "4.5",
+            "titleEn": "Parity indices (female/male, rural/urban, bottom/top wealth quintile and others such as disability status, indigenous peoples and conflict-affected, as data become available) for all education indicators on this list that can be disaggregated",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.6.1",
+            "goal": 4,
+            "target": "4.6",
+            "titleEn": "Youth/adult literacy rate",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.7.1",
+            "goal": 4,
+            "target": "4.7",
+            "titleEn": "Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.a.1",
+            "goal": 4,
+            "target": "4.a",
+            "titleEn": "Proportion of schools offering basic services, by type of service",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.b.1",
+            "goal": 4,
+            "target": "4.b",
+            "titleEn": "Volume of official development assistance flows for scholarships",
+            "domainRelevant": false
+        },
+        {
+            "code": "4.c.1",
+            "goal": 4,
+            "target": "4.c",
+            "titleEn": "Proportion of teachers with the minimum required qualifications, by education level",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.1.1",
+            "goal": 5,
+            "target": "5.1",
+            "titleEn": "Whether or not legal frameworks are in place to promote, enforce and monitor equality and non-discrimination on the basis of sex",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.2.1",
+            "goal": 5,
+            "target": "5.2",
+            "titleEn": "Proportion of ever-partnered women and girls aged 15 years and older subjected to physical, sexual or psychological violence by a current or former intimate partner in the previous 12 months, by form of violence and by age",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.2.2",
+            "goal": 5,
+            "target": "5.2",
+            "titleEn": "Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.3.1",
+            "goal": 5,
+            "target": "5.3",
+            "titleEn": "Proportion of women aged 20–24 years who were married or in a union before age 15 and before age 18",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.3.2",
+            "goal": 5,
+            "target": "5.3",
+            "titleEn": "Proportion of girls and women aged 15–49 years who have undergone female genital mutilation, by age",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.4.1",
+            "goal": 5,
+            "target": "5.4",
+            "titleEn": "Proportion of time spent on unpaid domestic and care work, by sex, age and location",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.5.1",
+            "goal": 5,
+            "target": "5.5",
+            "titleEn": "Proportion of seats held by women in (a) national parliaments and (b) local governments",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.5.2",
+            "goal": 5,
+            "target": "5.5",
+            "titleEn": "Proportion of women in managerial positions",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.6.1",
+            "goal": 5,
+            "target": "5.6",
+            "titleEn": "Proportion of women aged 15–49 years who make their own informed decisions regarding sexual relations, contraceptive use and reproductive health care",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.6.2",
+            "goal": 5,
+            "target": "5.6",
+            "titleEn": "Number of countries with laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.a.1",
+            "goal": 5,
+            "target": "5.a",
+            "titleEn": "(a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rights-bearers of agricultural land, by type of tenure",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.a.2",
+            "goal": 5,
+            "target": "5.a",
+            "titleEn": "Proportion of countries where the legal framework (including customary law) guarantees women’s equal rights to land ownership and/or control",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.b.1",
+            "goal": 5,
+            "target": "5.b",
+            "titleEn": "Proportion of individuals who own a mobile telephone, by sex",
+            "domainRelevant": false
+        },
+        {
+            "code": "5.c.1",
+            "goal": 5,
+            "target": "5.c",
+            "titleEn": "Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment",
+            "domainRelevant": false
+        },
+        {
+            "code": "6.1.1",
+            "goal": 6,
+            "target": "6.1",
+            "titleEn": "Proportion of population using safely managed drinking water services",
+            "domainRelevant": false
+        },
+        {
+            "code": "6.2.1",
+            "goal": 6,
+            "target": "6.2",
+            "titleEn": "Proportion of population using (a) safely managed sanitation services and (b) a hand-washing facility with soap and water",
+            "domainRelevant": false
+        },
+        {
+            "code": "6.3.1",
+            "goal": 6,
+            "target": "6.3",
+            "titleEn": "Proportion of domestic and industrial wastewater flows safely treated",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "percent",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "6.3.2",
+            "goal": 6,
+            "target": "6.3",
+            "titleEn": "Proportion of bodies of water with good ambient water quality",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "percent",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "measured"
+        },
+        {
+            "code": "6.4.1",
+            "goal": 6,
+            "target": "6.4",
+            "titleEn": "Change in water-use efficiency over time",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "ratio_delta",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "6.4.2",
+            "goal": 6,
+            "target": "6.4",
+            "titleEn": "Level of water stress: freshwater withdrawal as a proportion of available freshwater resources",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "percent",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "measured"
+        },
+        {
+            "code": "6.5.1",
+            "goal": 6,
+            "target": "6.5",
+            "titleEn": "Degree of integrated water resources management",
+            "domainRelevant": false
+        },
+        {
+            "code": "6.5.2",
+            "goal": 6,
+            "target": "6.5",
+            "titleEn": "Proportion of transboundary basin area with an operational arrangement for water cooperation",
+            "domainRelevant": false
+        },
+        {
+            "code": "6.6.1",
+            "goal": 6,
+            "target": "6.6",
+            "titleEn": "Change in the extent of water-related ecosystems over time",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "area_delta",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "measured"
+        },
+        {
+            "code": "6.a.1",
+            "goal": 6,
+            "target": "6.a",
+            "titleEn": "Amount of water- and sanitation-related official development assistance that is part of a government- coordinated spending plan",
+            "domainRelevant": false
+        },
+        {
+            "code": "6.b.1",
+            "goal": 6,
+            "target": "6.b",
+            "titleEn": "Proportion of local administrative units with established and operational policies and procedures for participation of local communities in water and sanitation management",
+            "domainRelevant": false
+        },
+        {
+            "code": "7.1.1",
+            "goal": 7,
+            "target": "7.1",
+            "titleEn": "Proportion of population with access to electricity",
+            "domainRelevant": false
+        },
+        {
+            "code": "7.1.2",
+            "goal": 7,
+            "target": "7.1",
+            "titleEn": "Proportion of population with primary reliance on clean fuels and technology",
+            "domainRelevant": false
+        },
+        {
+            "code": "7.2.1",
+            "goal": 7,
+            "target": "7.2",
+            "titleEn": "Renewable energy share in the total final energy consumption",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "percent",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "7.3.1",
+            "goal": 7,
+            "target": "7.3",
+            "titleEn": "Energy intensity measured in terms of primary energy and GDP",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "energy_per_value",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "7.a.1",
+            "goal": 7,
+            "target": "7.a",
+            "titleEn": "International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems",
+            "domainRelevant": false
+        },
+        {
+            "code": "7.b.1",
+            "goal": 7,
+            "target": "7.b",
+            "titleEn": "Installed renewable energy-generating capacity in developing and developed countries (in watts per capita)",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.1.1",
+            "goal": 8,
+            "target": "8.1",
+            "titleEn": "Annual growth rate of real GDP per capita",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.2.1",
+            "goal": 8,
+            "target": "8.2",
+            "titleEn": "Annual growth rate of real GDP per employed person",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.3.1",
+            "goal": 8,
+            "target": "8.3",
+            "titleEn": "Proportion of informal employment in total employment, by sector and sex",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.4.1",
+            "goal": 8,
+            "target": "8.4",
+            "titleEn": "Material footprint, material footprint per capita, and material footprint per GDP",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.4.2",
+            "goal": 8,
+            "target": "8.4",
+            "titleEn": "Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.5.1",
+            "goal": 8,
+            "target": "8.5",
+            "titleEn": "Average hourly earnings of employees, by sex, age, occupation and persons with disabilities",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.5.2",
+            "goal": 8,
+            "target": "8.5",
+            "titleEn": "Unemployment rate, by sex, age and persons with disabilities",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.6.1",
+            "goal": 8,
+            "target": "8.6",
+            "titleEn": "Proportion of youth (aged 15–24 years) not in education, employment or training",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.7.1",
+            "goal": 8,
+            "target": "8.7",
+            "titleEn": "Proportion and number of children aged 5–17 years engaged in child labour, by sex and age",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.8.1",
+            "goal": 8,
+            "target": "8.8",
+            "titleEn": "Fatal and non-fatal occupational injuries per 100,000 workers, by sex and migrant status",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "per_100k_workers",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "measured"
+        },
+        {
+            "code": "8.8.2",
+            "goal": 8,
+            "target": "8.8",
+            "titleEn": "Level of national compliance with labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "index_normalized",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "claimed"
+        },
+        {
+            "code": "8.9.1",
+            "goal": 8,
+            "target": "8.9",
+            "titleEn": "Tourism direct GDP as a proportion of total GDP and in growth rate",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.9.2",
+            "goal": 8,
+            "target": "8.9",
+            "titleEn": "Employed persons in the tourism industries",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.10.1",
+            "goal": 8,
+            "target": "8.10",
+            "titleEn": "(a) Number of commercial bank branches per 100,000 adults and (b) number of automated teller machines (ATMs) per 100,000 adults",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.10.2",
+            "goal": 8,
+            "target": "8.10",
+            "titleEn": "Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile-money-service provider",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.a.1",
+            "goal": 8,
+            "target": "8.a",
+            "titleEn": "Aid for Trade commitments and disbursements",
+            "domainRelevant": false
+        },
+        {
+            "code": "8.b.1",
+            "goal": 8,
+            "target": "8.b",
+            "titleEn": "Existence of a developed and operationalized national strategy for youth employment, as a distinct strategy or as part of a national employment strategy",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.1.1",
+            "goal": 9,
+            "target": "9.1",
+            "titleEn": "Proportion of the rural population who live within 2 km of an all-season road",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.1.2",
+            "goal": 9,
+            "target": "9.1",
+            "titleEn": "Passenger and freight volumes, by mode of transport",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.2.1",
+            "goal": 9,
+            "target": "9.2",
+            "titleEn": "Manufacturing value added as a proportion of GDP and per capita",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.2.2",
+            "goal": 9,
+            "target": "9.2",
+            "titleEn": "Manufacturing employment as a proportion of total employment",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.3.1",
+            "goal": 9,
+            "target": "9.3",
+            "titleEn": "Proportion of small-scale industries in total industry value added, based on (a) international classification and (b) national classifications",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.3.2",
+            "goal": 9,
+            "target": "9.3",
+            "titleEn": "Proportion of small-scale industries with a loan or line of credit",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.4.1",
+            "goal": 9,
+            "target": "9.4",
+            "titleEn": "CO2 emission per unit of value added",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "tco2e_per_value",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "9.5.1",
+            "goal": 9,
+            "target": "9.5",
+            "titleEn": "Research and development expenditure as a proportion of GDP",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.5.2",
+            "goal": 9,
+            "target": "9.5",
+            "titleEn": "Researchers (in full-time equivalent) per million inhabitants",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.a.1",
+            "goal": 9,
+            "target": "9.a",
+            "titleEn": "Total official international support (official development assistance plus other official flows) to infrastructure",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.b.1",
+            "goal": 9,
+            "target": "9.b",
+            "titleEn": "Proportion of medium and high-tech industry value added in total value added",
+            "domainRelevant": false
+        },
+        {
+            "code": "9.c.1",
+            "goal": 9,
+            "target": "9.c",
+            "titleEn": "Proportion of population covered by a mobile network, by technology",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.1.1",
+            "goal": 10,
+            "target": "10.1",
+            "titleEn": "Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.2.1",
+            "goal": 10,
+            "target": "10.2",
+            "titleEn": "Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.3.1",
+            "goal": 10,
+            "target": "10.3",
+            "titleEn": "Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.4.1",
+            "goal": 10,
+            "target": "10.4",
+            "titleEn": "Labour share of GDP",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.4.2",
+            "goal": 10,
+            "target": "10.4",
+            "titleEn": "Redistributive impact of fiscal policy on the Gini index",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.5.1",
+            "goal": 10,
+            "target": "10.5",
+            "titleEn": "Financial Soundness Indicators",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.6.1",
+            "goal": 10,
+            "target": "10.6",
+            "titleEn": "Proportion of members and voting rights of developing countries in international organizations",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.7.1",
+            "goal": 10,
+            "target": "10.7",
+            "titleEn": "Recruitment cost borne by employee as a proportion of monthly income earned in country of destination",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.7.2",
+            "goal": 10,
+            "target": "10.7",
+            "titleEn": "Proportion of countries with migration policies that facilitate orderly, safe, regular and responsible migration and mobility of people",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.7.3",
+            "goal": 10,
+            "target": "10.7",
+            "titleEn": "Number of people who died or disappeared in the process of migration towards an international destination",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.7.4",
+            "goal": 10,
+            "target": "10.7",
+            "titleEn": "Proportion of the population who are refugees, by country of origin",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.a.1",
+            "goal": 10,
+            "target": "10.a",
+            "titleEn": "Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.b.1",
+            "goal": 10,
+            "target": "10.b",
+            "titleEn": "Total resource flows for development (e.g. official development assistance, foreign direct investment and other flows)",
+            "domainRelevant": false
+        },
+        {
+            "code": "10.c.1",
+            "goal": 10,
+            "target": "10.c",
+            "titleEn": "Remittance costs as a proportion of the amount remitted",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.1.1",
+            "goal": 11,
+            "target": "11.1",
+            "titleEn": "Proportion of urban population living in slums, informal settlements or inadequate housing",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.2.1",
+            "goal": 11,
+            "target": "11.2",
+            "titleEn": "Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.3.1",
+            "goal": 11,
+            "target": "11.3",
+            "titleEn": "Ratio of land consumption rate to population growth rate",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.3.2",
+            "goal": 11,
+            "target": "11.3",
+            "titleEn": "Proportion of cities with a direct participation structure of civil society in urban planning and management that operate regularly and democratically",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.4.1",
+            "goal": 11,
+            "target": "11.4",
+            "titleEn": "Total per capita expenditure on the preservation, protection and conservation of all cultural and natural heritage, by source of funding (public, private), type of heritage (cultural, natural) and level of government (national, regional, and local/municipal)",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.5.1",
+            "goal": 11,
+            "target": "11.5",
+            "titleEn": "Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.5.2",
+            "goal": 11,
+            "target": "11.5",
+            "titleEn": "Direct economic loss attributed to disasters in relation to global gross domestic product (GDP)",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.5.3",
+            "goal": 11,
+            "target": "11.5",
+            "titleEn": "(a) Damage to critical infrastructure and (b) number of disruptions to basic services, attributed to disasters",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.6.1",
+            "goal": 11,
+            "target": "11.6",
+            "titleEn": "Proportion of municipal solid waste collected and managed in controlled facilities out of total municipal waste generated, by cities",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "percent",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "11.6.2",
+            "goal": 11,
+            "target": "11.6",
+            "titleEn": "Annual mean levels of fine particulate matter (e.g. PM2.5 and PM10) in cities (population weighted)",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "ug_m3",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "11.7.1",
+            "goal": 11,
+            "target": "11.7",
+            "titleEn": "Average share of the built-up area of cities that is open space for public use for all, by sex, age and persons with disabilities",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.7.2",
+            "goal": 11,
+            "target": "11.7",
+            "titleEn": "Proportion of persons victim of non-sexual or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.a.1",
+            "goal": 11,
+            "target": "11.a",
+            "titleEn": "Number of countries that have national urban policies or regional development plans that (a) respond to population dynamics; (b) ensure balanced territorial development; and (c) increase local fiscal space",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.b.1",
+            "goal": 11,
+            "target": "11.b",
+            "titleEn": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.b.2",
+            "goal": 11,
+            "target": "11.b",
+            "titleEn": "Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies",
+            "domainRelevant": false
+        },
+        {
+            "code": "11.c.1",
+            "goal": 11,
+            "target": "11.c",
+            "titleEn": "Total official development assistance and other official flows in support of urban infrastructure or urban infrastructure projects, by sector",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.1.1",
+            "goal": 12,
+            "target": "12.1",
+            "titleEn": "Number of countries developing, adopting or implementing policy instruments aimed at supporting the shift to sustainable consumption and production",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.2.1",
+            "goal": 12,
+            "target": "12.2",
+            "titleEn": "Material footprint, material footprint per capita, and material footprint per GDP",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.2.2",
+            "goal": 12,
+            "target": "12.2",
+            "titleEn": "Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.3.1",
+            "goal": 12,
+            "target": "12.3",
+            "titleEn": "(a) Food loss index and (b) food waste index",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.4.1",
+            "goal": 12,
+            "target": "12.4",
+            "titleEn": "Number of parties to international multilateral environmental agreements on hazardous waste, and other chemicals that meet their commitments and obligations in transmitting information as required by each relevant agreement water and soil in order to minimize their adverse impacts on human health and the environment",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.4.2",
+            "goal": 12,
+            "target": "12.4",
+            "titleEn": "(a) Hazardous waste generated per capita; and (b) proportion of hazardous waste treated, by type of treatment",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "mass_and_percent",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "measured"
+        },
+        {
+            "code": "12.5.1",
+            "goal": 12,
+            "target": "12.5",
+            "titleEn": "National recycling rate, tons of material recycled",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "percent",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "12.6.1",
+            "goal": 12,
+            "target": "12.6",
+            "titleEn": "Number of companies publishing sustainability reports",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.7.1",
+            "goal": 12,
+            "target": "12.7",
+            "titleEn": "Number of countries implementing sustainable public procurement policies and action plans",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.8.1",
+            "goal": 12,
+            "target": "12.8",
+            "titleEn": "Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.a.1",
+            "goal": 12,
+            "target": "12.a",
+            "titleEn": "Installed renewable energy-generating capacity in developing and developed countries (in watts per capita)",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.b.1",
+            "goal": 12,
+            "target": "12.b",
+            "titleEn": "Implementation of standard accounting tools to monitor the economic and environmental aspects of tourism sustainability",
+            "domainRelevant": false
+        },
+        {
+            "code": "12.c.1",
+            "goal": 12,
+            "target": "12.c",
+            "titleEn": "Amount of fossil-fuel subsidies (production and consumption) per unit of GDP",
+            "domainRelevant": false
+        },
+        {
+            "code": "13.1.1",
+            "goal": 13,
+            "target": "13.1",
+            "titleEn": "Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "per_100k_population",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "13.1.2",
+            "goal": 13,
+            "target": "13.1",
+            "titleEn": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030 international, intergovernmental forum for negotiating the global response to climate change.",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "count",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "claimed"
+        },
+        {
+            "code": "13.1.3",
+            "goal": 13,
+            "target": "13.1",
+            "titleEn": "Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies",
+            "domainRelevant": false
+        },
+        {
+            "code": "13.2.1",
+            "goal": 13,
+            "target": "13.2",
+            "titleEn": "Number of countries with reports under the Paris Agreement, as submitted to the secretariat of the United Nations Framework Convention on Climate Change",
+            "domainRelevant": true,
+            "direction": "higher_is_better",
+            "unit": "count",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "claimed"
+        },
+        {
+            "code": "13.2.2",
+            "goal": 13,
+            "target": "13.2",
+            "titleEn": "Total greenhouse gas emissions per year",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "tco2e_per_year",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "estimated"
+        },
+        {
+            "code": "13.3.1",
+            "goal": 13,
+            "target": "13.3",
+            "titleEn": "Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment",
+            "domainRelevant": false
+        },
+        {
+            "code": "13.a.1",
+            "goal": 13,
+            "target": "13.a",
+            "titleEn": "Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025",
+            "domainRelevant": false
+        },
+        {
+            "code": "13.b.1",
+            "goal": 13,
+            "target": "13.b",
+            "titleEn": "Number of least developed countries and small island developing States with reports under the Paris Agreement, as submitted to the secretariat of the United Nations Framework Convention on Climate Change",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.1.1",
+            "goal": 14,
+            "target": "14.1",
+            "titleEn": "(a) Index of coastal eutrophication; and (b) plastic debris density",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "index_and_density",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "measured"
+        },
+        {
+            "code": "14.2.1",
+            "goal": 14,
+            "target": "14.2",
+            "titleEn": "Number of countries using ecosystem-based approaches to managing marine areas",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.3.1",
+            "goal": 14,
+            "target": "14.3",
+            "titleEn": "Average marine acidity (pH) measured at agreed suite of representative sampling stations",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.4.1",
+            "goal": 14,
+            "target": "14.4",
+            "titleEn": "Proportion of fish stocks within biologically sustainable levels",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.5.1",
+            "goal": 14,
+            "target": "14.5",
+            "titleEn": "Coverage of protected areas in relation to marine areas",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.6.1",
+            "goal": 14,
+            "target": "14.6",
+            "titleEn": "Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.7.1",
+            "goal": 14,
+            "target": "14.7",
+            "titleEn": "Sustainable fisheries as a proportion of GDP in small island developing States, least developed countries and all countries",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.a.1",
+            "goal": 14,
+            "target": "14.a",
+            "titleEn": "Proportion of total research budget allocated to research in the field of marine technology",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.b.1",
+            "goal": 14,
+            "target": "14.b",
+            "titleEn": "Degree of application of a legal/regulatory/ policy/institutional framework which recognizes and protects access rights for small-scale fisheries",
+            "domainRelevant": false
+        },
+        {
+            "code": "14.c.1",
+            "goal": 14,
+            "target": "14.c",
+            "titleEn": "Number of countries making progress in ratifying, accepting and implementing through legal, policy and institutional frameworks, ocean-related instruments that implement international law, as reflected in the United Nations Convention on the Law of the Sea, for the conservation and sustainable use of the oceans and their resources the Hong Kong ministerial mandate.",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.1.1",
+            "goal": 15,
+            "target": "15.1",
+            "titleEn": "Forest area as a proportion of total land area",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.1.2",
+            "goal": 15,
+            "target": "15.1",
+            "titleEn": "Proportion of important sites for terrestrial and freshwater biodiversity that are covered by protected areas, by ecosystem type",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.2.1",
+            "goal": 15,
+            "target": "15.2",
+            "titleEn": "Progress towards sustainable forest management",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.3.1",
+            "goal": 15,
+            "target": "15.3",
+            "titleEn": "Proportion of land that is degraded over total land area",
+            "domainRelevant": true,
+            "direction": "lower_is_better",
+            "unit": "percent",
+            "thresholds": {
+                "improve": 0.6,
+                "worsen": 0.4
+            },
+            "tierDefault": "measured"
+        },
+        {
+            "code": "15.4.1",
+            "goal": 15,
+            "target": "15.4",
+            "titleEn": "Coverage by protected areas of important sites for mountain biodiversity",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.4.2",
+            "goal": 15,
+            "target": "15.4",
+            "titleEn": "(a) Mountain Green Cover Index and (b) proportion of degraded mountain land",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.5.1",
+            "goal": 15,
+            "target": "15.5",
+            "titleEn": "Red List Index",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.6.1",
+            "goal": 15,
+            "target": "15.6",
+            "titleEn": "Number of countries that have adopted legislative, administrative and policy frameworks to ensure fair and equitable sharing of benefits",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.7.1",
+            "goal": 15,
+            "target": "15.7",
+            "titleEn": "Proportion of traded wildlife that was poached or illicitly trafficked",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.8.1",
+            "goal": 15,
+            "target": "15.8",
+            "titleEn": "Proportion of countries adopting relevant national legislation and adequately resourcing the prevention or control of invasive alien species",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.9.1",
+            "goal": 15,
+            "target": "15.9",
+            "titleEn": "(a) Number of countries that have established national targets in accordance with or similar to Kunming- Montreal Global Biodiversity Framework Target 14 in their national biodiversity strategy and action plans and the progress reported towards these targets; and (b) integration of biodiversity into national accounting and reporting systems, defined as implementation of the System of Environmental-Economic Accounting",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.a.1",
+            "goal": 15,
+            "target": "15.a",
+            "titleEn": "(a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.b.1",
+            "goal": 15,
+            "target": "15.b",
+            "titleEn": "(a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments",
+            "domainRelevant": false
+        },
+        {
+            "code": "15.c.1",
+            "goal": 15,
+            "target": "15.c",
+            "titleEn": "Proportion of traded wildlife that was poached or illicitly trafficked",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.1.1",
+            "goal": 16,
+            "target": "16.1",
+            "titleEn": "Number of victims of intentional homicide per 100,000 population, by sex and age",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.1.2",
+            "goal": 16,
+            "target": "16.1",
+            "titleEn": "Conflict-related deaths per 100,000 population, by sex, age and cause",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.1.3",
+            "goal": 16,
+            "target": "16.1",
+            "titleEn": "Proportion of population subjected to (a) physical violence, (b) psychological violence and/or (c) sexual violence in the previous 12 months",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.1.4",
+            "goal": 16,
+            "target": "16.1",
+            "titleEn": "Proportion of population that feel safe walking alone around the area they live after dark",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.2.1",
+            "goal": 16,
+            "target": "16.2",
+            "titleEn": "Proportion of children aged 1–17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.2.2",
+            "goal": 16,
+            "target": "16.2",
+            "titleEn": "Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.2.3",
+            "goal": 16,
+            "target": "16.2",
+            "titleEn": "Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.3.1",
+            "goal": 16,
+            "target": "16.3",
+            "titleEn": "Proportion of victims of (a) physical, (b) psychological and/or (c) sexual violence in the previous 12 months who reported their victimization to competent authorities or other officially recognized conflict resolution mechanisms",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.3.2",
+            "goal": 16,
+            "target": "16.3",
+            "titleEn": "Unsentenced detainees as a proportion of overall prison population",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.3.3",
+            "goal": 16,
+            "target": "16.3",
+            "titleEn": "Proportion of the population who have experienced a dispute in the past two years and who accessed a formal or informal dispute resolution mechanism, by type of mechanism",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.4.1",
+            "goal": 16,
+            "target": "16.4",
+            "titleEn": "Total value of inward and outward illicit financial flows (in current United States dollars)",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.4.2",
+            "goal": 16,
+            "target": "16.4",
+            "titleEn": "Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.5.1",
+            "goal": 16,
+            "target": "16.5",
+            "titleEn": "Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.5.2",
+            "goal": 16,
+            "target": "16.5",
+            "titleEn": "Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.6.1",
+            "goal": 16,
+            "target": "16.6",
+            "titleEn": "Primary government expenditures as a proportion of original approved budget, by sector (or by budget codes or similar)",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.6.2",
+            "goal": 16,
+            "target": "16.6",
+            "titleEn": "Proportion of population satisfied with their last experience of public services",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.7.1",
+            "goal": 16,
+            "target": "16.7",
+            "titleEn": "Proportions of positions in national and local institutions, including (a) the legislatures; (b) the public service; and (c) the judiciary, compared to national distributions, by sex, age, persons with disabilities and population groups",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.7.2",
+            "goal": 16,
+            "target": "16.7",
+            "titleEn": "Proportion of population who believe decision- making is inclusive and responsive, by sex, age, disability and population group",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.8.1",
+            "goal": 16,
+            "target": "16.8",
+            "titleEn": "Proportion of members and voting rights of developing countries in international organizations",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.9.1",
+            "goal": 16,
+            "target": "16.9",
+            "titleEn": "Proportion of children under 5 years of age whose births have been registered with a civil authority, by age",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.10.1",
+            "goal": 16,
+            "target": "16.10",
+            "titleEn": "Number of verified cases of killing, kidnapping, enforced disappearance, arbitrary detention and torture of journalists, associated media personnel, trade unionists and human rights advocates in the previous 12 months",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.10.2",
+            "goal": 16,
+            "target": "16.10",
+            "titleEn": "Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.a.1",
+            "goal": 16,
+            "target": "16.a",
+            "titleEn": "Existence of independent national human rights institutions in compliance with the Paris Principles",
+            "domainRelevant": false
+        },
+        {
+            "code": "16.b.1",
+            "goal": 16,
+            "target": "16.b",
+            "titleEn": "Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.1.1",
+            "goal": 17,
+            "target": "17.1",
+            "titleEn": "Total government revenue as a proportion of GDP, by source",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.1.2",
+            "goal": 17,
+            "target": "17.1",
+            "titleEn": "Proportion of domestic budget funded by domestic taxes",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.2.1",
+            "goal": 17,
+            "target": "17.2",
+            "titleEn": "Net official development assistance, total and to least developed countries, as a proportion of the Organization for Economic Cooperation and Development (OECD) Development Assistance Committee donors’ gross national income (GNI)",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.3.1",
+            "goal": 17,
+            "target": "17.3",
+            "titleEn": "Additional financial resources mobilized for developing countries from multiple sources",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.3.2",
+            "goal": 17,
+            "target": "17.3",
+            "titleEn": "Volume of remittances (in United States dollars) as a proportion of total GDP",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.4.1",
+            "goal": 17,
+            "target": "17.4",
+            "titleEn": "Debt service as a proportion of exports of goods, services and primary income",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.5.1",
+            "goal": 17,
+            "target": "17.5",
+            "titleEn": "Number of countries that adopt and implement investment promotion regimes for developing countries, including the least developed countries Technology",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.6.1",
+            "goal": 17,
+            "target": "17.6",
+            "titleEn": "Fixed broadband subscriptions per 100 inhabitants, by speed",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.7.1",
+            "goal": 17,
+            "target": "17.7",
+            "titleEn": "Total amount of funding for developing and developed countries to promote the development, transfer, dissemination and diffusion of environmentally sound technologies",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.8.1",
+            "goal": 17,
+            "target": "17.8",
+            "titleEn": "Proportion of individuals using the Internet Capacity-building",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.9.1",
+            "goal": 17,
+            "target": "17.9",
+            "titleEn": "Dollar value of official development assistance committed to developing countries Trade",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.10.1",
+            "goal": 17,
+            "target": "17.10",
+            "titleEn": "Worldwide weighted tariff-average",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.11.1",
+            "goal": 17,
+            "target": "17.11",
+            "titleEn": "Developing countries’ and least developed countries’ share of global exports",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.12.1",
+            "goal": 17,
+            "target": "17.12",
+            "titleEn": "Weighted average tariffs faced by developing countries, least developed countries and small island developing States Systemic issues Policy and institutional coherence",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.13.1",
+            "goal": 17,
+            "target": "17.13",
+            "titleEn": "Macroeconomic Dashboard",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.14.1",
+            "goal": 17,
+            "target": "17.14",
+            "titleEn": "Number of countries with mechanisms in place to enhance policy coherence of sustainable development",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.15.1",
+            "goal": 17,
+            "target": "17.15",
+            "titleEn": "Extent of use of country-owned results frameworks and planning tools by providers of development cooperation Multi-stakeholder partnerships",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.16.1",
+            "goal": 17,
+            "target": "17.16",
+            "titleEn": "Number of countries reporting progress in multi- stakeholder development effectiveness monitoring frameworks that support the achievement of the Sustainable Development Goals",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.17.1",
+            "goal": 17,
+            "target": "17.17",
+            "titleEn": "Amount in United States dollars committed to public-private partnerships for infrastructure Data, monitoring and accountability",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.18.1",
+            "goal": 17,
+            "target": "17.18",
+            "titleEn": "Statistical capacity indicators",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.18.2",
+            "goal": 17,
+            "target": "17.18",
+            "titleEn": "Number of countries that have national statistical legislation that complies with the Fundamental Principles of Official Statistics",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.18.3",
+            "goal": 17,
+            "target": "17.18",
+            "titleEn": "Number of countries with a national statistical plan that is fully funded and under implementation, by source of funding",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.19.1",
+            "goal": 17,
+            "target": "17.19",
+            "titleEn": "Dollar value of all resources made available to strengthen statistical capacity in developing countries complement gross domestic product, and support statistical capacity-building in developing countries",
+            "domainRelevant": false
+        },
+        {
+            "code": "17.19.2",
+            "goal": 17,
+            "target": "17.19",
+            "titleEn": "Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years; and (b) have achieved 100 per cent birth registration and 80 per cent death registration",
+            "domainRelevant": false
+        }
+    ]
+}

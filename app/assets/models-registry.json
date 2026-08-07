@@ -1,0 +1,750 @@
+{
+    "generated_at": "2026-04-21T02:06:17.143Z",
+    "source": "Modelos3D",
+    "note": "GLBs físicos não commitados no repo (5.7GB+). Pipeline runtime carrega via URL local ou CDN conforme deploy.",
+    "total_models": 89,
+    "total_families": 33,
+    "coverage": 33,
+    "missing_families": [],
+    "families": {
+        "equipment": [
+            {
+                "filename": "aircompressor_texture.glb",
+                "basename": "aircompressor",
+                "sizeBytes": 61365608,
+                "sizeMB": 58.52,
+                "texturizado": true
+            },
+            {
+                "filename": "dieselgenerator_texture.glb",
+                "basename": "dieselgenerator",
+                "sizeBytes": 226126080,
+                "sizeMB": 215.65,
+                "texturizado": true
+            },
+            {
+                "filename": "flexiblehose_texture.glb",
+                "basename": "flexiblehose",
+                "sizeBytes": 57962100,
+                "sizeMB": 55.28,
+                "texturizado": true
+            },
+            {
+                "filename": "motoreletric_texture.glb",
+                "basename": "motoreletric",
+                "sizeBytes": 84573236,
+                "sizeMB": 80.66,
+                "texturizado": true
+            },
+            {
+                "filename": "pcbtranf_texture.glb",
+                "basename": "pcbtranf",
+                "sizeBytes": 72809796,
+                "sizeMB": 69.44,
+                "texturizado": true
+            },
+            {
+                "filename": "turbine_texture.glb",
+                "basename": "turbine",
+                "sizeBytes": 84479684,
+                "sizeMB": 80.57,
+                "texturizado": true
+            },
+            {
+                "filename": "valve_texture.glb",
+                "basename": "valve",
+                "sizeBytes": 38090056,
+                "sizeMB": 36.33,
+                "texturizado": true
+            }
+        ],
+        "vehicle": [
+            {
+                "filename": "ambulance_texture.glb",
+                "basename": "ambulance",
+                "sizeBytes": 86577200,
+                "sizeMB": 82.57,
+                "texturizado": true
+            },
+            {
+                "filename": "caminhao.glb",
+                "basename": "caminhao",
+                "sizeBytes": 42421980,
+                "sizeMB": 40.46,
+                "texturizado": false
+            },
+            {
+                "filename": "car_texture.glb",
+                "basename": "car",
+                "sizeBytes": 34003140,
+                "sizeMB": 32.43,
+                "texturizado": true
+            },
+            {
+                "filename": "firetruck_texture.glb",
+                "basename": "firetruck",
+                "sizeBytes": 71259080,
+                "sizeMB": 67.96,
+                "texturizado": true
+            },
+            {
+                "filename": "haultruck_texture.glb",
+                "basename": "haultruck",
+                "sizeBytes": 98284508,
+                "sizeMB": 93.73,
+                "texturizado": true
+            },
+            {
+                "filename": "tankertruck_texture.glb",
+                "basename": "tankertruck",
+                "sizeBytes": 133178160,
+                "sizeMB": 127.01,
+                "texturizado": true
+            },
+            {
+                "filename": "tanktrucke_texture.glb",
+                "basename": "tanktrucke",
+                "sizeBytes": 133178160,
+                "sizeMB": 127.01,
+                "texturizado": true
+            }
+        ],
+        "habitat": [
+            {
+                "filename": "arvore.glb",
+                "basename": "arvore",
+                "sizeBytes": 145549236,
+                "sizeMB": 138.81,
+                "texturizado": false
+            },
+            {
+                "filename": "bird_texture.glb",
+                "basename": "bird",
+                "sizeBytes": 38009312,
+                "sizeMB": 36.25,
+                "texturizado": true
+            },
+            {
+                "filename": "carnivore_texture.glb",
+                "basename": "carnivore",
+                "sizeBytes": 34376516,
+                "sizeMB": 32.78,
+                "texturizado": true
+            },
+            {
+                "filename": "cat_texture.glb",
+                "basename": "cat",
+                "sizeBytes": 35679744,
+                "sizeMB": 34.03,
+                "texturizado": true
+            },
+            {
+                "filename": "dog_texture.glb",
+                "basename": "dog",
+                "sizeBytes": 33757756,
+                "sizeMB": 32.19,
+                "texturizado": true
+            },
+            {
+                "filename": "fauna.glb",
+                "basename": "fauna",
+                "sizeBytes": 3652964,
+                "sizeMB": 3.48,
+                "texturizado": false
+            },
+            {
+                "filename": "fauna_texturizada.glb",
+                "basename": "fauna",
+                "sizeBytes": 32569428,
+                "sizeMB": 31.06,
+                "texturizado": true
+            },
+            {
+                "filename": "fish_texture.glb",
+                "basename": "fish",
+                "sizeBytes": 34213468,
+                "sizeMB": 32.63,
+                "texturizado": true
+            },
+            {
+                "filename": "flora.glb",
+                "basename": "flora",
+                "sizeBytes": 6306968,
+                "sizeMB": 6.01,
+                "texturizado": false
+            },
+            {
+                "filename": "flora_texturizada.glb",
+                "basename": "flora",
+                "sizeBytes": 42022952,
+                "sizeMB": 40.08,
+                "texturizado": true
+            },
+            {
+                "filename": "frog_texture.glb",
+                "basename": "frog",
+                "sizeBytes": 35311204,
+                "sizeMB": 33.68,
+                "texturizado": true
+            },
+            {
+                "filename": "habitat_texture.glb",
+                "basename": "habitat",
+                "sizeBytes": 85279544,
+                "sizeMB": 81.33,
+                "texturizado": true
+            },
+            {
+                "filename": "reptil_texture.glb",
+                "basename": "reptil",
+                "sizeBytes": 32203828,
+                "sizeMB": 30.71,
+                "texturizado": true
+            },
+            {
+                "filename": "riparianforest_texture.glb",
+                "basename": "riparianforest",
+                "sizeBytes": 254216628,
+                "sizeMB": 242.44,
+                "texturizado": true
+            },
+            {
+                "filename": "tree_texture.glb",
+                "basename": "tree",
+                "sizeBytes": 346023884,
+                "sizeMB": 329.99,
+                "texturizado": true
+            }
+        ],
+        "plume": [
+            {
+                "filename": "atmosphericplume_texture.glb",
+                "basename": "atmosphericplume",
+                "sizeBytes": 21384596,
+                "sizeMB": 20.39,
+                "texturizado": true
+            },
+            {
+                "filename": "plume_texture.glb",
+                "basename": "plume",
+                "sizeBytes": 29511116,
+                "sizeMB": 28.14,
+                "texturizado": true
+            }
+        ],
+        "atmosphere": [
+            {
+                "filename": "atmosphericplume_texture.glb",
+                "basename": "atmosphericplume",
+                "sizeBytes": 21384596,
+                "sizeMB": 20.39,
+                "texturizado": true
+            },
+            {
+                "filename": "cloud_texture.glb",
+                "basename": "cloud",
+                "sizeBytes": 39107080,
+                "sizeMB": 37.3,
+                "texturizado": true
+            }
+        ],
+        "dam": [
+            {
+                "filename": "barragem.glb",
+                "basename": "barragem",
+                "sizeBytes": 7726208,
+                "sizeMB": 7.37,
+                "texturizado": false
+            },
+            {
+                "filename": "barragem_texturizada.glb",
+                "basename": "barragem",
+                "sizeBytes": 41510312,
+                "sizeMB": 39.59,
+                "texturizado": true
+            }
+        ],
+        "blueprint": [
+            {
+                "filename": "blueprint_texture.glb",
+                "basename": "blueprint",
+                "sizeBytes": 129174372,
+                "sizeMB": 123.19,
+                "texturizado": true
+            }
+        ],
+        "boundary": [
+            {
+                "filename": "boundaries_texture.glb",
+                "basename": "boundaries",
+                "sizeBytes": 41918144,
+                "sizeMB": 39.98,
+                "texturizado": true
+            }
+        ],
+        "building": [
+            {
+                "filename": "building_texture.glb",
+                "basename": "building",
+                "sizeBytes": 92077552,
+                "sizeMB": 87.81,
+                "texturizado": true
+            },
+            {
+                "filename": "comercialofficebuilding_texture.glb",
+                "basename": "comercialofficebuilding",
+                "sizeBytes": 58437516,
+                "sizeMB": 55.73,
+                "texturizado": true
+            },
+            {
+                "filename": "galpão.glb",
+                "basename": "galpão",
+                "sizeBytes": 59463372,
+                "sizeMB": 56.71,
+                "texturizado": false
+            },
+            {
+                "filename": "heavyindustrialplant_texture.glb",
+                "basename": "heavyindustrialplant",
+                "sizeBytes": 520489660,
+                "sizeMB": 496.38,
+                "texturizado": true
+            },
+            {
+                "filename": "highrisetower_texture.glb",
+                "basename": "highrisetower",
+                "sizeBytes": 44880724,
+                "sizeMB": 42.8,
+                "texturizado": true
+            },
+            {
+                "filename": "house_texture.glb",
+                "basename": "house",
+                "sizeBytes": 84366248,
+                "sizeMB": 80.46,
+                "texturizado": true
+            },
+            {
+                "filename": "industrialsteelframe_texture.glb",
+                "basename": "industrialsteelframe",
+                "sizeBytes": 205242840,
+                "sizeMB": 195.73,
+                "texturizado": true
+            },
+            {
+                "filename": "industrialunitstructure_texture.glb",
+                "basename": "industrialunitstructure",
+                "sizeBytes": 43368156,
+                "sizeMB": 41.36,
+                "texturizado": true
+            },
+            {
+                "filename": "petrochemicalplant_texture.glb",
+                "basename": "petrochemicalplant",
+                "sizeBytes": 211274092,
+                "sizeMB": 201.49,
+                "texturizado": true
+            },
+            {
+                "filename": "warehouse_texture.glb",
+                "basename": "warehouse",
+                "sizeBytes": 131722376,
+                "sizeMB": 125.62,
+                "texturizado": true
+            }
+        ],
+        "emission_source": [
+            {
+                "filename": "chaminé.glb",
+                "basename": "chaminé",
+                "sizeBytes": 4839980,
+                "sizeMB": 4.62,
+                "texturizado": false
+            },
+            {
+                "filename": "emissionstack_texture.glb",
+                "basename": "emissionstack",
+                "sizeBytes": 35024328,
+                "sizeMB": 33.4,
+                "texturizado": true
+            }
+        ],
+        "tank": [
+            {
+                "filename": "container_texture.glb",
+                "basename": "container",
+                "sizeBytes": 71196632,
+                "sizeMB": 67.9,
+                "texturizado": true
+            },
+            {
+                "filename": "cylindricalstorage_texture.glb",
+                "basename": "cylindricalstorage",
+                "sizeBytes": 66374832,
+                "sizeMB": 63.3,
+                "texturizado": true
+            },
+            {
+                "filename": "horizontalpressurevessel_texture.glb",
+                "basename": "horizontalpressurevessel",
+                "sizeBytes": 17166000,
+                "sizeMB": 16.37,
+                "texturizado": true
+            },
+            {
+                "filename": "opentopsolventdip_texture.glb",
+                "basename": "opentopsolventdip",
+                "sizeBytes": 39504256,
+                "sizeMB": 37.67,
+                "texturizado": true
+            },
+            {
+                "filename": "sphericaltank_texture.glb",
+                "basename": "sphericaltank",
+                "sizeBytes": 32940480,
+                "sizeMB": 31.41,
+                "texturizado": true
+            },
+            {
+                "filename": "tanque.glb",
+                "basename": "tanque",
+                "sizeBytes": 20938536,
+                "sizeMB": 19.97,
+                "texturizado": false
+            },
+            {
+                "filename": "undergroundstoragetank_texture.glb",
+                "basename": "undergroundstoragetank",
+                "sizeBytes": 56837480,
+                "sizeMB": 54.2,
+                "texturizado": true
+            }
+        ],
+        "effluent_point": [
+            {
+                "filename": "effluentdischarge_texture.glb",
+                "basename": "effluentdischarge",
+                "sizeBytes": 47612140,
+                "sizeMB": 45.41,
+                "texturizado": true
+            },
+            {
+                "filename": "oilwaterseparator_texture.glb",
+                "basename": "oilwaterseparator",
+                "sizeBytes": 51874872,
+                "sizeMB": 49.47,
+                "texturizado": true
+            },
+            {
+                "filename": "septicsystem_texture.glb",
+                "basename": "septicsystem",
+                "sizeBytes": 41749608,
+                "sizeMB": 39.82,
+                "texturizado": true
+            }
+        ],
+        "sensor": [
+            {
+                "filename": "estacao.glb",
+                "basename": "estacao",
+                "sizeBytes": 2403304,
+                "sizeMB": 2.29,
+                "texturizado": false
+            },
+            {
+                "filename": "estacao_texturizado.glb",
+                "basename": "estacao",
+                "sizeBytes": 31515724,
+                "sizeMB": 30.06,
+                "texturizado": true
+            },
+            {
+                "filename": "iot_texture.glb",
+                "basename": "iot",
+                "sizeBytes": 28882576,
+                "sizeMB": 27.54,
+                "texturizado": true
+            }
+        ],
+        "fault": [
+            {
+                "filename": "fault_texture.glb",
+                "basename": "fault",
+                "sizeBytes": 28363828,
+                "sizeMB": 27.05,
+                "texturizado": true
+            }
+        ],
+        "generic": [
+            {
+                "filename": "generic_texture.glb",
+                "basename": "generic",
+                "sizeBytes": 47555724,
+                "sizeMB": 45.35,
+                "texturizado": true
+            }
+        ],
+        "pit": [
+            {
+                "filename": "hilltopslope_texture.glb",
+                "basename": "hilltopslope",
+                "sizeBytes": 104283616,
+                "sizeMB": 99.45,
+                "texturizado": true
+            },
+            {
+                "filename": "open-pit.glb",
+                "basename": "open-pit",
+                "sizeBytes": 49894356,
+                "sizeMB": 47.58,
+                "texturizado": false
+            },
+            {
+                "filename": "openpit_texture.glb",
+                "basename": "openpit",
+                "sizeBytes": 112688692,
+                "sizeMB": 107.47,
+                "texturizado": true
+            }
+        ],
+        "incident": [
+            {
+                "filename": "incident_texture.glb",
+                "basename": "incident",
+                "sizeBytes": 24522908,
+                "sizeMB": 23.39,
+                "texturizado": true
+            }
+        ],
+        "individual": [
+            {
+                "filename": "individuo.glb",
+                "basename": "individuo",
+                "sizeBytes": 9856088,
+                "sizeMB": 9.4,
+                "texturizado": false
+            },
+            {
+                "filename": "individuo_texturizado.glb",
+                "basename": "individuo",
+                "sizeBytes": 39643300,
+                "sizeMB": 37.81,
+                "texturizado": true
+            }
+        ],
+        "intangible": [
+            {
+                "filename": "intangible_texture.glb",
+                "basename": "intangible",
+                "sizeBytes": 43764220,
+                "sizeMB": 41.74,
+                "texturizado": true
+            },
+            {
+                "filename": "intangivel_texture.glb",
+                "basename": "intangivel",
+                "sizeBytes": 43764220,
+                "sizeMB": 41.74,
+                "texturizado": true
+            }
+        ],
+        "marker": [
+            {
+                "filename": "location_texture.glb",
+                "basename": "location",
+                "sizeBytes": 17357120,
+                "sizeMB": 16.55,
+                "texturizado": true
+            },
+            {
+                "filename": "samplingpoint_texture.glb",
+                "basename": "samplingpoint",
+                "sizeBytes": 35028464,
+                "sizeMB": 33.41,
+                "texturizado": true
+            }
+        ],
+        "site_area": [
+            {
+                "filename": "managementarea_texture.glb",
+                "basename": "managementarea",
+                "sizeBytes": 44570680,
+                "sizeMB": 42.51,
+                "texturizado": true
+            }
+        ],
+        "area": [
+            {
+                "filename": "managementarea_texture.glb",
+                "basename": "managementarea",
+                "sizeBytes": 44570680,
+                "sizeMB": 42.51,
+                "texturizado": true
+            },
+            {
+                "filename": "zone_texture.glb",
+                "basename": "zone",
+                "sizeBytes": 27622464,
+                "sizeMB": 26.34,
+                "texturizado": true
+            }
+        ],
+        "lake": [
+            {
+                "filename": "naturallake_texture.glb",
+                "basename": "naturallake",
+                "sizeBytes": 29922384,
+                "sizeMB": 28.54,
+                "texturizado": true
+            }
+        ],
+        "spring": [
+            {
+                "filename": "naturalspring_texture.glb",
+                "basename": "naturalspring",
+                "sizeBytes": 35724380,
+                "sizeMB": 34.07,
+                "texturizado": true
+            },
+            {
+                "filename": "springzone_texture.glb",
+                "basename": "springzone",
+                "sizeBytes": 138851676,
+                "sizeMB": 132.42,
+                "texturizado": true
+            }
+        ],
+        "treatment_system": [
+            {
+                "filename": "oilwaterseparator_texture.glb",
+                "basename": "oilwaterseparator",
+                "sizeBytes": 51874872,
+                "sizeMB": 49.47,
+                "texturizado": true
+            },
+            {
+                "filename": "pcbtranf_texture.glb",
+                "basename": "pcbtranf",
+                "sizeBytes": 72809796,
+                "sizeMB": 69.44,
+                "texturizado": true
+            },
+            {
+                "filename": "septicsystem_texture.glb",
+                "basename": "septicsystem",
+                "sizeBytes": 41749608,
+                "sizeMB": 39.82,
+                "texturizado": true
+            }
+        ],
+        "waste_stream": [
+            {
+                "filename": "pilha.glb",
+                "basename": "pilha",
+                "sizeBytes": 10046456,
+                "sizeMB": 9.58,
+                "texturizado": false
+            },
+            {
+                "filename": "rockpile_texture.glb",
+                "basename": "rockpile",
+                "sizeBytes": 46717828,
+                "sizeMB": 44.55,
+                "texturizado": true
+            }
+        ],
+        "infra_linear": [
+            {
+                "filename": "pipeline_texture.glb",
+                "basename": "pipeline",
+                "sizeBytes": 28650852,
+                "sizeMB": 27.32,
+                "texturizado": true
+            },
+            {
+                "filename": "road_texture.glb",
+                "basename": "road",
+                "sizeBytes": 36412056,
+                "sizeMB": 34.73,
+                "texturizado": true
+            },
+            {
+                "filename": "street_texture.glb",
+                "basename": "street",
+                "sizeBytes": 34413268,
+                "sizeMB": 32.82,
+                "texturizado": true
+            }
+        ],
+        "well": [
+            {
+                "filename": "poço.glb",
+                "basename": "poço",
+                "sizeBytes": 6650612,
+                "sizeMB": 6.34,
+                "texturizado": false
+            },
+            {
+                "filename": "poço_texturizado.glb",
+                "basename": "poço",
+                "sizeBytes": 41683128,
+                "sizeMB": 39.75,
+                "texturizado": true
+            }
+        ],
+        "site_project": [
+            {
+                "filename": "projectsite_texture.glb",
+                "basename": "projectsite",
+                "sizeBytes": 29394136,
+                "sizeMB": 28.03,
+                "texturizado": true
+            }
+        ],
+        "river": [
+            {
+                "filename": "Rio_texturizado.glb",
+                "basename": "rio",
+                "sizeBytes": 45439180,
+                "sizeMB": 43.33,
+                "texturizado": true
+            },
+            {
+                "filename": "simpleriver_texture.glb",
+                "basename": "simpleriver",
+                "sizeBytes": 30982168,
+                "sizeMB": 29.55,
+                "texturizado": true
+            }
+        ],
+        "sample": [
+            {
+                "filename": "samplingpoint_texture.glb",
+                "basename": "samplingpoint",
+                "sizeBytes": 35028464,
+                "sizeMB": 33.41,
+                "texturizado": true
+            }
+        ],
+        "stratum": [
+            {
+                "filename": "stratum_texture.glb",
+                "basename": "stratum",
+                "sizeBytes": 60687696,
+                "sizeMB": 57.88,
+                "texturizado": true
+            }
+        ],
+        "site_zone": [
+            {
+                "filename": "zone_texture.glb",
+                "basename": "zone",
+                "sizeBytes": 27622464,
+                "sizeMB": 26.34,
+                "texturizado": true
+            }
+        ]
+    },
+    "unmapped_glbs": []
+}

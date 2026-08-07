@@ -1,0 +1,54 @@
+{
+  "name": "ecbyts_open",
+  "version": "0.3.0",
+  "description": "Open Architecture for Trusted Environmental and Occupational Digital Twins",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "scripts": {
+    "build": "node scripts/ts-build-app.mjs && node scripts/build-supabase-config.mjs",
+    "start": "serve app -l 4000",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "leak:scan": "node scripts/publication/leak-scan.mjs --target=."
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "serve": "^14.2.5",
+    "typescript": "^6.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calvinsiost/ecbyts_open.git"
+  },
+  "keywords": [
+    "digital-twin",
+    "environmental-monitoring",
+    "occupational-health",
+    "blockchain",
+    "large-language-models",
+    "neuro-symbolic",
+    "ifc",
+    "environmental-liabilities",
+    "metrological-uncertainty"
+  ],
+  "authors": [
+    {
+      "name": "Calvin Stefan Iost",
+      "orcid": "0000-0003-0828-6042"
+    },
+    {
+      "name": "Ana Carolina Russo",
+      "orcid": "0000-0003-0276-1690"
+    },
+    {
+      "name": "Talita dos Santos Sturba",
+      "orcid": "0009-0009-5399-1614"
+    },
+    {
+      "name": "Amilton Barbosa Botelho Junior",
+      "orcid": "0000-0002-3421-6286"
+    }
+  ]
+}

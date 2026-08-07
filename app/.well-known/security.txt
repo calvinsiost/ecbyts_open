@@ -1,0 +1,9 @@
+# ecbyts_open — security.txt (RFC 9116)
+# Responsible vulnerability disclosure for the public ecbyts_open repository.
+# Use the GitHub Security Advisories channel below — do not open a public issue.
+
+Contact: https://github.com/calvinsiost/ecbyts_open/security/advisories/new
+Expires: 2027-08-05T00:00:00.000Z
+Preferred-Languages: en, pt
+Canonical: https://github.com/calvinsiost/ecbyts_open/blob/main/app/.well-known/security.txt
+Policy: https://github.com/calvinsiost/ecbyts_open/blob/main/SECURITY.md

@@ -1,0 +1,98 @@
+/* RETENTION — SPEC_READINGS_METADATA_RETENTION F5 */
+
+.retention-modal-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-bottom: var(--space-3);
+}
+
+.retention-modal-row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    font-size: var(--text-lg);
+}
+
+.retention-modal-label {
+    color: var(--text-secondary, #666);
+    font-weight: 500;
+}
+
+.retention-modal-value {
+    color: var(--text-primary, #111);
+    font-weight: 600;
+}
+
+.retention-modal-sep {
+    border: 0;
+    border-top: 1px solid var(--border-default, #ddd);
+    margin: var(--space-3) 0;
+}
+
+.retention-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.retention-modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.retention-modal-field label {
+    font-weight: 500;
+    font-size: var(--text-lg);
+}
+
+.retention-modal-field input,
+.retention-modal-field textarea {
+    padding: var(--space-2) 10px;
+    border: 1px solid var(--border-default, #ccc);
+    border-radius: var(--radius-md);
+    font-size: var(--text-lg);
+    font-family: inherit;
+}
+
+.retention-modal-field small {
+    color: var(--text-secondary, #888);
+    font-size: var(--text-base);
+}
+
+.retention-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+/* Badge near-expiry — usado quando wire no inspector (F5.5) */
+.retention-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px var(--space-2);
+    border-radius: 12px;
+    font-size: var(--text-base);
+    font-weight: 600;
+}
+
+.retention-badge--near-expiry {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.retention-badge--locked {
+    background-color: #cce5ff;
+    color: #004085;
+    border: 1px solid #b8daff;
+}
+
+.retention-badge--expired {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

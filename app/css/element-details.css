@@ -1,0 +1,185 @@
+/* ================================================================
+   ELEMENT DETAILS — Structured View (right-panel Elements tab)
+
+   Restyles the #element-details pane with a clear visual hierarchy:
+   header card (current element badge + actions) + collapsible
+   Identity / Position / specific sections.
+
+   Owns ALL .ecbt-edetails-* classes.
+   AGPL-3.0-only. (c) 2026 Calvin Stefan Iost.
+   ================================================================ */
+
+/* ---------- Header card: current element indicator ---------- */
+.ecbt-edetails-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-2) 10px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(
+        180deg,
+        rgba(var(--primary-rgb, 56, 189, 248), 0.10),
+        rgba(var(--primary-rgb, 56, 189, 248), 0.02)
+    );
+    border: 1px solid rgba(var(--primary-rgb, 56, 189, 248), 0.25);
+    border-left: 3px solid var(--primary-500, #38bdf8);
+    border-radius: var(--radius-lg);
+}
+
+.ecbt-edetails-header-main {
+    flex: 1;
+    min-width: 0; /* allow ellipsis */
+}
+
+.ecbt-edetails-header-name {
+    font-weight: 600;
+    font-size: var(--text-md);
+    color: var(--neutral-50, #f8fafc);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.ecbt-edetails-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: var(--space-1);
+    font-size: var(--text-xs);
+}
+
+.ecbt-edetails-family-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    background: var(--neutral-700, #334155);
+    color: var(--text, #f1f5f9);
+    border-radius: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.ecbt-edetails-id-badge {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    color: var(--neutral-400, #94a3b8);
+    font-size: var(--text-xs);
+    padding: 1px var(--space-1);
+    background: var(--neutral-800, #1e293b);
+    border-radius: 3px;
+}
+
+.ecbt-edetails-header-actions {
+    display: flex;
+    gap: var(--space-1);
+    flex-shrink: 0;
+}
+
+.ecbt-edetails-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    background: var(--neutral-800, #1e293b);
+    border: 1px solid var(--neutral-700, #334155);
+    border-radius: var(--radius-md);
+    color: var(--text-muted, #e2e8f0);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.ecbt-edetails-action-btn:hover {
+    background: var(--neutral-700, #334155);
+    border-color: var(--primary-500, #38bdf8);
+    color: var(--primary-300, #7dd3fc);
+}
+
+.ecbt-edetails-action-btn:focus-visible {
+    outline: 2px solid var(--primary-500, #38bdf8);
+    outline-offset: 1px;
+}
+
+.ecbt-edetails-action-danger:hover {
+    border-color: var(--accent-red, #ef4444);
+    color: var(--accent-red, #ef4444);
+}
+
+/* ---------- Collapsible sections used inside details ---------- */
+.ecbt-edetails-section {
+    margin-bottom: var(--space-2);
+}
+
+/* ---------- Position coordinate grid ---------- */
+.ecbt-edetails-coord-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.ecbt-edetails-coord {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px var(--space-1);
+    background: var(--neutral-800, #1e293b);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--neutral-700, #334155);
+}
+
+.ecbt-edetails-coord-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--neutral-400, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.ecbt-edetails-coord-value {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--text-base);
+    color: var(--text, #f1f5f9);
+    margin-top: 2px;
+}
+
+/* ---------- Empty state ---------- */
+.ecbt-edetails-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6) var(--space-3);
+    text-align: center;
+    color: var(--neutral-500, #64748b);
+    gap: var(--space-2);
+}
+
+.ecbt-edetails-empty p {
+    font-size: var(--text-sm);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ---------- Mobile responsive ---------- */
+@media (max-width: 600px) {
+    .ecbt-edetails-header {
+        flex-wrap: wrap;
+    }
+
+    .ecbt-edetails-header-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: var(--space-1);
+    }
+
+    .ecbt-edetails-coord-grid {
+        gap: var(--space-1);
+    }
+
+    .ecbt-edetails-coord-value {
+        font-size: var(--text-sm);
+    }
+}

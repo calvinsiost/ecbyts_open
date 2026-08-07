@@ -1,0 +1,392 @@
+[
+    {
+        "codigo_ibge": "3200102",
+        "nome": "Afonso Cláudio",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200169",
+        "nome": "Água Doce do Norte",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200136",
+        "nome": "Águia Branca",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200201",
+        "nome": "Alegre",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200300",
+        "nome": "Alfredo Chaves",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200359",
+        "nome": "Alto Rio Novo",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200409",
+        "nome": "Anchieta",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200508",
+        "nome": "Apiacá",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200607",
+        "nome": "Aracruz",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200706",
+        "nome": "Atílio Vivácqua",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200805",
+        "nome": "Baixo Guandu",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3200904",
+        "nome": "Barra de São Francisco",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201001",
+        "nome": "Boa Esperança",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201100",
+        "nome": "Bom Jesus do Norte",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201159",
+        "nome": "Brejetuba",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201209",
+        "nome": "Cachoeiro de Itapemirim",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201308",
+        "nome": "Cariacica",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201407",
+        "nome": "Castelo",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201506",
+        "nome": "Colatina",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201605",
+        "nome": "Conceição da Barra",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201704",
+        "nome": "Conceição do Castelo",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201803",
+        "nome": "Divino de São Lourenço",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3201902",
+        "nome": "Domingos Martins",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202009",
+        "nome": "Dores do Rio Preto",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202108",
+        "nome": "Ecoporanga",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202207",
+        "nome": "Fundão",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202256",
+        "nome": "Governador Lindenberg",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202306",
+        "nome": "Guaçuí",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202405",
+        "nome": "Guarapari",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202454",
+        "nome": "Ibatiba",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202504",
+        "nome": "Ibiraçu",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202553",
+        "nome": "Ibitirama",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202603",
+        "nome": "Iconha",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202652",
+        "nome": "Irupi",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202702",
+        "nome": "Itaguaçu",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202801",
+        "nome": "Itapemirim",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3202900",
+        "nome": "Itarana",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203007",
+        "nome": "Iúna",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203056",
+        "nome": "Jaguaré",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203106",
+        "nome": "Jerônimo Monteiro",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203130",
+        "nome": "João Neiva",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203163",
+        "nome": "Laranja da Terra",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203205",
+        "nome": "Linhares",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203304",
+        "nome": "Mantenópolis",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203320",
+        "nome": "Marataízes",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203346",
+        "nome": "Marechal Floriano",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203353",
+        "nome": "Marilândia",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203403",
+        "nome": "Mimoso do Sul",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203502",
+        "nome": "Montanha",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203601",
+        "nome": "Mucurici",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203700",
+        "nome": "Muniz Freire",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203809",
+        "nome": "Muqui",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3203908",
+        "nome": "Nova Venécia",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204005",
+        "nome": "Pancas",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204054",
+        "nome": "Pedro Canário",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204104",
+        "nome": "Pinheiros",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204203",
+        "nome": "Piúma",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204252",
+        "nome": "Ponto Belo",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204302",
+        "nome": "Presidente Kennedy",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204351",
+        "nome": "Rio Bananal",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204401",
+        "nome": "Rio Novo do Sul",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204500",
+        "nome": "Santa Leopoldina",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204559",
+        "nome": "Santa Maria de Jetibá",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204609",
+        "nome": "Santa Teresa",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204658",
+        "nome": "São Domingos do Norte",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204708",
+        "nome": "São Gabriel da Palha",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204807",
+        "nome": "São José do Calçado",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204906",
+        "nome": "São Mateus",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3204955",
+        "nome": "São Roque do Canaã",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205002",
+        "nome": "Serra",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205010",
+        "nome": "Sooretama",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205036",
+        "nome": "Vargem Alta",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205069",
+        "nome": "Venda Nova do Imigrante",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205101",
+        "nome": "Viana",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205150",
+        "nome": "Vila Pavão",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205176",
+        "nome": "Vila Valério",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205200",
+        "nome": "Vila Velha",
+        "uf": "ES"
+    },
+    {
+        "codigo_ibge": "3205309",
+        "nome": "Vitória",
+        "uf": "ES"
+    }
+]

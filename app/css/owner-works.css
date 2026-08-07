@@ -1,0 +1,163 @@
+/* ================================================================
+   OWNER WORKS PANEL — MKT-OWNER-VERIFY-001 F2
+   Licenças de modelos pagos: Minhas Obras (produtor) +
+   Obras Adquiridas (comprador). Owns: .oworks-*
+   Base: design-tokens (.ecbt-overlay/.ecbt-dialog--lg).
+   ================================================================ */
+
+.oworks-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+}
+
+.oworks-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.oworks-header h2 {
+    margin: 0;
+    font-size: var(--text-xl);
+}
+
+.oworks-close {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--neutral-600, #6b7280);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-sm, 4px);
+}
+
+.oworks-close:hover {
+    background: var(--neutral-100, #f3f4f6);
+}
+
+.oworks-tabs {
+    display: flex;
+    gap: var(--space-1);
+    border-bottom: 1px solid var(--neutral-200, #e5e7eb);
+}
+
+.oworks-tab {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 6px 14px;
+    font-size: var(--text-md);
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--neutral-600, #6b7280);
+}
+
+.oworks-tab.active {
+    color: var(--primary-600, #2563eb);
+    border-bottom-color: var(--primary-600, #2563eb);
+}
+
+.oworks-hint {
+    font-size: var(--text-base);
+    color: var(--neutral-600, #6b7280);
+    margin: var(--space-1) 0;
+}
+
+.oworks-list {
+    max-height: 180px;
+    overflow-y: auto;
+    border: 1px solid var(--neutral-200, #e5e7eb);
+    border-radius: var(--radius-md, 8px);
+    padding: 6px;
+}
+
+.oworks-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 5px var(--space-2);
+    font-size: var(--text-base);
+    border-bottom: 1px solid var(--neutral-100, #f3f4f6);
+}
+
+.oworks-row:last-child {
+    border-bottom: none;
+}
+
+.oworks-empty {
+    font-size: var(--text-base);
+    color: var(--neutral-500, #9ca3af);
+    text-align: center;
+    margin: var(--space-3) 0;
+}
+
+.oworks-badge {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1px var(--space-2);
+    border-radius: 999px;
+    margin-left: auto;
+}
+
+.oworks-badge.ok { background: rgba(22, 163, 74, 0.12); color: var(--accent-green); }
+.oworks-badge.bad { background: rgba(220, 38, 38, 0.12); color: var(--accent-red); }
+
+.oworks-input {
+    width: 100%;
+    font-family: var(--font-mono, monospace);
+    font-size: var(--text-sm);
+    border: 1px solid var(--neutral-300, #d1d5db);
+    border-radius: var(--radius-md, 8px);
+    padding: var(--space-2);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.oworks-verdict-card {
+    border-radius: var(--radius-md, 8px);
+    padding: 10px 14px;
+    margin-top: var(--space-2);
+    border: 1px solid;
+    font-size: var(--text-md);
+}
+
+.oworks-verdict-card p {
+    margin: var(--space-1) 0 0;
+    font-size: var(--text-base);
+}
+
+.oworks-verdict-card.ok { background: rgba(22, 163, 74, 0.08); border-color: #16a34a; color: #14532d; }
+.oworks-verdict-card.warn { background: rgba(217, 119, 6, 0.08); border-color: #d97706; color: #7c2d12; }
+.oworks-verdict-card.bad { background: rgba(220, 38, 38, 0.08); border-color: #dc2626; color: #7f1d1d; }
+.oworks-verdict-card.neutral { background: var(--neutral-100, #f3f4f6); border-color: var(--text-muted, #d1d5db); color: var(--neutral-700, #374151); }
+
+[data-theme="dark"] .oworks-verdict-card.ok { color: #86efac; }
+[data-theme="dark"] .oworks-verdict-card.warn { color: #fcd34d; }
+[data-theme="dark"] .oworks-verdict-card.bad { color: #fca5a5; }
+[data-theme="dark"] .oworks-verdict-card.neutral { background: var(--neutral-800, #1f2937); color: var(--text-muted, #d1d5db); }
+
+/* RF-5 — botão "Questionar uso" nos vereditos âmbar/vermelho */
+.oworks-dispute-btn {
+    display: inline-block;
+    margin-top: var(--space-2);
+    padding: 4px 12px;
+    border-radius: var(--radius-sm, 4px);
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+    font-size: var(--text-sm, 12.5px);
+    font-weight: 600;
+    cursor: pointer;
+}
+.oworks-dispute-btn:hover:not(:disabled) {
+    background: currentColor;
+    filter: brightness(1.1);
+}
+.oworks-dispute-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}

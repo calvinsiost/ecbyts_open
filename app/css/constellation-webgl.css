@@ -1,0 +1,101 @@
+/* ================================================================
+   CONSTELLATION WEBGL — Styles for WebGL renderer + overlay
+   SPEC_CONSTELLATION_HUD_9_75 §Q7.2
+   ================================================================ */
+
+/* ---- Container ---- */
+.constellation-webgl-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+}
+
+.constellation-webgl-container canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---- Tooltip ---- */
+.constellation-tooltip {
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+    padding: 6px 10px;
+    background: var(--bottom-bg-solid, rgba(10, 14, 20, 0.9));
+    border: 1px solid var(--bottom-border, rgba(255, 255, 255, 0.1));
+    border-radius: var(--radius-sm, 4px);
+    color: var(--bottom-text, rgba(255, 255, 255, 0.85));
+    font-size: var(--text-sm);
+    font-family: Inter, system-ui, sans-serif;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: opacity 0.1s ease;
+}
+
+/* ---- Loading spinner ---- */
+.constellation-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--bottom-border, rgba(255, 255, 255, 0.1));
+    border-top-color: var(--bottom-accent, #4fc3f7);
+    border-radius: 50%;
+    animation: constellation-spin 0.8s linear infinite;
+    z-index: 50;
+    pointer-events: none;
+}
+
+@keyframes constellation-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ---- Overlay ---- */
+.constellation-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.constellation-overlay canvas {
+    pointer-events: auto;
+}
+
+/* ---- Node labels (HTML overlay inside WebGL container) ---- */
+.constellation-node-label {
+    position: absolute;
+    transform: translate(-50%, 0);
+    pointer-events: none;
+    text-align: center;
+    line-height: 1.2;
+    user-select: none;
+}
+
+/* ---- Dark mode support ---- */
+@media (prefers-color-scheme: dark) {
+    .constellation-tooltip {
+        background: rgba(10, 14, 20, 0.92);
+        color: rgba(255, 255, 255, 0.85);
+        border-color: rgba(255, 255, 255, 0.12);
+    }
+}
+
+/* Failsafe quando CSS variables não estão definidas */
+.constellation-tooltip {
+    background: var(--bottom-bg-solid, rgba(10, 14, 20, 0.9));
+    color: var(--bottom-text, rgba(255, 255, 255, 0.85));
+    border-color: var(--bottom-border, rgba(255, 255, 255, 0.1));
+}

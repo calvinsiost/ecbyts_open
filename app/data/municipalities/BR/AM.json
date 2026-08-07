@@ -1,0 +1,312 @@
+[
+    {
+        "codigo_ibge": "1300029",
+        "nome": "Alvarães",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300060",
+        "nome": "Amaturá",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300086",
+        "nome": "Anamã",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300102",
+        "nome": "Anori",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300144",
+        "nome": "Apuí",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300201",
+        "nome": "Atalaia do Norte",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300300",
+        "nome": "Autazes",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300409",
+        "nome": "Barcelos",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300508",
+        "nome": "Barreirinha",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300607",
+        "nome": "Benjamin Constant",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300631",
+        "nome": "Beruri",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300680",
+        "nome": "Boa Vista do Ramos",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300706",
+        "nome": "Boca do Acre",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300805",
+        "nome": "Borba",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300839",
+        "nome": "Caapiranga",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1300904",
+        "nome": "Canutama",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301001",
+        "nome": "Carauari",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301100",
+        "nome": "Careiro",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301159",
+        "nome": "Careiro da Várzea",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301209",
+        "nome": "Coari",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301308",
+        "nome": "Codajás",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301407",
+        "nome": "Eirunepé",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301506",
+        "nome": "Envira",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301605",
+        "nome": "Fonte Boa",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301654",
+        "nome": "Guajará",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301704",
+        "nome": "Humaitá",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301803",
+        "nome": "Ipixuna",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301852",
+        "nome": "Iranduba",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301902",
+        "nome": "Itacoatiara",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1301951",
+        "nome": "Itamarati",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302009",
+        "nome": "Itapiranga",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302108",
+        "nome": "Japurá",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302207",
+        "nome": "Juruá",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302306",
+        "nome": "Jutaí",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302405",
+        "nome": "Lábrea",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302504",
+        "nome": "Manacapuru",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302553",
+        "nome": "Manaquiri",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302603",
+        "nome": "Manaus",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302702",
+        "nome": "Manicoré",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302801",
+        "nome": "Maraã",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1302900",
+        "nome": "Maués",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303007",
+        "nome": "Nhamundá",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303106",
+        "nome": "Nova Olinda do Norte",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303205",
+        "nome": "Novo Airão",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303304",
+        "nome": "Novo Aripuanã",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303403",
+        "nome": "Parintins",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303502",
+        "nome": "Pauini",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303536",
+        "nome": "Presidente Figueiredo",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303569",
+        "nome": "Rio Preto da Eva",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303601",
+        "nome": "Santa Isabel do Rio Negro",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303700",
+        "nome": "Santo Antônio do Içá",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303809",
+        "nome": "São Gabriel da Cachoeira",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303908",
+        "nome": "São Paulo de Olivença",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1303957",
+        "nome": "São Sebastião do Uatumã",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1304005",
+        "nome": "Silves",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1304062",
+        "nome": "Tabatinga",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1304104",
+        "nome": "Tapauá",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1304203",
+        "nome": "Tefé",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1304237",
+        "nome": "Tonantins",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1304260",
+        "nome": "Uarini",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1304302",
+        "nome": "Urucará",
+        "uf": "AM"
+    },
+    {
+        "codigo_ibge": "1304401",
+        "nome": "Urucurituba",
+        "uf": "AM"
+    }
+]

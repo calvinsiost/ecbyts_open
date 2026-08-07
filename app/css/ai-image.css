@@ -1,0 +1,234 @@
+/* ================================================================
+   AI IMAGE MODAL — Magnifier AI Scene Generator
+   ================================================================
+   Namespace: .ai-img-*
+   Owner: ai-image.css (see CLAUDE.md CSS File Ownership)
+   ================================================================ */
+
+/* --- Overlay --- */
+.ai-img-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Modal container --- */
+.ai-img-modal {
+    background: var(--bg-secondary, #1e1e2e);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: 12px;
+    width: 620px;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    color: var(--text-primary, #e0e0e0);
+    font-family: var(--font-family, system-ui, sans-serif);
+}
+
+/* --- Header --- */
+.ai-img-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-5) var(--space-3);
+    border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+
+.ai-img-title {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.ai-img-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary, #999);
+    font-size: var(--text-2xl);
+    cursor: pointer;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+    line-height: 1;
+}
+
+.ai-img-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary, #e0e0e0);
+}
+
+/* --- Body --- */
+.ai-img-body {
+    padding: var(--space-4) var(--space-5);
+}
+
+/* --- Input row: preview + prompt side by side --- */
+.ai-img-input-row {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-3);
+}
+
+.ai-img-preview {
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.ai-img-prompt {
+    flex: 1;
+    min-height: 120px;
+    resize: vertical;
+    background: var(--bg-primary, #12121a);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: var(--radius-xl);
+    padding: 10px var(--space-3);
+    color: var(--text-primary, #e0e0e0);
+    font-family: inherit;
+    font-size: var(--text-md);
+    line-height: 1.5;
+}
+
+.ai-img-prompt::placeholder {
+    color: var(--text-secondary, #777);
+}
+
+.ai-img-prompt:focus {
+    outline: none;
+    border-color: var(--accent-bright, #4a9eff);
+}
+
+/* --- Options row --- */
+.ai-img-options {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-base);
+    color: var(--text-secondary, #999);
+}
+
+.ai-img-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.ai-img-options label input[type='checkbox'] {
+    accent-color: var(--accent-bright, #4a9eff);
+}
+
+.ai-img-provider-badge {
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.06);
+    font-size: var(--text-sm);
+    letter-spacing: 0.3px;
+}
+
+/* --- Result area --- */
+.ai-img-result {
+    margin-top: var(--space-4);
+    text-align: center;
+}
+
+.ai-img-result-image {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+}
+
+.ai-img-result-text {
+    margin-top: var(--space-2);
+    font-size: var(--text-base);
+    color: var(--text-secondary, #999);
+    line-height: 1.4;
+    text-align: left;
+    max-height: 60px;
+    overflow-y: auto;
+}
+
+/* --- Spinner --- */
+.ai-img-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 32px 0;
+    color: var(--text-secondary, #999);
+    font-size: var(--text-md);
+}
+
+.ai-img-spinner::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--accent-bright, #4a9eff);
+    border-radius: 50%;
+    animation: ai-img-spin 0.8s linear infinite;
+}
+
+@keyframes ai-img-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- No key message --- */
+.ai-img-no-key {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 10px 14px;
+    background: rgba(255, 180, 0, 0.08);
+    border: 1px solid rgba(255, 180, 0, 0.2);
+    border-radius: var(--radius-xl);
+    font-size: var(--text-base);
+    color: var(--text-secondary, #ccc);
+    margin-bottom: var(--space-3);
+}
+
+.ai-img-no-key button {
+    background: none;
+    border: none;
+    color: var(--accent-bright, #4a9eff);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: var(--text-base);
+    padding: 0;
+}
+
+.ai-img-no-key button:hover {
+    color: #6cb4ff;
+}
+
+/* --- Footer --- */
+.ai-img-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5) var(--space-4);
+    border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+
+/* --- Error --- */
+.ai-img-error {
+    padding: 10px 14px;
+    background: rgba(255, 60, 60, 0.08);
+    border: 1px solid rgba(255, 60, 60, 0.2);
+    border-radius: var(--radius-xl);
+    font-size: var(--text-base);
+    color: #ff6b6b;
+    margin-top: var(--space-3);
+}

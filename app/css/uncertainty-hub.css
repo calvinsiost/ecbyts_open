@@ -1,0 +1,996 @@
+/* Uncertainty Hub — center-screen modal + panel body
+   Owned by app/js/utils/ui/uncertaintyHubPanel.js
+   Namespace: .unc-hub-* — do not leak outside this panel. */
+
+/* Modal overlay — opens from Mais (dd-more) menu, 2026-04-12 */
+.unc-hub-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9000;
+    padding: 4vh 4vw;
+}
+
+.unc-hub-modal-dialog {
+    position: relative;
+    width: min(1200px, 92vw);
+    max-width: var(--ecbt-modal-2xl, clamp(720px, 95vw, 1200px));
+    height: min(820px, 92vh);
+    background: #0f1419;
+    border: 1px solid #3a4552;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding: var(--space-2) var(--space-3) var(--space-3) var(--space-3);
+}
+
+.unc-hub-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    color: #9aa5b1;
+    font-size: var(--text-2xl);
+    line-height: 1;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.unc-hub-modal-close:hover {
+    background: #242c35;
+    color: #eef1f4;
+}
+
+/* Intro text (one per mode) + section descriptions */
+.unc-hub-intro {
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: #9aa5b1;
+    padding: var(--space-2) var(--space-3);
+    background: #1a2128;
+    border-left: 3px solid var(--primary-500, #2563eb);
+    border-radius: var(--radius-md);
+    margin: 0 0 10px 0;
+}
+
+.unc-hub-intro strong {
+    color: #eef1f4;
+}
+
+.unc-hub-intro abbr,
+.unc-hub-section-desc abbr {
+    border-bottom: 1px dotted var(--primary-300, #60a5fa);
+    cursor: help;
+    text-decoration: none;
+}
+
+.unc-hub-section-desc {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: #9aa5b1;
+    margin: 0 0 var(--space-2) 0;
+    padding: 0 2px;
+}
+
+.unc-hub-section-desc strong {
+    color: #eef1f4;
+}
+
+/* Help button (?) in header */
+.unc-hub-help-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin: 0 var(--space-2);
+    padding: 0;
+    border: 1px solid #3a4552;
+    background: #242c35;
+    color: #9aa5b1;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.unc-hub-help-btn:hover {
+    background: var(--primary-500, #2563eb);
+    color: #fff;
+    border-color: var(--primary-500, #2563eb);
+}
+
+/* Glossary panel */
+.unc-hub-glossary {
+    position: absolute;
+    right: 12px;
+    top: 48px;
+    width: min(420px, 90vw);
+    max-height: 70vh;
+    overflow: auto;
+    padding: 14px var(--space-4);
+    background: #0f1419;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.unc-hub-glossary-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid #3a4552;
+}
+
+.unc-hub-glossary-head h5 {
+    margin: 0;
+    font-size: var(--text-md);
+    color: #eef1f4;
+}
+
+.unc-hub-glossary-close {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    color: #9aa5b1;
+    font-size: var(--text-lg);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+}
+
+.unc-hub-glossary-close:hover {
+    background: #242c35;
+}
+
+.unc-hub-glossary-body {
+    margin: 0;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #9aa5b1;
+}
+
+.unc-hub-glossary-body dt {
+    font-weight: 700;
+    color: var(--primary-300, #60a5fa);
+    margin-top: var(--space-2);
+}
+
+.unc-hub-glossary-body dt:first-child {
+    margin-top: 0;
+}
+
+.unc-hub-glossary-body dd {
+    margin: 2px 0 0 0;
+    color: #eef1f4;
+}
+
+.unc-hub-glossary-body em {
+    color: #9aa5b1;
+}
+
+/* Permission warning */
+.unc-hub-perm-warning {
+    padding: var(--space-2) var(--space-3);
+    margin-bottom: 10px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--warning-300, #fcd34d);
+    font-size: var(--text-sm);
+}
+
+.unc-hub-perm-warning strong {
+    color: var(--warning-500, #f59e0b);
+}
+
+/* Phase 1c — global "show uncertainty" toggle in header */
+.unc-hub-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-sm);
+    color: #9aa5b1;
+    cursor: pointer;
+    margin-left: var(--space-3);
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.unc-hub-toggle input[type='checkbox'] {
+    accent-color: var(--primary-500, #2563eb);
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.unc-hub-toggle:hover {
+    color: #eef1f4;
+}
+
+/* Phase 1c — legacy banner (observations with inherited uncertainty) */
+.unc-hub-legacy-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    margin: 6px 0 var(--space-3) 0;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    border-radius: var(--radius-lg);
+}
+
+.unc-hub-legacy-banner-icon {
+    font-size: var(--text-xl);
+    color: #fcd34d;
+    flex-shrink: 0;
+}
+
+.unc-hub-legacy-banner-text {
+    flex: 1;
+    font-size: 11.5px;
+    color: #fbd38d;
+    line-height: 1.4;
+}
+
+.unc-hub-legacy-banner-text strong {
+    color: #fcd34d;
+    font-weight: 700;
+}
+
+.unc-hub-legacy-banner-dismiss {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    color: #fbd38d;
+    cursor: pointer;
+    font-size: var(--text-base);
+    border-radius: 3px;
+}
+
+.unc-hub-legacy-banner-dismiss:hover {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fff;
+}
+
+/* [hidden] must always hide, regardless of .unc-hub-mode-content cascade */
+.unc-hub [hidden] { display: none !important; }
+
+/* Empty-state CTA (Ver mode) — dominant call to action when no runs yet */
+.unc-hub-empty-cta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px var(--space-6);
+    background: linear-gradient(135deg, #1a2a3e 0%, #1a2128 100%);
+    border: 1px solid #3a4552;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.unc-hub-empty-cta-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.12);
+    color: #60a5fa;
+}
+
+.unc-hub-empty-cta-body { flex: 1; }
+
+.unc-hub-empty-cta-body h5 {
+    margin: 0 0 var(--space-1) 0;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: #eef1f4;
+}
+
+.unc-hub-empty-cta-body p {
+    margin: 0 0 10px 0;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #9aa5b1;
+    max-width: clamp(320px, 90vw, 560px);
+}
+
+.unc-hub-empty-cta-btn {
+    padding: var(--space-2) var(--space-4);
+    background: var(--primary-500, #2563eb);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 120ms;
+}
+
+.unc-hub-empty-cta-btn:hover {
+    background: var(--primary-600, #1d4ed8);
+}
+
+/* Executive cards (gap #6) */
+.unc-hub-exec-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: var(--space-3);
+}
+
+.unc-hub-exec-card {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: var(--space-3) 14px;
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-xl);
+}
+
+.unc-hub-exec-card[data-kind='liability'] { border-left: 3px solid var(--accent-red); }
+.unc-hub-exec-card[data-kind='asset'] { border-left: 3px solid var(--accent-green); }
+.unc-hub-exec-card[data-kind='eis'] { border-left: 3px solid var(--accent-primary); }
+
+.unc-hub-exec-label {
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.unc-hub-exec-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #eef1f4;
+    line-height: 1.1;
+}
+
+.unc-hub-exec-pm {
+    font-size: var(--text-base);
+    color: #fbbf24;
+}
+
+.unc-hub-exec-hint {
+    font-size: 9px;
+    color: #6b7685;
+    margin-top: 2px;
+}
+
+@media (max-width: 640px) {
+    .unc-hub-exec-cards { grid-template-columns: 1fr; }
+}
+
+/* Compact intro variant for VER */
+.unc-hub-intro-compact {
+    font-size: var(--text-sm);
+    padding: 6px 10px;
+    margin-bottom: var(--space-2);
+}
+
+/* Mode switcher — bolder + higher contrast */
+.unc-hub-modes {
+    background: #0b1015;
+    border: 1px solid #2a3440;
+}
+
+.unc-hub-mode {
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 7px 18px;
+    color: #9aa5b1;
+}
+
+.unc-hub-mode:hover {
+    color: #eef1f4;
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.unc-hub-mode[aria-pressed='true'] {
+    background: var(--primary-500, #2563eb);
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(37, 99, 235, 0.4);
+}
+
+/* Class-dot color via currentColor — SVG fill follows data-class */
+.unc-hub-class[data-class='green'] .unc-hub-class-dot { color: var(--accent-green); }
+.unc-hub-class[data-class='yellow'] .unc-hub-class-dot { color: var(--accent-orange); }
+.unc-hub-class[data-class='red'] .unc-hub-class-dot { color: var(--accent-red); }
+.unc-hub-class[data-class='unknown'] .unc-hub-class-dot { color: #64748b; }
+
+
+
+.unc-hub {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: 10px var(--space-2);
+    font-size: var(--text-base);
+    color: #eef1f4;
+}
+
+.unc-hub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.unc-hub-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: #eef1f4;
+    margin: 0;
+}
+
+.unc-hub-scope {
+    font-size: var(--text-sm);
+    color: #9aa5b1;
+    font-weight: 400;
+}
+
+.unc-hub-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+/* Mode switcher (Ver / Explorar / Ajustar) */
+.unc-hub-modes {
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    background: #1a2128;
+    border-radius: var(--radius-lg);
+    width: fit-content;
+}
+
+.unc-hub-mode {
+    padding: 6px 14px;
+    background: transparent;
+    color: #9aa5b1;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: var(--text-base);
+    font-weight: 500;
+    transition: background 120ms, color 120ms;
+}
+
+.unc-hub-mode:hover {
+    color: #eef1f4;
+}
+
+.unc-hub-mode[aria-pressed="true"] {
+    background: var(--primary-500, #2563eb);
+    color: #fff;
+}
+
+.unc-hub-mode-content {
+    display: none;
+}
+
+.unc-hub-mode-content[data-active="true"] {
+    display: block;
+}
+
+/* VER — card resumo */
+.unc-hub-summary {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 14px;
+    padding: 14px;
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-xl);
+}
+
+.unc-hub-class {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    border-radius: var(--radius-xl);
+    text-align: center;
+}
+
+.unc-hub-class[data-class="green"] { background: rgba(34, 197, 94, 0.12); border: 1px solid rgba(34, 197, 94, 0.4); }
+.unc-hub-class[data-class="yellow"] { background: rgba(234, 179, 8, 0.12); border: 1px solid rgba(234, 179, 8, 0.4); }
+.unc-hub-class[data-class="red"] { background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.4); }
+.unc-hub-class[data-class="unknown"] { background: rgba(148, 163, 184, 0.12); border: 1px solid rgba(148, 163, 184, 0.3); }
+
+.unc-hub-class-dot {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.unc-hub-class-label {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.unc-hub-class-action {
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+}
+
+.unc-hub-kpis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.unc-hub-kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: var(--space-2) 10px;
+    background: #242c35;
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--primary-500, #2563eb);
+}
+
+.unc-hub-kpi-label {
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.unc-hub-kpi-value {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    /* Explicit fallback: var(--text-primary) resolved to low-contrast in
+       modal context when parent cascade was bypassed. */
+    color: #eef1f4;
+    line-height: 1.1;
+}
+
+.unc-hub-class-label,
+.unc-hub-class-action,
+.unc-hub-title,
+.unc-hub-section-title,
+.unc-hub-field input,
+.unc-hub-field select,
+.unc-hub-field textarea {
+    color: #eef1f4;
+}
+
+.unc-hub-kpi-delta {
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+}
+
+.unc-hub-kpi-delta.up { color: var(--danger-500, #ef4444); }
+.unc-hub-kpi-delta.down { color: var(--success-500, #22c55e); }
+
+/* VER — sparkline histórico */
+.unc-hub-sparkline-wrap {
+    grid-column: 1 / -1;
+    margin-top: 6px;
+    padding: var(--space-2) 10px;
+    background: #242c35;
+    border-radius: var(--radius-lg);
+    border: 1px solid #273039;
+}
+
+.unc-hub-sparkline-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-1);
+}
+
+.unc-hub-sparkline-title {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: #9aa5b1;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.unc-hub-sparkline-meta {
+    font-size: var(--text-xs);
+    color: #6b7685;
+}
+
+.unc-hub-sparkline {
+    display: block;
+    width: 100%;
+    height: 40px;
+}
+
+.unc-hub-sparkline-wrap[data-empty='true'] .unc-hub-sparkline {
+    display: none;
+}
+
+.unc-hub-sparkline-wrap[data-empty='true'] .unc-hub-sparkline-meta {
+    color: #9aa5b1;
+    font-style: italic;
+}
+
+/* EXPLORAR — propagação + sensibilidade */
+.unc-hub-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.unc-hub-section-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: #eef1f4;
+    margin: 6px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.unc-hub-section-title-help {
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+    font-weight: 400;
+    margin-left: var(--space-2);
+}
+
+.unc-hub-tree {
+    padding: var(--space-2) 10px;
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-mono, monospace);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
+.unc-hub-tree-node { display: block; }
+.unc-hub-tree-key { color: #9aa5b1; }
+.unc-hub-tree-val { color: var(--primary-300, #60a5fa); font-weight: 500; }
+
+.unc-hub-drivers-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.unc-hub-drivers-table thead th {
+    text-align: left;
+    padding: 6px var(--space-2);
+    font-weight: 600;
+    color: #9aa5b1;
+    border-bottom: 1px solid #3a4552;
+    text-transform: uppercase;
+    font-size: var(--text-xs);
+    letter-spacing: 0.3px;
+}
+
+.unc-hub-drivers-table tbody td {
+    padding: 6px var(--space-2);
+    border-bottom: 1px solid #273039;
+    color: #eef1f4;
+}
+
+.unc-hub-drivers-table tbody tr:hover { background: rgba(37, 99, 235, 0.06); }
+
+.unc-hub-driver-bar {
+    display: inline-block;
+    height: 6px;
+    background: var(--primary-500, #2563eb);
+    border-radius: var(--radius-sm);
+    vertical-align: middle;
+    margin-left: 6px;
+}
+
+.unc-hub-chart-toggle {
+    margin-left: auto;
+    font-size: var(--text-xs);
+    background: transparent;
+    border: 1px solid #3a4552;
+    color: #9aa5b1;
+    padding: 3px var(--space-2);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.unc-hub-chart-toggle:hover { color: #eef1f4; }
+.unc-hub-chart-toggle[aria-pressed="true"] {
+    background: var(--primary-500, #2563eb);
+    color: #fff;
+    border-color: var(--primary-500, #2563eb);
+}
+
+.unc-hub-tornado {
+    display: none;
+    height: 180px;
+    padding: 6px;
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-lg);
+}
+
+.unc-hub-tornado[data-visible="true"] { display: block; }
+
+.unc-hub-diff {
+    display: grid;
+    grid-template-columns: 1fr 24px 1fr;
+    gap: var(--space-2);
+    padding: 10px;
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-lg);
+    align-items: center;
+}
+
+.unc-hub-diff-side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-2);
+    background: #242c35;
+    border-radius: var(--radius-md);
+}
+
+.unc-hub-diff-side-label {
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+    text-transform: uppercase;
+}
+
+.unc-hub-diff-side-value { font-size: var(--text-md); font-weight: 600; }
+.unc-hub-diff-arrow { text-align: center; color: #9aa5b1; font-size: var(--text-xl); }
+.unc-hub-diff-side[data-changed="true"] { border: 1px solid var(--warning-500, #f59e0b); }
+
+/* AJUSTAR — editor de policy */
+.unc-hub-policy-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: var(--space-3);
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-xl);
+}
+
+.unc-hub-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.unc-hub-field-label {
+    font-size: var(--text-sm);
+    color: #9aa5b1;
+    font-weight: 500;
+}
+
+.unc-hub-field-hint {
+    font-size: var(--text-xs);
+    color: #6b7685;
+    font-weight: 400;
+}
+
+.unc-hub-field input,
+.unc-hub-field select,
+.unc-hub-field textarea {
+    padding: 5px var(--space-2);
+    background: #242c35;
+    border: 1px solid #3a4552;
+    color: #eef1f4;
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    font-family: inherit;
+}
+
+.unc-hub-field input:focus,
+.unc-hub-field select:focus,
+.unc-hub-field textarea:focus {
+    outline: none;
+    border-color: var(--primary-500, #2563eb);
+}
+
+.unc-hub-advanced {
+    grid-column: 1 / -1;
+}
+
+.unc-hub-advanced > summary {
+    cursor: pointer;
+    font-size: var(--text-sm);
+    color: #9aa5b1;
+    padding: 6px 0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.unc-hub-advanced > summary:hover { color: #eef1f4; }
+
+.unc-hub-advanced[open] > summary { color: #eef1f4; margin-bottom: 6px; }
+
+.unc-hub-advanced-body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: var(--space-2) 0 0 0;
+}
+
+.unc-hub-policy-footer {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    padding-top: 6px;
+    border-top: 1px solid #273039;
+}
+
+.unc-hub-policy-footer-note {
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+}
+
+.unc-hub-perm-warning {
+    font-size: var(--text-sm);
+    color: var(--warning-500, #f59e0b);
+    padding: var(--space-2) 10px;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-2);
+}
+
+.unc-hub-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 6px;
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-lg);
+}
+
+.unc-hub-timeline-empty {
+    padding: var(--space-3);
+    text-align: center;
+    color: #9aa5b1;
+    font-size: var(--text-sm);
+}
+
+.unc-hub-timeline-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-2);
+    align-items: center;
+    padding: 6px var(--space-2);
+    background: #242c35;
+    border-radius: var(--radius-md);
+}
+
+.unc-hub-timeline-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: var(--text-sm);
+}
+
+.unc-hub-timeline-id {
+    font-family: var(--font-mono, monospace);
+    color: #9aa5b1;
+    font-size: var(--text-xs);
+}
+
+.unc-hub-timeline-date { color: #eef1f4; }
+
+.unc-hub-footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 10px;
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-xl);
+    position: sticky;
+    bottom: 8px;
+    z-index: 5;
+}
+
+.unc-hub-footer-status {
+    font-size: var(--text-sm);
+    color: #9aa5b1;
+}
+
+.unc-hub-footer-status[data-state="stale"] { color: var(--warning-500, #f59e0b); }
+.unc-hub-footer-status[data-state="ok"] { color: var(--success-500, #22c55e); }
+
+.unc-hub-empty {
+    padding: var(--space-5);
+    text-align: center;
+    color: #9aa5b1;
+    font-size: var(--text-base);
+}
+
+.unc-hub-raw-toggle {
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 2px 6px;
+    text-decoration: underline;
+}
+
+.unc-hub-raw {
+    display: none;
+    max-height: 200px;
+    overflow: auto;
+    padding: var(--space-2) 10px;
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-mono, monospace);
+    font-size: var(--text-xs);
+    color: #9aa5b1;
+    white-space: pre;
+}
+
+.unc-hub-raw[data-visible="true"] { display: block; }
+
+/* GV read-only badge link */
+.unc-hub-gv-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px var(--space-3);
+    background: #1a2128;
+    border: 1px solid #3a4552;
+    border-radius: var(--radius-lg);
+    margin: 6px 0;
+}
+
+.unc-hub-gv-badge-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+}
+
+.unc-hub-gv-badge-dot {
+    font-size: var(--text-xl);
+}
+
+.unc-hub-gv-badge-link {
+    background: var(--primary-500, #2563eb);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    cursor: pointer;
+}

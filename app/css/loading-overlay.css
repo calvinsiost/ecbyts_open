@@ -1,0 +1,447 @@
+/*
+ * loading-overlay.css — Loading Overlay styles
+ *
+ * Overlay fullscreen reutilizavel para operacoes async longas.
+ * Extraido de app/js/utils/ui/loadingOverlay.js.
+ *
+ * Copyright (C) 2026 Calvin Stefan Iost
+ * Licensed under AGPL-3.0-only
+ */
+
+/* ── Overlay fullscreen ────────────────────────────────────── */
+.ecbt-loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(6, 15, 28, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.25rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.ecbt-loading-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ── Saída padronizada por fade (BOOT-ENTRY-UX-001 / RF-E1) ────────
+ * Classe aplicada via JS (o #loading-overlay do boot é inline em
+ * index.html; o JS adiciona `.fade-out` e escuta `transitionend`).
+ * Easing de SAÍDA acelerado (cubic-bezier(0.4,0,1,1)) + duração curta
+ * (280ms), conforme dossiê RESEARCH_BOOT_ENTRY_UX (260-300ms). Nunca
+ * corte abrupto: a remoção é disparada por `transitionend`.
+ */
+.fade-out {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 280ms cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* ── Saída como superfície única (BOOT-ENTRY-UX-001 / RF-E5) ─────────
+ * Logo, barra, status e dica devem desaparecer JUNTOS com o overlay
+ * (sem micro-flash / "parece 2ª tela"). Qualquer transição própria de um
+ * filho (ex.: a dica rotativa com transition:opacity .22s) é neutralizada
+ * durante a saída — todos herdam o fade do container pai. */
+#loading-overlay.fade-out > * {
+    transition: none !important;
+}
+
+/* ── Container com glassmorphism sutil ─────────────────────── */
+.ecbt-loading-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Spinner duplo-anel ────────────────────────────────────── */
+.ecbt-loading-spinner {
+    position: relative;
+    width: 56px;
+    height: 56px;
+}
+
+.ecbt-loading-spinner::before,
+.ecbt-loading-spinner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.ecbt-loading-spinner::before {
+    border-top-color: var(--accent, #5eead4);
+    border-right-color: rgba(94, 234, 212, 0.3);
+    animation: ecbt-spin 0.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.ecbt-loading-spinner::after {
+    inset: 6px;
+    border-bottom-color: rgba(94, 234, 212, 0.5);
+    border-left-color: rgba(94, 234, 212, 0.15);
+    animation: ecbt-spin 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite reverse;
+}
+
+/* ── Mensagem ──────────────────────────────────────────────── */
+.ecbt-loading-message {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary, rgba(255, 255, 255, 0.75));
+    letter-spacing: 0.02em;
+    text-align: center;
+    max-width: clamp(220px, 80vw, 320px);
+    line-height: 1.5;
+}
+
+/* ── Percentual / ETA ──────────────────────────────────────── */
+.ecbt-loading-percent {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.75rem;
+    color: rgba(94, 234, 212, 0.8);
+    letter-spacing: 0.05em;
+    display: none;
+}
+
+/* ── Progress bar ──────────────────────────────────────────── */
+.ecbt-loading-progress-track {
+    width: 220px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: none;
+}
+
+.ecbt-loading-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent, #5eead4), #2dd4bf);
+    border-radius: var(--radius-md);
+    width: 0%;
+    transition: width 0.35s ease;
+    box-shadow: 0 0 8px rgba(94, 234, 212, 0.4);
+}
+
+/* ── Botao cancelar ────────────────────────────────────────── */
+.ecbt-loading-cancel {
+    margin-top: 0.5rem;
+    padding: 6px var(--space-5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    font-family: Inter, system-ui, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.03em;
+}
+
+.ecbt-loading-cancel:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Keyframes ─────────────────────────────────────────────── */
+@keyframes ecbt-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Reduced motion na saída do splash (BOOT-ENTRY-UX-001 / RF-E4) ──
+ * Respeita prefers-reduced-motion: ENCURTA a transição de saída para
+ * ~1ms em vez de removê-la. Remover o overlay traria de volta o flash
+ * cinza do F5 (fix histórico de 2026-04-11), então o overlay permanece
+ * e só neutralizamos a duração da transição. Inclui o seletor .fade-out
+ * (classe adicionada por RF-E1) para cobrir o fade de saída. O
+ * !important fica restrito a este media query.
+ */
+@media (prefers-reduced-motion: reduce) {
+    #loading-overlay,
+    #loading-overlay.fade-out {
+        transition-duration: 1ms !important;
+    }
+}
+
+/* ── RF-B3: Skeleton do layout REAL (BOOT-ENTRY-UX-001) ──────────
+ * Substitui o splash centralizado (logo+barra) por retângulos skeleton
+ * que ESPELHAM o layout final do app: titlebar, painel esquerdo,
+ * área do canvas, painel direito, statusbar. Anti-CLS: as dimensões
+ * reservam espaço para o conteúdo real que vai aparecer.
+ * NN/G Skeleton Screens 101: skeleton que espelha o layout reduz a
+ * percepção de espera e melhora o CLS (Cumulative Layout Shift).
+ */
+#loading-overlay.boot-skeleton {
+    /* RF-A1: começa hidden, loading-gate.js decide mostrar (seta display:grid).
+     * FIX (BOOT-ENTRY-UX-001, bootux-exec 2026-07-18): a regra base
+     * .ecbt-loading-overlay NÃO se aplica a este overlay (ele não tem a classe
+     * .ecbt-loading-overlay), então position/inset/z-index precisam vir AQUI.
+     * Sem eles o container ficava position:static com altura de conteúdo
+     * (120px) → a linha 1fr colapsava e os painéis viravam uma faixa flutuante
+     * sobre o app real. Agora o overlay preenche o viewport e o 1fr expande. */
+    position: fixed;
+    inset: 0;
+    z-index: 10000; /* acima do #app (map de z-index: overlays de boot no topo) */
+    display: none;
+    grid-template-columns: 220px 1fr 280px;
+    grid-template-rows: 40px 36px 1fr 28px;
+    grid-template-areas:
+        "titlebar titlebar titlebar"
+        "toolbar toolbar toolbar"
+        "left main right"
+        "statusbar statusbar statusbar";
+    gap: 0;
+    padding: 0;
+    background: var(--window-dark-3, #1b252e);
+}
+
+/* Revelação: loading-gate.js seta display:grid inline; .visible cobre o caminho
+ * declarativo (switchOverlay/testes) para o MESMO layout de grid. */
+#loading-overlay.boot-skeleton.visible {
+    display: grid;
+}
+
+/* Áreas do skeleton — retângulos cinza com shimmer */
+.sk-titlebar {
+    grid-area: titlebar;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+}
+
+.sk-titlebar::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+}
+
+.sk-titlebar::after {
+    content: '';
+    width: 60px;
+    height: 10px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sk-toolbar {
+    grid-area: toolbar;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    gap: 6px;
+}
+
+.sk-toolbar::before,
+.sk-toolbar::after {
+    content: '';
+    height: 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.sk-toolbar::before { width: 50px; }
+.sk-toolbar::after { width: 70px; }
+
+.sk-left-panel {
+    grid-area: left;
+    background: rgba(255, 255, 255, 0.02);
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sk-left-panel::before,
+.sk-left-panel::after {
+    content: '';
+    height: 28px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.sk-left-panel::before { width: 80%; }
+.sk-left-panel::after { width: 60%; }
+
+.sk-main {
+    grid-area: main;
+    /* Vinheta radial sutil: centro levemente iluminado (accent) fundindo para
+     * o navy nas bordas — dá foco ao centro sem ser um retângulo chapado. */
+    background:
+        radial-gradient(circle at 50% 46%, rgba(94, 234, 212, 0.05), transparent 42%),
+        rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    position: relative;
+}
+
+/* FIX visual (BOOT-ENTRY-UX-001, bootux-exec 2026-07-18): o círculo fantasma
+ * 120×120 (rgba verde-água quase invisível) era pobre e sem propósito.
+ * Substituído por um SPINNER de anel único, fino e elegante, na cor accent do
+ * app (#5eead4) — coerente com um app 3D técnico e com o duplo-anel do overlay
+ * async (.ecbt-loading-spinner). Centralizado na área main via flex do pai. */
+.sk-main::before {
+    content: '';
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2.5px solid rgba(94, 234, 212, 0.12);
+    border-top-color: var(--accent, #5eead4);
+    border-right-color: rgba(94, 234, 212, 0.55);
+    animation: sk-spin 0.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    /* halo suave para o spinner respirar sobre o fundo escuro */
+    box-shadow: 0 0 18px rgba(94, 234, 212, 0.12);
+}
+
+@keyframes sk-spin {
+    to { transform: rotate(360deg); }
+}
+
+.sk-right-panel {
+    grid-area: right;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sk-right-panel::before,
+.sk-right-panel::after {
+    content: '';
+    height: 24px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.sk-right-panel::before { width: 70%; }
+.sk-right-panel::after { width: 50%; }
+
+.sk-statusbar {
+    grid-area: statusbar;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.sk-statusbar::before {
+    content: '';
+    width: 100px;
+    height: 8px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Progresso + status ficam sobre a área central do skeleton */
+/* BOOT-ENTRY-UX-001 RF-A3: barra suprimida em boot <600ms (opacity:0).
+ * Só aparece (.bar-shown) após gate temporal no startup-feedback.ts.
+ * Em boot rápido, o overlay cross-fade direto sem barra — "flash" de
+ * barra em boot de 300ms irrita mais que ajuda (NN/G Progress Indicators). */
+.sk-progress-wrap {
+    /* FIX visual (BOOT-ENTRY-UX-001, bootux-exec 2026-07-18): antes bottom:20%
+     * jogava a barra para o rodapé, deslocada do spinner central. Agora fica
+     * logo ABAIXO do centro (spinner ocupa o centro exato via flex do pai),
+     * formando um bloco spinner→barra→dica coeso e verticalmente equilibrado. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 44px); /* desce ~44px: fica sob o spinner de 46px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sk-progress-wrap.bar-shown {
+    opacity: 1;
+}
+
+/* Shimmer animation para todos os retângulos skeleton */
+@keyframes sk-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.sk-titlebar::before, .sk-titlebar::after,
+.sk-toolbar::before, .sk-toolbar::after,
+.sk-left-panel::before, .sk-left-panel::after,
+.sk-right-panel::before, .sk-right-panel::after,
+.sk-statusbar::before {
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.03) 100%
+    );
+    background-size: 200% 100%;
+    animation: sk-shimmer 1.8s ease-in-out infinite;
+}
+
+/* Reduced motion: desliga o shimmer E a rotação do spinner (RF-E4 estende
+ * a política de reduced-motion ao novo spinner do skeleton). O spinner
+ * permanece VISÍVEL (anel estático em accent) para não sumir o indicador. */
+@media (prefers-reduced-motion: reduce) {
+    .sk-titlebar::before, .sk-titlebar::after,
+    .sk-toolbar::before, .sk-toolbar::after,
+    .sk-left-panel::before, .sk-left-panel::after,
+    .sk-right-panel::before, .sk-right-panel::after,
+    .sk-statusbar::before,
+    .sk-main::before {
+        animation: none;
+    }
+}
+
+/* ── RF-E6: Zero layout shift na revelação (BOOT-ENTRY-UX-001) ────
+ * Reserva aspect-ratio/min-height nos containers do canvas three.js e
+ * dos HUD cards para que o espaço final já esteja reservado ANTES do
+ * overlay dissolver. Alvo: CLS < 0.1 na revelação (web.dev Optimize CLS).
+ *
+ * Princípio: o browser calcula o layout final do #app grid ANTES do
+ * fade começar (o overlay está em display:grid por cima). Quando o
+ * overlay fade-out acontece, o conteúdo abaixo já tem dimensões
+ * estáveis — sem shift.
+ *
+ * #canvas-container tem min-height:180px em styles.css (RF-E6).
+ * #geo-hud precisa de min-height para que os 6 canvas cards internos
+ * não causem shift quando populados pelo three.js.
+ */
+/* Indicador visual anti-CLS: classe aplicada durante o fade-out para
+   garantir que os containers críticos tenham suas dimensões finais
+   antes do overlay sumir completamente. JS adiciona .cls-stable no
+   #app quando o layout está pronto para revelação. */
+#app.cls-stable #canvas-container,
+#app.cls-stable #geo-hud {
+    visibility: visible;
+}
+/* min-height do #geo-hud fica em styles.css (canônico) para evitar
+   CSS duplicate selector. */

@@ -1,0 +1,433 @@
+/* ================================================================
+   EQUIPMENT HUD - family/equipment selector overlay
+   ================================================================ */
+
+.equipment-hud-panel {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 260px;
+    /* Máx 100vh - 80px (status/rodapé + margin segurança). Sempre deixa scroll interno visível */
+    max-height: calc(100vh - 80px);
+    /* z-index 200 = floating panels canonical (vê CLAUDE.md §Panel System) — acima do canvas 3D
+       para eventos de click não vazarem para OrbitControls/picker raycaster */
+    z-index: 200;
+    pointer-events: auto;
+    border: 1px solid var(--neutral-700, #3b3f47);
+    border-radius: var(--radius-md, 6px);
+    background: rgba(20, 24, 32, 0.94);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: var(--text-muted, #e5e7eb);
+    font-size: var(--text-sm);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.equipment-hud-panel:hover {
+    overflow: visible;
+}
+
+.equipment-hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: move;
+    user-select: none;
+}
+
+.equipment-hud-header:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.equipment-hud-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.equipment-hud-header-actions {
+    display: flex;
+    gap: var(--space-1);
+    align-items: center;
+}
+
+/* Dragging state */
+.equipment-hud-dragging {
+    opacity: 0.9;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: none;
+}
+
+/* Resize handles z-index — acima do panel para não interferir com drag */
+.equipment-hud-panel .resize-handle {
+    z-index: 210;
+}
+
+.equipment-hud-body {
+    padding: var(--space-2) 10px 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Custom scrollbar for webkit browsers */
+.equipment-hud-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.equipment-hud-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.equipment-hud-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.equipment-hud-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.equipment-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.equipment-hud-btn {
+    border: 1px solid var(--neutral-700, #3b3f47);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-muted, #d1d5db);
+    min-width: 24px;
+    min-height: 22px;
+    cursor: pointer;
+}
+
+.equipment-hud-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.equipment-pill {
+    flex: 1;
+    text-align: center;
+    border-radius: var(--radius-md);
+    padding: 3px 6px;
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.equipment-active-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.equipment-active-meta {
+    color: var(--neutral-500, #6b7280);
+    margin-bottom: var(--space-2);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.equipment-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: var(--space-2);
+}
+
+.equipment-action {
+    border: 1px solid var(--neutral-700, #3b3f47);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-muted, #d1d5db);
+    font-size: var(--text-xs);
+    padding: var(--space-1) 6px;
+    cursor: pointer;
+}
+
+.equipment-action.active {
+    border-color: #22d3ee;
+    color: #67e8f9;
+    background: rgba(6, 182, 212, 0.15);
+}
+
+.equipment-action:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.equipment-stats {
+    margin-bottom: var(--space-2);
+    color: var(--neutral-400, #9ca3af);
+}
+
+.equipment-visual {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px var(--space-2);
+    align-items: center;
+    margin-bottom: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.equipment-label {
+    color: var(--neutral-400, #9ca3af);
+}
+
+.equipment-check {
+    grid-column: 1 / span 2;
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--text-muted, #d1d5db);
+}
+
+.equipment-upload {
+    padding-top: var(--space-2);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.equipment-upload-label {
+    display: block;
+    color: var(--text-muted, #d1d5db);
+    margin-bottom: 6px;
+}
+
+.equipment-upload-label input[type='file'] {
+    display: block;
+    margin-top: 6px;
+    width: 100%;
+    font-size: var(--text-xs);
+}
+
+.equipment-upload-note {
+    color: var(--neutral-500, #6b7280);
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.equipment-hud-empty {
+    text-align: center;
+    color: var(--neutral-500, #6b7280);
+    padding: var(--space-3) 6px;
+}
+
+.equipment-preview-wrap {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+.equipment-thumb {
+    width: 96px;
+    height: 72px;
+    border: 1px solid var(--neutral-700, #3b3f47);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    padding: 0;
+}
+
+.equipment-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.equipment-thumb-fallback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #93c5fd;
+    font: 700 16px 'JetBrains Mono', monospace;
+    letter-spacing: 0.06em;
+}
+
+.equipment-thumb.is-active {
+    border-color: #22d3ee;
+}
+
+.equipment-open-btn {
+    width: 100%;
+    height: 72px;
+    border: 1px solid var(--neutral-700, #3b3f47);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-muted, #e5e7eb);
+    font-size: var(--text-sm);
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+.equipment-open-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.equipment-open-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.equipment-thumb-strip {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    margin-bottom: var(--space-2);
+}
+
+.equipment-thumb-strip .equipment-thumb {
+    width: 48px;
+    height: 38px;
+    border-radius: var(--radius-md);
+    flex: 0 0 auto;
+}
+
+body.mobile .equipment-hud-panel {
+    left: 8px;
+    right: 8px;
+    top: 8px;
+    bottom: auto;
+    width: auto;
+    max-height: 46vh;
+}
+
+/* ================================================================
+   BIBLIOTECA ecbyts — variant picker do model-library.js
+   Seção abaixo de "Attach OBJ/GLB" que mostra modelos curados por
+   família. Suporta toggle HQ (isHq opt-in) e seleção de variant.
+   ================================================================ */
+.equipment-library {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.equipment-library-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-secondary, #9fb0c8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.equipment-library-title {
+    opacity: 0.85;
+}
+
+.equipment-library-hq {
+    font-size: var(--text-xs);
+    text-transform: none;
+    letter-spacing: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    cursor: pointer;
+}
+
+.equipment-library-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
+    gap: var(--space-1);
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+.equipment-library-thumb {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition:
+        background 120ms,
+        border-color 120ms;
+}
+
+.equipment-library-thumb:hover:not(:disabled) {
+    background: rgba(79, 195, 247, 0.12);
+    border-color: rgba(79, 195, 247, 0.4);
+}
+
+.equipment-library-thumb.is-active {
+    border-color: #4fc3f7;
+    background: rgba(79, 195, 247, 0.18);
+}
+
+.equipment-library-thumb img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    background: #2a2f3a;
+}
+
+.equipment-library-label {
+    font-size: 9px;
+    color: var(--text-primary, #e6edf3);
+    text-align: center;
+    line-height: 1.1;
+    word-break: break-word;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.equipment-library-hq-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #4fc3f7;
+    color: #0a0e14;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 3px;
+    border-radius: var(--radius-sm);
+    line-height: 1;
+}
+
+.equipment-library-meta {
+    font-size: var(--text-xs);
+    color: var(--text-secondary, #9fb0c8);
+    opacity: 0.75;
+    text-align: center;
+    padding-top: 2px;
+}

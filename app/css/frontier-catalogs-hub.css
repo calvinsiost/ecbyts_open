@@ -1,0 +1,71 @@
+/* Frontier Catalogs Hub (claude - novaspec, 2026-06-02) — UI entry point único.
+ * Reusa .ecbt-dialog (design-tokens.css) + extraClass 'hub-catalog-dialog'.
+ * Atende CLAUDE.md "UI Visibility Rule".
+ */
+
+.hub-catalog-root {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.hub-catalog-intro {
+    color: var(--text-secondary, #b0b0b0);
+    font-size: var(--text-md);
+    line-height: 1.5;
+    margin: 0 0 var(--space-1) 0;
+}
+
+.hub-catalog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.hub-catalog-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    background: var(--surface-2, #2a2a2a);
+    border: 1px solid var(--border-subtle, #444);
+    border-radius: var(--radius-lg);
+}
+
+.hub-catalog-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.hub-catalog-card-label {
+    font-weight: 600;
+    color: var(--text-primary, #e6e6e6);
+    font-size: var(--text-lg);
+}
+
+.hub-catalog-card-count {
+    display: inline-block;
+    background: var(--accent-primary, #4a9eff);
+    color: #fff;
+    font-family: var(--font-mono, monospace);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    padding: 2px var(--space-2);
+    border-radius: 10px;
+}
+
+.hub-catalog-card-desc {
+    color: var(--text-secondary, #b0b0b0);
+    font-size: var(--text-base);
+    line-height: 1.45;
+    flex: 1;
+}
+
+.hub-catalog-card-action {
+    align-self: flex-start;
+    margin-top: var(--space-1);
+}

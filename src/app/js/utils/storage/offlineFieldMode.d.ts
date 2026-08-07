@@ -1,0 +1,10 @@
+export const FIELD_MODE_KEY: string;
+export function isOffline(...args: any[]): boolean;
+export function isFieldModeForced(...args: any[]): boolean;
+export function getOfflineState(...args: any[]): any;
+export function subscribe(...args: any[]): any;
+export function setFieldModeForced(...args: any[]): any;
+export function toggleFieldMode(...args: any[]): any;
+export function computeBadgeState(...args: any[]): any;
+export function initOfflineFieldMode(...args: any[]): any;
+export function __resetOfflineFieldModeForTests(...args: any[]): any;

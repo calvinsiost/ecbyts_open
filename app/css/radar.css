@@ -1,0 +1,633 @@
+/* ================================================================
+   RADAR CSS — Broadcasting de modelos para stakeholders
+   Namespace: .radar-*
+   Owner: radar.css (unico arquivo que define .radar-*)
+   ================================================================ */
+
+/* --- Modal container --- */
+.radar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9000;
+}
+
+.radar-dialog {
+    background: var(--bg-secondary, #1e1e2e);
+    color: var(--text-primary, #e0e0e0);
+    border-radius: 12px;
+    width: min(720px, 92vw);
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* --- Header --- */
+.radar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--border-color, #333);
+}
+
+.radar-header h2 {
+    margin: 0;
+    font-size: var(--text-2xl);
+    font-weight: 600;
+}
+
+.radar-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary, #aaa);
+    font-size: 20px;
+    cursor: pointer;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+}
+
+.radar-close:hover {
+    background: var(--bg-hover, #2a2a3e);
+}
+
+/* --- Tabs --- */
+.radar-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-color, #333);
+    padding: 0 var(--space-5);
+    gap: var(--space-1);
+}
+
+/* CTA panels (DataStudio Radar Profiles tabs) */
+.radar-cta-panel {
+    text-align: center;
+    padding: 32px var(--space-6);
+    min-height: 200px;
+}
+
+.radar-cta-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-3);
+    opacity: 0.6;
+}
+
+.radar-cta-btn {
+    min-width: 200px;
+    padding: 10px var(--space-6);
+}
+
+.radar-tab {
+    padding: 10px var(--space-4);
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-secondary, #aaa);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.radar-tab:hover {
+    color: var(--text-primary, #e0e0e0);
+}
+
+.radar-tab-active {
+    color: var(--accent-bright, #4fc3f7);
+    border-bottom-color: var(--accent-bright, #4fc3f7);
+}
+
+/* --- Tab content --- */
+.radar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-4) var(--space-5);
+}
+
+.radar-tab-panel {
+    display: none;
+}
+
+.radar-tab-panel-active {
+    display: block;
+}
+
+/* --- Model card --- */
+.radar-model-card {
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-3);
+    overflow: hidden;
+}
+
+.radar-model-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.radar-model-header:hover {
+    background: var(--bg-hover, #2a2a3e);
+}
+
+.radar-model-name {
+    font-weight: 600;
+    font-size: var(--text-lg);
+}
+
+.radar-model-meta {
+    font-size: var(--text-base);
+    color: var(--text-secondary, #aaa);
+    margin-top: 2px;
+}
+
+.radar-model-toggle {
+    font-size: var(--text-base);
+    color: var(--text-secondary, #aaa);
+}
+
+/* --- Broadcast entry --- */
+.radar-broadcast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-2) var(--space-4);
+    border-top: 1px solid var(--border-subtle, #2a2a3e);
+    font-size: var(--text-md);
+}
+
+.radar-broadcast-info {
+    flex: 1;
+}
+
+.radar-broadcast-profile-name {
+    font-weight: 500;
+}
+
+.radar-broadcast-details {
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #aaa);
+    margin-top: 2px;
+}
+
+.radar-broadcast-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+/* --- Status indicators --- */
+.radar-status-live {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: #4caf50;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.radar-status-live::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4caf50;
+    animation: radar-pulse 1.5s ease-in-out infinite;
+}
+
+.radar-status-stale {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: #ff9800;
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.radar-status-stale::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff9800;
+}
+
+.radar-status-off {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--text-secondary, #888);
+    font-size: var(--text-sm);
+}
+
+.radar-status-off::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-secondary, #888);
+}
+
+/* RND-RADAR-COMM-001 — local preview badge (random-seeded, not transmitting) */
+.radar-status-preview {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: #9c7bff;
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.radar-status-preview::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px dashed #9c7bff;
+}
+
+@keyframes radar-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* --- Inline editor --- */
+.radar-editor {
+    border-top: 1px solid var(--border-color, #333);
+    padding: var(--space-4);
+    background: var(--bg-tertiary, #161625);
+    display: none;
+}
+
+.radar-editor-open {
+    display: block;
+}
+
+.radar-editor-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: 10px;
+}
+
+.radar-editor-row label {
+    min-width: 100px;
+    font-size: var(--text-md);
+    color: var(--text-secondary, #aaa);
+}
+
+.radar-editor-row input,
+.radar-editor-row select {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary, #1e1e2e);
+    color: var(--text-primary, #e0e0e0);
+    font-size: var(--text-md);
+}
+
+/* --- Presets --- */
+.radar-presets {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.radar-preset-btn {
+    padding: 5px var(--space-3);
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary, #1e1e2e);
+    color: var(--text-primary, #e0e0e0);
+    font-size: var(--text-base);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.radar-preset-btn:hover {
+    background: var(--bg-hover, #2a2a3e);
+    border-color: var(--accent-bright, #4fc3f7);
+}
+
+/* --- Checkbox matrix --- */
+.radar-matrix-section {
+    margin-bottom: var(--space-4);
+}
+
+.radar-matrix-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-secondary, #aaa);
+    margin-bottom: var(--space-2);
+    letter-spacing: 0.5px;
+}
+
+.radar-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-1);
+}
+
+.radar-matrix-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+    font-size: var(--text-md);
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.radar-matrix-item:hover {
+    background: var(--bg-hover, #2a2a3e);
+}
+
+.radar-matrix-item input[type="checkbox"] {
+    accent-color: var(--accent-bright, #4fc3f7);
+}
+
+.radar-matrix-item-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.radar-matrix-actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: 6px;
+}
+
+.radar-matrix-actions button {
+    font-size: var(--text-sm);
+    padding: 3px var(--space-2);
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-md);
+    background: none;
+    color: var(--text-secondary, #aaa);
+    cursor: pointer;
+}
+
+.radar-matrix-actions button:hover {
+    color: var(--text-primary, #e0e0e0);
+    border-color: var(--accent-bright, #4fc3f7);
+}
+
+/* --- Sections grid (2 columns) --- */
+.radar-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-1);
+}
+
+/* --- Editor actions --- */
+.radar-editor-actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    justify-content: flex-end;
+}
+
+.radar-btn-primary {
+    padding: 7px var(--space-4);
+    border: none;
+    border-radius: var(--radius-lg);
+    background: var(--accent-bright, #4fc3f7);
+    color: #000;
+    font-size: var(--text-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.radar-btn-primary:hover {
+    opacity: 0.85;
+}
+
+.radar-btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.radar-btn-secondary {
+    padding: 7px var(--space-4);
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-lg);
+    background: none;
+    color: var(--text-primary, #e0e0e0);
+    font-size: var(--text-md);
+    cursor: pointer;
+}
+
+.radar-btn-secondary:hover {
+    background: var(--bg-hover, #2a2a3e);
+}
+
+.radar-btn-danger {
+    padding: 7px var(--space-4);
+    border: 1px solid #c62828;
+    border-radius: var(--radius-lg);
+    background: none;
+    color: #ef5350;
+    font-size: var(--text-md);
+    cursor: pointer;
+}
+
+.radar-btn-danger:hover {
+    background: rgba(198, 40, 40, 0.15);
+}
+
+/* --- Add broadcast button --- */
+.radar-add-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: var(--space-2) var(--space-4);
+    border-top: 1px solid var(--border-subtle, #2a2a3e);
+    font-size: var(--text-md);
+    color: var(--accent-bright, #4fc3f7);
+    cursor: pointer;
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    width: 100%;
+    text-align: left;
+}
+
+.radar-add-btn:hover {
+    background: var(--bg-hover, #2a2a3e);
+}
+
+.radar-add-btn:disabled {
+    color: var(--text-secondary, #888);
+    cursor: not-allowed;
+}
+
+/* --- Slot counter --- */
+.radar-slot-counter {
+    text-align: center;
+    padding: var(--space-3);
+    font-size: var(--text-md);
+    color: var(--text-secondary, #aaa);
+    border-top: 1px solid var(--border-color, #333);
+}
+
+.radar-slot-bar {
+    height: 4px;
+    background: var(--border-color, #333);
+    border-radius: var(--radius-sm);
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.radar-slot-fill {
+    height: 100%;
+    background: var(--accent-bright, #4fc3f7);
+    border-radius: var(--radius-sm);
+    transition: width 0.3s;
+}
+
+/* --- Discovery tab --- */
+.radar-search {
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-lg);
+    background: var(--bg-tertiary, #161625);
+    color: var(--text-primary, #e0e0e0);
+    font-size: var(--text-md);
+    margin-bottom: var(--space-3);
+}
+
+.radar-search:focus {
+    outline: none;
+    border-color: var(--accent-bright, #4fc3f7);
+}
+
+.radar-discovery-card {
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3) var(--space-4);
+    margin-bottom: var(--space-2);
+    transition: background 0.15s;
+}
+
+.radar-discovery-card:hover {
+    background: var(--bg-hover, #2a2a3e);
+}
+
+.radar-discovery-owner {
+    font-size: var(--text-base);
+    color: var(--text-secondary, #aaa);
+}
+
+.radar-discovery-model {
+    font-weight: 600;
+    font-size: var(--text-lg);
+    margin-top: 2px;
+}
+
+.radar-discovery-profile {
+    font-size: var(--text-base);
+    color: var(--accent-bright, #4fc3f7);
+    margin-top: 2px;
+}
+
+.radar-discovery-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-2);
+}
+
+.radar-discovery-stats {
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #aaa);
+}
+
+.radar-discovery-empty {
+    text-align: center;
+    padding: 40px var(--space-5);
+    color: var(--text-secondary, #888);
+    font-size: var(--text-lg);
+}
+
+/* --- Email chips --- */
+.radar-email-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-top: var(--space-1);
+}
+
+.radar-email-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 2px var(--space-2);
+    background: var(--bg-hover, #2a2a3e);
+    border-radius: 12px;
+    font-size: var(--text-base);
+}
+
+.radar-email-chip-remove {
+    cursor: pointer;
+    color: var(--text-secondary, #aaa);
+    font-size: var(--text-lg);
+    line-height: 1;
+}
+
+.radar-email-chip-remove:hover {
+    color: #ef5350;
+}
+
+.radar-email-input {
+    border: none;
+    background: none;
+    color: var(--text-primary, #e0e0e0);
+    font-size: var(--text-base);
+    outline: none;
+    min-width: 120px;
+}
+
+/* ================================================================
+   RADAR-INVERTED-MONET F3 — Openness badge in sliceCreatorWizard
+   Reflete classificação isOpenPublication em tempo real.
+   ================================================================ */
+
+.rsw-badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    margin-top: var(--space-2);
+    border-radius: 12px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.rsw-badge--open {
+    background: var(--ecbt-color-success-bg, #1a3a1a);
+    color: var(--ecbt-color-success-text, #6fde6f);
+    border: 1px solid var(--ecbt-color-success-border, #2a5a2a);
+}
+
+.rsw-badge--paid {
+    background: var(--ecbt-color-warning-bg, #3a2a1a);
+    color: var(--ecbt-color-warning-text, #ffb86c);
+    border: 1px solid var(--ecbt-color-warning-border, #5a4a2a);
+}

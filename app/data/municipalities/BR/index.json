@@ -1,0 +1,117 @@
+{
+    "country": "BR",
+    "country_name": "Brasil",
+    "source": "IBGE",
+    "source_url": "https://servicodados.ibge.gov.br",
+    "generated_at": "2026-04-06T20:32:38.634Z",
+    "states": [
+        {
+            "code": "AC",
+            "file": "AC.json"
+        },
+        {
+            "code": "AL",
+            "file": "AL.json"
+        },
+        {
+            "code": "AP",
+            "file": "AP.json"
+        },
+        {
+            "code": "AM",
+            "file": "AM.json"
+        },
+        {
+            "code": "BA",
+            "file": "BA.json"
+        },
+        {
+            "code": "CE",
+            "file": "CE.json"
+        },
+        {
+            "code": "DF",
+            "file": "DF.json"
+        },
+        {
+            "code": "ES",
+            "file": "ES.json"
+        },
+        {
+            "code": "GO",
+            "file": "GO.json"
+        },
+        {
+            "code": "MA",
+            "file": "MA.json"
+        },
+        {
+            "code": "MT",
+            "file": "MT.json"
+        },
+        {
+            "code": "MS",
+            "file": "MS.json"
+        },
+        {
+            "code": "MG",
+            "file": "MG.json"
+        },
+        {
+            "code": "PA",
+            "file": "PA.json"
+        },
+        {
+            "code": "PB",
+            "file": "PB.json"
+        },
+        {
+            "code": "PR",
+            "file": "PR.json"
+        },
+        {
+            "code": "PE",
+            "file": "PE.json"
+        },
+        {
+            "code": "PI",
+            "file": "PI.json"
+        },
+        {
+            "code": "RJ",
+            "file": "RJ.json"
+        },
+        {
+            "code": "RN",
+            "file": "RN.json"
+        },
+        {
+            "code": "RS",
+            "file": "RS.json"
+        },
+        {
+            "code": "RO",
+            "file": "RO.json"
+        },
+        {
+            "code": "RR",
+            "file": "RR.json"
+        },
+        {
+            "code": "SC",
+            "file": "SC.json"
+        },
+        {
+            "code": "SP",
+            "file": "SP.json"
+        },
+        {
+            "code": "SE",
+            "file": "SE.json"
+        },
+        {
+            "code": "TO",
+            "file": "TO.json"
+        }
+    ]
+}

@@ -1,0 +1,999 @@
+/* ================================================================
+   DATA ENTRY MATRIX — Formulário de entrada de dados em campo/escritório
+   Matriz transposta: linhas=parâmetros, colunas=elementos
+   Prefixo: dem- (Data Entry Matrix)
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   MODAL SIZE — Wider than standard modal
+   ---------------------------------------------------------------- */
+.modal-data-entry {
+    max-width: 90vw;
+    width: 1100px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-data-entry .modal-body {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+/* ----------------------------------------------------------------
+   WRAPPER — Main container inside modal-body
+   ---------------------------------------------------------------- */
+.dem-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* ----------------------------------------------------------------
+   TOOLBAR — Campaign info, mode toggle, stats
+   ---------------------------------------------------------------- */
+.dem-toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 10px var(--space-4);
+    border-bottom: 1px solid var(--neutral-200);
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.dem-toolbar-label {
+    font-size: 0.75rem;
+    color: var(--neutral-500);
+    white-space: nowrap;
+}
+
+.dem-toolbar-value {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--neutral-800);
+}
+
+.dem-toolbar-sep {
+    width: 1px;
+    height: 20px;
+    background: var(--neutral-200);
+    flex-shrink: 0;
+}
+
+.dem-toolbar-spacer {
+    flex: 1;
+}
+
+.dem-stats {
+    font-size: 0.75rem;
+    color: var(--neutral-500);
+}
+
+.dem-stats-count {
+    font-weight: 700;
+    color: var(--accent-600);
+}
+
+.dem-stats-warn {
+    color: var(--amber-600, #d97706);
+    font-weight: 600;
+}
+
+/* ----------------------------------------------------------------
+   STEP INDICATOR
+   ---------------------------------------------------------------- */
+.dem-steps {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 10px var(--space-4);
+    border-bottom: 1px solid var(--neutral-200);
+    flex-shrink: 0;
+}
+
+.dem-step {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--neutral-400);
+}
+
+.dem-step.active {
+    color: var(--accent-600);
+    font-weight: 600;
+}
+
+.dem-step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: var(--neutral-100);
+    color: var(--neutral-500);
+}
+
+.dem-step.active .dem-step-number {
+    background: var(--accent-600);
+    color: #fff;
+}
+
+.dem-step-arrow {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+}
+
+/* ----------------------------------------------------------------
+   SETUP CONTENT — Step 1 (parameter/element selection)
+   ---------------------------------------------------------------- */
+.dem-setup {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-4);
+}
+
+.dem-section {
+    margin-bottom: var(--space-5);
+}
+
+.dem-section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--neutral-700);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dem-section-actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+.dem-btn-sm {
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    color: var(--neutral-600);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.dem-btn-sm:hover {
+    background: var(--neutral-100);
+    border-color: var(--neutral-400);
+}
+
+.dem-btn-sm.active {
+    background: var(--accent-50);
+    border-color: var(--accent-400);
+    color: var(--accent-700);
+}
+
+/* Campaign row */
+.dem-campaign-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.dem-campaign-row .dem-form-group {
+    flex: 1;
+    min-width: 160px;
+}
+
+.dem-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.dem-form-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.dem-form-input {
+    padding: 6px var(--space-2);
+    font-size: 0.8rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    background: var(--neutral-0, #fff);
+    color: var(--neutral-800);
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.dem-form-input:focus {
+    border-color: var(--accent-500);
+    box-shadow: 0 0 0 2px var(--accent-100);
+}
+
+/* Search input */
+.dem-search {
+    width: 100%;
+    max-width: clamp(200px, 80vw, 280px);
+    margin-bottom: var(--space-2);
+}
+
+/* Parameter/element checkbox grid */
+.dem-check-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+    max-height: 200px;
+    overflow-y: auto;
+    padding: var(--space-2);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+}
+
+.dem-check-grid::-webkit-scrollbar {
+    width: 4px;
+}
+
+.dem-check-grid::-webkit-scrollbar-thumb {
+    background: var(--neutral-300);
+    border-radius: var(--radius-sm);
+}
+
+.dem-check-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78rem;
+    color: var(--neutral-700);
+    cursor: pointer;
+    padding: 2px 0;
+    min-width: 140px;
+}
+
+.dem-check-item input[type="checkbox"] {
+    accent-color: var(--accent-600);
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+/* Category label inside check grid */
+.dem-category-label {
+    width: 100%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 6px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.dem-category-label:first-child {
+    margin-top: 0;
+}
+
+/* Mode toggle */
+.dem-mode-toggle {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.dem-mode-btn {
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: none;
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    color: var(--neutral-500);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.dem-mode-btn.active {
+    background: var(--accent-600);
+    color: #fff;
+}
+
+.dem-mode-btn:not(.active):hover {
+    background: var(--neutral-100);
+}
+
+/* ----------------------------------------------------------------
+   FOOTER — Actions (Next, Save, Cancel)
+   ---------------------------------------------------------------- */
+.dem-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px var(--space-4);
+    border-top: 1px solid var(--neutral-200);
+    flex-shrink: 0;
+}
+
+.dem-footer-spacer {
+    flex: 1;
+}
+
+.dem-btn {
+    padding: 7px 18px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--neutral-300);
+    border-radius: 5px;
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    color: var(--neutral-700);
+    cursor: pointer;
+    transition: background 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dem-btn:hover {
+    background: var(--neutral-100);
+}
+
+.dem-btn-primary {
+    background: var(--accent-600);
+    color: #fff;
+    border-color: var(--accent-700);
+}
+
+.dem-btn-primary:hover {
+    background: var(--accent-700);
+}
+
+.dem-btn-success {
+    background: var(--green-600, #16a34a);
+    color: #fff;
+    border-color: var(--green-700, #15803d);
+}
+
+.dem-btn-success:hover {
+    background: var(--green-700, #15803d);
+}
+
+.dem-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ----------------------------------------------------------------
+   MATRIX TABLE — Office mode (Step 2)
+   ---------------------------------------------------------------- */
+.dem-matrix-scroll {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+}
+
+.dem-table {
+    border-collapse: collapse;
+    font-size: 0.78rem;
+    width: max-content;
+    min-width: 100%;
+}
+
+.dem-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--neutral-100);
+    padding: var(--space-2) 10px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: var(--neutral-700);
+    border-bottom: 2px solid var(--neutral-300);
+    white-space: nowrap;
+}
+
+.dem-table thead th:first-child,
+.dem-table thead th:nth-child(2) {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+}
+
+.dem-table thead th:nth-child(2) {
+    left: 140px;
+}
+
+/* Row header — parameter name (sticky left) */
+.dem-row-header {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    padding: 6px 10px;
+    font-weight: 600;
+    color: var(--neutral-700);
+    white-space: nowrap;
+    min-width: 140px;
+    max-width: var(--ecbt-input-lg, 140px);
+    border-right: 1px solid var(--neutral-200);
+}
+
+.dem-row-unit {
+    position: sticky;
+    left: 140px;
+    z-index: 1;
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    padding: 6px 6px;
+    font-size: 0.7rem;
+    color: var(--neutral-400);
+    text-align: center;
+    min-width: 50px;
+    max-width: var(--ecbt-grid-cell-sm, 50px);
+    border-right: 1px solid var(--neutral-200);
+}
+
+.dem-table tbody tr {
+    border-bottom: 1px solid var(--neutral-100);
+}
+
+.dem-table tbody tr:hover {
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+}
+
+/* Data cell */
+.dem-cell {
+    padding: var(--space-1) 6px;
+    text-align: center;
+    min-width: 120px;
+    vertical-align: top;
+}
+
+.dem-input {
+    width: 80px;
+    padding: 5px 6px;
+    font-size: 0.8rem;
+    text-align: right;
+    border: 1px solid var(--neutral-200);
+    border-radius: 3px;
+    background: #fff;
+    color: var(--neutral-800);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.dem-input:focus {
+    border-color: var(--accent-500);
+    box-shadow: 0 0 0 2px var(--accent-100);
+}
+
+.dem-input.dirty {
+    border-color: var(--accent-400);
+    background: var(--accent-50);
+}
+
+.dem-input.error {
+    border-color: var(--red-500, #ef4444);
+    background: var(--red-50, #fef2f2);
+}
+
+.dem-input.exceeds {
+    border-color: var(--amber-500, #f59e0b);
+    background: var(--amber-50, #fffbeb);
+}
+
+/* Historical value below input */
+.dem-history {
+    font-size: 0.65rem;
+    color: var(--neutral-400);
+    margin-top: 2px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: clamp(80px, 30vw, 120px);
+}
+
+.dem-history-value {
+    font-weight: 600;
+    color: var(--neutral-500);
+}
+
+/* Regulatory limit indicator */
+.dem-limit-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    padding: 0 var(--space-1);
+    border-radius: 3px;
+    font-weight: 700;
+    margin-left: 3px;
+}
+
+.dem-limit-badge.warning {
+    background: var(--amber-100, #fef3c7);
+    color: var(--amber-700, #b45309);
+}
+
+.dem-limit-badge.critical {
+    background: var(--red-100, #fee2e2);
+    color: var(--red-700, #b91c1c);
+}
+
+/* ----------------------------------------------------------------
+   FIELD MODE — Single element card view (Step 2 alternate)
+   ---------------------------------------------------------------- */
+.dem-field-view {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-3) var(--space-4);
+    display: none;
+}
+
+.dem-mode-field .dem-matrix-scroll { display: none; }
+.dem-mode-field .dem-field-view { display: block; }
+
+/* Element navigator */
+.dem-field-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.dem-field-nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--neutral-300);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    color: var(--neutral-600);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dem-field-nav-btn:hover {
+    background: var(--neutral-100);
+}
+
+.dem-field-element-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--neutral-800);
+    text-align: center;
+}
+
+.dem-field-progress {
+    font-size: 0.7rem;
+    color: var(--neutral-400);
+    text-align: center;
+    margin-top: 2px;
+}
+
+/* Field mode rows */
+.dem-field-rows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.dem-field-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px var(--space-3);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+}
+
+.dem-field-row-label {
+    flex: 1;
+    min-width: 0;
+}
+
+.dem-field-row-param {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--neutral-700);
+}
+
+.dem-field-row-unit {
+    font-size: 0.68rem;
+    color: var(--neutral-400);
+}
+
+.dem-field-row-history {
+    font-size: 0.65rem;
+    color: var(--neutral-400);
+    margin-top: 2px;
+}
+
+.dem-field-input {
+    width: 100px;
+    height: 44px;
+    padding: var(--space-2) 10px;
+    font-size: 1rem;
+    text-align: right;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-lg);
+    background: #fff;
+    color: var(--neutral-800);
+    outline: none;
+    flex-shrink: 0;
+}
+
+.dem-field-input:focus {
+    border-color: var(--accent-500);
+    box-shadow: 0 0 0 3px var(--accent-100);
+}
+
+.dem-field-input.dirty {
+    border-color: var(--accent-400);
+    background: var(--accent-50);
+}
+
+.dem-field-input.error {
+    border-color: var(--red-500, #ef4444);
+}
+
+.dem-field-input.exceeds {
+    border-color: var(--amber-500, #f59e0b);
+    background: var(--amber-50, #fffbeb);
+}
+
+/* ----------------------------------------------------------------
+   EMPTY STATE
+   ---------------------------------------------------------------- */
+.dem-empty {
+    text-align: center;
+    padding: 40px var(--space-5);
+    color: var(--neutral-400);
+}
+
+.dem-empty-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-2);
+}
+
+.dem-empty-text {
+    font-size: 0.85rem;
+}
+
+/* ----------------------------------------------------------------
+   DARK THEME
+   ---------------------------------------------------------------- */
+[data-theme="dark"] .dem-toolbar {
+    border-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .dem-steps {
+    border-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .dem-footer {
+    border-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .dem-form-input {
+    background: var(--neutral-800);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .dem-check-grid {
+    background: var(--neutral-800);
+    border-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .dem-check-item {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .dem-category-label {
+    color: var(--neutral-400);
+    border-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .dem-table thead th {
+    background: var(--neutral-800);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .dem-row-header,
+[data-theme="dark"] .dem-row-unit {
+    background: var(--neutral-850, var(--neutral-800));
+    border-color: var(--neutral-700);
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .dem-table tbody tr {
+    border-color: var(--neutral-750, var(--neutral-700));
+}
+
+[data-theme="dark"] .dem-input {
+    background: var(--neutral-800);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .dem-input.dirty {
+    background: var(--accent-900, rgba(59, 130, 246, 0.15));
+}
+
+[data-theme="dark"] .dem-field-row {
+    background: var(--neutral-800);
+    border-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .dem-field-input {
+    background: var(--neutral-800);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .dem-btn {
+    background: var(--neutral-700);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .dem-btn:hover {
+    background: var(--neutral-600);
+}
+
+[data-theme="dark"] .dem-btn-sm {
+    background: var(--neutral-700);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+/* ----------------------------------------------------------------
+   MOBILE OVERRIDES
+   ---------------------------------------------------------------- */
+body.mobile .modal-data-entry {
+    max-width: 100vw;
+    width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+    margin: 0;
+}
+
+body.mobile .dem-toolbar {
+    padding: var(--space-2) var(--space-3);
+    gap: var(--space-2);
+}
+
+body.mobile .dem-setup {
+    padding: var(--space-3);
+}
+
+body.mobile .dem-check-grid {
+    max-height: 160px;
+}
+
+body.mobile .dem-field-input {
+    width: 110px;
+    height: 48px;
+    font-size: 1.1rem;
+}
+
+body.mobile .dem-input {
+    height: 44px;
+    font-size: 1rem;
+    width: 90px;
+}
+
+/* Quick-fill bar */
+.dem-quickfill {
+    display: flex;
+    gap: 6px;
+    padding: 6px var(--space-4);
+    border-bottom: 1px solid var(--neutral-200);
+    flex-shrink: 0;
+    align-items: center;
+}
+
+[data-theme="dark"] .dem-quickfill {
+    border-color: var(--neutral-700);
+}
+
+/* ----------------------------------------------------------------
+   DATE INPUT — Per-element date (noCampaignMode)
+   ---------------------------------------------------------------- */
+.dem-date-input {
+    display: block;
+    width: 100%;
+    margin-top: var(--space-1);
+    padding: 3px var(--space-1);
+    font-size: 0.68rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: 3px;
+    background: var(--neutral-0, #fff);
+    color: var(--neutral-700);
+    outline: none;
+}
+
+.dem-date-input:focus {
+    border-color: var(--accent-500);
+    box-shadow: 0 0 0 2px var(--accent-100);
+}
+
+[data-theme="dark"] .dem-date-input {
+    background: var(--neutral-800);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+/* Field mode date row */
+.dem-field-date-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+}
+
+.dem-field-date {
+    padding: 6px var(--space-2);
+    font-size: 0.85rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    background: var(--neutral-0, #fff);
+    color: var(--neutral-800);
+    outline: none;
+}
+
+.dem-field-date:focus {
+    border-color: var(--accent-500);
+    box-shadow: 0 0 0 2px var(--accent-100);
+}
+
+[data-theme="dark"] .dem-field-date-row {
+    background: var(--neutral-800);
+    border-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .dem-field-date {
+    background: var(--neutral-800);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+/* ----------------------------------------------------------------
+   UNIT SELECT — Per-parameter unit override
+   ---------------------------------------------------------------- */
+.dem-unit-select {
+    width: 100%;
+    padding: 2px 3px;
+    font-size: 0.7rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: 3px;
+    background: var(--neutral-0, #fff);
+    color: var(--neutral-600);
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: center;
+}
+
+.dem-unit-select:focus {
+    border-color: var(--accent-500);
+}
+
+[data-theme="dark"] .dem-unit-select {
+    background: var(--neutral-800);
+    border-color: var(--neutral-600);
+    color: var(--text-muted);
+}
+
+/* ----------------------------------------------------------------
+   VO COLUMN — Valor Orientador (regulatory reference)
+   ---------------------------------------------------------------- */
+.dem-th-vo {
+    min-width: 50px;
+    max-width: var(--ecbt-input-xs, 60px);
+    font-size: 0.68rem !important;
+    color: var(--neutral-500) !important;
+}
+
+.dem-row-vo {
+    position: sticky;
+    left: 190px;
+    z-index: 1;
+    background: var(--ecbt-surface-muted, var(--neutral-50));
+    padding: 6px 6px;
+    font-size: 0.7rem;
+    color: var(--neutral-400);
+    text-align: center;
+    min-width: 50px;
+    max-width: var(--ecbt-input-xs, 60px);
+    border-right: 1px solid var(--neutral-200);
+    font-style: italic;
+}
+
+[data-theme="dark"] .dem-row-vo {
+    background: var(--neutral-850, var(--neutral-800));
+    border-color: var(--neutral-700);
+    color: var(--neutral-500);
+}
+
+/* Sticky header for VO column */
+.dem-table thead th:nth-child(3) {
+    position: sticky;
+    left: 190px;
+    z-index: 3;
+}
+
+/* ----------------------------------------------------------------
+   INSIGHTS BUTTON
+   ---------------------------------------------------------------- */
+.dem-btn-insights {
+    background: var(--accent-50);
+    border-color: var(--accent-300);
+    color: var(--accent-700);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.dem-btn-insights:hover {
+    background: var(--accent-100);
+    border-color: var(--accent-400);
+}
+
+[data-theme="dark"] .dem-btn-insights {
+    background: var(--accent-900, rgba(59, 130, 246, 0.15));
+    border-color: var(--accent-600);
+    color: var(--accent-300);
+}
+
+/* ----------------------------------------------------------------
+   HINT — Small helper text
+   ---------------------------------------------------------------- */
+.dem-hint {
+    font-size: 0.68rem;
+    color: var(--accent-600);
+    font-style: italic;
+    align-self: center;
+}
+
+.dem-hint-tag {
+    font-size: 0.7rem;
+    color: var(--accent-600);
+    font-style: italic;
+}
+
+/* Field mode VO badge inline */
+.dem-field-vo {
+    font-size: 0.62rem;
+    color: var(--neutral-400);
+    margin-left: 6px;
+    font-style: italic;
+}

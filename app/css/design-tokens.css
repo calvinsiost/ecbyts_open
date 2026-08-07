@@ -1,0 +1,783 @@
+/* ================================================================
+   DESIGN TOKENS — Shared UI primitives for ECBT modals & panels
+   Componentes base reutilizaveis: overlay, dialog, form, buttons,
+   badges, tables, cards, loading, filters.
+
+   Cada modal/painel usa classes .ecbt-* como base e adiciona
+   classes especificas do componente (.photolog-*, .credential-*, etc.)
+
+   ## Regra de tamanhos (audit 2026-05-13)
+   Modais usam .ecbt-dialog--{xs,sm,md,lg,xl,2xl} via custom properties
+   --ecbt-modal-* com clamp() — mobile-first, sem media queries
+   hardcoded. NAO definir max-width: NNNpx fora deste arquivo.
+   Ver docs/reports/UI_MODAL_TOKENS_AUDIT_2026_05_13.md.
+   ================================================================ */
+
+/* SPEC_ARCH_CSS_CASCADE_LAYERS (Fase 1) — canonical cascade layer order.
+   design-tokens.css is the first stylesheet loaded (index.html), so this is the
+   authoritative @layer order for the whole app. INERT until CSS is migrated into
+   layers (Fase 2+): unlayered styles always win over layered ones, so this
+   declaration ALONE causes ZERO precedence/visual change (refactor, not redesign). */
+@layer reset, base, tokens, layouts, components, utilities, overrides;
+
+/* === MODAL SIZE TOKENS (clamp-based, programmatic) ===
+   Substitui max-width: NNNpx fixo. Width fluido entre min e max
+   baseado no viewport — sem necessidade de @media queries por modal. */
+/* SPEC_ARCH_CSS_CASCADE_LAYERS Fase 1b — token defs migrados p/ @layer tokens.
+   Zero-efeito: --ecbt-* são definidos SÓ aqui (sem redefinição unlayered), então
+   var(--ecbt-*) resolve idêntico independente do layer. Smaller-module proof
+   antes da migração de styles.css. Validado: css-cascade-layers.spec.ts CL-02. */
+@layer tokens {
+:root {
+    --ecbt-modal-xs: clamp(280px, 90vw, 360px);
+    --ecbt-modal-sm: clamp(320px, 90vw, 480px);
+    --ecbt-modal-md: clamp(360px, 90vw, 520px);
+    --ecbt-modal-lg: clamp(480px, 90vw, 720px);
+    --ecbt-modal-xl: clamp(640px, 92vw, 920px);
+    --ecbt-modal-2xl: clamp(720px, 95vw, 1200px);
+    /* Modal vertical sizing: clamp altura entre min (legivel) e max (nao
+       transborda viewport). Conteudo interno scrolla via overflow-y. */
+    --ecbt-modal-max-h: min(92vh, 920px);
+    --ecbt-modal-min-h: clamp(280px, 40vh, 480px);
+
+    /* G1b — Input widths estendidos (extremos faltantes na escala
+       xs/sm/md/lg pré-existente, W3C DTCG tier semantic 2026-05-30).
+       Reference: research-2026-05-30 §24.2. */
+    --ecbt-input-tiny: clamp(32px,   8vw,  48px);   /* badges, k coeffs ≤50px */
+    --ecbt-input-xl:   clamp(140px, 25vw, 240px);   /* grid label longo */
+
+    /* G1b residual — controls + grid cells (categorias semânticas distintas
+       de input width). Drena os 2 residuais finais do scanner sem misuso
+       de input tokens. Reference: research-2026-05-30 §24.2. */
+    --ecbt-control-icon-sm: clamp(20px, 5vw,  28px);  /* icon button quadrado */
+    --ecbt-grid-cell-sm:    clamp(40px, 8vw,  56px);  /* célula grid estreita */
+
+    /* G1b — Content widths semânticos (texto narrativo, parágrafos).
+       Categoria distinta de --ecbt-modal-* (overlay vs content-area).
+       Substitui max-width:NNpx hardcoded em empty-state e report editor. */
+    --ecbt-content-narrow:   clamp(280px, 40vw, 340px); /* empty-state, tooltip */
+    --ecbt-content-readable: clamp(480px, 65vw, 760px); /* report editor body */
+
+    /* F1 — Surface/elevation tokens semânticos (Material Design 3 elevation +
+       W3C DTCG tier semantic 2026-05-30). Referenciam primitives existentes
+       (--chrome-bg, --window-dark-*) para preservar tema dark/light/sépia.
+       Reference: research-2026-05-30 §24.6. */
+    --ecbt-surface-base:    var(--chrome-bg, #f1f5f6);       /* header/toolbar/ticker */
+    --ecbt-surface-body:    var(--window-dark, #f9fbfc);     /* body principal, panels */
+    --ecbt-surface-raised:  var(--window-dark-2, #f1f5f6);   /* cards, elevated panels */
+    --ecbt-surface-overlay: var(--window-dark-3, #e8edf0);   /* modais, popovers */
+    --ecbt-surface-sunken:  var(--overlay-subtle, rgba(0,0,0,0.04));  /* inputs, tracks */
+    --ecbt-surface-muted:   var(--neutral-50, #f3f4f6);      /* badges, chips */
+
+    /* === INPUT/BADGE SIZE TOKENS (clamp-based, programmatic) ===
+       Cap-preserving para small form inputs, dropdowns, badges, labels.
+       Floor permite shrink em mobile sem quebrar legibilidade. */
+    --ecbt-input-xs: clamp(60px, 22vw, 80px);
+    --ecbt-input-sm: clamp(72px, 25vw, 100px);
+    --ecbt-input-md: clamp(100px, 30vw, 140px);
+    --ecbt-input-lg: clamp(140px, 45vw, 180px);
+
+    /* === DATASET AUTO-COLOR PALETTE (SPEC_GIS_AUTO_COLOR_DATASET) ===
+       Paleta Tableau-10 estendida (12 cores) — espelha
+       src/app/js/core/symbology/datasetColors.ts. Cada dataset
+       importado (shapefile, GeoJSON, demo case, ECBT key) recebe
+       automaticamente uma destas cores via hash FNV-1a(datasetId) % 12.
+
+       Calibracao: Stone et al. (Tableau, 2017) + ColorBrewer Set3 ext.
+       Contraste WCAG 3:1 garantido sobre bg dark e bg light.
+       Distinguiveis sob deuteranopia/protanopia. */
+    --ecbt-dataset-color-01: #4e79a7; /* blue */
+    --ecbt-dataset-color-02: #f28e2b; /* orange */
+    --ecbt-dataset-color-03: #59a14f; /* green */
+    --ecbt-dataset-color-04: #e15759; /* red */
+    --ecbt-dataset-color-05: #76b7b2; /* teal */
+    --ecbt-dataset-color-06: #b07aa1; /* purple */
+    --ecbt-dataset-color-07: #edc948; /* yellow */
+    --ecbt-dataset-color-08: #ff9da7; /* pink */
+    --ecbt-dataset-color-09: #9c755f; /* brown */
+    --ecbt-dataset-color-10: #bab0ac; /* gray */
+    --ecbt-dataset-color-11: #86bcb6; /* cyan */
+    --ecbt-dataset-color-12: #d4a6c8; /* mauve */
+}
+} /* end @layer tokens */
+
+/* SPEC_ARCH_CSS_CASCADE_LAYERS Fase 2 (A1) — wrap .ecbt-* in @layer components.
+   Strategy: unlayered styles retain MAXIMUM precedence, so wrapping .ecbt-*
+   makes them LOSE to any unlayered legacy rule targeting same class — desired
+   gradual takeover per Smashing 2025-09 research. styles.css (~6800L legacy)
+   remains unlayered and continues to win. Incremental migration, zero forced
+   regression. Reference: research-2026-05-30 §24.1. */
+@layer components {
+
+/* === OVERLAY === */
+.ecbt-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+/* === DIALOG === */
+.ecbt-dialog {
+    background: var(--bg-secondary, #1e1e2e);
+    /* Texto explícito claro: o bg acima cai no fallback escuro #1e1e2e (--bg-secondary
+       é fantasma/indefinido), mas sem `color` o texto HERDA --text-primary (tematizado
+       ESCURO no tema light) → texto-escuro-em-fundo-escuro = invisível (contraste 1.05:1,
+       medido no consent modal @light). Como TODO modal usa .ecbt-dialog (regra da spec),
+       isto quebrava todos no tema light. Pin claro garante AA em ambos os temas; o modal
+       fica um card escuro consistente (tematizar o surface é follow-up, exige validar
+       conteúdo que assume bg escuro). SPEC §16.4 contraste/legibilidade. */
+    color: var(--ecbt-dialog-fg, #e8ecf2);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 12px;
+    max-height: var(--ecbt-modal-max-h);
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+.ecbt-dialog--xs  { width: var(--ecbt-modal-xs); }
+.ecbt-dialog--sm  { width: var(--ecbt-modal-sm); }
+.ecbt-dialog--md  { width: var(--ecbt-modal-md); }
+.ecbt-dialog--lg  { width: var(--ecbt-modal-lg); }
+.ecbt-dialog--xl  { width: var(--ecbt-modal-xl); }
+.ecbt-dialog--2xl { width: var(--ecbt-modal-2xl); }
+
+/* Links dentro de qualquer .ecbt-dialog. Sem esta regra o <a> caía no azul
+   default do browser (#0000EE) sobre o fundo escuro pinado em .ecbt-dialog
+   (#1e1e2e) — 1,9:1, ilegível. MEDIDO no #terms-acceptance-modal
+   (EARLY-ADOPTER-LAUNCH-READINESS#tos-oauth-consent, screenshot do J1) e
+   idêntico no #legal-consent-modal, que tem os mesmos links de Termos/
+   Privacidade. Num modal LEGAL o link para o documento tem de ser legível.
+   #7fb2ff sobre #1e1e2e = 7,6:1 (AAA). Dentro de @layer components: qualquer
+   regra legada não-layerizada continua vencendo — zero regressão forçada. */
+.ecbt-dialog a {
+    color: var(--ecbt-dialog-link, #7fb2ff);
+    text-decoration: underline;
+}
+.ecbt-dialog a:hover,
+.ecbt-dialog a:focus-visible {
+    color: var(--ecbt-dialog-link-hover, #a9ccff);
+}
+
+/* Opt-in "Ajude a melhorar o produto" no consent modal (HUMAN-USAGE-CAPTURE
+   F2). Checkbox NUNCA pré-marcado (default OFF — LGPD/CDC, sem dark pattern). */
+.legal-consent-improve-row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 13px;
+}
+.legal-consent-improve-row input[type='checkbox'] {
+    margin-top: 3px;
+    flex: none;
+}
+
+/* === HEADER === */
+.ecbt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color, #333);
+}
+
+.ecbt-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary, #e0e0e0);
+}
+
+.ecbt-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary, #888);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.ecbt-close:hover {
+    background: var(--hover-bg, rgba(255, 255, 255, 0.08));
+    color: var(--text-primary, #e0e0e0);
+}
+
+/* === FORM === */
+.ecbt-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ecbt-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ecbt-field label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary, #aaa);
+}
+
+.ecbt-field select,
+.ecbt-field textarea,
+.ecbt-field input[type="text"],
+.ecbt-field input[type="number"],
+.ecbt-field input[type="email"],
+.ecbt-field input[type="url"],
+.ecbt-field input[type="password"] {
+    background: var(--bg-primary, #121220);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 6px;
+    color: var(--text-primary, #e0e0e0);
+    padding: 8px 12px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.ecbt-field select:focus,
+.ecbt-field textarea:focus,
+.ecbt-field input:focus {
+    border-color: var(--accent-bright, #60a5fa);
+    outline: none;
+}
+
+.ecbt-hint {
+    font-size: 11px;
+    color: var(--text-tertiary, #666);
+}
+
+/* === BUTTONS === */
+.ecbt-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 8px;
+}
+
+.ecbt-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border-color, #333);
+    transition: all 0.15s ease;
+    /* WCAG 2.5.8 (AA) target-size — garante alvo de toque >= 24x24px mesmo
+       quando o reset global `* { padding: 0 }` (styles.css) zera o padding
+       deste botao. min-height/min-width nao sao afetados pelo reset. */
+    min-height: 24px;
+    min-width: 24px;
+    line-height: 1.4;
+}
+
+.ecbt-btn--primary {
+    background: var(--accent-bright, #60a5fa);
+    color: #fff;
+    border-color: var(--accent-bright, #60a5fa);
+}
+.ecbt-btn--primary:hover { opacity: 0.9; }
+.ecbt-btn--primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.ecbt-btn--cancel {
+    background: transparent;
+    color: var(--text-secondary, #aaa);
+}
+.ecbt-btn--cancel:hover {
+    background: var(--hover-bg, rgba(255, 255, 255, 0.08));
+}
+
+.ecbt-btn--danger {
+    background: var(--error, #ef4444);
+    color: #fff;
+    border-color: var(--error, #ef4444);
+}
+.ecbt-btn--danger:hover { background: #dc2626; }
+
+.ecbt-btn--outline {
+    background: var(--bg-primary, #121220);
+    border: 1px dashed #555;
+    color: var(--text-secondary, #aaa);
+}
+.ecbt-btn--outline:hover {
+    border-color: var(--accent-bright, #60a5fa);
+    color: var(--accent-bright, #60a5fa);
+}
+
+/* === BADGE === */
+.ecbt-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ecbt-badge--info    { background: rgba(96, 165, 250, 0.2); color: #60a5fa; }
+.ecbt-badge--success { background: rgba(74, 222, 128, 0.2); color: #4ade80; }
+.ecbt-badge--warning { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+.ecbt-badge--danger  { background: rgba(248, 113, 113, 0.2); color: #f87171; }
+.ecbt-badge--purple  { background: rgba(168, 85, 247, 0.2); color: #a855f7; }
+
+/* === TABLE === */
+.ecbt-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.ecbt-table thead th {
+    text-align: left;
+    padding: 8px 6px;
+    color: var(--text-secondary, #888);
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color, #333);
+    position: sticky;
+    top: 0;
+    background: var(--bg-secondary, #1e1e2e);
+}
+
+.ecbt-table tbody tr { cursor: pointer; }
+.ecbt-table tbody tr:hover {
+    background: var(--hover-bg, rgba(255, 255, 255, 0.04));
+}
+
+.ecbt-table td {
+    padding: 8px 6px;
+    border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.05));
+    color: var(--text-primary, #e0e0e0);
+    vertical-align: top;
+}
+
+/* === LOADING (inside dialog) === */
+.ecbt-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: var(--bg-secondary, #1e1e2e);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.ecbt-spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-color, #333);
+    border-top-color: var(--accent-bright, #60a5fa);
+    border-radius: 50%;
+    animation: ecbt-spin 0.7s linear infinite;
+}
+
+@keyframes ecbt-spin {
+    to { transform: rotate(360deg); }
+}
+
+.ecbt-loading-text {
+    font-size: 12px;
+    color: var(--text-tertiary, #666);
+    margin-top: 4px;
+}
+
+/* === FILTER BAR === */
+.ecbt-filters {
+    display: flex;
+    gap: 8px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-color, #333);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.ecbt-filters select,
+.ecbt-filters input {
+    background: var(--bg-primary, #121220);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 6px;
+    color: var(--text-primary, #e0e0e0);
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+/* === DETAIL PANEL === */
+.ecbt-detail {
+    border-top: 1px solid var(--border-color, #333);
+    padding: 16px 20px;
+    max-height: 50vh;
+    overflow-y: auto;
+    background: var(--bg-primary, #121220);
+}
+
+/* === CARD GRID === */
+.ecbt-card-grid {
+    display: grid;
+    gap: 12px;
+    padding: 16px 20px;
+}
+.ecbt-card-grid--2 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.ecbt-card-grid--3 { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+
+.ecbt-card {
+    border: 1px solid var(--border-color, #333);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ecbt-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-bright, #60a5fa);
+}
+
+/* === CHECKBOX === */
+.ecbt-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary, #aaa);
+    cursor: pointer;
+}
+
+/* === TEXT TRUNCATION === */
+.ecbt-truncate {
+    max-width: clamp(200px, 75vw, 300px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* === TWO-PANE LAYOUT === */
+.ecbt-two-pane {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.ecbt-sidebar {
+    width: 220px;
+    min-width: 180px;
+    border-right: 1px solid var(--border-color, #333);
+    overflow-y: auto;
+    background: var(--bg-primary, #121220);
+}
+
+.ecbt-sidebar-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary, #aaa);
+    border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.05));
+}
+.ecbt-sidebar-item:hover {
+    background: var(--hover-bg, rgba(255, 255, 255, 0.04));
+}
+.ecbt-sidebar-item--active {
+    background: var(--accent-bright, #3b6bff);
+    color: #fff;
+}
+
+.ecbt-pane-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+}
+
+/* === EMPTY STATE === */
+.ecbt-empty {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-tertiary, #666);
+    font-size: 13px;
+}
+
+/* === SECTION STAT TEXT === */
+.ecbt-stat {
+    font-size: 12px;
+    color: var(--text-tertiary, #666);
+    margin-left: auto;
+}
+
+/* ================================================================
+   BANNERS — Non-modal top-right notifications
+   ----------------------------------------------------------------
+   Used by SPEC_GIS_OUT_OF_VIEWPORT_BANNER. Distinct from .toast
+   (bottom-right, transient) — banners are top-right with a primary
+   action button. Stack vertically when multiple are visible.
+   ================================================================ */
+
+#gis-banner-container {
+    position: fixed;
+    top: 60px;
+    right: 16px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: clamp(280px, 30vw, 420px);
+    pointer-events: none;
+}
+
+.ecbt-banner {
+    pointer-events: auto;
+    background: var(--bg-secondary, #1e1e2e);
+    color: var(--text-primary, #e0e0e0);
+    border: 1px solid var(--border-color, #333);
+    border-left: 4px solid var(--accent-bright, #60a5fa);
+    border-radius: 8px;
+    padding: 12px 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    animation: ecbt-banner-slide-in 0.25s ease-out;
+}
+
+@keyframes ecbt-banner-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.ecbt-banner-message {
+    flex: 1;
+    min-width: 0;
+    color: var(--text-primary, #e0e0e0);
+}
+
+.ecbt-banner-action {
+    /* Inherits .ecbt-btn--primary visuals; just tighten padding for banner footprint */
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.ecbt-banner-close {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary, #888);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.ecbt-banner-close:hover {
+    background: var(--hover-bg, rgba(255, 255, 255, 0.08));
+    color: var(--text-primary, #e0e0e0);
+}
+.ecbt-banner-close:focus-visible,
+.ecbt-banner-action:focus-visible {
+    outline: 2px solid var(--accent-bright, #60a5fa);
+    outline-offset: 2px;
+}
+
+/* GIS out-of-viewport variant — info severity (default accent blue) */
+.ecbt-banner--gis-out-of-viewport {
+    border-left-color: var(--accent-bright, #60a5fa);
+}
+
+} /* end @layer components */
+
+/* === ESTRUTURA INTERNA DO DIALOG (título / corpo / rodapé) ===
+   MEDIDO em 2026-08-07, no primeiro uso real do Calvin: o modal de consentimento
+   LGPD — a PRIMEIRA tela que todo convidado vê — aparecia cru: texto colado na
+   borda, links e checkbox sem espaçamento, botões com a borda `outset` default do
+   navegador. Causa: o markup usa `.ecbt-dialog__title/__body/__footer` (BEM) e
+   NENHUMA folha definia essas três classes. Cinco painéis usam esse markup
+   (privacyNotice, ohsPanel, portfolioPanel, regulatoryReportModal,
+   eis/adminInterface) — todos herdavam o mesmo vazio.
+
+   Não é o bug do CSS adiado: `design-tokens.css` é eager. Era ausência de regra,
+   e por isso nenhum gesto consertava — o consent modal nasce ANTES de qualquer
+   gesto, então ele nunca teria segunda chance.
+
+   Fica nesta folha, ao lado de `.ecbt-dialog`, para que a estrutura viva junto
+   com o card que a contém. */
+.ecbt-dialog__title {
+    margin: 0;
+    padding: var(--space-5, 20px) var(--space-6, 24px) var(--space-3, 12px);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.ecbt-dialog__body {
+    padding: 0 var(--space-6, 24px) var(--space-4, 16px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3, 12px);
+    line-height: 1.5;
+}
+
+.ecbt-dialog__body > p {
+    margin: 0;
+}
+
+.ecbt-dialog__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-3, 12px);
+    padding: var(--space-4, 16px) var(--space-6, 24px) var(--space-5, 20px);
+    border-top: 1px solid var(--border-color, #333);
+}
+
+/* Os botões do rodapé são marcados só com `.btn-primary`/`.btn-secondary`, SEM a
+   classe base `.btn` — que é quem carrega padding, raio e `border-style: solid`
+   em styles.css. Sem isto o navegador desenha o botão default (borda `outset`,
+   padding 0). Corrigir por CSS, e não trocando o markup, mantém os 5 painéis
+   consertados de uma vez e não mexe em superfície que outros agentes editam. */
+.ecbt-dialog__footer > .btn-primary,
+.ecbt-dialog__footer > .btn-secondary {
+    padding: var(--space-2, 8px) var(--space-4, 16px);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm, 6px);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2, 8px);
+}
+
+
+/* ================================================================
+   MODO SIMPLES/TÉCNICO — camada leiga (FRIEND-SCORE-001 TD-11)
+   Conceito da Fundação ecbyts. Fora de @layer p/ as regras de
+   visibilidade vencerem por especificidade. Default = Simples (lay).
+   ================================================================ */
+/* Default = Simples (lay): lay-only visível mesmo sem a classe (anti-flash no boot);
+   só o modo Técnico explícito esconde o leigo e revela o técnico. */
+/* lay-only é visível por padrão (default = Simples); só o Técnico explícito esconde */
+html.ecbt-tech .ecbt-lay-only { display: none; }
+.ecbt-tech-only { display: none; }
+html.ecbt-tech .ecbt-tech-only { display: revert; }
+
+/* Jargão decorado: sublinhado pontilhado + cursor de ajuda (Simples); some no Técnico */
+.ecbt-jargon {
+    border-bottom: 1px dotted var(--accent-bright, #60a5fa);
+    cursor: help;
+}
+html.ecbt-tech .ecbt-jargon { border-bottom: 0; cursor: default; }
+
+/* Controle na statusbar */
+.ecbt-laymode { display: inline-flex; align-items: center; gap: 4px; }
+.ecbt-laymode-btn,
+.ecbt-laymode-help {
+    font: inherit;
+    font-size: 11px;
+    line-height: 1;
+    padding: 3px 8px;
+    border: 1px solid #3a4453;
+    border-radius: 6px;
+    background: #1f2937;
+    color: #7ab8ff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.ecbt-laymode-help { padding: 3px 7px; font-weight: 700; }
+.ecbt-laymode-btn:hover,
+.ecbt-laymode-help:hover { border-color: #7ab8ff; }
+.ecbt-laymode-btn:focus-visible,
+.ecbt-laymode-help:focus-visible { outline: 2px solid #7ab8ff; outline-offset: 1px; }
+
+/* Glossário leigo (popover no body, acima do botão "?") */
+.ecbt-lay-glossary {
+    position: fixed;
+    bottom: 34px;
+    right: 12px;
+    z-index: 320;
+    width: min(420px, 92vw);
+    max-height: 60vh;
+    overflow: auto;
+    padding: 14px 16px;
+    border: 1px solid #3a4453;
+    border-radius: 10px;
+    /* Cores explícitas (não via --neutral-*, que resolvem ESCURO em alguns temas →
+       texto-escuro-em-fundo-escuro, mesmo bug documentado em .ecbt-dialog §16.4). */
+    background: #111827;
+    color: #e8ecf2;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    line-height: 1.5;
+}
+.ecbt-lay-glossary[hidden] { display: none; }
+.ecbt-lay-glossary-head { font-weight: 700; font-size: 14px; margin-bottom: 4px; color: #e8ecf2; }
+.ecbt-lay-glossary-hint { margin: 0 0 10px; color: #9ca3af; font-size: 12px; }
+.ecbt-lay-glossary-list { margin: 0; }
+.ecbt-lay-glossary-list dt { font-weight: 700; color: #7ab8ff; margin-top: 8px; }
+.ecbt-lay-glossary-list dd { margin: 2px 0 0; color: #d6dbe3; }
+
+/* ============================================================
+   A11y primitivo compartilhado — screen-reader-only
+   ------------------------------------------------------------
+   .lms-sr-only: conteúdo só para leitores de tela (labels de
+   type-picker no editor de curso, anúncios aria-live de reorder
+   no player). Definição CANÔNICA ÚNICA — consumido por
+   lmsManager.ts e lmsAuthoringModal.ts. Mora aqui (design-tokens
+   é carregado globalmente em index.html) para não ficar atado ao
+   CSS de um módulo. Padrão WCAG visually-hidden (clip-rect).
+   ============================================================ */
+.lms-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ================================================================
+   #terms-acceptance-modal — aceite de Termos pós-OAuth
+   (EARLY-ADOPTER-LAUNCH-READINESS#tos-oauth-consent)
+
+   FORA de @layer, de propósito e pelo mesmo motivo do bloco
+   "MODO SIMPLES/TÉCNICO" acima: o reset global de styles.css
+   (`*, *::before, *::after { padding: 0 }`) é NÃO-LAYERIZADO, e
+   estilo não-layerizado vence QUALQUER camada — independente de
+   especificidade. Por isso o `padding: 20px` de .ecbt-form e o
+   `padding: 16px 20px` de .ecbt-header (ambos em @layer components)
+   chegam zerados na tela: MEDIDO no screenshot do J1, texto e botões
+   colados na borda do diálogo. Aqui, unlayered vs unlayered, a
+   especificidade volta a valer e o ID ganha do `*`.
+
+   Escopo travado no ID: nenhum outro modal muda de aparência.
+   ================================================================ */
+#terms-acceptance-modal .ecbt-header {
+    padding: 16px 20px;
+}
+#terms-acceptance-modal .ecbt-form {
+    padding: 20px;
+}
+#terms-acceptance-modal .ecbt-actions {
+    padding-top: 8px;
+}
+#terms-acceptance-modal .ecbt-btn {
+    padding: 8px 16px;
+}

@@ -1,0 +1,151 @@
+/* SPEC_REGISTRY_CATALOG (claude - novaspec, 2026-06-02) — Fase 2 styles.
+ *
+ * Componente único `openRegistryCatalog`. Reusa .ecbt-dialog (design-tokens.css)
+ * + extraClass 'registry-catalog-dialog'. Tokens semantic apenas.
+ */
+
+.registry-catalog-dialog {
+    display: flex;
+    flex-direction: column;
+}
+
+.registry-catalog-root {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    min-height: 0;
+}
+
+.registry-catalog-search {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.registry-catalog-search .form-input {
+    flex: 1;
+}
+
+.registry-catalog-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 84px;
+    overflow-y: auto;
+    padding: 2px 0;
+}
+
+.registry-catalog-chip {
+    background: var(--surface-2, #2a2a2a);
+    color: var(--text-primary, #e6e6e6);
+    border: 1px solid var(--border-subtle, #444);
+    padding: var(--space-1) 10px;
+    border-radius: 12px;
+    font-size: var(--text-base);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.registry-catalog-chip:hover {
+    background: var(--surface-3, #353535);
+}
+
+.registry-catalog-chip.is-active {
+    background: var(--accent-primary, #4a9eff);
+    color: #fff;
+    border-color: var(--accent-primary, #4a9eff);
+}
+
+.registry-catalog-chip:focus-visible {
+    outline: 2px solid var(--focus-ring, #4a9eff);
+    outline-offset: 2px;
+}
+
+.registry-catalog-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    overflow-y: auto;
+    flex: 1;
+    min-height: 200px;
+    max-height: 60vh;
+}
+
+.registry-catalog-card {
+    background: var(--surface-2, #2a2a2a);
+    border: 1px solid var(--border-subtle, #444);
+    border-radius: var(--radius-lg);
+    padding: 10px var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.registry-catalog-card-label {
+    font-weight: 600;
+    color: var(--text-primary, #e6e6e6);
+    font-size: var(--text-lg);
+}
+
+.registry-catalog-card-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.registry-catalog-group-badge,
+.registry-catalog-id-badge {
+    background: var(--surface-3, #353535);
+    color: var(--text-secondary, #b0b0b0);
+    border: 1px solid var(--border-subtle, #444);
+    padding: 2px var(--space-2);
+    border-radius: 10px;
+    font-size: var(--text-sm);
+    font-family: var(--font-mono, monospace);
+}
+
+.registry-catalog-card-desc {
+    color: var(--text-secondary, #b0b0b0);
+    font-size: var(--text-md);
+    line-height: 1.4;
+}
+
+.registry-catalog-card-ref {
+    font-size: var(--text-base);
+    color: var(--text-tertiary, #888);
+    font-family: var(--font-mono, monospace);
+}
+
+.registry-catalog-card-ref a {
+    color: var(--accent-primary, #4a9eff);
+    text-decoration: none;
+}
+
+.registry-catalog-card-ref a:hover {
+    text-decoration: underline;
+}
+
+.registry-catalog-card-action {
+    align-self: flex-start;
+    margin-top: 2px;
+}
+
+.registry-catalog-empty {
+    text-align: center;
+    color: var(--text-tertiary, #888);
+    padding: 32px var(--space-4);
+    font-style: italic;
+}
+
+.registry-catalog-counter {
+    font-size: var(--text-base);
+    color: var(--text-tertiary, #888);
+    text-align: right;
+    padding-top: var(--space-1);
+    border-top: 1px solid var(--border-subtle, #444);
+}
+
+.registry-catalog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+}

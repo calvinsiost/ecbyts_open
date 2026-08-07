@@ -1,0 +1,452 @@
+/* ================================================================
+   SIMULATION LAB — Modal & component styles
+   Estilos do modal Simulation Lab: sidebar, cards de modelo,
+   painel de detalhes, formulário externo, resultados.
+
+   Usa classes .ecbt-* de design-tokens.css como base.
+   Namespace proprio: .sim-*
+   ================================================================ */
+
+/* === DIALOG === */
+.sim-dialog {
+    background: var(--bg-secondary, #1e1e2e);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    width: 1080px;
+    max-width: 96vw;
+    max-height: 92vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === BODY (two-pane layout) === */
+.sim-body {
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+    padding: 0;
+    flex: 1;
+    min-height: 560px;
+}
+
+/* === SIDEBAR (model list) === */
+.sim-sidebar {
+    width: 300px;
+    border-right: 1px solid var(--border);
+    overflow: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sim-sidebar-cards {
+    flex: 1;
+}
+
+.sim-sidebar-footer {
+    border-top: 1px solid var(--border);
+    padding: var(--space-2) 0 0;
+    margin-top: var(--space-1);
+}
+
+/* === MODEL CARD === */
+.sim-model-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface-1);
+    margin-bottom: var(--space-2);
+    cursor: pointer;
+}
+
+.sim-model-card.is-active {
+    background: var(--surface-2);
+}
+
+.sim-card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sim-card-badges {
+    display: flex;
+    gap: var(--space-1);
+    align-items: center;
+}
+
+.sim-card-title {
+    font-size: var(--text-base);
+    font-weight: bold;
+}
+
+.sim-badge-external {
+    font-size: 9px;
+    padding: 1px var(--space-1);
+    border-radius: 3px;
+    background: #fde68a;
+    color: #111;
+}
+
+.sim-badge-license {
+    font-size: var(--text-xs);
+    padding: 2px 6px;
+    border-radius: 999px;
+    color: #111;
+}
+
+.sim-card-desc {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+}
+
+.sim-card-meta {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* === ADD EXTERNAL BUTTON === */
+.sim-add-external-btn {
+    width: 100%;
+    padding: var(--space-2);
+    font-size: var(--text-sm);
+    background: none;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.sim-add-external-btn:hover {
+    border-color: var(--accent-bright, #60a5fa);
+    color: var(--accent-bright, #60a5fa);
+}
+
+/* === DETAIL PANE === */
+.sim-detail {
+    flex: 1;
+    overflow: auto;
+    padding: 14px;
+}
+
+/* === DETAIL HEADER === */
+.sim-detail-header {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    align-items: flex-start;
+}
+
+.sim-detail-title-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-1);
+}
+
+.sim-detail-title-row h4 {
+    margin: 0;
+}
+
+.sim-detail-desc {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.sim-detail-meta {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-align: right;
+    white-space: nowrap;
+}
+
+.sim-detail-repo {
+    font-size: var(--text-xs);
+}
+
+.sim-no-model {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+}
+
+/* === MUTABLE VERSION WARNING === */
+.sim-mutable-warn {
+    margin-bottom: 10px;
+    padding: var(--space-2);
+    border: 1px solid var(--accent-orange);
+    border-radius: var(--radius-lg);
+    background: rgba(245, 158, 11, 0.08);
+    font-size: var(--text-sm);
+    color: var(--accent-orange);
+}
+
+/* === SECTION BOX === */
+.sim-section {
+    margin-bottom: var(--space-3);
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface-1);
+}
+
+.sim-section-title {
+    font-size: var(--text-base);
+    font-weight: bold;
+}
+
+/* === PARAMETER GRID === */
+.sim-param-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.sim-no-params {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+/* === VOLUME SELECTOR === */
+.sim-volume-select {
+    margin-top: 6px;
+}
+
+.sim-volume-select select {
+    width: 100%;
+    padding: 7px;
+}
+
+/* === EMPTY VOLUME STATE === */
+.sim-empty-volume {
+    margin-top: var(--space-2);
+    padding: var(--space-3);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-xl);
+    text-align: center;
+}
+
+.sim-empty-volume-text {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    margin-bottom: var(--space-2);
+}
+
+.sim-empty-volume .btn {
+    font-size: var(--text-base);
+    padding: 6px var(--space-4);
+}
+
+/* === CONSENT SECTION === */
+.sim-consent-list {
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sim-consent-done {
+    color: #34d399;
+}
+
+/* === ACTIONS ROW === */
+.sim-actions {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* === REMOVE EXTERNAL BUTTON === */
+.sim-remove-btn {
+    font-size: var(--text-sm);
+    padding: 6px var(--space-3);
+    border: 1px solid var(--border);
+    background: none;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+/* === STATUS TEXT === */
+.sim-status {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+/* === RESULT AREA === */
+.sim-result {
+    margin-top: var(--space-3);
+}
+
+.sim-result-box {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface-1);
+    font-size: var(--text-base);
+}
+
+.sim-result-grid {
+    margin-top: var(--space-2);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: var(--space-2);
+}
+
+.sim-result-label {
+    color: var(--text-muted);
+}
+
+/* === INPUT FIELD (shared for params + external form) === */
+.sim-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+}
+
+.sim-field--full {
+    grid-column: 1 / -1;
+}
+
+.sim-field input[type="number"],
+.sim-field input[type="text"],
+.sim-field select {
+    padding: 7px;
+}
+
+.sim-field-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.sim-field-row input[type="number"] {
+    flex: 1;
+    padding: 7px;
+}
+
+.sim-spatial-label {
+    font-size: var(--text-xs);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.sim-spatial-status {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+/* === ZONE CHECKBOXES === */
+.sim-zone-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sim-zone-label {
+    cursor: pointer;
+}
+
+/* === REQUIRED MARKER === */
+.sim-required {
+    color: #f87171;
+}
+
+/* === EXTERNAL FORM === */
+.sim-ext-form {
+    max-width: clamp(320px, 90vw, 560px);
+}
+
+.sim-ext-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.sim-ext-form-header h4 {
+    margin: 0;
+}
+
+.sim-ext-cancel-btn {
+    font-size: var(--text-sm);
+    padding: 5px var(--space-3);
+    border: 1px solid var(--border);
+    background: none;
+    cursor: pointer;
+}
+
+.sim-ext-manifest-hint {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.sim-ext-manifest-row {
+    display: flex;
+    gap: 6px;
+}
+
+.sim-ext-manifest-row input {
+    flex: 1;
+    padding: 7px;
+    font-size: var(--text-sm);
+}
+
+.sim-ext-manifest-row .btn {
+    font-size: var(--text-sm);
+    padding: 7px var(--space-3);
+    white-space: nowrap;
+}
+
+.sim-ext-fetch-status {
+    font-size: var(--text-sm);
+    margin-top: var(--space-1);
+    color: var(--text-muted);
+}
+
+.sim-ext-or-divider {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.sim-ext-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+}
+
+.sim-ext-actions {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: flex-end;
+}
+
+.sim-ext-actions .sim-ext-cancel-btn {
+    padding: 6px var(--space-4);
+}
+
+.sim-ext-actions .btn-primary {
+    font-size: var(--text-base);
+    padding: 6px var(--space-4);
+}
+
+/* === MUTABLE VERSION INLINE BADGE === */
+.sim-mutable-inline {
+    color: var(--accent-orange);
+}

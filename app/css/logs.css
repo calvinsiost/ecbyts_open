@@ -1,0 +1,138 @@
+/* ================================================================
+   LOGS MODAL — Mais → Logs viewer (system errors/warnings/toasts).
+   Owns .logs-* (see CLAUDE.md CSS File Ownership). Built on .ecbt-*.
+   ================================================================ */
+
+.logs-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 80vh;
+}
+
+.logs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logs-header h2 {
+    margin: 0;
+    font-size: var(--text-2xl);
+}
+
+.logs-hint {
+    margin: 0;
+    font-size: var(--text-base);
+    color: var(--text-tertiary, #999);
+}
+
+.logs-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.logs-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.logs-chip {
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary, #cfe0f2);
+    font-size: var(--text-base);
+    cursor: pointer;
+}
+
+.logs-chip:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.logs-chip-active {
+    background: rgba(90, 150, 255, 0.22);
+    border-color: rgba(120, 170, 255, 0.7);
+    color: #fff;
+}
+
+.logs-count-wrap {
+    margin-left: auto;
+    font-size: var(--text-sm);
+    color: var(--text-tertiary, #999);
+}
+
+.logs-list {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    background: rgba(0, 0, 0, 0.18);
+    padding: var(--space-1);
+    min-height: 200px;
+}
+
+.logs-row {
+    display: grid;
+    grid-template-columns: 64px 88px 70px 1fr;
+    gap: var(--space-2);
+    align-items: baseline;
+    padding: 6px var(--space-2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: var(--text-base);
+}
+
+.logs-row:last-child {
+    border-bottom: none;
+}
+
+.logs-badge {
+    text-align: center;
+    border-radius: var(--radius-md);
+    padding: 1px 6px;
+    font-size: 10.5px;
+    font-weight: 600;
+}
+
+.logs-lvl-error {
+    background: rgba(239, 68, 68, 0.18);
+    color: #fca5a5;
+}
+
+.logs-lvl-warning {
+    background: rgba(245, 158, 11, 0.18);
+    color: #fcd34d;
+}
+
+.logs-lvl-success {
+    background: rgba(34, 197, 94, 0.18);
+    color: #86efac;
+}
+
+.logs-lvl-info {
+    background: rgba(96, 165, 250, 0.18);
+    color: #93c5fd;
+}
+
+.logs-time,
+.logs-src {
+    color: var(--text-tertiary, #888);
+    font-variant-numeric: tabular-nums;
+}
+
+.logs-msg {
+    color: var(--text-primary, #e7f1fb);
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.logs-empty {
+    padding: 32px var(--space-4);
+    text-align: center;
+    color: var(--text-tertiary, #888);
+    font-size: var(--text-md);
+}

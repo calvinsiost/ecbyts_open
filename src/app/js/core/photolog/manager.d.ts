@@ -1,0 +1,14 @@
+export function setPhotologUpdateAllUI(...args: any[]): any;
+export function addPhoto(...args: any[]): Promise<any>;
+export function getPhoto(...args: any[]): any;
+export function getPhotoBlob(...args: any[]): Promise<any>;
+export function getPhotoThumb(...args: any[]): Promise<any>;
+export function getPhotosByElement(...args: any[]): any[];
+export function getAllPhotos(...args: any[]): any[];
+export function deletePhoto(...args: any[]): Promise<any>;
+export function deletePhotosByElement(...args: any[]): Promise<any>;
+export function updatePhotoMeta(...args: any[]): any;
+export function syncPendingPhotos(...args: any[]): Promise<any>;
+export function exportPhotos(...args: any[]): any;
+export function importPhotos(...args: any[]): any;
+export function getPhotoStats(...args: any[]): any;

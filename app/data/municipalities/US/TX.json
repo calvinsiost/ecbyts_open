@@ -1,0 +1,52 @@
+[
+    {
+        "codigo_ibge": "48007",
+        "nome": "Arlington",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48004",
+        "nome": "Austin",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48008",
+        "nome": "Corpus Christi",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48003",
+        "nome": "Dallas",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48006",
+        "nome": "El Paso",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48005",
+        "nome": "Fort Worth",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48001",
+        "nome": "Houston",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48010",
+        "nome": "Laredo",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48009",
+        "nome": "Plano",
+        "uf": "TX"
+    },
+    {
+        "codigo_ibge": "48002",
+        "nome": "San Antonio",
+        "uf": "TX"
+    }
+]

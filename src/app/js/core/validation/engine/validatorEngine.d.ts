@@ -1,0 +1,16 @@
+export function registerDomain(...args: any[]): any;
+export function unregisterDomain(...args: any[]): any;
+export function clearRegistry(...args: any[]): any;
+export function listDomains(...args: any[]): any[];
+export function getDomainConfig(...args: any[]): any;
+export function validate(...args: any[]): any;
+export function validateBatch(...args: any[]): any;
+export function validateDataset(...args: any[]): any;
+export function rule(...args: any[]): any;
+export function batchRule(...args: any[]): any;
+export function required(...args: any[]): any;
+export function ifAvailable(...args: any[]): any;
+export function oneOf(...args: any[]): any;
+export function numeric(...args: any[]): any;
+export function matchPattern(...args: any[]): any;
+export function uniqueKey(...args: any[]): any;

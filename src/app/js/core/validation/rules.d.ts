@@ -1,0 +1,23 @@
+// @ts-check
+export const DEFAULT_SEVERITY: any;
+export const REGULATORY_THRESHOLDS: any;
+export const PARAMETER_THRESHOLDS: any;
+export const BENCHMARKS: any;
+export function calculateStats(...args: any[]): any;
+export function detectOutlierIQR(...args: any[]): any;
+export function detectOutlierZScore(...args: any[]): any;
+export function validateObservation(...args: any[]): any;
+export function validateObservationFull(...args: any[]): any;
+export function validateByCAS(...args: any[]): any;
+export function validateByParameter(...args: any[]): any;
+export function compareToBenchmark(...args: any[]): any;
+export function getExceededThreshold(...args: any[]): any;
+export function getThresholds(...args: any[]): any;
+export function getAllRegulatoryStandards(...args: any[]): any[];
+export function addCustomThreshold(...args: any[]): any;
+export function removeCustomThreshold(...args: any[]): any;
+export function getCustomThresholds(...args: any[]): any[];
+export function clearCustomThresholds(...args: any[]): void;
+export function exportCustomThresholds(...args: any[]): Record<string, any>;
+export function importCustomThresholds(...args: any[]): any;
+export function getSubstanceInfo(...args: any[]): any;

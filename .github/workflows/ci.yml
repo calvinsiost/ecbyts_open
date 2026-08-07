@@ -1,0 +1,46 @@
+# ecbyts_open — CI (ECBYTS-OPEN-LOCAL-001 RF15). GERADO por
+# scripts/publication/extract-to-open.mjs — nao editar a mao.
+# Roda em todo push/PR: install -> build -> test -> leak-scan.
+# Um run vermelho bloqueia o merge (branch protection exige CI verde).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: build + test (Node 22.14.0)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22.14.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+
+      - name: Cache npm downloads
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('package.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build (compiles src/ to app/js/)
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - name: Leak-scan (no secrets in the published tree)
+        run: npm run leak:scan

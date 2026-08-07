@@ -1,0 +1,144 @@
+/* ================================================================
+   SHORTCUTS MODAL — Mais → Ajuda → Atalhos (keyboard reference).
+   Owns .shortcuts-* (see CLAUDE.md CSS File Ownership). Built on .ecbt-*.
+   ================================================================ */
+
+.shortcuts-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 80vh;
+}
+
+.shortcuts-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shortcuts-header h2 {
+    margin: 0;
+    font-size: var(--text-2xl);
+}
+
+.shortcuts-hint {
+    margin: 0;
+    font-size: var(--text-base);
+    color: var(--text-tertiary, #999);
+}
+
+.shortcuts-search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(0, 0, 0, 0.18);
+    color: var(--text-primary, #e7f1fb);
+    font-size: var(--text-md);
+}
+
+.shortcuts-search:focus {
+    outline: none;
+    border-color: rgba(120, 170, 255, 0.7);
+}
+
+.shortcuts-list {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 200px;
+    padding-right: var(--space-1);
+}
+
+.shortcuts-section {
+    margin-bottom: 14px;
+}
+
+.shortcuts-cat {
+    margin: 0 0 6px;
+    font-size: var(--text-base);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-tertiary, #9fb3c8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: var(--space-1);
+}
+
+.shortcuts-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-3);
+    align-items: baseline;
+    padding: 6px var(--space-1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: var(--text-md);
+}
+
+.shortcuts-row:last-child {
+    border-bottom: none;
+}
+
+.shortcuts-keys {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.shortcuts-key {
+    display: inline-block;
+    min-width: 18px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-bottom-width: 2px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-primary, #e7f1fb);
+    font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.shortcuts-plus,
+.shortcuts-or {
+    color: var(--text-tertiary, #888);
+    font-size: var(--text-sm);
+    padding: 0 2px;
+}
+
+.shortcuts-or {
+    padding: 0 6px;
+    opacity: 0.7;
+}
+
+.shortcuts-desc {
+    color: var(--text-primary, #e7f1fb);
+}
+
+.shortcuts-ctx {
+    display: inline-block;
+    margin-left: var(--space-2);
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: rgba(96, 165, 250, 0.14);
+    color: #93c5fd;
+    font-size: 10.5px;
+    vertical-align: middle;
+}
+
+.shortcuts-empty {
+    padding: 32px var(--space-4);
+    text-align: center;
+    color: var(--text-tertiary, #888);
+    font-size: var(--text-md);
+}
+
+@media (max-width: 640px) {
+    .shortcuts-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-1);
+    }
+}

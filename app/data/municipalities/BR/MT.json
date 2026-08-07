@@ -1,0 +1,712 @@
+[
+    {
+        "codigo_ibge": "5100102",
+        "nome": "Acorizal",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5100201",
+        "nome": "Água Boa",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5100250",
+        "nome": "Alta Floresta",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5100300",
+        "nome": "Alto Araguaia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5100359",
+        "nome": "Alto Boa Vista",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5100409",
+        "nome": "Alto Garças",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5100508",
+        "nome": "Alto Paraguai",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5100607",
+        "nome": "Alto Taquari",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5100805",
+        "nome": "Apiacás",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101001",
+        "nome": "Araguaiana",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101209",
+        "nome": "Araguainha",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101258",
+        "nome": "Araputanga",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101308",
+        "nome": "Arenápolis",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101407",
+        "nome": "Aripuanã",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101605",
+        "nome": "Barão de Melgaço",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101704",
+        "nome": "Barra do Bugres",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101803",
+        "nome": "Barra do Garças",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101837",
+        "nome": "Boa Esperança do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101852",
+        "nome": "Bom Jesus do Araguaia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5101902",
+        "nome": "Brasnorte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102504",
+        "nome": "Cáceres",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102603",
+        "nome": "Campinápolis",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102637",
+        "nome": "Campo Novo do Parecis",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102678",
+        "nome": "Campo Verde",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102686",
+        "nome": "Campos de Júlio",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102694",
+        "nome": "Canabrava do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102702",
+        "nome": "Canarana",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102793",
+        "nome": "Carlinda",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5102850",
+        "nome": "Castanheira",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103007",
+        "nome": "Chapada dos Guimarães",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103056",
+        "nome": "Cláudia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103106",
+        "nome": "Cocalinho",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103205",
+        "nome": "Colíder",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103254",
+        "nome": "Colniza",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103304",
+        "nome": "Comodoro",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103353",
+        "nome": "Confresa",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103361",
+        "nome": "Conquista D'Oeste",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103379",
+        "nome": "Cotriguaçu",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103403",
+        "nome": "Cuiabá",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103437",
+        "nome": "Curvelândia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103452",
+        "nome": "Denise",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103502",
+        "nome": "Diamantino",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103601",
+        "nome": "Dom Aquino",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103700",
+        "nome": "Feliz Natal",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103809",
+        "nome": "Figueirópolis D'Oeste",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103858",
+        "nome": "Gaúcha do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103908",
+        "nome": "General Carneiro",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5103957",
+        "nome": "Glória D'Oeste",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104104",
+        "nome": "Guarantã do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104203",
+        "nome": "Guiratinga",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104500",
+        "nome": "Indiavaí",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104526",
+        "nome": "Ipiranga do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104542",
+        "nome": "Itanhangá",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104559",
+        "nome": "Itaúba",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104609",
+        "nome": "Itiquira",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104807",
+        "nome": "Jaciara",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5104906",
+        "nome": "Jangada",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105002",
+        "nome": "Jauru",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105101",
+        "nome": "Juara",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105150",
+        "nome": "Juína",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105176",
+        "nome": "Juruena",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105200",
+        "nome": "Juscimeira",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105234",
+        "nome": "Lambari D'Oeste",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105259",
+        "nome": "Lucas do Rio Verde",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105309",
+        "nome": "Luciara",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105580",
+        "nome": "Marcelândia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105606",
+        "nome": "Matupá",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105622",
+        "nome": "Mirassol d'Oeste",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105903",
+        "nome": "Nobres",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106000",
+        "nome": "Nortelândia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106109",
+        "nome": "Nossa Senhora do Livramento",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106158",
+        "nome": "Nova Bandeirantes",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106208",
+        "nome": "Nova Brasilândia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106216",
+        "nome": "Nova Canaã do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108808",
+        "nome": "Nova Guarita",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106182",
+        "nome": "Nova Lacerda",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108857",
+        "nome": "Nova Marilândia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108907",
+        "nome": "Nova Maringá",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108956",
+        "nome": "Nova Monte Verde",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106224",
+        "nome": "Nova Mutum",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106174",
+        "nome": "Nova Nazaré",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106232",
+        "nome": "Nova Olímpia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106190",
+        "nome": "Nova Santa Helena",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106240",
+        "nome": "Nova Ubiratã",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106257",
+        "nome": "Nova Xavantina",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106273",
+        "nome": "Novo Horizonte do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106265",
+        "nome": "Novo Mundo",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106315",
+        "nome": "Novo Santo Antônio",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106281",
+        "nome": "Novo São Joaquim",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106299",
+        "nome": "Paranaíta",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106307",
+        "nome": "Paranatinga",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106372",
+        "nome": "Pedra Preta",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106422",
+        "nome": "Peixoto de Azevedo",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106455",
+        "nome": "Planalto da Serra",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106505",
+        "nome": "Poconé",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106653",
+        "nome": "Pontal do Araguaia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106703",
+        "nome": "Ponte Branca",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106752",
+        "nome": "Pontes e Lacerda",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106778",
+        "nome": "Porto Alegre do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106802",
+        "nome": "Porto dos Gaúchos",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106828",
+        "nome": "Porto Esperidião",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5106851",
+        "nome": "Porto Estrela",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107008",
+        "nome": "Poxoréu",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107040",
+        "nome": "Primavera do Leste",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107065",
+        "nome": "Querência",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107156",
+        "nome": "Reserva do Cabaçal",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107180",
+        "nome": "Ribeirão Cascalheira",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107198",
+        "nome": "Ribeirãozinho",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107206",
+        "nome": "Rio Branco",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107578",
+        "nome": "Rondolândia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107602",
+        "nome": "Rondonópolis",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107701",
+        "nome": "Rosário Oeste",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107750",
+        "nome": "Salto do Céu",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107248",
+        "nome": "Santa Carmem",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107743",
+        "nome": "Santa Cruz do Xingu",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107768",
+        "nome": "Santa Rita do Trivelato",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107776",
+        "nome": "Santa Terezinha",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107263",
+        "nome": "Santo Afonso",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107800",
+        "nome": "Santo Antônio de Leverger",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107792",
+        "nome": "Santo Antônio do Leste",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107859",
+        "nome": "São Félix do Araguaia",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107297",
+        "nome": "São José do Povo",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107305",
+        "nome": "São José do Rio Claro",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107354",
+        "nome": "São José do Xingu",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107107",
+        "nome": "São José dos Quatro Marcos",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107404",
+        "nome": "São Pedro da Cipa",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107875",
+        "nome": "Sapezal",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107883",
+        "nome": "Serra Nova Dourada",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107909",
+        "nome": "Sinop",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107925",
+        "nome": "Sorriso",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107941",
+        "nome": "Tabaporã",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5107958",
+        "nome": "Tangará da Serra",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108006",
+        "nome": "Tapurah",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108055",
+        "nome": "Terra Nova do Norte",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108105",
+        "nome": "Tesouro",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108204",
+        "nome": "Torixoréu",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108303",
+        "nome": "União do Sul",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108352",
+        "nome": "Vale de São Domingos",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108402",
+        "nome": "Várzea Grande",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108501",
+        "nome": "Vera",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5105507",
+        "nome": "Vila Bela da Santíssima Trindade",
+        "uf": "MT"
+    },
+    {
+        "codigo_ibge": "5108600",
+        "nome": "Vila Rica",
+        "uf": "MT"
+    }
+]

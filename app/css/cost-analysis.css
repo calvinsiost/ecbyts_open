@@ -1,0 +1,384 @@
+/* ================================================================
+   COST ANALYSIS PANEL — Dashboard de Analise de Custos
+   Estilos do painel de analise de custos: KPIs, graficos, tabelas
+
+   Ownership: .ca-* (except .ca-alloc-* which lives in governance.css)
+   Moved from injectCostAnalysisStyles() in costAnalysisPanel.js
+   ================================================================ */
+
+/* --- Action bar --- */
+.ca-actions {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: flex-end;
+    padding: 0.3rem 0;
+    margin-bottom: 0.2rem;
+}
+.ca-actions .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.ca-uncertainty-slot {
+    margin-right: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* --- View toggle --- */
+.ca-view-toggle {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+.ca-view-btn {
+    flex: 1;
+    padding: 0.35rem 0.5rem;
+    border: none;
+    background: transparent;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.15s;
+}
+.ca-view-btn:hover {
+    background: var(--neutral-100, #f5f5f5);
+}
+.ca-view-btn.active {
+    background: var(--primary-500, #3b6bff);
+    color: #fff;
+}
+
+/* --- KPI cards --- */
+.ca-kpi-row {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+.ca-kpi {
+    flex: 1;
+    min-width: 70px;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid var(--border-color, #eee);
+    border-radius: var(--radius-md);
+    text-align: center;
+    background: var(--bg-secondary, #fafafa);
+}
+.ca-kpi-label {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.ca-kpi-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+}
+.ca-kpi-capex .ca-kpi-value { color: var(--primary-600, #2d52c4); }
+.ca-kpi-opex .ca-kpi-value { color: #e67e22; }
+.ca-kpi-total .ca-kpi-value { color: #27ae60; }
+/* COST-CENTRAL-BOARD-001 F2: passivo / ativo / líquido (ECBT Score) */
+.ca-kpi-liability .ca-kpi-value { color: #e74c3c; }
+.ca-kpi-asset .ca-kpi-value { color: #16a085; }
+.ca-kpi-net .ca-kpi-value { font-size: 1.05em; font-weight: 700; }
+.ca-kpi-net.ca-net-positive .ca-kpi-value { color: #16a085; }
+.ca-kpi-net.ca-net-negative .ca-kpi-value { color: #e74c3c; }
+.ca-assets-kpi-row {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem;
+    background: rgba(22, 160, 133, 0.06);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid #16a085;
+}
+.ca-td-asset { color: #16a085; font-weight: 500; }
+.ca-td-net-positive { color: #16a085; font-weight: 600; }
+.ca-td-net-negative { color: #e74c3c; font-weight: 600; }
+.ca-kpi-sm .ca-kpi {
+    padding: 0.25rem 0.4rem;
+}
+.ca-kpi-sm .ca-kpi-value {
+    font-size: 0.8rem;
+}
+
+/* --- Sections --- */
+.ca-section {
+    margin-bottom: 0.5rem;
+}
+.ca-section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.3rem;
+}
+
+/* --- Chart containers --- */
+.ca-chart-container {
+    position: relative;
+    height: 180px;
+    margin-bottom: 0.5rem;
+}
+.ca-chart-sm {
+    height: 150px;
+}
+.ca-charts-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.ca-chart-half {
+    flex: 1;
+    min-width: 0;
+}
+
+/* --- Tables --- */
+.ca-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+}
+.ca-table th {
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0.25rem 0.35rem;
+    border-bottom: 1px solid var(--border-color, #ddd);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.ca-table td {
+    padding: 0.3rem 0.35rem;
+    border-bottom: 1px solid var(--border-color, #f0f0f0);
+}
+.ca-table-compact th,
+.ca-table-compact td {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.75rem;
+}
+.ca-td-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+.ca-td-bold { font-weight: 600; }
+.ca-td-family {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+}
+.ca-clickable { cursor: pointer; }
+.ca-clickable:hover {
+    background: var(--neutral-50, #fafafa);
+}
+.ca-chevron {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+}
+
+/* --- Drill-down detail --- */
+.ca-detail-row {
+    background: var(--bg-secondary, #fafafa);
+}
+.ca-detail {
+    padding: 0.4rem 0.5rem 0.4rem 1.2rem;
+    font-size: 0.75rem;
+}
+.ca-detail-sub {
+    font-weight: 600;
+    margin-top: 0.3rem;
+    margin-bottom: 0.15rem;
+}
+.ca-detail-line {
+    margin-bottom: 0.15rem;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.ca-detail-year {
+    font-weight: 600;
+    min-width: 35px;
+}
+.ca-detail-param {
+    font-weight: 500;
+    min-width: 80px;
+}
+.ca-detail-badge {
+    font-size: 0.6rem;
+    padding: 0.05rem 0.3rem;
+    border-radius: 3px;
+    background: var(--neutral-200, #e0e0e0);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+.ca-detail-items {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    padding-left: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+.ca-item {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: var(--radius-sm);
+    background: var(--neutral-100, #f5f5f5);
+    color: var(--text-secondary);
+}
+.ca-detail-more {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* --- Category blocks --- */
+.ca-category-block {
+    margin-bottom: 0.5rem;
+}
+.ca-category-header {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid var(--border-color, #ddd);
+    margin-bottom: 0.2rem;
+}
+
+/* --- Empty state --- */
+.ca-empty {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* --- Inline edit controls in drill-down --- */
+.ca-basis-select {
+    font-size: 0.6rem;
+    padding: 0 2px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+.ca-inline-input {
+    width: 70px;
+    text-align: right;
+    font-size: 0.68rem;
+    padding: 0 3px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text-primary, #333);
+}
+.ca-inline-input:focus {
+    border-color: var(--primary-500, #3b6bff);
+    outline: none;
+}
+.ca-btn-remove {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    padding: 0 2px;
+    line-height: 1;
+}
+.ca-btn-remove:hover {
+    color: var(--danger, #e74c3c);
+}
+
+/* --- Cost center table helpers (used in both views) --- */
+.ca-cc-table-overflow {
+    overflow-x: auto;
+}
+.ca-cc-th-right {
+    text-align: right;
+}
+.ca-benchmark-green { color: #27ae60; }
+.ca-benchmark-red { color: #e74c3c; }
+
+/* --- Drill-down add-year bar --- */
+.ca-add-year-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.3rem;
+}
+.ca-add-year-btn {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+}
+
+/* --- Chart margin helper --- */
+.ca-chart-mt {
+    margin-top: 0.5rem;
+}
+
+/* ================================================================
+   COST-VAL-PROV F3 — Valuation badges (provenance + integrity + range)
+   ================================================================ */
+.val-badges {
+    display: inline-flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.val-prov-badge,
+.val-int-badge,
+.val-range {
+    display: inline-block;
+    padding: 2px var(--space-2);
+    border-radius: 10px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+.val-prov-badge--ok {
+    background: var(--ecbt-color-info-bg, #1a2a3a);
+    color: var(--ecbt-color-info-text, #6fb3de);
+    border: 1px solid var(--ecbt-color-info-border, #2a4a5a);
+}
+
+.val-prov-badge--empty {
+    background: var(--ecbt-color-muted-bg, #2a2a2a);
+    color: var(--ecbt-color-muted-text, #888);
+    border: 1px solid var(--ecbt-color-muted-border, #444);
+}
+
+.val-int-badge--green {
+    background: var(--ecbt-color-success-bg, #1a3a1a);
+    color: var(--ecbt-color-success-text, #6fde6f);
+    border: 1px solid var(--ecbt-color-success-border, #2a5a2a);
+}
+
+.val-int-badge--yellow {
+    background: var(--ecbt-color-warning-bg, #3a2a1a);
+    color: var(--ecbt-color-warning-text, #ffb86c);
+    border: 1px solid var(--ecbt-color-warning-border, #5a4a2a);
+}
+
+.val-int-badge--red {
+    background: var(--ecbt-color-error-bg, #3a1a1a);
+    color: var(--ecbt-color-error-text, #ff6b6b);
+    border: 1px solid var(--ecbt-color-error-border, #5a2a2a);
+}
+
+.val-range--gum {
+    font-family: var(--font-mono, monospace);
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #aaa);
+}
+
+.val-range--point {
+    font-weight: 600;
+    color: var(--text-primary, #e0e0e0);
+}

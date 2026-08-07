@@ -1,0 +1,323 @@
+/* ================================================================
+   VIZ SETTINGS BAR — 3D visualization controls
+   Barra de controles no rodape do viewport 3D.
+   ================================================================ */
+
+.viz-settings-bar {
+    flex-shrink: 0;
+    z-index: 16;
+    background: var(--bottom-bg-solid);
+    border-top: 1px solid var(--bottom-border);
+    backdrop-filter: blur(8px);
+    font-size: var(--text-sm);
+    color: var(--bottom-text);
+}
+
+/* Handle de resize vertical no topo do viz settings */
+.vizSettings-resize-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    cursor: ns-resize;
+    z-index: 20;
+    background: transparent;
+    transition: background 0.15s ease;
+}
+
+.vizSettings-resize-top::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 3px;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    transition: background 0.15s ease;
+}
+
+.vizSettings-resize-top:hover {
+    background: var(--primary-500);
+    box-shadow: 0 0 4px rgba(61, 107, 122, 0.3);
+}
+
+.vizSettings-resize-top:hover::before {
+    background: var(--primary-500);
+}
+
+.viz-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px var(--space-3);
+    border-bottom: 1px solid var(--bottom-border-subtle);
+}
+
+.viz-settings-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: var(--text-base);
+}
+
+.viz-settings-header-actions {
+    display: flex;
+    gap: 2px;
+}
+
+.viz-settings-btn {
+    background: none;
+    border: none;
+    color: var(--bottom-text-muted);
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+}
+
+.viz-settings-btn:hover {
+    color: var(--bottom-text);
+    background: var(--bottom-hover);
+}
+
+.viz-settings-body {
+    padding: var(--space-2) var(--space-3);
+}
+
+/* Presets row */
+.viz-presets-row {
+    display: flex;
+    gap: var(--space-1);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-2);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--bottom-border-subtle);
+}
+
+.viz-preset-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) 10px;
+    border: 1px solid var(--bottom-border);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--bottom-text-muted);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    white-space: nowrap;
+    transition: all 0.15s;
+}
+
+.viz-preset-btn:hover {
+    background: var(--bottom-hover);
+    border-color: var(--bottom-text-muted);
+}
+
+.viz-preset-btn.viz-preset-active {
+    background: var(--primary-600, #3b6b7a);
+    border-color: var(--primary-500, #4a8a9a);
+    color: #fff;
+}
+
+.viz-preset-btn span {
+    font-size: var(--text-sm);
+}
+
+.viz-preset-user {
+    position: relative;
+}
+
+.viz-preset-delete {
+    display: none;
+    cursor: pointer;
+    color: var(--neutral-500);
+    margin-left: 2px;
+}
+
+.viz-preset-user:hover .viz-preset-delete {
+    display: inline-flex;
+}
+
+.viz-preset-delete:hover {
+    color: var(--error, #ef4444);
+}
+
+/* Controls grid */
+.viz-controls-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px var(--space-3);
+    align-items: center;
+    margin-bottom: var(--space-2);
+}
+
+.viz-control {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.viz-control-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Separador visual entre grupos de controles */
+.viz-control-separator {
+    width: 1px;
+    height: 20px;
+    background: var(--bottom-border, rgba(255, 255, 255, 0.15));
+    margin: 0 var(--space-1);
+    flex-shrink: 0;
+}
+
+/* Toggle switch */
+.viz-toggle-label {
+    font-size: var(--text-sm);
+    color: var(--bottom-text-muted);
+    white-space: nowrap;
+    min-width: 32px;
+}
+
+.viz-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.viz-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.viz-toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--neutral-400);
+    border-radius: var(--radius-xl);
+    transition: background 0.2s;
+}
+
+.viz-toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--neutral-0);
+    left: 2px;
+    top: 2px;
+    transition: transform 0.2s;
+}
+
+.viz-toggle-switch input:checked + .viz-toggle-slider {
+    background: var(--accent-500, #21c08b);
+}
+
+.viz-toggle-switch input:checked + .viz-toggle-slider::before {
+    transform: translateX(12px);
+}
+
+/* Slider */
+.viz-control-slider {
+    gap: var(--space-1);
+}
+
+.viz-slider-label {
+    font-size: var(--text-sm);
+    color: var(--bottom-text-muted);
+    white-space: nowrap;
+    min-width: 32px;
+}
+
+.viz-control-slider input[type="range"] {
+    width: 80px;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--neutral-400);
+    border-radius: var(--radius-sm);
+    outline: none;
+    cursor: pointer;
+}
+
+.viz-control-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-500, #21c08b);
+    cursor: pointer;
+}
+
+.viz-slider-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--text-xs);
+    color: var(--bottom-text);
+    min-width: 30px;
+    text-align: right;
+}
+
+/* Color picker */
+.viz-control-color {
+    gap: var(--space-1);
+}
+
+.viz-color-label {
+    font-size: var(--text-sm);
+    color: var(--bottom-text-muted);
+}
+
+.viz-control-color input[type="color"] {
+    width: 24px;
+    height: 20px;
+    border: 1px solid var(--bottom-border);
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    padding: 1px;
+}
+
+/* Actions row */
+.viz-actions-row {
+    display: flex;
+    gap: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--bottom-border-subtle);
+}
+
+.viz-action-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) 10px;
+    border: 1px solid var(--bottom-border);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--bottom-text-muted);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    transition: all 0.15s;
+}
+
+.viz-action-btn:hover {
+    background: var(--bottom-hover);
+    border-color: var(--bottom-text-muted);
+}
+
+/* Viz-settings bar usa position:absolute z-index:16 — overlaya acima do HUD.
+   Nao deslocar o HUD via bottom (quebra flex layout). */
+

@@ -1,0 +1,738 @@
+/* ================================================================
+   PURPOSE MODULE — Styles
+   Modulo de Proposito — Estilos
+
+   Namespace: .purpose-*
+   Ownership: Este arquivo e o unico que define seletores .purpose-*
+   Nao definir .btn-*, .modal-*, ou outros seletores fora do namespace.
+
+   Camada 1: Micro-toast (feedback instantaneo)
+   Camada 2: Statusbar widget (sessao)
+   Camada 3: Home grid section (retorno)
+   Camada 4: Modal (reflexao) — Phase 2
+   ================================================================ */
+
+/* ================================================================
+   CAMADA 1 — MICRO-TOAST
+   Toast contextual discreto para acoes EIS.
+   Menor e mais efemero que o toast padrao.
+   ================================================================ */
+
+.purpose-micro-toast-container {
+    position: fixed;
+    bottom: 80px;
+    right: 16px;
+    z-index: 150;
+    pointer-events: none;
+    max-width: var(--ecbt-modal-xs, clamp(280px, 90vw, 360px));
+}
+
+.purpose-micro-toast {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px var(--space-3);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid #888;
+    background: var(--surface-2, #1e1e2e);
+    color: var(--text-1, #e0e0e0);
+    font-size: var(--text-base);
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 300ms ease, transform 300ms ease;
+    pointer-events: auto;
+}
+
+.purpose-micro-toast-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.purpose-micro-toast-fade {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.purpose-micro-toast-arrow {
+    font-size: var(--text-xs);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.purpose-micro-toast-axis {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.purpose-micro-toast-sep {
+    color: var(--text-3, #666);
+    flex-shrink: 0;
+}
+
+.purpose-micro-toast-msg {
+    color: var(--text-2, #aaa);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ================================================================
+   CAMADA 2 — STATUSBAR WIDGET
+   Indicador EIS compacto no statusbar.
+   ================================================================ */
+
+.purpose-status-widget {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 0 6px;
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    border-radius: 3px;
+    transition: background 200ms ease;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.purpose-status-widget:hover {
+    background: var(--surface-hover, rgba(255, 255, 255, 0.08));
+}
+
+.purpose-status-score {
+    font-weight: 600;
+}
+
+.purpose-status-delta {
+    font-size: var(--text-xs);
+    opacity: 0.8;
+}
+
+.purpose-status-breakdown {
+    font-size: var(--text-xs);
+    opacity: 0.75;
+}
+
+.purpose-status-delta-positive {
+    color: var(--accent-green);
+}
+
+.purpose-status-delta-negative {
+    color: var(--accent-red);
+}
+
+.purpose-status-delta-neutral {
+    color: #888;
+}
+
+/* Pulse animation — dispara quando delta muda */
+@keyframes purpose-pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.purpose-status-pulse {
+    animation: purpose-pulse 400ms ease-in-out;
+}
+
+/* Cor por verdict */
+.purpose-status-high {
+    color: var(--accent-green);
+}
+
+.purpose-status-medium {
+    color: var(--accent-orange);
+}
+
+.purpose-status-low {
+    color: var(--accent-red);
+}
+
+/* ================================================================
+   CAMADA 3 — HOME GRID PURPOSE SECTION
+   Secao de impacto no home grid.
+   ================================================================ */
+
+.purpose-home-section {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-xl);
+    background: var(--surface-2, #1e1e2e);
+    border: 1px solid var(--border-1, #333);
+    margin-bottom: var(--space-3);
+}
+
+.purpose-home-meta {
+    font-size: var(--text-sm);
+    opacity: 0.78;
+    margin-bottom: 6px;
+}
+
+.purpose-home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+}
+
+.purpose-home-title {
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--text-1, #e0e0e0);
+}
+
+.purpose-home-details-link {
+    font-size: var(--text-sm);
+    color: var(--accent-1, #4a9eff);
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: inherit;
+}
+
+.purpose-home-details-link:hover {
+    text-decoration: underline;
+}
+
+.purpose-home-score-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin-bottom: 6px;
+}
+
+.purpose-home-score {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+}
+
+.purpose-home-delta {
+    font-size: var(--text-md);
+    font-family: var(--font-mono, 'Fira Code', monospace);
+}
+
+.purpose-home-narrative {
+    font-size: var(--text-base);
+    color: var(--text-2, #aaa);
+    margin-bottom: var(--space-2);
+}
+
+/* Sparkline canvas */
+.purpose-home-sparkline {
+    display: block;
+    height: 24px;
+    max-width: clamp(80px, 30vw, 120px);
+    margin-bottom: 6px;
+}
+
+/* Axis breakdown inline */
+.purpose-home-breakdown {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    font-size: var(--text-sm);
+    color: var(--text-2, #aaa);
+}
+
+.purpose-home-axis-delta {
+    white-space: nowrap;
+}
+
+/* Empty state */
+.purpose-home-empty {
+    font-size: var(--text-base);
+    color: var(--text-3, #666);
+    text-align: center;
+    padding: var(--space-2) 0;
+}
+
+/* ================================================================
+   CAMADA 4 — REFLECTION MODAL
+   Modal de reflexao com grafico, tabs e breakdown por eixo.
+   ================================================================ */
+
+.purpose-modal-box {
+    width: min(560px, 90vw);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.purpose-modal-tabs {
+    display: flex;
+    gap: var(--space-1);
+    padding: 0 var(--space-4) var(--space-2);
+    border-bottom: 1px solid var(--border-1, #333);
+}
+
+.purpose-modal-tab {
+    padding: var(--space-1) var(--space-3);
+    border: 1px solid var(--border-1, #444);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-2, #aaa);
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 150ms, color 150ms;
+}
+
+.purpose-modal-tab:hover {
+    background: var(--surface-hover, rgba(255, 255, 255, 0.08));
+}
+
+.purpose-modal-tab.active {
+    background: var(--accent-1, #4a9eff);
+    color: #fff;
+    border-color: var(--accent-1, #4a9eff);
+}
+
+.purpose-modal-body {
+    padding: var(--space-3) var(--space-4) var(--space-4);
+}
+
+/* --- Summary --- */
+
+.purpose-modal-score-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+.purpose-modal-score {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+}
+
+.purpose-modal-scale {
+    font-size: var(--text-lg);
+    color: var(--text-3, #666);
+}
+
+.purpose-modal-verdict {
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.purpose-modal-deltas {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-4);
+}
+
+.purpose-modal-delta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.purpose-modal-delta-label {
+    font-size: var(--text-xs);
+    color: var(--text-3, #666);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.purpose-modal-delta-value {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+}
+
+/* --- Chart --- */
+
+.purpose-modal-chart-wrapper {
+    position: relative;
+    height: 160px;
+    margin-bottom: var(--space-4);
+}
+
+.purpose-modal-chart-wrapper canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* --- Axes Breakdown --- */
+
+.purpose-modal-axes-title,
+.purpose-modal-priorities-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-2, #aaa);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-2);
+}
+
+.purpose-modal-axes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--space-4);
+}
+
+.purpose-modal-axis-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.purpose-modal-axis-label {
+    font-size: var(--text-base);
+    font-weight: 700;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.purpose-modal-axis-name {
+    font-size: var(--text-sm);
+    color: var(--text-2, #aaa);
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.purpose-modal-axis-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.purpose-modal-axis-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 300ms ease;
+}
+
+.purpose-modal-axis-score {
+    font-size: var(--text-base);
+    font-weight: 600;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    width: 28px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.purpose-modal-axis-delta {
+    font-size: var(--text-sm);
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    width: 32px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* --- Priorities --- */
+
+.purpose-modal-priority-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 6px var(--space-2);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-1);
+}
+
+.purpose-modal-priority-axis {
+    font-size: var(--text-base);
+    font-weight: 700;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.purpose-modal-priority-hint {
+    flex: 1;
+    font-size: var(--text-base);
+    color: var(--text-2, #aaa);
+}
+
+.purpose-modal-priority-score {
+    font-size: var(--text-sm);
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    color: var(--text-3, #666);
+    flex-shrink: 0;
+}
+
+.purpose-modal-priority-ok {
+    font-size: var(--text-base);
+    color: var(--accent-green);
+    padding: 6px 0;
+}
+
+/* ================================================================
+   CAMADA 5 — EIS SCOPE SELECTOR
+   Seletor de escopo no dashboard EIS: Modelo / Por CNPJ / Por Area
+   ================================================================ */
+
+.purpose-scope-tabs {
+    display: flex;
+    gap: 2px;
+    padding: 6px var(--space-3);
+    background: var(--surface-2, #1e1e2e);
+    border-bottom: 1px solid var(--border-1, #333);
+    flex-shrink: 0;
+}
+
+.purpose-scope-tab {
+    padding: 5px var(--space-3);
+    border: 1px solid var(--border-1, #444);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-2, #aaa);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 150ms, color 150ms;
+    white-space: nowrap;
+}
+
+.purpose-scope-tab:hover {
+    background: var(--surface-hover, rgba(255, 255, 255, 0.08));
+}
+
+.purpose-scope-tab.active {
+    background: var(--accent-1, #4a9eff);
+    color: #fff;
+    border-color: var(--accent-1, #4a9eff);
+}
+
+.purpose-model-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: var(--text-xs);
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    color: var(--text-3, #666);
+    margin-left: var(--space-1);
+    vertical-align: middle;
+}
+
+/* Scope list (CNPJ / area items) */
+.purpose-scope-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.purpose-scope-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 6px 10px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 150ms, border-color 150ms;
+}
+
+.purpose-scope-item:hover {
+    background: var(--surface-hover, rgba(255, 255, 255, 0.08));
+    border-color: var(--border-1, #444);
+}
+
+.purpose-scope-item.active {
+    border-color: var(--accent-1, #4a9eff);
+    background: rgba(74, 158, 255, 0.08);
+}
+
+.purpose-scope-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.purpose-scope-item-name {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-1, #e0e0e0);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.purpose-scope-item-detail {
+    font-size: var(--text-xs);
+    color: var(--text-3, #666);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* EIS badge (circle + score) */
+.purpose-eis-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 2px var(--space-2);
+    border-radius: 12px;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    flex-shrink: 0;
+}
+
+.purpose-eis-badge--high {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--accent-green);
+}
+
+.purpose-eis-badge--medium {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-orange);
+}
+
+.purpose-eis-badge--low {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--accent-red);
+}
+
+.purpose-eis-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Spatial indicators panel */
+.purpose-spatial-panel {
+    padding: var(--space-2) var(--space-3);
+    border-top: 1px solid var(--border-1, #333);
+}
+
+.purpose-spatial-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-2, #aaa);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.purpose-spatial-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.purpose-spatial-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.purpose-spatial-label {
+    font-size: var(--text-sm);
+    color: var(--text-2, #aaa);
+    width: 140px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.purpose-spatial-bar {
+    flex: 1;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.purpose-spatial-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 300ms ease;
+}
+
+.purpose-spatial-score {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    font-family: var(--font-mono, 'Fira Code', monospace);
+    width: 20px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.purpose-spatial-critical {
+    color: var(--accent-red);
+}
+
+/* Responsibles header */
+.purpose-responsibles {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    padding: 6px var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-2, #aaa);
+    border-bottom: 1px solid var(--border-1, #333);
+}
+
+.purpose-responsible-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.purpose-responsible-role {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-3, #666);
+}
+
+.purpose-responsible-name {
+    font-size: var(--text-sm);
+    color: var(--text-1, #e0e0e0);
+    font-weight: 500;
+}
+
+.purpose-responsible-inherited {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* Scope empty state */
+.purpose-scope-empty {
+    font-size: var(--text-base);
+    color: var(--text-3, #666);
+    text-align: center;
+    padding: var(--space-4) 0;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .purpose-micro-toast-container {
+        right: 8px;
+        bottom: 60px;
+        max-width: clamp(200px, 80vw, 280px);
+    }
+
+    .purpose-status-widget {
+        display: none;
+    }
+
+    .purpose-home-score {
+        font-size: 20px;
+    }
+}

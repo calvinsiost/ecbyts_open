@@ -1,0 +1,275 @@
+{
+    "country": "US",
+    "country_name": "United States",
+    "source": "US Census Bureau",
+    "source_url": "https://www.census.gov",
+    "generated_at": "2026-04-06T20:33:35.540Z",
+    "states": [
+        {
+            "code": "AL",
+            "name": "Alabama",
+            "file": "AL.json"
+        },
+        {
+            "code": "AK",
+            "name": "Alaska",
+            "file": "AK.json"
+        },
+        {
+            "code": "AZ",
+            "name": "Arizona",
+            "file": "AZ.json"
+        },
+        {
+            "code": "AR",
+            "name": "Arkansas",
+            "file": "AR.json"
+        },
+        {
+            "code": "CA",
+            "name": "California",
+            "file": "CA.json"
+        },
+        {
+            "code": "CO",
+            "name": "Colorado",
+            "file": "CO.json"
+        },
+        {
+            "code": "CT",
+            "name": "Connecticut",
+            "file": "CT.json"
+        },
+        {
+            "code": "DE",
+            "name": "Delaware",
+            "file": "DE.json"
+        },
+        {
+            "code": "DC",
+            "name": "District of Columbia",
+            "file": "DC.json"
+        },
+        {
+            "code": "FL",
+            "name": "Florida",
+            "file": "FL.json"
+        },
+        {
+            "code": "GA",
+            "name": "Georgia",
+            "file": "GA.json"
+        },
+        {
+            "code": "HI",
+            "name": "Hawaii",
+            "file": "HI.json"
+        },
+        {
+            "code": "ID",
+            "name": "Idaho",
+            "file": "ID.json"
+        },
+        {
+            "code": "IL",
+            "name": "Illinois",
+            "file": "IL.json"
+        },
+        {
+            "code": "IN",
+            "name": "Indiana",
+            "file": "IN.json"
+        },
+        {
+            "code": "IA",
+            "name": "Iowa",
+            "file": "IA.json"
+        },
+        {
+            "code": "KS",
+            "name": "Kansas",
+            "file": "KS.json"
+        },
+        {
+            "code": "KY",
+            "name": "Kentucky",
+            "file": "KY.json"
+        },
+        {
+            "code": "LA",
+            "name": "Louisiana",
+            "file": "LA.json"
+        },
+        {
+            "code": "ME",
+            "name": "Maine",
+            "file": "ME.json"
+        },
+        {
+            "code": "MD",
+            "name": "Maryland",
+            "file": "MD.json"
+        },
+        {
+            "code": "MA",
+            "name": "Massachusetts",
+            "file": "MA.json"
+        },
+        {
+            "code": "MI",
+            "name": "Michigan",
+            "file": "MI.json"
+        },
+        {
+            "code": "MN",
+            "name": "Minnesota",
+            "file": "MN.json"
+        },
+        {
+            "code": "MS",
+            "name": "Mississippi",
+            "file": "MS.json"
+        },
+        {
+            "code": "MO",
+            "name": "Missouri",
+            "file": "MO.json"
+        },
+        {
+            "code": "MT",
+            "name": "Montana",
+            "file": "MT.json"
+        },
+        {
+            "code": "NE",
+            "name": "Nebraska",
+            "file": "NE.json"
+        },
+        {
+            "code": "NV",
+            "name": "Nevada",
+            "file": "NV.json"
+        },
+        {
+            "code": "NH",
+            "name": "New Hampshire",
+            "file": "NH.json"
+        },
+        {
+            "code": "NJ",
+            "name": "New Jersey",
+            "file": "NJ.json"
+        },
+        {
+            "code": "NM",
+            "name": "New Mexico",
+            "file": "NM.json"
+        },
+        {
+            "code": "NY",
+            "name": "New York",
+            "file": "NY.json"
+        },
+        {
+            "code": "NC",
+            "name": "North Carolina",
+            "file": "NC.json"
+        },
+        {
+            "code": "ND",
+            "name": "North Dakota",
+            "file": "ND.json"
+        },
+        {
+            "code": "OH",
+            "name": "Ohio",
+            "file": "OH.json"
+        },
+        {
+            "code": "OK",
+            "name": "Oklahoma",
+            "file": "OK.json"
+        },
+        {
+            "code": "OR",
+            "name": "Oregon",
+            "file": "OR.json"
+        },
+        {
+            "code": "PA",
+            "name": "Pennsylvania",
+            "file": "PA.json"
+        },
+        {
+            "code": "RI",
+            "name": "Rhode Island",
+            "file": "RI.json"
+        },
+        {
+            "code": "SC",
+            "name": "South Carolina",
+            "file": "SC.json"
+        },
+        {
+            "code": "SD",
+            "name": "South Dakota",
+            "file": "SD.json"
+        },
+        {
+            "code": "TN",
+            "name": "Tennessee",
+            "file": "TN.json"
+        },
+        {
+            "code": "TX",
+            "name": "Texas",
+            "file": "TX.json"
+        },
+        {
+            "code": "UT",
+            "name": "Utah",
+            "file": "UT.json"
+        },
+        {
+            "code": "VT",
+            "name": "Vermont",
+            "file": "VT.json"
+        },
+        {
+            "code": "VA",
+            "name": "Virginia",
+            "file": "VA.json"
+        },
+        {
+            "code": "WA",
+            "name": "Washington",
+            "file": "WA.json"
+        },
+        {
+            "code": "WV",
+            "name": "West Virginia",
+            "file": "WV.json"
+        },
+        {
+            "code": "WI",
+            "name": "Wisconsin",
+            "file": "WI.json"
+        },
+        {
+            "code": "WY",
+            "name": "Wyoming",
+            "file": "WY.json"
+        },
+        {
+            "code": "PR",
+            "name": "Puerto Rico",
+            "file": "PR.json"
+        },
+        {
+            "code": "VI",
+            "name": "Virgin Islands",
+            "file": "VI.json"
+        }
+    ],
+    "note": "Lista simplificada com cidades principais. Para lista completa (~19.500 cidades), usar API do Census."
+}

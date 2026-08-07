@@ -1,0 +1,31 @@
+export const VIDEO_CAPTURE_MODES: readonly string[];
+export const CAPTION_EXPORT_MODES: readonly string[];
+export const VIDEO_EXPORT_PRESETS: Readonly<Record<string, unknown>>;
+export interface VideoExportPreset {
+    id: string;
+    label: string;
+    description?: string;
+    captureMode?: string;
+    captionsMode?: string;
+    [key: string]: unknown;
+}
+export function detectSupportedMime(): string;
+export function isVideoRecordingAvailable(): boolean;
+export function isScreenRecordingAvailable(): boolean;
+export function listVideoExportPresets(): VideoExportPreset[];
+export function getVideoExportPreset(id: string): VideoExportPreset;
+export function getSuggestedExportPreset(profileId: string): string | undefined;
+export function startCapture(canvas: HTMLCanvasElement, options?: Record<string, unknown>): unknown;
+export function startScreenCapture(options?: Record<string, unknown>): Promise<unknown>;
+export function startPlaybackCapture(canvas: HTMLCanvasElement, options?: Record<string, unknown>): Promise<unknown>;
+export function stopCapture(): unknown;
+export function downloadBlob(blob: Blob, filename: string): void;
+export function startCaptureGuarded(canvas: HTMLCanvasElement, presentation: unknown, options?: Record<string, unknown>): unknown;
+export function sanitizeFilename(title: string): string;
+export function normalizeTrimRange(durationSec: number, startSec?: number, endSec?: number | null): unknown;
+export function buildPresentationTimeline(presentation: unknown): unknown[];
+export function resolveTimelineStep(timeline: unknown[], elapsedSec: number): unknown;
+export function composeEditedRecording(blob: Blob, options?: Record<string, unknown>): Promise<unknown>;
+export function trimRecordedVideo(blob: Blob, options?: Record<string, unknown>): unknown;
+export function _reset(): void;
+export function getRecordingStatus(): unknown;

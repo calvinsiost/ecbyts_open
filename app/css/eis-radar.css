@@ -1,0 +1,74 @@
+/* ================================================================
+   EIS Radar Chart — Estilos do componente radar 10-eixos
+   SPEC_EIS_RADAR_10AXES_PROGRESSIVE_UI.md Fase 2
+   Namespace: .eis-radar-*
+   ================================================================ */
+
+/* Container principal do radar EIS */
+.eis-radar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    box-sizing: border-box;
+}
+
+/* Canvas do radar — display block garante sem espaço extra inline.
+   Nota: .eis-radar-canvas bare selector vive em eis.css (linha 1420).
+   Aqui escopo apenas dentro de .eis-radar-container. */
+.eis-radar-container canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Legenda abaixo do radar */
+.eis-radar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px var(--space-3);
+    justify-content: center;
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #555);
+    margin-top: var(--space-1);
+}
+
+/* Rótulo de cada eixo na legenda */
+.eis-radar-axis-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    white-space: nowrap;
+}
+
+/* Indicador de tier (cor do ponto antes do label) */
+.eis-radar-axis-label::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #228b22;
+    flex-shrink: 0;
+}
+
+/* Eixos progressivos: indicador em roxo/azul distinto */
+.eis-radar-axis-label.progressive::before {
+    background-color: #666688;
+}
+
+/* Score numérico exibido ao lado do label na legenda */
+.eis-radar-score {
+    font-weight: 600;
+    color: var(--text-primary, #222);
+}
+
+/* Estado sem dados */
+.eis-radar-no-data {
+    font-size: var(--text-md);
+    color: var(--text-muted, #999);
+    text-align: center;
+    padding: var(--space-6) 0;
+}

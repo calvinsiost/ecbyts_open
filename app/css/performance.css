@@ -1,0 +1,53 @@
+/* ================================================================
+   PERFORMANCE HUD — Overlay de metricas no canto inferior-direito
+   Estilo minimalista, semi-transparente, monospace, theme-aware.
+   ================================================================ */
+
+.perf-hud {
+    position: fixed;
+    /* HUD-UX 2026-06-11 (Calvin print): 34px caía DENTRO do compliance banner
+       (fixed acima do statusbar, ~26-67px) — sobrepunha os botões Violações/
+       Gerenciar/Detalhes. 78px fica acima do banner. */
+    bottom: 78px;
+    right: 100px; /* Afastado do AI FAB button (56px + 20px + 24px gap) */
+    z-index: 18;
+
+    display: none;
+    align-items: center;
+    gap: 2px;
+
+    padding: var(--space-1) 10px;
+    border-radius: var(--radius-lg);
+
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: var(--text-sm);
+    line-height: 1;
+    white-space: nowrap;
+
+    background: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+
+    pointer-events: none;
+    user-select: none;
+}
+
+.perf-hud.visible {
+    display: flex;
+}
+
+.perf-hud .perf-sep {
+    color: rgba(255, 255, 255, 0.25);
+    margin: 0 3px;
+}
+
+/* Offset when viz-settings bar is open (140px bar height) */
+.viz-settings-active .perf-hud {
+    bottom: 174px;
+    transition: bottom 0.2s ease;
+}
+
+/* Light theme: slightly different background for contrast */
+[data-theme="light"] .perf-hud {
+    background: rgba(30, 30, 40, 0.75);
+}

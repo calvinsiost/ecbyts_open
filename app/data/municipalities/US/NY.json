@@ -1,0 +1,32 @@
+[
+    {
+        "codigo_ibge": "36006",
+        "nome": "Albany",
+        "uf": "NY"
+    },
+    {
+        "codigo_ibge": "36002",
+        "nome": "Buffalo",
+        "uf": "NY"
+    },
+    {
+        "codigo_ibge": "36001",
+        "nome": "New York",
+        "uf": "NY"
+    },
+    {
+        "codigo_ibge": "36003",
+        "nome": "Rochester",
+        "uf": "NY"
+    },
+    {
+        "codigo_ibge": "36005",
+        "nome": "Syracuse",
+        "uf": "NY"
+    },
+    {
+        "codigo_ibge": "36004",
+        "nome": "Yonkers",
+        "uf": "NY"
+    }
+]

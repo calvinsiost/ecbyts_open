@@ -1,0 +1,260 @@
+/* ================================================================
+   LIBRARY COMMUNITY — Review Queue & Contribution Form styles
+   LIBRARY_COMMUNITY_ENRICHMENT_9_68 (MVP estrutural)
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   REVIEW QUEUE
+   ---------------------------------------------------------------- */
+
+.library-review-queue {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    font-family: inherit;
+    color: var(--text-primary, #e2e8f0);
+}
+
+.library-review-filters {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.library-review-select {
+    background: var(--panel-bg, #091522);
+    border: 1px solid var(--border-color, #2b3c56);
+    border-radius: var(--radius-lg);
+    padding: 6px 10px;
+    font-size: var(--text-md);
+    color: var(--text-primary, #e2e8f0);
+    min-width: 140px;
+}
+
+.library-review-select:focus {
+    outline: none;
+    border-color: var(--accent-bright, #3b6bff);
+}
+
+.library-review-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border-color, #2b3c56);
+    border-radius: var(--radius-xl);
+}
+
+.library-review-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-md);
+}
+
+.library-review-table thead {
+    background: var(--panel-header-bg, #0d1b2a);
+}
+
+.library-review-table th,
+.library-review-table td {
+    padding: 10px var(--space-3);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color, #2b3c56);
+    white-space: nowrap;
+}
+
+.library-review-table th {
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: var(--text-secondary, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.library-review-table tbody tr:hover {
+    background: rgba(59, 107, 255, 0.06);
+}
+
+.library-review-empty {
+    text-align: center;
+    padding: var(--space-6);
+    color: var(--text-secondary, #94a3b8);
+    font-style: italic;
+}
+
+.library-review-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--neutral-700, #334155);
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.library-review-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.library-review-author {
+    vertical-align: middle;
+}
+
+.library-review-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.library-review-actions .btn-sm {
+    padding: var(--space-1) 10px;
+    font-size: var(--text-base);
+}
+
+/* Status badges */
+.library-status-badge {
+    display: inline-block;
+    padding: 3px var(--space-2);
+    border-radius: 12px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-badge--pending {
+    background: rgba(234, 179, 8, 0.15);
+    color: var(--accent-yellow);
+}
+
+.status-badge--review {
+    background: rgba(59, 107, 255, 0.15);
+    color: #3b6bff;
+}
+
+.status-badge--approved {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--accent-green);
+}
+
+.status-badge--rejected {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--accent-red);
+}
+
+/* ----------------------------------------------------------------
+   CONTRIBUTION FORM
+   ---------------------------------------------------------------- */
+
+.library-contribution-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: clamp(320px, 90vw, 560px);
+    font-family: inherit;
+    color: var(--text-primary, #e2e8f0);
+}
+
+.library-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.library-form-field label {
+    font-size: var(--text-md);
+    font-weight: 500;
+    color: var(--text-secondary, #94a3b8);
+}
+
+.library-form-field input[type="text"],
+.library-form-field input[type="url"],
+.library-form-field input[type="date"],
+.library-form-field select,
+.library-form-field textarea {
+    background: var(--panel-bg, #091522);
+    border: 1px solid var(--border-color, #2b3c56);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2) 10px;
+    font-size: var(--text-md);
+    color: var(--text-primary, #e2e8f0);
+    font-family: inherit;
+}
+
+.library-form-field input:focus,
+.library-form-field select:focus,
+.library-form-field textarea:focus {
+    outline: none;
+    border-color: var(--accent-bright, #3b6bff);
+}
+
+.library-form-field textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.library-form-checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.library-form-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-bright, #3b6bff);
+    cursor: pointer;
+}
+
+.library-form-checkbox label {
+    margin: 0;
+    cursor: pointer;
+    font-size: var(--text-md);
+    color: var(--text-primary, #e2e8f0);
+}
+
+.library-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: var(--space-1);
+}
+
+.library-form-actions .btn-primary {
+    padding: var(--space-2) 18px;
+    font-size: var(--text-md);
+    font-weight: 500;
+}
+
+/* ----------------------------------------------------------------
+   RESPONSIVE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+    .library-review-table th,
+    .library-review-table td {
+        padding: var(--space-2);
+        font-size: var(--text-base);
+    }
+
+    .library-review-actions {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    .library-review-actions .btn-sm {
+        padding: var(--space-1) var(--space-2);
+        font-size: var(--text-sm);
+    }
+
+    .library-review-filters {
+        flex-direction: column;
+    }
+
+    .library-review-select {
+        width: 100%;
+    }
+
+    .library-contribution-form {
+        max-width: 100%;
+    }
+}

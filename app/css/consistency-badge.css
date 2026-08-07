@@ -1,0 +1,41 @@
+/* ================================================================
+   CONSISTENCY BADGE — Indicador de integridade no statusbar
+   Namespace: .status-consistency
+   Ownership: src/app/js/utils/ui/consistencyStatusBadge.ts
+   Spec: CONSIST-OBS-001 S2 (Pilar 2 N* v2 — confiança VISÍVEL)
+   ================================================================ */
+
+.status-consistency {
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 6px;
+    border-radius: var(--radius-sm, 4px);
+}
+
+.status-consistency:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.status-consistency:focus-visible {
+    outline: 2px solid var(--accent-bright, #2563eb);
+    outline-offset: 1px;
+}
+
+/* Estados via data-status (preenchido pelo runtime) */
+.status-consistency[data-status='green'] {
+    color: var(--accent-green);
+}
+
+.status-consistency[data-status='red'] {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.status-consistency[data-status='unknown'] {
+    color: var(--text-secondary, #9ca3af);
+    font-style: italic;
+}

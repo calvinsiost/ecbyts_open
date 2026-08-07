@@ -1,0 +1,303 @@
+/* ================================================================
+   FORUM — Knowledge Groups panel (.forum-* namespace).
+   SPEC: docs/specs/features/SPEC_FORUM_KNOWLEDGE_GROUPS.md (Phase 2).
+   Base modal uses .ecbt-overlay + .ecbt-dialog--xl design tokens;
+   this file only owns the .forum-* layout/skin.
+   ================================================================ */
+
+.forum-dialog {
+    display: flex;
+    flex-direction: column;
+    color: #e0e0e0;
+}
+
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+}
+
+.forum-title {
+    margin: 0;
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.forum-close {
+    padding: var(--space-1) 10px;
+}
+
+.forum-body {
+    display: grid;
+    grid-template-columns: 240px 1fr 1.3fr;
+    gap: var(--space-3);
+    flex: 1;
+    min-height: 0;
+    height: 70vh;
+}
+
+.forum-sidebar,
+.forum-feed,
+.forum-detail {
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-lg);
+    padding: 10px;
+    overflow-y: auto;
+    background: var(--bg-secondary, #1a1a2a);
+}
+
+.forum-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.forum-new-group,
+.forum-new-thread {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.forum-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.forum-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    text-align: left;
+    padding: var(--space-2) 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #e0e0e0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.forum-group:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.forum-group--active {
+    border-color: var(--accent-bright, #60a5fa);
+    background: rgba(96, 165, 250, 0.12);
+}
+
+.forum-group-name {
+    font-size: var(--text-md);
+    font-weight: 600;
+}
+
+.forum-group-meta {
+    font-size: var(--text-sm);
+    color: #999;
+}
+
+.forum-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+}
+
+.forum-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.forum-chip {
+    font-size: 9px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: rgba(168, 85, 247, 0.18);
+    color: #c4a5f7;
+}
+
+.forum-feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.forum-thread-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    text-align: left;
+    padding: var(--space-2) 10px;
+    border: 1px solid var(--border-color, #333);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #e0e0e0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.forum-thread-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.forum-thread-title {
+    font-size: var(--text-md);
+    font-weight: 600;
+}
+
+.forum-pin {
+    color: #fbbf24;
+    margin-right: var(--space-1);
+}
+
+.forum-thread-meta {
+    display: flex;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: #999;
+}
+
+.forum-detail-head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: var(--space-2);
+    margin-bottom: 10px;
+}
+
+.forum-detail-title {
+    margin: 0 0 var(--space-1);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.forum-detail-sub {
+    font-size: var(--text-sm);
+    color: #999;
+}
+
+.forum-detail-main {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.forum-votebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.forum-vote {
+    background: transparent;
+    border: 1px solid var(--border-color, #444);
+    color: #aaa;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    padding: 2px 6px;
+    font-size: var(--text-base);
+}
+
+.forum-vote:hover {
+    color: #60a5fa;
+    border-color: #60a5fa;
+}
+
+.forum-vote--sm {
+    margin-top: var(--space-1);
+    font-size: var(--text-sm);
+}
+
+.forum-vote-count {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.forum-detail-body,
+.forum-reply-body {
+    font-size: var(--text-md);
+    line-height: 1.5;
+    color: #d0d0d0;
+    word-break: break-word;
+}
+
+.forum-detail-body code,
+.forum-reply-body code {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1px var(--space-1);
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.forum-replies {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.forum-reply {
+    padding: var(--space-2) 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.forum-reply--nested {
+    margin-left: var(--space-5);
+    border-left: 2px solid var(--accent-bright, #60a5fa);
+}
+
+.forum-reply-meta {
+    font-size: var(--text-sm);
+    color: #999;
+    margin-bottom: var(--space-1);
+}
+
+.forum-composer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.forum-reply-input {
+    width: 100%;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color, #444);
+    background: var(--bg-primary, #121220);
+    color: #e0e0e0;
+    font-family: inherit;
+    font-size: var(--text-base);
+    resize: vertical;
+}
+
+.forum-reply-submit {
+    align-self: flex-end;
+    padding: 6px 14px;
+    font-size: var(--text-base);
+}
+
+.forum-empty {
+    padding: var(--space-5);
+    text-align: center;
+    color: var(--text-tertiary, #888);
+    font-size: var(--text-base);
+}
+
+@media (max-width: 900px) {
+    .forum-body {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}

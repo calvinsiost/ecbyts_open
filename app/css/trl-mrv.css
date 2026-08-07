@@ -1,0 +1,86 @@
+/* This file is part of ecbyts/ECBT (Environmental & Occupational Core Byte Tools).
+   Copyright (C) 2026 Calvin Stefan Iost — AGPL-3.0-only.
+
+   DONO: trlMaturityPanel.ts + mrvPanel.ts (ECBYTS-ENERGY-SCENARIOS-001 #6/#7).
+   Reusa tokens .ecbt-overlay/.ecbt-dialog (design-tokens.css) e os banners
+   honestos .scn-source (scenarios.css). Sem z-index novo (fica no overlay). */
+
+/* ── TRL: timeline 1..9 ─────────────────────────────────────────── */
+.trl-route { margin: 14px 0 18px; }
+.trl-route-name { margin: 0 0 2px; font-size: 15px; }
+.trl-route-summary { margin: 0 0 8px; color: var(--text-secondary, #aaa); font-size: 13px; }
+.trl-timeline {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+}
+.trl-cell {
+    flex: 1;
+    min-width: 30px;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #333);
+    color: var(--text-secondary, #aaa);
+    background: transparent;
+    font-size: 12px;
+}
+.trl-cell-num::before { content: "TRL "; font-size: 9px; opacity: 0.7; }
+.trl-cell--done { background: color-mix(in srgb, var(--accent, #60a5fa) 25%, transparent); color: var(--text-primary, #fff); }
+.trl-cell--current { background: var(--accent, #60a5fa); color: #fff; font-weight: 700; }
+.trl-cell--gap { border-style: dashed; border-color: var(--accent, #60a5fa); }
+.trl-cell--target { border: 2px solid var(--success-color, #34d399); color: var(--success-color, #34d399); font-weight: 700; }
+
+/* ── TRL: critérios de passagem (editáveis) ─────────────────────── */
+.trl-criteria { list-style: none; margin: 8px 0 0; padding: 0; }
+.trl-criterion { margin-bottom: 8px; }
+.trl-criterion-label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+.trl-criterion-input {
+    width: 100%;
+    resize: vertical;
+    font-size: 12px;
+    padding: 6px 8px;
+    border: 1px solid var(--border-color, #333);
+    border-radius: 6px;
+    background: var(--bg-secondary, #1e1e2e);
+    color: var(--text-primary, #fff);
+}
+.trl-badge--custom {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 8px;
+    background: var(--warning-color, #f59e0b);
+    color: #000;
+}
+.trl-footnote, .mrv-footnote {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color, #333);
+    color: var(--text-secondary, #aaa);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ── MRV: cadeia + status ───────────────────────────────────────── */
+.mrv-summary { margin: 8px 0; font-size: 13px; color: var(--text-secondary, #aaa); }
+.mrv-scope { color: var(--text-secondary, #aaa); }
+.mrv-unit { font-size: 11px; color: var(--text-secondary, #aaa); }
+.mrv-audit { font-size: 12px; }
+.mrv-chain { display: flex; align-items: center; gap: 4px; margin-top: 4px; flex-wrap: wrap; font-size: 11px; }
+.mrv-link { white-space: nowrap; }
+.mrv-link--ok { color: var(--success-color, #34d399); }
+.mrv-link--pending { color: var(--text-secondary, #aaa); }
+.mrv-stage {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color, #333);
+}
+.mrv-stage--verificado { background: var(--success-color, #34d399); color: #000; border-color: transparent; }
+.mrv-stage--reportado { background: var(--accent, #60a5fa); color: #fff; border-color: transparent; }
+.mrv-stage--monitorado { background: color-mix(in srgb, var(--accent, #60a5fa) 30%, transparent); }
+.mrv-stage--pendente { color: var(--text-secondary, #aaa); }

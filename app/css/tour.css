@@ -1,0 +1,450 @@
+/* ================================================================
+   TOUR — Onboarding tour styles (coachmarks, tooltip, chapters)
+   Estilos do sistema de tour guiado para onboarding
+
+   This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0.
+   ================================================================ */
+
+/* --- Tour Portal (stacking context fix for modals/panels) --- */
+
+#tour-portal {
+    position: fixed;
+    inset: 0;
+    z-index: 9500;
+    pointer-events: none;
+}
+
+#tour-portal > * {
+    pointer-events: auto;
+}
+
+/* --- Spotlight (coachmark overlay) --- */
+
+.tour-spotlight {
+    position: fixed;
+    z-index: 10000;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.55);
+    pointer-events: none;
+    transition: top 0.3s ease, left 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+/* --- Backdrop (click catcher for dark area) --- */
+
+.tour-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    cursor: default;
+}
+
+/* --- Tooltip --- */
+
+.tour-tooltip {
+    position: fixed;
+    z-index: 10001;
+    max-width: var(--ecbt-modal-xs, clamp(280px, 90vw, 360px));
+    min-width: 260px;
+    background: var(--bottom-bg-solid, #1e1e2e);
+    border: 1px solid var(--accent-bright, #3b82f6);
+    border-radius: 10px;
+    padding: var(--space-4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    animation: tourTooltipIn 0.25s ease-out;
+    color: var(--text-primary, #e1e1e6);
+    font-family: inherit;
+}
+
+@keyframes tourTooltipIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Arrow */
+
+.tour-tooltip-arrow {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--bottom-bg-solid, #1e1e2e);
+    border: 1px solid var(--accent-bright, #3b82f6);
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.tour-tooltip[data-position="bottom"] .tour-tooltip-arrow {
+    top: -7px;
+    left: 50%;
+    margin-left: -6px;
+    border-bottom: none;
+    border-right: none;
+}
+
+.tour-tooltip[data-position="top"] .tour-tooltip-arrow {
+    bottom: -7px;
+    left: 50%;
+    margin-left: -6px;
+    border-top: none;
+    border-left: none;
+}
+
+.tour-tooltip[data-position="right"] .tour-tooltip-arrow {
+    left: -7px;
+    top: 50%;
+    margin-top: -6px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.tour-tooltip[data-position="left"] .tour-tooltip-arrow {
+    right: -7px;
+    top: 50%;
+    margin-top: -6px;
+    border-left: none;
+    border-top: none;
+}
+
+.tour-tooltip[data-position="center"] .tour-tooltip-arrow {
+    display: none;
+}
+
+/* Tooltip header */
+
+.tour-tooltip-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+    font-size: var(--text-sm);
+    opacity: 0.6;
+}
+
+.tour-step-counter {
+    font-variant-numeric: tabular-nums;
+}
+
+.tour-chapter-name {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Tooltip title & body */
+
+.tour-tooltip-title {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary, #e1e1e6);
+}
+
+.tour-tooltip-body {
+    margin: 0 0 14px 0;
+    font-size: var(--text-md);
+    line-height: 1.5;
+    color: var(--text-secondary, #a1a1aa);
+}
+
+/* Tooltip footer */
+
+.tour-tooltip-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.tour-tooltip-nav {
+    display: flex;
+    gap: 6px;
+}
+
+/* Buttons */
+
+.tour-btn {
+    padding: 6px 14px;
+    border: 1px solid var(--border, #333);
+    border-radius: var(--radius-lg);
+    background: transparent;
+    color: var(--text-primary, #e1e1e6);
+    font-size: var(--text-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s;
+}
+
+.tour-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tour-btn:disabled {
+    cursor: not-allowed;
+}
+
+.tour-btn.primary {
+    background: var(--accent-bright, #3b82f6);
+    border-color: var(--accent-bright, #3b82f6);
+    color: #fff;
+}
+
+.tour-btn.primary:hover:not(:disabled) {
+    background: var(--accent-hover, #2563eb);
+}
+
+.tour-skip-btn {
+    border: none;
+    opacity: 0.5;
+    font-size: var(--text-sm);
+}
+
+.tour-skip-btn:hover {
+    opacity: 0.8;
+}
+
+/* --- Tour Titlebar Button --- */
+
+.tour-titlebar-btn {
+    position: relative;
+}
+
+.tour-titlebar-btn .icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Pulso de primeiro acesso — glow azul que chama atenção */
+@keyframes tourTitlebarPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+    50%      { box-shadow: 0 0 0 6px rgba(59, 130, 246, 0); }
+}
+
+.tour-titlebar-btn.tour-first-visit {
+    animation: tourTitlebarPulse 1.5s ease-in-out 5;
+    border: 1px solid rgba(59, 130, 246, 0.6);
+}
+
+/* Legacy FAB — hidden, tour-controller still used by tour system */
+/* Final welcome-tour action: transient CTA, removed when the tour exits. */
+.tour-first-action-cta {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    z-index: 10002;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    min-width: 220px;
+    max-width: calc(100vw - 32px);
+    padding: 0 18px;
+    border: 1px solid rgba(59, 130, 246, 0.75);
+    border-radius: var(--radius-md);
+    background: var(--accent-primary);
+    color: #fff;
+    box-shadow: 0 10px 28px rgba(37, 99, 235, 0.4);
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--text-lg);
+    font-weight: 700;
+    transform: translateX(-50%);
+}
+
+.tour-first-action-cta:hover {
+    background: #1d4ed8;
+}
+
+.tour-first-action-cta-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    font-size: 17px;
+    line-height: 1;
+}
+
+.tour-first-action-cta-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.tour-first-action-cta.is-pulsing {
+    animation: tourFirstActionPulse 1.25s ease-in-out infinite;
+}
+
+@keyframes tourFirstActionPulse {
+    0%, 100% {
+        box-shadow: 0 10px 28px rgba(37, 99, 235, 0.4), 0 0 0 0 rgba(59, 130, 246, 0.45);
+    }
+    50% {
+        box-shadow: 0 10px 28px rgba(37, 99, 235, 0.4), 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+}
+
+@media (max-width: 480px) {
+    .tour-first-action-cta {
+        bottom: 18px;
+        width: calc(100vw - 32px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tour-first-action-cta.is-pulsing {
+        animation: none;
+    }
+}
+
+.tour-fab {
+    display: none;
+}
+
+/* --- Chapter Picker Panel --- */
+
+.tour-chapters {
+    position: fixed;
+    top: 44px;
+    right: 120px;
+    z-index: 1500;
+    width: 320px;
+    background: var(--bottom-bg-solid, #1e1e2e);
+    border: 1px solid var(--border, #333);
+    border-radius: 12px;
+    padding: var(--space-4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    animation: tourTooltipIn 0.2s ease-out;
+}
+
+.tour-chapters-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+}
+
+.tour-chapters-header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary, #e1e1e6);
+}
+
+.tour-chapters-close {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-lg);
+    border: none;
+    background: transparent;
+    color: var(--text-secondary, #a1a1aa);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tour-chapters-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Chapter cards */
+
+.tour-chapter-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 10px var(--space-3);
+    border: 1px solid var(--border, #333);
+    border-radius: var(--radius-xl);
+    background: transparent;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary, #e1e1e6);
+    text-align: left;
+}
+
+.tour-chapter-card:last-child {
+    margin-bottom: 0;
+}
+
+.tour-chapter-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-bright, #3b82f6);
+}
+
+.tour-chapter-card.completed {
+    border-color: var(--success, #22c55e);
+}
+
+.tour-chapter-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: var(--text-xl);
+}
+
+.tour-chapter-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tour-chapter-name-card {
+    font-size: var(--text-md);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.tour-chapter-desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary, #a1a1aa);
+}
+
+.tour-chapter-badge {
+    font-size: var(--text-xs);
+    padding: 2px var(--space-2);
+    border-radius: 10px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.tour-chapter-badge.pending {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary, #a1a1aa);
+}
+
+.tour-chapter-badge.in-progress {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-bright, #3b82f6);
+}
+
+.tour-chapter-badge.completed {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--success, #22c55e);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 480px) {
+    .tour-tooltip {
+        max-width: calc(100vw - 32px);
+        min-width: 200px;
+    }
+
+    .tour-chapters {
+        width: calc(100vw - 48px);
+        right: 24px;
+        left: 24px;
+    }
+}

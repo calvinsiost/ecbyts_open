@@ -1,0 +1,377 @@
+[
+    {
+        "codigo_ibge": "2800100",
+        "nome": "Amparo do São Francisco",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2800209",
+        "nome": "Aquidabã",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2800308",
+        "nome": "Aracaju",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2800407",
+        "nome": "Arauá",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2800506",
+        "nome": "Areia Branca",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2800605",
+        "nome": "Barra dos Coqueiros",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2800670",
+        "nome": "Boquim",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2800704",
+        "nome": "Brejo Grande",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801009",
+        "nome": "Campo do Brito",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801108",
+        "nome": "Canhoba",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801207",
+        "nome": "Canindé de São Francisco",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801306",
+        "nome": "Capela",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801405",
+        "nome": "Carira",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801504",
+        "nome": "Carmópolis",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801603",
+        "nome": "Cedro de São João",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801702",
+        "nome": "Cristinápolis",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2801900",
+        "nome": "Cumbe",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802007",
+        "nome": "Divina Pastora",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802106",
+        "nome": "Estância",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802205",
+        "nome": "Feira Nova",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802304",
+        "nome": "Frei Paulo",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802403",
+        "nome": "Gararu",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802502",
+        "nome": "General Maynard",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802601",
+        "nome": "Graccho Cardoso",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802700",
+        "nome": "Ilha das Flores",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802809",
+        "nome": "Indiaroba",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2802908",
+        "nome": "Itabaiana",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803005",
+        "nome": "Itabaianinha",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803104",
+        "nome": "Itabi",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803203",
+        "nome": "Itaporanga d'Ajuda",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803302",
+        "nome": "Japaratuba",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803401",
+        "nome": "Japoatã",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803500",
+        "nome": "Lagarto",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803609",
+        "nome": "Laranjeiras",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803708",
+        "nome": "Macambira",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803807",
+        "nome": "Malhada dos Bois",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2803906",
+        "nome": "Malhador",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804003",
+        "nome": "Maruim",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804102",
+        "nome": "Moita Bonita",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804201",
+        "nome": "Monte Alegre de Sergipe",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804300",
+        "nome": "Muribeca",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804409",
+        "nome": "Neópolis",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804458",
+        "nome": "Nossa Senhora Aparecida",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804508",
+        "nome": "Nossa Senhora da Glória",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804607",
+        "nome": "Nossa Senhora das Dores",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804706",
+        "nome": "Nossa Senhora de Lourdes",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804805",
+        "nome": "Nossa Senhora do Socorro",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2804904",
+        "nome": "Pacatuba",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805000",
+        "nome": "Pedra Mole",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805109",
+        "nome": "Pedrinhas",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805208",
+        "nome": "Pinhão",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805307",
+        "nome": "Pirambu",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805406",
+        "nome": "Poço Redondo",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805505",
+        "nome": "Poço Verde",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805604",
+        "nome": "Porto da Folha",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805703",
+        "nome": "Propriá",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805802",
+        "nome": "Riachão do Dantas",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2805901",
+        "nome": "Riachuelo",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806008",
+        "nome": "Ribeirópolis",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806107",
+        "nome": "Rosário do Catete",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806206",
+        "nome": "Salgado",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806305",
+        "nome": "Santa Luzia do Itanhy",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806503",
+        "nome": "Santa Rosa de Lima",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806404",
+        "nome": "Santana do São Francisco",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806602",
+        "nome": "Santo Amaro das Brotas",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806701",
+        "nome": "São Cristóvão",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806800",
+        "nome": "São Domingos",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2806909",
+        "nome": "São Francisco",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2807006",
+        "nome": "São Miguel do Aleixo",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2807105",
+        "nome": "Simão Dias",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2807204",
+        "nome": "Siriri",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2807303",
+        "nome": "Telha",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2807402",
+        "nome": "Tobias Barreto",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2807501",
+        "nome": "Tomar do Geru",
+        "uf": "SE"
+    },
+    {
+        "codigo_ibge": "2807600",
+        "nome": "Umbaúba",
+        "uf": "SE"
+    }
+]

@@ -1,0 +1,178 @@
+/* ================================================================
+   HUD CARDS — Intangible/Generic element cards overlay
+   Cards fixos no canto inferior esquerdo do viewport 3D.
+   ================================================================ */
+
+.hud-cards-panel {
+    position: absolute;
+    bottom: var(--space-6, 24px);
+    /* left definido proceduralmente pelo JS (cardRenderer._positionHudPanel) */
+    left: 220px; /* fallback até o JS inicializar */
+    z-index: 12;
+    width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(26, 29, 35, 0.92);
+    border: 1px solid var(--neutral-700, #3b3f47);
+    border-radius: var(--radius-md, 6px);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.hud-cards-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.hud-cards-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: #BA68C8;
+}
+
+.hud-cards-actions {
+    display: flex;
+    gap: 2px;
+}
+
+.hud-cards-btn {
+    background: none;
+    border: none;
+    color: var(--neutral-400);
+    cursor: pointer;
+    padding: 2px var(--space-1);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+}
+
+.hud-cards-btn:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.hud-cards-body {
+    padding: var(--space-1);
+}
+
+.hud-cards-empty {
+    padding: var(--space-3) var(--space-2);
+    text-align: center;
+    color: var(--neutral-500);
+    font-size: var(--text-xs);
+}
+
+.hud-card {
+    margin-bottom: 3px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    transition: background 0.15s;
+}
+
+.hud-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.hud-card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px var(--space-2);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.hud-card-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.hud-card-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: var(--text-sm);
+}
+
+.hud-card-chevron {
+    flex-shrink: 0;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+}
+
+.hud-card-body {
+    padding: var(--space-1) var(--space-2) 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hud-card-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 0;
+    font-size: var(--text-xs);
+}
+
+.hud-card-label {
+    color: var(--neutral-500);
+}
+
+.hud-card-value {
+    color: var(--text-muted, #d1d5db);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--text-xs);
+}
+
+.hud-card-buttons {
+    display: flex;
+    gap: var(--space-1);
+    margin-top: var(--space-1);
+}
+
+.hud-card-action {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 3px 6px;
+    border: 1px solid var(--neutral-700, #3b3f47);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--text-muted, #d1d5db);
+    cursor: pointer;
+    font-size: var(--text-xs);
+    transition: all 0.15s;
+}
+
+.hud-card-action:hover {
+    background: var(--neutral-700, #3b3f47);
+    color: #fff;
+}
+
+/* ── Minimized state ────────────────────────────────────────────── */
+.hud-cards-minimized {
+    max-height: none;
+    overflow: visible;
+}
+
+.hud-cards-minimized .hud-cards-body {
+    display: none;
+}
+
+

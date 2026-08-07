@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ecbyts Documentation</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<!--
+  SYNC NOTE: This file is the END-USER documentation (English, polished UI).
+  The README.md at the repo root is the DEVELOPER documentation (bilingual, technical).
+
+  Overlapping sections that must stay in sync:
+  - Element families (PDPL-U): README "PDPL-U Element Taxonomy" <-> docs.html #elements
+  - Unit conversion table: README "Unit Conversion Engine" <-> docs.html #unit-conversion
+  - EIS scoring: README "EIS" <-> docs.html #eis
+  - Data model schema: README "Data Model Specification" <-> docs.html #data-model
+  - Technology stack: README "Technology Stack" <-> docs.html #tech-stack
+  - Glossary: README "Environmental Glossary" <-> docs.html #glossary
+  - ECBT format: README "Cryptographic Sharing" <-> docs.html #import-export, #blockchain
+
+  When updating these sections in either file, check the other.
+-->
+<style>
+/* ================================================================
+   DOCS — Dark-themed user documentation
+   Documentacao completa da plataforma ecbyts
+   ================================================================ */
+
+:root {
+    --bg-primary: #0f1117;
+    --bg-secondary: #161822;
+    --bg-card: #1c1e2b;
+    --bg-code: #12131c;
+    --border: #2a2d3e;
+    --text-primary: #e1e4ed;
+    --text-secondary: #8b8fa3;
+    --text-muted: #5c6070;
+    --accent: #6c8aff;
+    --accent-hover: #8ba3ff;
+    --green: #49cc90;
+    --blue: #61affe;
+    --orange: #fca130;
+    --red: #f93e3e;
+    --purple: #9b59b6;
+    --radius: 8px;
+    --sidebar-w: 260px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---- Sidebar ---- */
+
+.sidebar {
+    width: var(--sidebar-w);
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+.sidebar h1 {
+    font-size: 16px;
+    padding: 0 20px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.sidebar h1 span {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 6px;
+}
+
+.sidebar nav { padding: 10px 0; }
+
+.sidebar nav a {
+    display: block;
+    padding: 6px 20px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.15s;
+}
+
+.sidebar nav a:hover, .sidebar nav a.active {
+    color: var(--text-primary);
+    background: rgba(108, 138, 255, 0.08);
+}
+
+.sidebar nav .section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    padding: 16px 20px 4px;
+    font-weight: 600;
+}
+
+.sidebar .api-link {
+    margin: 16px 20px;
+    padding: 10px 14px;
+    background: rgba(108, 138, 255, 0.1);
+    border: 1px solid rgba(108, 138, 255, 0.2);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.15s;
+}
+
+.sidebar .api-link:hover {
+    background: rgba(108, 138, 255, 0.18);
+    border-color: var(--accent);
+}
+
+.sidebar .api-link svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* ---- Main Content ---- */
+
+.main {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    padding: 40px;
+    max-width: 960px;
+}
+
+.main h2 {
+    font-size: 24px;
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.main h2:first-of-type { margin-top: 0; }
+
+.main h3 {
+    font-size: 16px;
+    margin: 24px 0 8px;
+    color: var(--text-secondary);
+}
+
+.main p, .main li {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.main ul, .main ol { padding-left: 20px; margin-bottom: 16px; }
+
+pre {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    overflow-x: auto;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin: 8px 0 16px;
+}
+
+code {
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    background: var(--bg-code);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--accent);
+}
+
+/* ---- Info Card ---- */
+
+.info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 12px 0;
+}
+
+.info-card.highlight {
+    border-left: 3px solid var(--accent);
+}
+
+.info-card.tip {
+    border-left: 3px solid var(--green);
+}
+
+.info-card.warning {
+    border-left: 3px solid var(--orange);
+}
+
+.info-card h4 {
+    font-size: 13px;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.info-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+/* ---- Table ---- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px;
+    font-size: 13px;
+}
+
+th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+tr:hover td {
+    background: rgba(108, 138, 255, 0.04);
+}
+
+/* ---- Feature Grid ---- */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    transition: border-color 0.15s;
+}
+
+.feature-card:hover {
+    border-color: var(--accent);
+}
+
+.feature-card .icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--accent);
+}
+
+.feature-card h4 {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.feature-card p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ---- Kbd (keyboard shortcuts) ---- */
+
+kbd {
+    display: inline-block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 12px;
+    color: var(--text-primary);
+    box-shadow: 0 1px 0 var(--border);
+}
+
+/* ---- Screenshot ---- */
+
+.doc-screenshot {
+    display: block;
+    max-width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    margin: 16px 0 24px;
+}
+
+.docs-video-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) minmax(320px, 1.4fr);
+    gap: 18px;
+    align-items: center;
+    margin: 18px 0 28px;
+    padding: 18px;
+    border: 1px solid rgba(75, 216, 196, 0.22);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(20, 33, 48, 0.92), rgba(8, 17, 29, 0.96));
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+}
+
+.docs-video-copy h3 {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.docs-video-copy p {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+}
+
+.docs-video-eyebrow {
+    margin: 0;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.docs-video-frame video {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: calc(var(--radius) - 2px);
+    background: #02070d;
+}
+
+.docs-video-open {
+    grid-column: 2;
+    justify-self: end;
+    color: var(--accent);
+    font-size: 13px;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 88px 20px 20px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .docs-video-card { grid-template-columns: 1fr; }
+    .docs-video-open { grid-column: 1; justify-self: start; }
+    .mobile-doc-toolbar { display: flex; }
+    .mobile-doc-toolbar .api-link {
+        margin: 0;
+        flex: 1;
+        justify-content: center;
+    }
+    .mobile-doc-toolbar .doc-lang-selector {
+        margin: 0;
+        min-width: 88px;
+    }
+    .mobile-doc-toolbar .doc-lang-trigger {
+        width: auto;
+        min-width: 88px;
+        justify-content: center;
+    }
+    .mobile-doc-toolbar .doc-lang-dropdown {
+        top: calc(100% + 4px);
+        bottom: auto;
+        left: auto;
+        right: 0;
+    }
+}
+
+/* ---- Scroll highlight ---- */
+
+:target {
+    scroll-margin-top: 20px;
+}
+
+/* ---- Hero ---- */
+
+.hero {
+    background: linear-gradient(135deg, rgba(108, 138, 255, 0.1) 0%, rgba(155, 89, 182, 0.08) 100%);
+    border: 1px solid rgba(108, 138, 255, 0.2);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 32px;
+}
+
+.hero h2 {
+    margin: 0 0 8px;
+    padding: 0;
+    border: 0;
+    font-size: 22px;
+    color: var(--text-primary);
+}
+
+.hero p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.hero .version {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--accent);
+    background: rgba(108, 138, 255, 0.12);
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+/* Language switcher */
+.doc-lang-selector {
+    position: relative;
+    margin: 16px 16px 0;
+}
+.doc-lang-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding: 8px 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 13px;
+}
+.doc-lang-trigger:hover { border-color: var(--accent); }
+.doc-lang-trigger svg { width: 14px; height: 14px; flex-shrink: 0; }
+.doc-lang-dropdown {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    max-height: 280px;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 4px;
+    z-index: 100;
+}
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 13px;
+    text-align: left;
+}
+.lang-option:hover { background: rgba(108, 138, 255, 0.1); color: var(--text-primary); }
+.lang-option.active { color: var(--accent); font-weight: 600; }
+.lang-option-code { font-weight: 600; min-width: 24px; }
+.mobile-doc-toolbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    padding: 12px 16px;
+    gap: 10px;
+    background: rgba(15, 17, 23, 0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+    .mobile-doc-toolbar { display: flex; }
+}
+
+/* ---- Print button ---- */
+.print-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+    text-align: left;
+}
+
+/* ---- Print / PDF styles ---- */
+@media print {
+    body { display: block; background: #fff; color: #000; }
+    .sidebar, .mobile-doc-toolbar, .print-btn { display: none !important; }
+    .main {
+        margin-left: 0 !important;
+        padding: 20px !important;
+        max-width: 100% !important;
+    }
+    .card {
+        background: #fff !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+    h2 { break-after: avoid; }
+    img.doc-screenshot { max-width: 100%; break-inside: avoid; }
+    pre, code { background: #f5f5f5 !important; color: #000 !important; }
+    a { color: #000 !important; text-decoration: underline; }
+    table { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-doc-toolbar">
+    <div class="doc-lang-selector" data-doc-lang-selector data-open="false">
+        <button type="button" class="doc-lang-trigger" id="doc-lang-trigger-mobile" data-doc-lang-trigger data-cc-action="doc-lang-mobile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="lang-current-code">EN</span>
+        </button>
+        <div class="doc-lang-dropdown" id="doc-lang-dropdown-mobile" data-doc-lang-dropdown role="listbox"></div>
+    </div>
+    <a href="./api-docs.html" class="api-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span data-i18n="doc.nav.apiReference">API Reference</span>
+    </a>
+</div>
+
+<!-- ==================== SIDEBAR ==================== -->
+<aside class="sidebar">
+    <h1>ecbyts <span>docs</span></h1>
+    <nav>
+        <div class="section-label" data-i18n="doc.nav.gettingStarted">Getting Started</div>
+        <a href="#overview" data-i18n="doc.nav.overview">Overview</a>
+        <a href="#quick-start" data-i18n="doc.nav.quickStart">Quick Start</a>
+        <a href="#interface" data-i18n="doc.nav.interface">Interface Guide</a>
+        <a href="#view-modes" data-i18n="doc.nav.viewModes">View Modes</a>
+
+        <div class="section-label" data-i18n="doc.nav.coreConcepts">Core Concepts</div>
+        <a href="#elements" data-i18n="doc.nav.elements">Element Families</a>
+        <a href="#campaigns" data-i18n="doc.nav.campaigns">Campaigns</a>
+        <a href="#observations" data-i18n="doc.nav.observations">Observations</a>
+        <a href="#scenes" data-i18n="doc.nav.scenes">Scenes</a>
+        <a href="#multi-model-tabs" data-i18n="doc.nav.multiModelTabs">Multi-Model Tabs</a>
+        <a href="#stamps-edges" data-i18n="doc.nav.stampsEdges">Stamps &amp; Edges</a>
+        <a href="#unit-conversion" data-i18n="doc.nav.unitConversion">Unit Conversion</a>
+        <a href="#uncertainty" data-i18n="doc.nav.uncertainty">Uncertainty (UNC-001)</a>
+        <a href="#taxonomy" data-i18n="doc.nav.taxonomy">Taxonomy / Data Dictionary</a>
+
+        <div class="section-label" data-i18n="doc.nav.features">Features</div>
+        <a href="#scene-3d" data-i18n="doc.nav.scene3d">3D Scene</a>
+        <a href="#labels-3d" data-i18n="doc.nav.labels3d">3D Labels</a>
+        <a href="#symbology-profiles" data-i18n="doc.nav.symbologyProfiles">Symbology Profiles</a>
+        <a href="#analytics" data-i18n="doc.nav.analytics">Analytics</a>
+        <a href="#filter-radar" data-i18n="doc.nav.filterRadar">Parameter Filter &amp; Radar</a>
+        <a href="#scenario-simulation" data-i18n="doc.nav.scenarioSimulation">Scenario Simulation</a>
+        <a href="#calculator" data-i18n="doc.nav.calculator">Calculator</a>
+        <a href="#import-export" data-i18n="doc.nav.importExport">Import / Export</a>
+        <a href="#files-module" data-i18n="doc.nav.filesModule">Files Module</a>
+        <a href="#ifc-export" data-i18n="doc.nav.ifcExport">IFC / BIM Export</a>
+        <a href="#power-bi" data-i18n="doc.nav.powerBi">Power BI</a>
+        <a href="#interpolation" data-i18n="doc.nav.interpolation">Interpolation</a>
+        <a href="#potentiometric" data-i18n="doc.nav.potentiometric">Potentiometric Maps</a>
+        <a href="#voxel" data-i18n="doc.nav.voxel">Voxel Modeling</a>
+        <a href="#neural-networks" data-i18n="doc.nav.neuralNetworks">Neural Networks</a>
+        <a href="#fine-tuning" data-i18n="doc.nav.fineTuning">Fine-Tuning Pipeline</a>
+        <a href="#recognition" data-i18n="doc.nav.recognition">ML Recognition</a>
+        <a href="#aerial-georef" data-i18n="doc.nav.aerialGeoref">Aerial Georeferencing</a>
+        <a href="#blockchain" data-i18n="doc.nav.blockchain">Blockchain Integrity</a>
+        <a href="#eis" data-i18n="doc.nav.eis">EIS Score</a>
+        <a href="#sao-matrices" data-i18n="doc.nav.saoMatrices">SAO Matrices</a>
+        <a href="#validation" data-i18n="doc.nav.validation">Compliance Validation</a>
+        <a href="#validation-profiles" data-i18n="doc.nav.validationProfiles">Validation Profiles</a>
+        <a href="#constants" data-i18n="doc.nav.constants">Constants Manager</a>
+        <a href="#workflows" data-i18n="doc.nav.workflows">Guided Workflows</a>
+        <a href="#spatial" data-i18n="doc.nav.spatial">Spatial Blueprint</a>
+        <a href="#ingestion" data-i18n="doc.nav.ingestion">Data Ingestion</a>
+        <a href="#data-entry-matrix" data-i18n="doc.nav.dataEntryMatrix">Data Entry Matrix</a>
+        <a href="#sequencer" data-i18n="doc.nav.sequencer">Storyboard</a>
+        <a href="#pipelines" data-i18n="doc.nav.pipelines">Pipelines</a>
+        <a href="#remediation" data-i18n="doc.nav.remediation">Treatment Systems</a>
+        <a href="#well-geology" data-i18n="doc.nav.wellGeology">Well Geology</a>
+        <a href="#raster-upload" data-i18n="doc.nav.rasterUpload">Historical Map Upload</a>
+        <a href="#photolog" data-i18n="doc.nav.photolog">PhotoLog</a>
+        <a href="#diagrams" data-i18n="doc.nav.diagrams">Technical Diagrams (ISA)</a>
+        <a href="#impact-estimator" data-i18n="doc.nav.impactEstimator">Impact Estimator</a>
+        <a href="#environmental-valuation" data-i18n="doc.nav.envValuation">Environmental Valuation</a>
+        <a href="#cost-analysis" data-i18n="doc.nav.costAnalysis">Cost Analysis</a>
+        <a href="#purpose" data-i18n="doc.nav.purpose">Purpose Module</a>
+        <a href="#issues" data-i18n="doc.nav.issues">Issues 3D</a>
+        <a href="#audit" data-i18n="doc.nav.audit">Data Audit</a>
+        <a href="#i18n" data-i18n="doc.nav.i18n">Internationalization</a>
+        <a href="#random-generator" data-i18n="doc.nav.randomGenerator">Random Generator</a>
+
+        <div class="section-label" data-i18n="doc.nav.tools">Tools</div>
+        <a href="#ai-assistant" data-i18n="doc.nav.aiAssistant">AI Assistant</a>
+        <a href="#llm-dispatch" data-i18n="doc.nav.llmDispatch">LLM Dynamic Dispatch</a>
+        <a href="#automation" data-i18n="doc.nav.automation">Automation Bot Manager</a>
+        <a href="#mcp-server" data-i18n="doc.nav.mcpServer">MCP Server</a>
+        <a href="#reports" data-i18n="doc.nav.reports">Reports</a>
+        <a href="#governance" data-i18n="doc.nav.governance">Governance</a>
+        <a href="#timekeeper" data-i18n="doc.nav.timekeeper">Timekeeper</a>
+        <a href="#sensors" data-i18n="doc.nav.sensors">IoT Sensors</a>
+        <a href="#radar" data-i18n="doc.nav.radar">Model Radar</a>
+        <a href="#sample-files" data-i18n="doc.nav.sampleFiles">Sample Files</a>
+        <a href="#datastudio" data-i18n="doc.nav.datastudio">DataStudio SQL</a>
+        <a href="#customize" data-i18n="doc.nav.customize">UI Customization</a>
+        <a href="#error-reporting" data-i18n="doc.nav.errorReporting">Error Reporting</a>
+        <a href="#libraries-marketplace" data-i18n="doc.nav.librariesMarketplace">Libraries Marketplace</a>
+        <a href="#tours" data-i18n="doc.nav.tours">Guided Tours</a>
+        <a href="#map-picker" data-i18n="doc.nav.mapPicker">Map Picker</a>
+
+        <div class="section-label" data-i18n="doc.nav.platform">Platform</div>
+        <a href="#admin-module" data-i18n="doc.nav.adminModule">Admin Module</a>
+        <a href="#data-sovereignty" data-i18n="doc.nav.dataSovereignty">Data Sovereignty</a>
+        <a href="#esg-framework" data-i18n="doc.nav.esgFramework">ESG Framework</a>
+        <a href="#security" data-i18n="doc.nav.security">Security</a>
+        <a href="#authentication" data-i18n="doc.nav.authentication">Authentication</a>
+
+        <div class="section-label" data-i18n="doc.nav.contributing">Contributing</div>
+        <a href="#contributing" data-i18n="doc.nav.howToContribute">How to Contribute</a>
+        <a href="#contributing-developer" data-i18n="doc.nav.developer">Developer</a>
+        <a href="#contributing-dev-toolkit" data-i18n="doc.nav.devToolkit">Dev Prompt Toolkit</a>
+        <a href="#contributing-vibecoder" data-i18n="doc.nav.vibeCoder">Vibe Coder</a>
+        <a href="#contributing-orgao" data-i18n="doc.nav.regulatoryBody">Regulatory Body</a>
+        <a href="#contributing-usuario" data-i18n="doc.nav.endUser">End User</a>
+        <a href="#contributing-financeiro" data-i18n="doc.nav.financialSponsor">Financial Sponsor</a>
+
+        <div class="section-label" data-i18n="doc.nav.reference">Reference</div>
+        <a href="#shortcuts" data-i18n="doc.nav.shortcuts">Keyboard Shortcuts</a>
+        <a href="#glossary" data-i18n="doc.nav.glossary">Glossary</a>
+        <a href="#parameters" data-i18n="doc.nav.parameters">Parameters</a>
+        <a href="#tech-stack" data-i18n="doc.nav.techStack">Technology Stack</a>
+        <a href="#data-model" data-i18n="doc.nav.dataModel">Data Model</a>
+        <a href="#discoverable-panels" data-i18n="doc.nav.discoverablePanels">Discoverable Panels</a>
+    </nav>
+    <div class="doc-lang-selector" data-doc-lang-selector data-open="false">
+        <button type="button" class="doc-lang-trigger" id="doc-lang-trigger" data-doc-lang-trigger data-cc-action="doc-lang">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="lang-current-code">EN</span>
+        </button>
+        <div class="doc-lang-dropdown" id="doc-lang-dropdown" data-doc-lang-dropdown role="listbox"></div>
+    </div>
+    <a href="./api-docs.html" class="api-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span data-i18n="doc.nav.apiReference">API Reference</span>
+    </a>
+    <a href="https://github.com/calvinsiost/ecbyts_open#readme" class="api-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span data-i18n="doc.nav.developerReadme">Developer README</span>
+    </a>
+    <button type="button" class="api-link print-btn" data-cc-action="doc-print">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span data-i18n="doc.nav.printPdf">Print / Save as PDF</span>
+    </button>
+</aside>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<div class="main">
+
+<!-- ---- Hero ---- -->
+<div class="hero">
+    <h2 data-i18n="doc.title.hero">ecbyts Documentation</h2>
+    <p data-i18n="doc.hero.description">Environmental Digital Twin Platform &mdash; complete user guide for creating 3D models of environmental monitoring sites with linked temporal data, scientific analytics, ML-powered recognition, and blockchain-backed integrity.</p>
+    <span class="version">v0.3.0</span>
+</div>
+
+<!-- ================================================================
+     GETTING STARTED
+     ================================================================ -->
+
+<h2 id="overview" data-i18n="doc.title.overview">Overview</h2>
+<p><strong>ecbyts</strong> (Environmental &amp; Occupational Core Byte Tools) is a platform for Environmental Digital Twins. It creates 3D models of environmental monitoring sites &mdash; contaminated areas, water bodies, remediation projects &mdash; with linked temporal observation data, scientific analytics, ML-powered recognition, and blockchain-backed data integrity.</p>
+<img class="doc-screenshot" src="./assets/docs/interface-overview.png" alt="ecbyts main interface with 3D environmental site, contamination plumes, monitoring wells, and satellite imagery">
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <span class="icon">&#9679;</span>
+        <h4>3D Digital Twins</h4>
+        <p>Build and visualize 3D models of environmental sites with interactive camera controls.</p>
+    </div>
+    <div class="feature-card">
+        <span class="icon">&#9650;</span>
+        <h4>Scientific Analytics</h4>
+        <p>Mann-Kendall trends, predictions, cost analysis, and prescriptive optimization.</p>
+    </div>
+    <div class="feature-card">
+        <span class="icon">&#9670;</span>
+        <h4>Blockchain Integrity</h4>
+        <p>SHA-256, ECDSA signatures, Merkle trees, and hash chains for tamper-proof data.</p>
+    </div>
+    <div class="feature-card">
+        <span class="icon">&#9733;</span>
+        <h4>AI-Powered</h4>
+        <p>Multi-provider LLM assistant, ML image recognition, and neural network modules.</p>
+    </div>
+    <div class="feature-card">
+        <span class="icon">&#9632;</span>
+        <h4>Compliance</h4>
+        <p>CONAMA/CETESB validation, domain validators, ESH matrices, and regulatory support.</p>
+    </div>
+    <div class="feature-card">
+        <span class="icon">&#9678;</span>
+        <h4>IoT Integration</h4>
+        <p>Connect real-time sensors for continuous environmental monitoring.</p>
+    </div>
+</div>
+
+<h2 id="quick-start" data-i18n="doc.title.quickStart">Quick Start</h2>
+<ol>
+    <li>Open the application at <code>https://ecbyts.com</code> or <code>localhost:4000</code> for local development.</li>
+    <li>On first visit, the <strong>Welcome Screen</strong> lets you choose an init mode: Random Model, Map Picker, Last Location, or Blank.</li>
+    <li>Use the <strong>toolbar</strong> at the top to access grouped actions: File, History, Insert, Libraries, View, Analyze, and More.</li>
+    <li>Click <strong>Insert &gt; Add Element</strong> to create your first environmental element (well, plume, lake, etc.).</li>
+    <li>Add <strong>Campaigns</strong> to define sampling events, then add <strong>Observations</strong> (parameter + value + timestamp) to your elements.</li>
+    <li>Use the <strong>3D viewport</strong> to visualize your site. Rotate (left-click drag), pan (right-click drag), zoom (scroll).</li>
+    <li>Go to <strong>Optimize</strong> tab for analytics, neural networks, and guided environmental workflows.</li>
+    <li>Export your model using <strong>File &gt; Export</strong> to save as an ECBT key.</li>
+</ol>
+
+<div class="info-card tip">
+    <h4>Demo Mode</h4>
+    <p>Click <strong>File &gt; Random</strong> to instantly create a sample site with elements, campaigns, observations, ticker data, and analytics. Great for exploring features.</p>
+</div>
+
+<h2 id="interface" data-i18n="doc.title.interface">Interface Guide</h2>
+<h3 data-i18n="doc.title.layout">Layout</h3>
+<p>The application uses a CSS Grid layout with five main areas:</p>
+<img class="doc-screenshot" src="./assets/docs/interface-annotated.png" alt="ecbyts interface guide with top toolbar, side panels, central viewport, and bottom Constellation HUD">
+<ul>
+    <li><strong>Toolbar</strong> (top) &mdash; Flat toolbar with permanent groups and progressive-disclosure dropdowns.</li>
+    <li><strong>Left Panel</strong> &mdash; Element list organized by family. Click an element to select it in the 3D view.</li>
+    <li><strong>3D Viewport</strong> (center) &mdash; Interactive Three.js scene showing your environmental model.</li>
+    <li><strong>Right Panel</strong> &mdash; Property inspector showing details of the selected element, observations, and campaigns.</li>
+    <li><strong>Constellation HUD</strong> (bottom) &mdash; Tabbed bottom bar with analytics charts, data entry matrix, cost analysis, timeline ticker, and more.</li>
+</ul>
+
+<h3>Panel Reference</h3>
+<p>These screenshots summarize the main panels and navigation surfaces used by most modules and submodules:</p>
+<img class="doc-screenshot" src="./assets/docs/ribbon-overview.png" alt="Top toolbar with grouped actions for file, insert, libraries, view, analysis, and utilities">
+<img class="doc-screenshot" src="./assets/docs/panel-left.png" alt="Left panel with family browser and element tree">
+<img class="doc-screenshot" src="./assets/docs/panel-right.png" alt="Right panel with inspector tabs for project, elements, campaigns, scenes, analytics, and governance">
+<img class="doc-screenshot" src="./assets/docs/panel-constellation.png" alt="Bottom Constellation HUD with graph, report, storyboard, and operational tabs">
+
+<div class="info-card highlight">
+    <h4>Dockable Panels</h4>
+    <p>All panels support three states: <strong>docked</strong> (fixed to edge), <strong>minimized</strong> (collapsed to edge tab), and <strong>floating</strong> (draggable, resizable). Right-click a panel title bar for options.</p>
+</div>
+
+<h3 data-i18n="doc.title.toolbarGroups">Toolbar Groups</h3>
+<p>The toolbar uses a flat layout with permanent groups and dropdown menus for progressive disclosure:</p>
+<table>
+    <tr><th>Group</th><th>Purpose</th><th>Key Actions</th></tr>
+    <tr><td><strong>File</strong></td><td>Project lifecycle and exchange</td><td>New, Random, Clear Model, Open/Import, Export, Download Key, Share URL, Drawing Plate, Diff &amp; Merge</td></tr>
+    <tr><td><strong>History</strong></td><td>Edit history and duplication</td><td>Undo, Redo, Copy, Paste</td></tr>
+    <tr><td><strong>Insert</strong></td><td>Add model content and source data</td><td>Element, Campaign, Scene, Data Entry Matrix, EDD Import, DXF/CAD, Georeference, Field Variables, Sensors Center, Families</td></tr>
+    <tr><td><strong>Libraries</strong></td><td>Reusable content and packaged knowledge</td><td>Installed Libraries Gallery, Marketplace, Library Manager, Import Library, Product Wizard</td></tr>
+    <tr><td><strong>View</strong></td><td>Camera, layout, and display controls</td><td>3D, Top, Front, Fit All, 2D/3D Toggle, Reset, Panels, Theme, Labels, Inspector, Symbology, Performance, Customize</td></tr>
+    <tr><td><strong>Analyze</strong></td><td>Analytics, modeling, automation, and AI</td><td>Temporal, Interpolation, Analytics/Governance/Cost/Issues panels, Hypothesis Test, MAC Curve, Geology, Voxels, EIS, SAO, Regulatory Standards, Aerial Recognition, ML, Workflows, Pipelines, AI Assistant</td></tr>
+    <tr><td><strong>More</strong></td><td>Auxiliary workspace utilities</td><td>Focus Mode, Snapshot, Account Usage, About, Documentation</td></tr>
+</table>
+<p>Two additional toolbar surfaces appear contextually: <strong>Voxel Controls</strong> are shown only when voxel mode is active, and the <strong>Edit Ribbon</strong> replaces the main toolbar while shape editing is in progress.</p>
+
+<h2 id="view-modes" data-i18n="doc.title.viewModes">View Modes</h2>
+<p>The application has a <strong>View Router</strong> that manages four distinct modes, switchable via the toolbar or keyboard:</p>
+<img class="doc-screenshot" src="./assets/docs/view-2d.png" alt="ecbyts 2D view mode with terrain interpolation overlay">
+<table>
+    <tr><th>Mode</th><th>Description</th></tr>
+    <tr><td><strong>Home</strong></td><td>Dashboard grid with project cards, recent activity, and quick actions. No 3D scene loaded.</td></tr>
+    <tr><td><strong>Actions</strong></td><td>Focused on data entry and tabular workflows &mdash; elements list, campaigns, observations.</td></tr>
+    <tr><td><strong>2D</strong></td><td>Top-down orthographic view. Ideal for site plans, interpolation surfaces, and spatial analysis.</td></tr>
+    <tr><td><strong>3D</strong></td><td>Full perspective 3D scene with orbit controls, labels, terrain, and voxel layers.</td></tr>
+</table>
+
+<div class="info-card tip">
+    <h4>Lazy 3D Initialization</h4>
+    <p>The Three.js scene only initializes when you first switch to 2D or 3D mode. This keeps the Home and Actions views fast and lightweight.</p>
+</div>
+
+<!-- ================================================================
+     CORE CONCEPTS
+     ================================================================ -->
+
+<h2 id="elements" data-i18n="doc.title.elements">Element Families (PDPL-U / PDPLU)</h2>
+<p>Elements are the building blocks of your environmental model. Each element belongs to a <strong>family</strong> that determines its 3D representation, available properties, and behavior. The classification follows the <strong>PDPL-U / PDPLU</strong> model.</p>
+<p>In ecbyts, <strong>PDPL-U</strong> and <strong>PDPLU</strong> refer to the same organizing model: <strong>Ponto, Data, Parametro, Leitura, Unidade</strong>. This structure underpins the platform's element families, tabular observation views, CSV exports, and the broader organization of environmental records and site entities.</p>
+<p>When you see <strong>PDPLU</strong> in the bottom Constellation HUD, it is the same concept rendered as a flat observation table and export format.</p>
+<img class="doc-screenshot" src="./assets/docs/elements-panel.png" alt="Elements panel listing PDPL-U families and model items in the side inspector">
+
+<table>
+    <tr><th>Family</th><th>ID</th><th>Description</th></tr>
+    <tr><td colspan="3"><strong>Environmental Monitoring</strong></td></tr>
+    <tr><td>Contamination Plume</td><td><code>plume</code></td><td>3D volume representing contaminated groundwater or soil. Can be visualized with interpolation surfaces.</td></tr>
+    <tr><td>Monitoring Well</td><td><code>well</code></td><td>Vertical borehole used for sampling groundwater. Supports constructive and lithologic SVG profiles.</td></tr>
+    <tr><td>Lake</td><td><code>lake</code></td><td>Surface water body. Can hold water quality observations over time.</td></tr>
+    <tr><td>River</td><td><code>river</code></td><td>Flowing water body modeled as a linear feature with cross-sections.</td></tr>
+    <tr><td>Spring</td><td><code>spring</code></td><td>Natural groundwater discharge point. Important for hydrogeological models.</td></tr>
+    <tr><td>Sample Point</td><td><code>sample</code></td><td>Soil, surface water, or other sampling location.</td></tr>
+    <tr><td>Geological Layer</td><td><code>stratum</code></td><td>Subsurface stratum representing different soil/rock types.</td></tr>
+    <tr><td>Marker</td><td><code>marker</code></td><td>Generic reference point for any location of interest.</td></tr>
+    <tr><td>Sensor</td><td><code>sensor</code></td><td>Remote IoT monitoring device. Collects real-time environmental data via external protocols.</td></tr>
+    <tr><td colspan="3"><strong>Infrastructure</strong></td></tr>
+    <tr><td>Building</td><td><code>building</code></td><td>Infrastructure element. Used as spatial reference for site layout.</td></tr>
+    <tr><td>Storage Tank</td><td><code>tank</code></td><td>Chemical or fuel storage container. Potential contamination source.</td></tr>
+    <tr><td>Boundary</td><td><code>boundary</code></td><td>Property or study area limits. Defines the extent of the model.</td></tr>
+    <tr><td>Spatial Blueprint</td><td><code>blueprint</code></td><td>Imported CAD/GIS footprint from DXF files. Provides base mapping.</td></tr>
+    <tr><td colspan="3"><strong>ESG &amp; H&amp;S</strong></td></tr>
+    <tr><td>Organizational Area</td><td><code>area</code></td><td>Plant sector or zone. Used for H&amp;S metrics and resource allocation.</td></tr>
+    <tr><td>Individual</td><td><code>individual</code></td><td>Person, animal, or tree. For H&amp;S (workers) and biodiversity (fauna/flora).</td></tr>
+    <tr><td>Incident</td><td><code>incident</code></td><td>H&amp;S occurrence: accidents, near-misses, first aid.</td></tr>
+    <tr><td>Emission Source</td><td><code>emission_source</code></td><td>Chimney, vent, or fugitive emission point. For atmospheric emission inventories.</td></tr>
+    <tr><td>Waste Stream</td><td><code>waste_stream</code></td><td>Solid waste flow. For waste management and recycling tracking.</td></tr>
+    <tr><td>Effluent Point</td><td><code>effluent_point</code></td><td>Liquid effluent discharge point. For effluent quality monitoring.</td></tr>
+    <tr><td>Habitat</td><td><code>habitat</code></td><td>Biodiversity area: ecosystems, protected areas, restoration zones.</td></tr>
+    <tr><td colspan="3"><strong>Special</strong></td></tr>
+    <tr><td>Intangible Asset</td><td><code>intangible</code></td><td>Contracts, carbon credits, green energy certificates, environmental licenses.</td></tr>
+    <tr><td>Generic Element</td><td><code>generic</code></td><td>Wildcard type for elements that do not fit any other family.</td></tr>
+    <tr><td>Geological Fault</td><td><code>fault</code></td><td>Geological fault trace or zone. Used in structural geology and seismic hazard models.</td></tr>
+    <tr><td colspan="3"><strong>Mining &amp; Civil</strong></td></tr>
+    <tr><td>Dam</td><td><code>dam</code></td><td>Water or tailings containment structure. Used in mining, hydro, and sanitation projects.</td></tr>
+    <tr><td>Open-pit Mine</td><td><code>pit</code></td><td>Surface benched excavation. Used in mining, quarries, and post-closure remediation.</td></tr>
+    <tr><td colspan="3"><strong>Fleet &amp; Operations</strong></td></tr>
+    <tr><td>Vehicle</td><td><code>vehicle</code></td><td>Mobile fleet element (trucks, machinery, drones). Used for logistics and emission tracking.</td></tr>
+    <tr><td>Equipment</td><td><code>equipment</code></td><td>Operational equipment (pumps, generators, instruments). Used for CAPEX/OPEX and maintenance.</td></tr>
+    <tr><td>Linear Infrastructure</td><td><code>infra_linear</code></td><td>Linear built elements: pipes, cables, fences, conveyor belts.</td></tr>
+    <tr><td>Treatment System</td><td><code>treatment_system</code></td><td>Remediation and treatment systems: pump &amp; treat, SVE, bioreactors, oil-water separators, septic systems.</td></tr>
+    <tr><td>Atmosphere</td><td><code>atmosphere</code></td><td>Atmospheric zone or air mass. Used for air quality and GHG dispersion modeling.</td></tr>
+    <tr><td colspan="3"><strong>Transport &amp; Flow</strong></td></tr>
+    <tr><td>Route &amp; Flow</td><td><code>route_flow</code></td><td>Linear directional elements: sampling routes, vehicle routes, pipes, connectors. Supports Manning hydraulics and graph connectivity.</td></tr>
+    <tr><td colspan="3"><strong>Containers (Hierarchy)</strong></td></tr>
+    <tr><td>Project</td><td><code>site_project</code></td><td>Top-level project container grouping all areas and zones of a site.</td></tr>
+    <tr><td>Area</td><td><code>site_area</code></td><td>Defined area within a project (e.g., contamination source zone, investigation perimeter).</td></tr>
+    <tr><td>Zone</td><td><code>site_zone</code></td><td>Sub-division of an area for granular spatial organization.</td></tr>
+</table>
+
+<div class="info-card highlight">
+    <h4>Adding Elements</h4>
+    <p>Go to <strong>Insert &gt; Add Element</strong>, select a family, and the element will appear in the 3D viewport. Drag to position it. Use the <strong>Property Inspector</strong> (right panel) to edit coordinates, name, and properties.</p>
+</div>
+
+<h2 id="campaigns" data-i18n="doc.title.campaigns">Campaigns</h2>
+<p>A <strong>Campaign</strong> represents a field sampling event &mdash; a specific date when a team collected data from multiple elements. Campaigns organize observations chronologically.</p>
+<img class="doc-screenshot" src="./assets/docs/campaigns-panel.png" alt="Campaigns tab showing campaign records and related environmental sampling data">
+<ul>
+    <li>Each campaign has a <strong>date</strong>, <strong>team name</strong>, and <strong>description</strong>.</li>
+    <li>Observations are always linked to both an <strong>element</strong> and a <strong>campaign</strong>.</li>
+    <li>Use the <strong>Timeline Ticker</strong> in the Constellation HUD to navigate between campaigns and see how data changes over time.</li>
+    <li>Create campaigns via <strong>Insert &gt; Add Campaign</strong> or through the right panel.</li>
+</ul>
+
+<h2 id="observations" data-i18n="doc.title.observations">Observations</h2>
+<p>An <strong>Observation</strong> is a single measurement at a specific point in time: a parameter (what was measured), a value (the result), and a timestamp (when). Observations are the core data of the environmental model.</p>
+<img class="doc-screenshot" src="./assets/docs/observations-panel.png" alt="Observation-focused view with temporal measurements linked to elements and campaigns">
+<ul>
+    <li><strong>Parameter</strong>: What was measured (e.g., Benzene, pH, Dissolved Oxygen). Supports 30+ built-in parameters plus custom ones.</li>
+    <li><strong>Value</strong>: The numeric result with units (e.g., 0.005 mg/L). Unit conversion uses a 90+ unit catalog.</li>
+    <li><strong>Timestamp</strong>: When the measurement was taken (linked to a Campaign).</li>
+    <li><strong>Custom Fields</strong>: Additional context like sample depth, detection limit, fraction, and preservation method.</li>
+    <li>Observations drive analytics: trends, exceedances, interpolation, compliance checks, and EIS scoring.</li>
+</ul>
+
+<h2 id="scenes" data-i18n="doc.title.scenes">Scenes</h2>
+<p><strong>Scenes</strong> are saved camera viewpoints and display configurations. They let you quickly switch between different views of your model.</p>
+<img class="doc-screenshot" src="./assets/docs/scenes-panel.png" alt="Scenes tab with saved viewpoints and display presets for the environmental model">
+<ul>
+    <li>Save the current camera position, zoom, and rotation as a named scene.</li>
+    <li>Scene snapshots are included in reports and the storyboard sequencer.</li>
+    <li>Create scenes via <strong>Insert &gt; Add Scene</strong>.</li>
+</ul>
+
+<h2 id="stamps-edges" data-i18n="doc.title.stampsEdges">Stamps &amp; Edges</h2>
+<p><strong>Stamps</strong> are compliance or status tags attached to elements. <strong>Edges</strong> are directed relationships between elements, forming a knowledge graph of your environmental site.</p>
+<img class="doc-screenshot" src="./assets/docs/stamps-edges.png" alt="Stamps and edges interface showing compliance tags and directed relationships between elements">
+
+<h3 data-i18n="doc.title.stamps">Stamps</h3>
+<p>20+ predefined tags for element annotation:</p>
+<ul>
+    <li><code>compliance_ok</code>, <code>compliance_fail</code> &mdash; Regulatory compliance status.</li>
+    <li><code>priority_high</code>, <code>priority_medium</code>, <code>priority_low</code> &mdash; Prioritization levels.</li>
+    <li><code>retest_required</code>, <code>archived</code>, <code>under_review</code> &mdash; Workflow status markers.</li>
+    <li>Stamps are visible in the element list and included in ECBT exports.</li>
+</ul>
+
+<h3 data-i18n="doc.title.edges">Edges</h3>
+<p>15+ directed relationship types between elements:</p>
+<ul>
+    <li><code>monitors</code> &mdash; Well monitors a plume or area.</li>
+    <li><code>sources_from</code>, <code>discharges_to</code>, <code>flows_to</code> &mdash; Hydrological connections.</li>
+    <li><code>contains</code>, <code>part_of</code> &mdash; Spatial containment hierarchy.</li>
+    <li><code>occurred_in</code>, <code>involved_in</code> &mdash; Incident-area associations.</li>
+    <li><code>inhabits</code>, <code>supplies</code>, <code>treats</code>, <code>adjacent_to</code> &mdash; Ecological and operational links.</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Adding Stamps &amp; Edges</h4>
+    <p>Select an element, then use the <strong>Stamps</strong> tab in the right panel to toggle tags. For edges, use the <strong>Edge Editor</strong> to create directed relationships between two selected elements.</p>
+</div>
+
+<h2 id="unit-conversion" data-i18n="doc.title.unitConversion">Unit Conversion Engine</h2>
+<p>90+ units across 12 dimensions with automatic conversion between compatible units. When observations use different units for the same parameter, the engine converts values transparently for analytics and compliance checks.</p>
+<img class="doc-screenshot" src="./assets/docs/unit-conversion.png" alt="Unit conversion controls with engineering units applied to environmental parameters">
+
+<table>
+    <tr><th>Dimension</th><th>Units</th></tr>
+    <tr><td><strong>Concentration</strong></td><td>mg/L, &mu;g/L, ppm, ppb, mg/kg, &mu;g/kg, meq/L, mol/L</td></tr>
+    <tr><td><strong>Length</strong></td><td>m, cm, mm, km, ft, in, yd, mi</td></tr>
+    <tr><td><strong>Temperature</strong></td><td>Celsius, Fahrenheit, Kelvin</td></tr>
+    <tr><td><strong>Flow</strong></td><td>m&sup3;/s, L/s, m&sup3;/h, L/min, gal/min</td></tr>
+    <tr><td><strong>Mass</strong></td><td>kg, g, mg, &mu;g, ton, lb</td></tr>
+    <tr><td><strong>Area</strong></td><td>m&sup2;, ha, km&sup2;, acre</td></tr>
+    <tr><td><strong>Volume</strong></td><td>m&sup3;, L, mL, gal</td></tr>
+    <tr><td><strong>Emissions</strong></td><td>tCO2e, kgCO2e (GWP: CH4=28, N2O=265, SF6=23500)</td></tr>
+    <tr><td><strong>Safety rates</strong></td><td>per 200k hh (OSHA), per 1M hh (OIT)</td></tr>
+    <tr><td><strong>Biodiversity</strong></td><td>species count</td></tr>
+    <tr><td><strong>Noise</strong></td><td>dB(A)</td></tr>
+    <tr><td><strong>Dimensionless</strong></td><td>pH, ratio, percentage</td></tr>
+</table>
+
+<div class="info-card highlight">
+    <h4>Auto-Conversion</h4>
+    <p>When <code>autoConvert</code> is enabled on an observation, the system converts values to the parameter's default unit automatically. Custom parameters can define their own unit dimensions.</p>
+</div>
+
+<!-- ================================================================
+     FEATURES
+     ================================================================ -->
+
+<h2 id="scene-3d" data-i18n="doc.title.scene3d">3D Scene</h2>
+<p>The 3D viewport is powered by <strong>Three.js</strong> and renders your environmental model in real-time.</p>
+<img class="doc-screenshot" src="./assets/docs/scene-3d.png" alt="3D viewport with terrain surface, environmental elements, and monitoring wells">
+
+<h3 data-i18n="doc.title.cameraControls">Camera Controls</h3>
+<table>
+    <tr><th>Action</th><th>Mouse</th><th>Touch</th></tr>
+    <tr><td>Rotate / Orbit</td><td>Left-click + drag</td><td>One finger drag</td></tr>
+    <tr><td>Pan</td><td>Right-click + drag</td><td>Two finger drag</td></tr>
+    <tr><td>Zoom</td><td>Scroll wheel</td><td>Pinch</td></tr>
+    <tr><td>Select element</td><td>Left-click on element</td><td>Tap on element</td></tr>
+    <tr><td>Reset camera</td><td>Double-click background</td><td>Double-tap background</td></tr>
+</table>
+
+<h3 data-i18n="doc.title.vizOptions">Visualization Options</h3>
+<ul>
+    <li><strong>Grid</strong> &mdash; Toggle reference grid on/off (View tab).</li>
+    <li><strong>Layer Visibility</strong> &mdash; Show/hide specific element families.</li>
+    <li><strong>Labels</strong> &mdash; Four categories of CSS2D billboards: element names, observation values, geology layers, and model title.</li>
+    <li><strong>Terrain</strong> &mdash; Enable interpolated terrain surface from elevation data.</li>
+    <li><strong>Symbology</strong> &mdash; Apply visual overlay profiles for standardized site mapping.</li>
+    <li><strong>Cursor Projector</strong> &mdash; Real-time coordinate display projected onto terrain and meshes.</li>
+</ul>
+
+<h2 id="labels-3d" data-i18n="doc.title.labels3d">3D Labels</h2>
+<p>In-scene element labeling using <strong>CSS2DRenderer</strong> billboards that always face the camera.</p>
+<img class="doc-screenshot" src="./assets/docs/labels-3d.png" alt="3D scene with dynamic labels for elements and environmental measurements">
+<ul>
+    <li>Four label categories: element names, observation values, geology layers, and model title.</li>
+    <li>Dynamic visibility based on zoom level and element selection.</li>
+    <li>Labels update in real-time when observations or element properties change.</li>
+    <li>Toggle via <strong>View &gt; Labels</strong> in the toolbar.</li>
+</ul>
+
+<h2 id="symbology-profiles" data-i18n="doc.title.symbologyProfiles">Symbology Profiles</h2>
+<p>Standardized visual mapping profiles that control how elements are rendered in the 3D viewport. Symbology profiles ensure consistent visual communication across environmental site investigations.</p>
+<ul>
+    <li><strong>Profile-based rendering</strong> &mdash; Switch between symbology standards (ABNT, CETESB, custom) to change element colors, icons, and 3D shapes globally.</li>
+    <li><strong>Layer-aware styling</strong> &mdash; Each element family has configurable visual rules based on observation values, compliance status, and metadata.</li>
+    <li><strong>Legend generation</strong> &mdash; Auto-generated map legends matching the active symbology profile for reports and drawing plates.</li>
+    <li><strong>Custom profiles</strong> &mdash; Create organization-specific symbology standards via JSON configuration.</li>
+</ul>
+<div class="info-card tip">
+    <h4>Activating Symbology</h4>
+    <p>Go to <strong>View &gt; Symbology</strong> in the toolbar to select or manage profiles. The active profile is persisted in the model and included in ECBT exports.</p>
+</div>
+
+<h2 id="analytics" data-i18n="doc.title.analytics">Analytics</h2>
+<p>The analytics module provides scientific analysis tools for environmental monitoring data, organized as a multi-viewport workspace.</p>
+<img class="doc-screenshot" src="./assets/docs/analytics.png" alt="Analytics workspace with Constellation HUD interpolation tab and 3D scene">
+
+<h3 data-i18n="doc.title.availableAnalyses">Available Analyses</h3>
+<ul>
+    <li><strong>Time Series Charts</strong> &mdash; Plot observation values over time with Chart.js. Compare multiple parameters and elements.</li>
+    <li><strong>Mann-Kendall Trend Test</strong> &mdash; Statistical test for monotonic trends in environmental data. Identifies increasing or decreasing contamination patterns.</li>
+    <li><strong>Predictions</strong> &mdash; Forecast future values based on historical trends using regression models.</li>
+    <li><strong>Cost Analysis (CAPEX+OPEX)</strong> &mdash; Roll up remediation costs by project, fiscal year, and cost category with L1&ndash;L4 aggregation.</li>
+    <li><strong>GA Optimization</strong> &mdash; Genetic Algorithm-based prescriptive optimization for spatial sampling network design, using Kriging variance minimization.</li>
+    <li><strong>Histograms</strong> &mdash; Frequency distribution of observation values.</li>
+    <li><strong>Scatter Plots</strong> &mdash; Bivariate analysis across parameters or elements.</li>
+    <li><strong>Cross-tabulation</strong> &mdash; Pivot-table analysis of multi-dimensional observation data.</li>
+    <li><strong>Violations Timeline</strong> &mdash; Compliance breach tracking across time.</li>
+    <li><strong>Temporal KPI (D2)</strong> &mdash; Time-series scoring for data density and coverage.</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>EventBus Integration</h4>
+    <p>All analytics viewports communicate via a central pub/sub EventBus. Selecting a data point in one viewport highlights it across all others.</p>
+</div>
+
+<h2 id="filter-radar" data-i18n="doc.title.filterRadar">Parameter Filter &amp; Radar (FEAT-FILTER-RADAR-001)</h2>
+<p>Aggregation engine that groups environmental parameters into 7 canonical classes and computes per-element radar charts for rapid multi-contaminant assessment.</p>
+<ul>
+    <li><strong>7 canonical groups</strong> &mdash; VOC, SVOC, Metais (metals), Físico-Químicos, Hidrocarbonetos, Pesticidas, Nutrientes. Based on EPA QAPP §3.4.2.</li>
+    <li><strong>6 aggregation functions</strong> &mdash; mean, median, max, min, P95 (EPA-240/B-06-003), standard deviation &mdash; configurable per group.</li>
+    <li><strong>O(1) element index</strong> &mdash; <code>buildElementGroupIndex</code> pre-computes group membership so radar data resolves in constant time regardless of observation count.</li>
+    <li><strong>Per-element radar</strong> &mdash; <code>computeElementRadarData</code> returns 7-axis scores normalized to CETESB VP/VI thresholds for immediate visual risk classification.</li>
+    <li><strong>Drill-down (Phase 2)</strong> &mdash; Canvas 2D radar renderer + lateral drill-down panel + i18n 16 locales + synchronized 3D highlighting. Pending.</li>
+</ul>
+<div class="info-card highlight">
+    <h4>Academic Reference</h4>
+    <p>P95 interpolation method per EPA-240/B-06-003 §A.1.3. Group classification follows EPA QAPP §3.4.2 analyte category schema.</p>
+</div>
+
+<h2 id="scenario-simulation" data-i18n="doc.title.scenarioSimulation">Scenario Simulation</h2>
+<p>Probabilistic environmental scenario modeling using <strong>Monte Carlo</strong> and <strong>Latin Hypercube Sampling (LHS)</strong>. Evaluate remediation strategies under uncertainty before committing resources.</p>
+<img class="doc-screenshot" src="./assets/docs/scenario-simulation.png" alt="Monte Carlo Scenario Simulation modal with BTEX plume scenario and execution controls">
+<ul>
+    <li><strong>8 pre-defined scenarios</strong> &mdash; BTEX plume, heavy metals, chlorinated solvents, PAH, nitrate, GHG, effluent, leachate.</li>
+    <li><strong>25+ remediation decisions</strong> &mdash; Pump &amp; Treat, PRB, MNA, SVE, and more.</li>
+    <li><strong>P10&ndash;P90 cost ranges</strong> &mdash; CAPEX + OPEX with confidence intervals.</li>
+    <li><strong>Composite score</strong> &mdash; <code>compliance&times;30 + noFailure&times;20 + costEfficiency&times;20 + health&times;15 + speed&times;15</code></li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Running a Simulation</h4>
+    <p>Go to <strong>Analyze &gt; Scenarios MC</strong> in the toolbar. Select a scenario, configure distributions, and click <strong>Execute</strong>. Results target &lt;2 s for 300 runs.</p>
+</div>
+
+<h2 id="calculator" data-i18n="doc.title.calculator">Calculator</h2>
+<p>The <strong>Calculator</strong> is a reusable filter pipeline for computing environmental metrics, compound rules, and parameter ratios from live model data.</p>
+<img class="doc-screenshot" src="./assets/docs/calculator.png" alt="Calculator panel with environmental metrics, BTEX compliance, and parameter ratios">
+<ul>
+    <li><strong>Metrics</strong> &mdash; Compute aggregate values (mean, max, exceedance count) across elements and campaigns.</li>
+    <li><strong>Compound Rules</strong> &mdash; Boolean or threshold-based rules combining multiple parameters (e.g., "Benzene &gt; VI AND pH &lt; 5").</li>
+    <li><strong>Ratios</strong> &mdash; Parameter-to-parameter ratios for diagnostic analysis.</li>
+    <li><strong>Hypotheses</strong> &mdash; What-if scenario definitions that feed neural network predictions.</li>
+    <li><strong>MAC Curves</strong> &mdash; Marginal Abatement Cost curves for remediation prioritization.</li>
+</ul>
+<p>Calculator items are defined via the <strong>Data Entry Matrix</strong> in the Constellation HUD and persist in the model.</p>
+
+<h2 id="import-export" data-i18n="doc.title.importExport">Import / Export (ECBT)</h2>
+<p>The <strong>ECBT format</strong> is the unified serialization format for ecbyts models. It supports both simple and blockchain-backed models.</p>
+<img class="doc-screenshot" src="./assets/docs/import-export.png" alt="Export modal with ECBT key format selection and generated key">
+
+<h3 data-i18n="doc.title.export">Export</h3>
+<ul>
+    <li><strong>Export Key</strong> &mdash; Generates a compact ECBT string that encodes the entire model (elements, campaigns, observations, scenes, edges, calculator, constants, interpolation layers, and more). Copy and share as text.</li>
+    <li><strong>Export JSON</strong> &mdash; Full model as a JSON file for programmatic use.</li>
+    <li><strong>Download</strong> &mdash; Save the model as a downloadable file.</li>
+</ul>
+
+<h3 data-i18n="doc.title.import">Import</h3>
+<ul>
+    <li><strong>Import Key</strong> &mdash; Paste an ECBT key to restore a full model. Legacy ECO1 keys are also accepted for backward compatibility.</li>
+    <li><strong>Import JSON</strong> &mdash; Load a previously exported JSON file.</li>
+    <li><strong>Spreadsheet Import</strong> &mdash; Bulk import from XLSX/CSV files using the ingestion wizard.</li>
+    <li><strong>DXF Import</strong> &mdash; Import CAD site plans as Spatial Blueprint elements.</li>
+    <li><strong>URL Import</strong> &mdash; Load a model directly via URL parameter: <code>?key=ECBT.A0000001-...-10000000A.TBCE</code></li>
+</ul>
+
+<div class="info-card highlight">
+    <h4>ECBT Format Variants</h4>
+    <p>Simple models use <strong>6 segments</strong>. Blockchain-backed models use <strong>10 segments</strong> (adding key ID, hash chain, Merkle root, and ECDSA signature). Both use the ECBT prefix &mdash; the format is differentiated by internal structure.</p>
+<pre tabindex="0" role="region" aria-label="ECBT key format variants">
+<strong>Simple (A):</strong>     ECBT.A0000001-{families}-{salt}-{checksum}-{payload}-10000000A.TBCE
+<strong>Blockchain (B):</strong> ECBT.B0000001-{families}-{keyId}-{prevHash}-{merkle}-{signature}-{salt}-{checksum}-{payload}-10000000B.TBCE
+<strong>Compressed (C):</strong> ECBT.C0000001-{families}-{salt}-{crc32}-{payload}-10000000C.TBCE
+</pre>
+    <p>Family codes encode which element types are present (e.g., &ldquo;PWM&rdquo; = Plume, Well, Marker). The checksum is a 4-character hex for integrity verification. Legacy ECO1 keys (without the ECBT envelope) are still accepted on import.</p>
+</div>
+
+<h2 id="files-module" data-i18n="doc.title.filesModule">Files Module</h2>
+<p>Cloud-based file management integrated with Supabase Storage. Attach documents, images, and reports to your environmental model with full versioning and access control.</p>
+<ul>
+    <li><strong>Per-project storage</strong> &mdash; Files are organized by project with automatic folder structure.</li>
+    <li><strong>Drag &amp; drop upload</strong> &mdash; Upload files directly from the file manager panel. Supports images, PDFs, DOCX, XLSX, DXF, and more.</li>
+    <li><strong>Inline preview</strong> &mdash; Preview images and documents without downloading. PDF and image files render inline.</li>
+    <li><strong>Element attachments</strong> &mdash; Link files to specific elements (e.g., well logs, lab reports, photos).</li>
+    <li><strong>Quota-aware</strong> &mdash; Storage usage counts against your plan quota. Free tier: 50 MB. Pro: 5 GB. Scale: 50 GB.</li>
+</ul>
+<div class="info-card highlight">
+    <h4>Accessing Files</h4>
+    <p>Open the <strong>Files</strong> panel from the right sidebar or use <strong>More &gt; Files</strong> in the toolbar. Files are synced to Supabase Storage and available across devices when authenticated.</p>
+</div>
+
+<h2 id="ifc-export" data-i18n="doc.title.ifcExport">IFC / BIM Export</h2>
+<p>Export your environmental model to <strong>IFC4</strong> format (ISO 16739-1:2018), the international BIM standard for integration with Autodesk Revit, ArchiCAD, and BIM 360.</p>
+<ul>
+    <li>Each element exported as an <code>IfcBuildingElementProxy</code> with full 3D placement.</li>
+    <li>No external dependencies &mdash; pure STEP text output (ISO 10303-21).</li>
+    <li>Axis conversion: Three.js Y-up &rarr; IFC Z-up automatically handled.</li>
+    <li>Property sets: <code>ecbyts_Metadata</code> (family, id, name) and <code>ecbyts_Observations</code> (last observation per parameter).</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Exporting to IFC</h4>
+    <p>Go to <strong>File &gt; Export &gt; IFC (.ifc)</strong>. The file can be opened in any IFC-compliant viewer (BIM Vision, IFC.js, xBIM).</p>
+</div>
+
+<h2 id="power-bi" data-i18n="doc.title.powerBi">Power BI Integration (BI v1)</h2>
+<p>Tabular BI API designed for analytics tools like Power BI. Endpoints expose a star-model friendly structure.</p>
+<ul>
+    <li><code>GET /api/bi/v1/schema</code> &mdash; Table dictionary and column types.</li>
+    <li><code>GET /api/bi/v1/dim_elements</code> &mdash; Elements dimension.</li>
+    <li><code>GET /api/bi/v1/dim_campaigns</code> &mdash; Campaigns dimension.</li>
+    <li><code>GET /api/bi/v1/fact_observations</code> &mdash; Observations fact table (filterable by date, element, campaign, parameter).</li>
+    <li><code>GET /api/bi/v1/fact_edges</code> &mdash; Element relationship facts.</li>
+</ul>
+
+<h2 id="interpolation" data-i18n="doc.title.interpolation">Interpolation</h2>
+<p>Spatial interpolation creates continuous surfaces from point observations, essential for mapping contamination plumes and terrain.</p>
+<img class="doc-screenshot" src="./assets/docs/interpolation.png" alt="Interpolation panel with topographic surface configuration and layer controls">
+<ul>
+    <li><strong>IDW (Inverse Distance Weighting)</strong> &mdash; Simple, fast interpolation weighted by distance. Built-in, zero dependencies.</li>
+    <li><strong>RBF (Radial Basis Functions)</strong> &mdash; Smooth interpolation using radial basis functions. Loaded on demand via CDN.</li>
+    <li><strong>Kriging</strong> &mdash; Geostatistical interpolation providing best linear unbiased estimates with uncertainty quantification. Loaded on demand via CDN.</li>
+    <li><strong>Terrain Interpolation</strong> &mdash; Generate terrain surfaces from elevation data points.</li>
+</ul>
+
+<div class="info-card highlight">
+    <h4>Performance</h4>
+    <p>Heavy interpolation computations run in a <strong>Web Worker</strong> off the main thread. Results are persisted to IndexedDB to avoid recomputation on reload.</p>
+</div>
+
+<h2 id="potentiometric" data-i18n="doc.title.potentiometric">Potentiometric Maps &amp; Plume Generation</h2>
+<p>Automated spatial analysis from monitoring campaign data, generating potentiometric surfaces and contamination plumes.</p>
+<img class="doc-screenshot" src="./assets/docs/potentiometric-maps.png" alt="Potentiometric mapping workflow with generated groundwater surface and plume analysis">
+<ul>
+    <li><strong>Potentiometric map</strong> &mdash; Generated from <code>water_level</code> observations using Kriging or IDW interpolation. Shows groundwater flow direction and hydraulic gradient.</li>
+    <li><strong>Contamination plume generation</strong> &mdash; Create plume boundaries from campaign concentration data, automatically identifying hotspots and extent.</li>
+    <li><strong>Contour isolines</strong> &mdash; Labeled contour lines with configurable intervals for precise value mapping.</li>
+    <li><strong>Coordinate deduplication</strong> &mdash; Handles co-located wells (multiple wells at similar coordinates) by averaging or selecting representative values.</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Generating a Potentiometric Map</h4>
+    <p>Ensure your wells have <code>water_level</code> observations in at least one campaign. Go to the <strong>Interpolation</strong> panel in the Constellation HUD, select the campaign and <strong>Water Table</strong> layer type, then click <strong>Generate</strong>.</p>
+</div>
+
+<h2 id="voxel" data-i18n="doc.title.voxel">Voxel Modeling</h2>
+<p>3D subsurface modeling using volumetric voxels for contamination plume visualization and geochemical analysis.</p>
+<img class="doc-screenshot" src="./assets/docs/voxel-modeling.png" alt="Voxel-based subsurface visualization for contamination and geological analysis">
+<ul>
+    <li>Discretize the subsurface into a 3D grid of voxels, each holding parameter values.</li>
+    <li>Apply color ramps and opacity thresholds to visualize contamination extent in three dimensions.</li>
+    <li>Combine with interpolation layers for integrated subsurface analysis.</li>
+    <li>Voxel data is persisted to IndexedDB for fast reload.</li>
+</ul>
+
+<h2 id="neural-networks" data-i18n="doc.title.neuralNetworks">Neural Networks</h2>
+<p>Custom neural network module for predictive modeling of environmental data.</p>
+<img class="doc-screenshot" src="./assets/docs/neural-networks.png" alt="ML Studio side panel with trained networks and training data preview">
+<ul>
+    <li><strong>SimpleNN</strong> &mdash; Vanilla JavaScript neural network implementation (no external frameworks). Trained on calculator metric values from real element observations.</li>
+    <li><strong>Web Worker Training</strong> &mdash; Training runs off the main thread to keep the UI responsive.</li>
+    <li><strong>What-If Engine</strong> &mdash; Run scenario predictions by modifying input parameters and observing predicted outcomes.</li>
+    <li><strong>Plume Connector</strong> &mdash; Connect trained networks to plume visualization for dynamic contamination prediction.</li>
+    <li>Named NN instances are persisted to IndexedDB and included in ECBT exports.</li>
+</ul>
+
+<h2 id="fine-tuning" data-i18n="doc.title.fineTuning">Fine-Tuning Pipeline</h2>
+<p>Domain-specific fine-tuning pipeline for training language models on environmental data. Uses <strong>Qwen2.5</strong> as the base model with LoRA adapters for efficient specialization.</p>
+
+<h3>Pipeline Stages</h3>
+<table>
+    <tr><th>Stage</th><th>Description</th></tr>
+    <tr><td><strong>Data Curation</strong></td><td>Extract training pairs from environmental reports, observations, and compliance data. Auto-generates instruction/response pairs from PDPLU records.</td></tr>
+    <tr><td><strong>Format Conversion</strong></td><td>Convert curated data to ChatML/Alpaca format compatible with fine-tuning frameworks (Unsloth, Axolotl).</td></tr>
+    <tr><td><strong>Training</strong></td><td>LoRA fine-tuning with rank 16, alpha 32. Targets: q_proj, v_proj, k_proj, o_proj. Runs on consumer GPUs (RTX 3090+).</td></tr>
+    <tr><td><strong>Evaluation</strong></td><td>Automated benchmarks: environmental term accuracy, regulatory citation, unit conversion, and CONAMA/CETESB compliance checks.</td></tr>
+    <tr><td><strong>Deployment</strong></td><td>Export GGUF quantized model for local inference via Ollama or LM Studio integration.</td></tr>
+</table>
+
+<div class="info-card highlight">
+    <h4>Training Data Sources</h4>
+    <p>The pipeline ingests ecbyts model data (elements, observations, campaigns), environmental regulations (CONAMA, CETESB), and domain glossaries to produce a model specialized in Brazilian environmental consulting terminology and workflows.</p>
+</div>
+
+<h2 id="recognition" data-i18n="doc.title.recognition">ML Recognition</h2>
+<p>Machine learning modules for automated image analysis and environmental feature detection.</p>
+<img class="doc-screenshot" src="./assets/docs/aerial-view.png" alt="Aerial Recognition modal with image source selection for automated feature detection">
+<ul>
+    <li><strong>Image Classification</strong> &mdash; Classify aerial or site images using neural network models.</li>
+    <li><strong>SLIC Superpixels</strong> &mdash; Segment images into visually coherent regions for pre-processing.</li>
+    <li><strong>YOLOS Object Detection</strong> &mdash; Detect environmental features (tanks, wells, buildings) in aerial imagery.</li>
+    <li><strong>SAM (Segment Anything)</strong> &mdash; Interactive segmentation for precise boundary extraction.</li>
+</ul>
+
+<h2 id="aerial-georef" data-i18n="doc.title.aerialGeoref">Aerial Georeferencing</h2>
+<p>Workflow for georeferencing user-owned aerial or satellite images onto the 3D model.</p>
+<img class="doc-screenshot" src="./assets/docs/aerial-georeference.png" alt="Aerial georeferencing workflow with control points and map alignment">
+<ul>
+    <li><strong>Interactive GCP placement</strong> &mdash; Click and drag Ground Control Points on both the image and the map (minimum 3 points required).</li>
+    <li><strong>EXIF GPS bootstrap</strong> &mdash; Optionally reads GPS coordinates from JPEG EXIF metadata for initial placement.</li>
+    <li><strong>AI "Suggest Location"</strong> &mdash; Uses an LLM provider (OpenAI, Claude, or Gemini) to suggest the geographic location from image content.</li>
+    <li><strong>Live map preview</strong> &mdash; Real-time overlay of the image on the map with opacity slider and satellite toggle.</li>
+    <li>Applies a georeferenced boundary element with the image as an overlay texture rendered in the 3D viewport.</li>
+</ul>
+
+<div class="info-card warning">
+    <h4>Current Limits</h4>
+    <p>GeoTIFF embedded coordinates are not auto-read yet (manual GCP works). Images &gt;5 MB increase ECBT payload size and trigger a warning.</p>
+</div>
+
+<h2 id="blockchain" data-i18n="doc.title.blockchain">Blockchain Integrity</h2>
+<p>Data integrity is enforced through cryptographic primitives, ensuring environmental data cannot be tampered with after collection.</p>
+<img class="doc-screenshot" src="./assets/docs/import-export.png" alt="Export workflow centered on ECBT key generation and cryptographic model portability">
+<ul>
+    <li><strong>SHA-256 Hashing</strong> &mdash; Every data point gets a unique cryptographic fingerprint.</li>
+    <li><strong>ECDSA Signatures</strong> &mdash; Digital signatures prove data authorship and prevent forgery (P-256 via Web Crypto API).</li>
+    <li><strong>Merkle Trees</strong> &mdash; Efficient verification of data sets &mdash; any modification invalidates the tree root.</li>
+    <li><strong>Hash Chains</strong> &mdash; Sequential linking ensures chronological ordering cannot be altered.</li>
+    <li><strong>AES Vault</strong> &mdash; Encrypted storage for sensitive key material.</li>
+</ul>
+
+<div class="info-card highlight">
+    <h4>Audit Trail</h4>
+    <p>The crypto module works transparently. When blockchain mode is enabled, every observation and campaign update is automatically hashed and chained. The ECBT export includes the full integrity proof.</p>
+</div>
+
+<h2 id="eis" data-i18n="doc.title.eis">EIS &mdash; EnviroTech Integrity Score</h2>
+<p>The <strong>EIS</strong> (EnviroTech Integrity Score) evaluates the quality and trustworthiness of an environmental model using the <strong>3CTA+</strong> framework &mdash; a non-compensatory geometric weighted mean across 6 axes.</p>
+<img class="doc-screenshot" src="./assets/docs/eis-score.png" alt="EIS Dashboard with 3CTA+ donut chart, score axes, and integrity verdict">
+
+<h3 data-i18n="doc.title.eisAxes">Score Axes</h3>
+<table>
+    <tr><th>Axis</th><th>Weight</th><th>What It Measures</th></tr>
+    <tr><td><strong>T</strong> &mdash; Transparency</td><td>3</td><td>Evidence of data origin and provenance. Enhanced by academic credentials (1.0x&ndash;2.0x).</td></tr>
+    <tr><td><strong>A</strong> &mdash; Accuracy</td><td>3</td><td>Sensor health, data accuracy, and measurement precision.</td></tr>
+    <tr><td><strong>Cp</strong> &mdash; Completeness</td><td>2</td><td>Coverage uptime &mdash; planned vs. executed readings across the monitoring network.</td></tr>
+    <tr><td><strong>Ty</strong> &mdash; Timeliness</td><td>2</td><td>Delivery latency &mdash; how quickly data reaches the platform after collection.</td></tr>
+    <tr><td><strong>Cs</strong> &mdash; Consistency</td><td>1</td><td>SI unit consistency and internal coherence across datasets.</td></tr>
+    <tr><td><strong>Cm</strong> &mdash; Comparability</td><td>1</td><td>Taxonomy alignment &mdash; consistent naming and classification enabling cross-site comparison.</td></tr>
+</table>
+
+<h3 data-i18n="doc.title.eisInterpretation">Score Interpretation</h3>
+<ul>
+    <li>&#9679; <strong>&ge; 4.50</strong> &mdash; High integrity. Model is reliable for decision-making.</li>
+    <li>&#9650; <strong>&ge; 3.50</strong> &mdash; Moderate integrity. Review flagged axes before use.</li>
+    <li>&#9670; <strong>&lt; 3.50</strong> &mdash; Low integrity. Significant data quality issues.</li>
+</ul>
+
+<div class="info-card warning">
+    <h4>Veto Mode</h4>
+    <p>In veto mode, if Technicality (T) or Accuracy (A) scores &le; 2, the EIS is automatically set to 0.0 &mdash; a "kill switch" that flags fundamentally unreliable data regardless of other scores.</p>
+</div>
+
+<h2 id="sao-matrices" data-i18n="doc.title.saoMatrices">SAO Matrices</h2>
+<p>Environment, Safety &amp; Health (ESH) risk assessment using Systematic Assessment of Operations matrices.</p>
+<img class="doc-screenshot" src="./assets/docs/sao-matrices.png" alt="SAO risk matrix module for environment, safety, and health assessment">
+<ul>
+    <li><strong>Multi-scenario evaluation</strong> &mdash; Assess risks across environmental, occupational safety, and operational health domains simultaneously.</li>
+    <li><strong>Parameter-based risk scoring</strong> &mdash; Observations feed directly into matrix calculations for evidence-based risk levels.</li>
+    <li><strong>Unit-aware calculations</strong> &mdash; Automatic unit conversion ensures consistent risk scoring regardless of input units.</li>
+    <li>9 parameter definition files covering environmental, safety, and health indicators.</li>
+</ul>
+
+<h2 id="validation" data-i18n="doc.title.validation">Compliance Validation</h2>
+<p>Multi-level compliance validation against environmental regulatory standards.</p>
+<img class="doc-screenshot" src="./assets/docs/compliance-validation.png" alt="Regulatory Standards panel with CONAMA/CETESB threshold values for soil and groundwater">
+
+<h3 data-i18n="doc.title.builtInRegulations">Built-in Regulations</h3>
+<ul>
+    <li><strong>CONAMA 420/2009</strong> &mdash; Brazilian soil and groundwater quality standards (VR, VP, VI thresholds).</li>
+    <li><strong>CETESB DD-256/2016</strong> &mdash; S&atilde;o Paulo state reference cleanup values.</li>
+    <li><strong>NR-15</strong> &mdash; Occupational exposure limits.</li>
+</ul>
+
+<h3 data-i18n="doc.title.domainValidator">Domain Validator Engine</h3>
+<p>A generic, extensible validation engine that loads domain-specific rules from JSON templates:</p>
+<ul>
+    <li>3-level validation: <strong>observation</strong> &rarr; <strong>element</strong> &rarr; <strong>site</strong>.</li>
+    <li>Thresholds keyed by CAS Number for unambiguous substance identification.</li>
+    <li>Custom domain templates can be imported from <code>docs/templates/</code> (e.g., EPA GAC, GHG-BR).</li>
+    <li>Validation results feed the EIS Cs (Consistency) and Cm (Compliance) axes.</li>
+</ul>
+
+<h2 id="validation-profiles" data-i18n="doc.title.validationProfiles">Validation Profiles</h2>
+<p>Pluggable compliance rule engine for domain-specific validation beyond the built-in CONAMA/CETESB rules.</p>
+<img class="doc-screenshot" src="./assets/docs/validation-profiles.png" alt="Validation profile manager with rule sets for environmental compliance">
+<ul>
+    <li><strong>JSON-based profiles</strong> &mdash; Define compliance rules in portable JSON format (CETESB DD-256, CONAMA 420, EPA GAC, custom).</li>
+    <li><strong>Rule types</strong> &mdash; Threshold checks, required field validation, unit verification, and statistical outlier detection.</li>
+    <li><strong>Batch validation</strong> &mdash; Validate all observations at once with results exportable as CSV.</li>
+    <li>Import community-contributed profiles from <code>docs/templates/</code> or create your own.</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Custom Profiles</h4>
+    <p>Create a JSON file following the domain validator schema, add your thresholds keyed by CAS Number, and import via <strong>Analyze &gt; Domain Validator</strong>. Profiles are persisted in the model.</p>
+</div>
+
+<h2 id="constants" data-i18n="doc.title.constants">Constants Manager</h2>
+<p>User-defined constants for scientific calculations: emission factors, uncertainty values, unit conversion factors, and site-specific parameters.</p>
+<img class="doc-screenshot" src="./assets/docs/constants-manager.png" alt="Constants manager for custom scientific and engineering values">
+<ul>
+    <li>Constants are referenced by the Calculator engine for metric computations.</li>
+    <li>Editable via the <strong>Constants Modal</strong> (Optimize tab).</li>
+    <li>Persisted in the model and included in ECBT exports.</li>
+</ul>
+
+<h2 id="workflows" data-i18n="doc.title.workflows">Guided Workflows</h2>
+<p>Step-by-step guided workflows help users through standard environmental engineering processes.</p>
+<img class="doc-screenshot" src="./assets/docs/workflow-picker.png" alt="Guided workflow picker with structured environmental engineering processes">
+<ul>
+    <li>Workflows are defined declaratively and executed by the workflow engine.</li>
+    <li>Each step can collect data, validate inputs, and call platform actions.</li>
+    <li>Workflow events integrate with the EventBus for real-time progress tracking.</li>
+    <li>Access via <strong>Analyze &gt; Workflows</strong>.</li>
+</ul>
+
+<h2 id="spatial" data-i18n="doc.title.spatial">Spatial Blueprint (DXF)</h2>
+<p>Import CAD site plans as Spatial Blueprint elements using the DXF ingestion pipeline.</p>
+<img class="doc-screenshot" src="./assets/docs/spatial-dxf.png" alt="DXF spatial blueprint import workflow for CAD-based site plans">
+<ul>
+    <li>Supports <strong>DXF files</strong> from AutoCAD, QGIS, and other CAD/GIS tools.</li>
+    <li>Parses layers, polylines, circles, text, and blocks.</li>
+    <li>Creates a <code>blueprint</code> family element with the imported geometry rendered in the 3D viewport.</li>
+    <li>Use <strong>File &gt; Import DXF</strong> to start the import process.</li>
+</ul>
+
+<h2 id="ingestion" data-i18n="doc.title.ingestion">Data Ingestion</h2>
+<p>Bulk import environmental data from spreadsheets and documents.</p>
+<img class="doc-screenshot" src="./assets/docs/data-ingestion.png" alt="Data import wizard with format selection and supported file types">
+
+<h3 data-i18n="doc.title.spreadsheetImport">Spreadsheet Import (EDD)</h3>
+<ul>
+    <li>Import <strong>XLSX</strong> and <strong>CSV</strong> files with the bulk import wizard.</li>
+    <li>Map columns to element properties, parameters, and campaign dates.</li>
+    <li>Supports Electronic Data Deliverables (EDD) format from laboratories.</li>
+</ul>
+
+<h3 data-i18n="doc.title.richDocIngestion">Rich Document Ingestion (v0.2)</h3>
+<ul>
+    <li>Extract data from <strong>PDF</strong> and <strong>DOCX</strong> reports using neuro-symbolic processing.</li>
+    <li>PDF extraction via <strong>pdfplumber</strong> server-side for high-fidelity table parsing.</li>
+    <li><strong>Split-view</strong> interface: source document on the left, extracted data on the right with source grounding highlights.</li>
+    <li>Automatically identifies tables, measurements, and structured data.</li>
+    <li>Includes a Cost Framework L1 for extracting financial data from environmental reports.</li>
+    <li>AI-powered analyzer with decision tracking for audit trails.</li>
+</ul>
+
+<h2 id="data-entry-matrix" data-i18n="doc.title.dataEntryMatrix">Data Entry Matrix</h2>
+<p>Bulk data entry interface for observations, designed for rapid field data input without navigating between modals.</p>
+<img class="doc-screenshot" src="./assets/docs/data-entry-matrix.png" alt="Spreadsheet-like data entry matrix for bulk observation input">
+<ul>
+    <li><strong>Spreadsheet-like grid</strong> &mdash; Tabular interface for entering multiple observations at once. Select elements as rows, parameters as columns.</li>
+    <li><strong>Parameter and unit selection</strong> &mdash; Configure which parameters appear per column with automatic unit defaults.</li>
+    <li>Accessible from the <strong>Constellation HUD</strong> (bottom panel) &mdash; Data Entry tab.</li>
+    <li>Values are validated in real-time against compliance thresholds (highlighted in red when exceeding limits).</li>
+</ul>
+
+<h2 id="sequencer" data-i18n="doc.title.sequencer">Storyboard &amp; Sequencer</h2>
+<p>Create animated sequences and video presentations from your environmental model.</p>
+<img class="doc-screenshot" src="./assets/docs/storyboard-sequencer.png" alt="Storyboard and sequencer interface for animated environmental presentations">
+<ul>
+    <li><strong>Timeline Sequencer</strong> &mdash; Arrange scene snapshots and camera transitions on a timeline.</li>
+    <li><strong>Cluster Animations</strong> &mdash; Group related elements for coordinated visual storytelling.</li>
+    <li><strong>Playback</strong> &mdash; Preview animations directly in the 3D viewport.</li>
+    <li><strong>Plume Animation</strong> &mdash; Animate contamination plume evolution over time.</li>
+    <li><strong>Veo 2 Video Generation</strong> &mdash; Generate photorealistic environmental videos from scene descriptions using Google Veo 2. Deterministic seeding ensures reproducible outputs.</li>
+    <li><strong>Keyframe Validation</strong> &mdash; Automated consistency checks between keyframes: camera path smoothness, element visibility continuity, and temporal coherence.</li>
+    <li><strong>Scene Seeding</strong> &mdash; Deterministic random seeds for reproducible camera paths and animation sequences across exports.</li>
+</ul>
+
+<h2 id="pipelines" data-i18n="doc.title.pipelines">Pipelines (BPMN)</h2>
+<p>Automate multi-step workflows using a BPMN-inspired pipeline system.</p>
+<img class="doc-screenshot" src="./assets/docs/pipeline-editor.png" alt="Pipeline editor for multi-step automation and BPMN-inspired workflows">
+<ul>
+    <li>Define pipelines as sequences of platform actions with conditional branching.</li>
+    <li>A <strong>Pipeline Editor</strong> UI for visual pipeline design.</li>
+    <li>Pipeline executor runs registered actions with a security allowlist (~15 safe action names).</li>
+    <li>Pipeline events integrate with the EventBus for status tracking.</li>
+    <li><strong>Treatment system integration</strong> &mdash; Treatment System elements can link to operational pipelines. Run, monitor, and track execution from the element inspector.</li>
+</ul>
+
+<h2 id="remediation" data-i18n="doc.title.remediation">Treatment Systems</h2>
+<p>Model and track remediation and treatment infrastructure linked to operational pipelines. The <code>treatment_system</code> family connects physical treatment equipment to automated workflows and cost accounting.</p>
+<ul>
+    <li><strong>System types</strong> &mdash; Pump &amp; Treat, SVE (Soil Vapor Extraction), Air Sparging, PRB (Permeable Reactive Barrier), MNA (Monitored Natural Attenuation), ISCO, bioremediation, oil-water separators, septic systems, and custom configurations.</li>
+    <li><strong>Operational parameters</strong> &mdash; Track flow rates, extraction volumes, treatment efficiency, energy consumption, and maintenance schedules as observations.</li>
+    <li><strong>Pipeline integration</strong> &mdash; Link treatment system elements to BPMN pipelines for automated monitoring, alerting, and reporting. Run pipelines from the element inspector.</li>
+    <li><strong>Cost tracking</strong> &mdash; CAPEX + OPEX rollup per system with L1&ndash;L4 cost aggregation feeding the governance module.</li>
+    <li><strong>Compliance targets</strong> &mdash; Define target concentrations and track progress toward CMA (Concentra&ccedil;&atilde;o M&aacute;xima Aceit&aacute;vel) goals over time.</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Adding a Treatment System</h4>
+    <p>Use <strong>Insert &gt; Add Element</strong> and select the <strong>Treatment System</strong> family. Configure the system type, link to wells and plumes via edges, and optionally attach a BPMN pipeline for operational automation.</p>
+</div>
+
+<h2 id="well-geology" data-i18n="doc.title.wellGeology">Well Geology</h2>
+<p>Advanced geological analysis modules for monitoring wells, based on Brazilian and international stratigraphic standards.</p>
+<ul>
+    <li><strong>Geological cross-section</strong> &mdash; SVG cross-section correlating lithologic layers across wells with ABGE-standard patterns and colors.</li>
+    <li><strong>Stratigraphy engine</strong> &mdash; Normalizes raw lithologic data into ISO 14688 / AGS4 compatible schema with SUCS classification.</li>
+    <li><strong>Well compliance checker</strong> &mdash; Validates wells against NBR 15495-1:2007 (ABNT standard). Scores: &ge;80 = ok, 50&ndash;79 = warning, &lt;50 = error.</li>
+    <li><strong>Constructive profile</strong> &mdash; SVG well construction diagram showing casing, screen, grout, and filter pack.</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Accessing Well Geology</h4>
+    <p>Select monitoring wells, then go to <strong>Insert &gt; Well Profile</strong>. Tabs: constructive profile, lithologic log, cross-section, and NBR 15495-1 compliance report.</p>
+</div>
+
+<h2 id="issues" data-i18n="doc.title.issues">Issues 3D (BCF-like)</h2>
+<p>3D-anchored non-conformity markers for collaborative issue tracking, inspired by BIM Collaboration Format (BCF).</p>
+<img class="doc-screenshot" src="./assets/docs/issues-panel.png" alt="Issues 3D panel with spatially anchored review markers and issue tracking">
+<ul>
+    <li>Create spatially-anchored issue markers directly in the 3D scene.</li>
+    <li>Map-indexed for O(1) lookup performance.</li>
+    <li>Persisted to IndexedDB with a sync queue for offline-first operation.</li>
+    <li>3-way merge conflict resolution for multi-user scenarios.</li>
+</ul>
+
+<h2 id="audit" data-i18n="doc.title.audit">Data Audit</h2>
+<p>Detect anomalies and potential fraud in environmental datasets.</p>
+<img class="doc-screenshot" src="./assets/docs/data-audit.png" alt="Data audit module highlighting anomaly detection and integrity review workflows">
+<ul>
+    <li><strong>Benford's Law Analysis</strong> &mdash; Check first-digit distribution of observations against the expected Benford distribution. Deviations may indicate fabricated or manipulated data.</li>
+    <li><strong>Greenwashing Detection</strong> &mdash; Flag suspiciously uniform or implausible environmental metrics.</li>
+</ul>
+
+<h2 id="i18n" data-i18n="doc.title.i18n">Internationalization (i18n)</h2>
+<p>16 fully-translated locales with lazy loading, interpolation, pluralization, and RTL support.</p>
+<img class="doc-screenshot" src="./assets/docs/i18n-language.png" alt="Localized ecbyts interface demonstrating internationalization support">
+
+<table>
+    <tr><th>Code</th><th>Language</th><th>Code</th><th>Language</th></tr>
+    <tr><td><code>pt-BR</code></td><td>Portugu&ecirc;s</td><td><code>en-US</code></td><td>English</td></tr>
+    <tr><td><code>es-LA</code></td><td>Espa&ntilde;ol</td><td><code>zh-CN</code></td><td>Chinese</td></tr>
+    <tr><td><code>fr-FR</code></td><td>Fran&ccedil;ais</td><td><code>de-DE</code></td><td>Deutsch</td></tr>
+    <tr><td><code>ja-JP</code></td><td>Japanese</td><td><code>it-IT</code></td><td>Italiano</td></tr>
+    <tr><td><code>ko-KR</code></td><td>Korean</td><td><code>ru-RU</code></td><td>Russian</td></tr>
+    <tr><td><code>id-ID</code></td><td>Bahasa Indonesia</td><td><code>hi-IN</code></td><td>Hindi</td></tr>
+    <tr><td><code>tr-TR</code></td><td>T&uuml;rk&ccedil;e</td><td><code>pl-PL</code></td><td>Polski</td></tr>
+    <tr><td><code>sv-SE</code></td><td>Svenska</td><td><code>ar-SA</code></td><td>Arabic (RTL)</td></tr>
+</table>
+
+<ul>
+    <li><strong>Lazy loading</strong> &mdash; Only 1&ndash;2 JSON files loaded per session for fast startup.</li>
+    <li><strong>Interpolation</strong> &mdash; <code>t('key', { count: n })</code> for dynamic values in translated strings.</li>
+    <li><strong>Pluralization</strong> &mdash; <code>tp('key', n)</code> via <code>Intl.PluralRules</code> for grammatically correct plural forms.</li>
+    <li><strong>Regional formatting</strong> &mdash; Numbers, dates, and currencies formatted via <code>Intl.*</code> APIs.</li>
+    <li><strong>RTL support</strong> &mdash; Arabic locale triggers <code>dir="rtl"</code> on the root element.</li>
+    <li>Switch languages via the titlebar language selector (EN / PT / ES) or any of the 16 locales in settings.</li>
+</ul>
+
+<h2 id="random-generator" data-i18n="doc.title.randomGenerator">Random Model Generator</h2>
+<p>One-click demo model generation with realistic environmental data for exploration, training, and presentations.</p>
+<img class="doc-screenshot" src="./assets/docs/random-model.png" alt="Random demo model loaded in the main ecbyts workspace">
+<ul>
+    <li>1 boundary with 6 geological strata.</li>
+    <li>3&ndash;8 monitoring wells, 1&ndash;4 contamination plumes, 1&ndash;3 tanks, 1&ndash;4 buildings.</li>
+    <li>Lakes, rivers, springs, and general markers.</li>
+    <li>ESG elements: emission sources, waste streams, effluent points, habitats, individuals, incidents, areas.</li>
+    <li>Mining &amp; civil: dams, open-pit excavations.</li>
+    <li>Fleet &amp; operations: vehicles, equipment, treatment systems, linear infrastructure.</li>
+    <li>Route &amp; flow elements for hydraulic connectivity.</li>
+    <li>3&ndash;5 sampling campaigns spanning 2 years with observations per element.</li>
+    <li>Edge relationships (wells&rarr;plumes, incidents&rarr;areas, fauna&rarr;habitats).</li>
+    <li>50+ parameter types with realistic value ranges.</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Generating a Random Model</h4>
+    <p>Click <strong>File &gt; Random</strong> in the toolbar. The model includes fully populated campaigns with observations, making it ideal for testing analytics, interpolation, and export features.</p>
+</div>
+
+<!-- ================================================================
+     TOOLS
+     ================================================================ -->
+
+<h2 id="ai-assistant" data-i18n="doc.title.aiAssistant">AI Assistant</h2>
+<p>The built-in AI assistant provides natural language interaction with the platform through a multi-provider LLM engine.</p>
+<img class="doc-screenshot" src="./assets/docs/ai-assistant.png" alt="AI assistant chat panel with multi-provider LLM engine and environmental commands">
+
+<h3 data-i18n="doc.title.capabilities">Capabilities</h3>
+<ul>
+    <li><strong>442+ dynamic actions</strong> &mdash; Registry-based dispatch across 18 semantic categories (Model, Analytics, Visualization, Import/Export, Compliance, Infrastructure, and more).</li>
+    <li><strong>Natural language commands</strong> &mdash; "Add a monitoring well at coordinates 100, 50" or "Show me the benzene trend for Well-01".</li>
+    <li><strong>Data analysis</strong> &mdash; Ask questions about your model data and get AI-powered insights.</li>
+    <li><strong>Multi-provider support</strong> &mdash; Works with Cloud providers (OpenAI, Claude, Gemini), local models (Ollama, LM Studio), browser-based (Transformers.js, WebLLM).</li>
+    <li><strong>Agentic loop</strong> &mdash; Complex tasks are broken into a multi-step plan and executed autonomously with tool calling. Supports up to 10 chained actions per turn.</li>
+    <li><strong>3-tier prompt system</strong> &mdash; System prompt (identity), registry injection (dynamic context), and user message (intent) for precise action resolution.</li>
+    <li><strong>MCP integration</strong> &mdash; External AI agents can interact via the Model Context Protocol server. See <a href="#mcp-server" style="color: var(--accent);">MCP Server</a>.</li>
+</ul>
+
+<div class="info-card tip">
+    <h4>Opening the AI Assistant</h4>
+    <p>Click the <strong>AI Assistant</strong> floating widget button in the bottom-right corner of the screen.</p>
+</div>
+
+<h2 id="llm-dispatch" data-i18n="doc.title.llmDispatch">LLM Dynamic Dispatch</h2>
+<p>The AI Assistant uses a <strong>registry-based dynamic dispatch</strong> system with <strong>442+ registered actions</strong> organized in <strong>18 semantic categories</strong>. Instead of hardcoded function calls, actions are discovered and executed dynamically based on user intent.</p>
+
+<h3>3-Tier Prompt Architecture</h3>
+<table>
+    <tr><th>Tier</th><th>Role</th><th>Contents</th></tr>
+    <tr><td><strong>System Prompt</strong></td><td>Identity &amp; rules</td><td>Platform identity, capabilities summary, response format rules, safety guardrails.</td></tr>
+    <tr><td><strong>Registry Injection</strong></td><td>Dynamic context</td><td>Current model state, available actions grouped by category, active element context.</td></tr>
+    <tr><td><strong>User Message</strong></td><td>Intent</td><td>Natural language request with optional element/parameter references.</td></tr>
+</table>
+
+<h3>Semantic Categories</h3>
+<div class="feature-grid">
+    <div class="feature-card"><span class="icon">&#9679;</span><h4>Model</h4><p>Element CRUD, bulk operations, property edits</p></div>
+    <div class="feature-card"><span class="icon">&#9650;</span><h4>Analytics</h4><p>Trends, predictions, statistical tests</p></div>
+    <div class="feature-card"><span class="icon">&#9670;</span><h4>Visualization</h4><p>Camera, layers, labels, symbology</p></div>
+    <div class="feature-card"><span class="icon">&#9733;</span><h4>Import/Export</h4><p>ECBT, JSON, XLSX, DXF, IFC, reports</p></div>
+    <div class="feature-card"><span class="icon">&#9632;</span><h4>Compliance</h4><p>CONAMA, CETESB, domain validators</p></div>
+    <div class="feature-card"><span class="icon">&#9678;</span><h4>Infrastructure</h4><p>Pipelines, workflows, remediation</p></div>
+</div>
+
+<div class="info-card highlight">
+    <h4>Agentic Loop</h4>
+    <p>For complex tasks, the AI decomposes the request into a multi-step plan, executes each action sequentially via <code>tool_use</code> calls, and reports results with a structured summary. The loop supports up to 10 chained actions per turn.</p>
+</div>
+
+<h2 id="mcp-server" data-i18n="doc.title.mcpServer">MCP Server</h2>
+<p>A <strong>Model Context Protocol (MCP)</strong> server that exposes ecbyts functionality to external AI agents and IDE integrations (Claude Desktop, Cursor, VS Code Copilot).</p>
+<ul>
+    <li><strong>14 tools exposed</strong> &mdash; Model queries, element creation, observation insertion, analytics execution, report generation, and more.</li>
+    <li><strong>4 resources</strong> &mdash; Model summary, element list, campaign list, and observation data as structured context.</li>
+    <li><strong>Stdio transport</strong> &mdash; Runs as a local process communicating via JSON-RPC over stdin/stdout.</li>
+    <li><strong>Quota billing</strong> &mdash; MCP tool calls count against the user's API quota (1 call = 1 unit). Free tier: 100 calls/month.</li>
+    <li><strong>Security</strong> &mdash; Read-only by default. Write operations require explicit <code>--allow-write</code> flag.</li>
+</ul>
+<pre tabindex="0" role="region" aria-label="MCP server setup example"><code># Start the MCP server
+node scripts/ecbyts-mcp-server.js --project ./my-model.json
+
+# Configure in Claude Desktop (claude_desktop_config.json)
+{
+  "mcpServers": {
+    "ecbyts": {
+      "command": "node",
+      "args": ["scripts/ecbyts-mcp-server.js", "--allow-write"]
+    }
+  }
+}</code></pre>
+
+<div class="info-card tip">
+    <h4>IDE Integration</h4>
+    <p>Add the MCP server to your IDE's AI configuration to let AI assistants query and modify ecbyts models directly from your development environment.</p>
+</div>
+
+<h2 id="reports" data-i18n="doc.title.reports">Reports</h2>
+<p>Generate professional reports from your environmental model data.</p>
+<img class="doc-screenshot" src="./assets/docs/constellation-report.png" alt="Report editor with environmental investigation report and 3D site model">
+<ul>
+    <li><strong>PDF Export</strong> &mdash; Create formatted reports with charts, tables, maps, and compliance summaries.</li>
+    <li><strong>DOCX Export</strong> &mdash; Generate editable Word documents for further customization.</li>
+    <li><strong>Report Editor</strong> &mdash; Customize report sections, add narrative text, and select which data to include. Supports filter presets.</li>
+    <li><strong>Drawing Plate</strong> &mdash; Export technical drawings with title blocks and scales.</li>
+    <li><strong>Multi-Report Manager</strong> &mdash; Maintain multiple report templates with tree-view navigation.</li>
+    <li>Access via <strong>File &gt; Drawing Plate</strong> or through the report panel.</li>
+</ul>
+
+<h2 id="governance" data-i18n="doc.title.governance">Governance</h2>
+<p>Project management tools for environmental remediation contracts.</p>
+<img class="doc-screenshot" src="./assets/docs/governance-panel.png" alt="Governance panel with contracts, WBS, and project control modules">
+<ul>
+    <li><strong>Contracts</strong> &mdash; Track environmental service contracts with scope, dates, and milestones.</li>
+    <li><strong>WBS (Work Breakdown Structure)</strong> &mdash; Organize remediation activities hierarchically.</li>
+    <li><strong>EVA (Earned Value Analysis)</strong> &mdash; Track project performance: planned vs. actual cost and schedule.</li>
+    <li><strong>Project Registry</strong> &mdash; Central directory of projects with metadata and status.</li>
+</ul>
+
+<h2 id="timekeeper" data-i18n="doc.title.timekeeper">Timekeeper</h2>
+<p>Cross-project time tracking panel embedded in the Constellation HUD. Log hours against projects, phases, and resources without leaving the modeling environment.</p>
+<img class="doc-screenshot" src="./assets/docs/timekeeper-panel.png" alt="Timekeeper tab inside the bottom panel with timer and timesheet modules">
+<table>
+    <tr><th>Section</th><th>Description</th></tr>
+    <tr><td><strong>Summary</strong></td><td>Weekly, monthly, and lifetime hour totals across all projects.</td></tr>
+    <tr><td><strong>Live Timer</strong></td><td>Clock-in / clock-out with project, phase, and resource selectors. Elapsed time shown in real time.</td></tr>
+    <tr><td><strong>Quick Entry</strong></td><td>Fast hour entry for retroactive time logging.</td></tr>
+    <tr><td><strong>Cross-Project Table</strong></td><td>Full timesheet view with filters by project, resource, and date range.</td></tr>
+</table>
+
+<div class="info-card tip">
+    <h4>Opening Timekeeper</h4>
+    <p>Expand the <strong>Constellation HUD</strong> (bottom panel) and select the <strong>Timekeeper</strong> tab. Active timer state persists across page reloads.</p>
+</div>
+
+<h2 id="sensors" data-i18n="doc.title.sensors">IoT Sensors</h2>
+<p>Connect real-time environmental sensors to your digital twin for continuous monitoring.</p>
+<img class="doc-screenshot" src="./assets/docs/sensor-center.png" alt="Sensor center for linking IoT devices and live environmental feeds">
+<ul>
+    <li>Link sensors to elements for automatic observation updates.</li>
+    <li>Configure polling intervals and alert thresholds.</li>
+    <li>Sensor data feeds into the same analytics pipeline as manual observations.</li>
+</ul>
+
+<h2 id="tours" data-i18n="doc.title.tours">Guided Tours</h2>
+<p>Interactive step-by-step tutorials that guide you through platform features.</p>
+<img class="doc-screenshot" src="./assets/docs/guided-tours.png" alt="Guided Tours picker with categorized tours for Element Management, Field Data, and more">
+<ul>
+    <li><strong>50 guided tours</strong> covering ~230 steps across all major features.</li>
+    <li>Tours highlight UI elements, explain concepts, and walk through workflows.</li>
+    <li>Available in all supported languages (English, Portuguese, Spanish).</li>
+    <li>Access via <strong>More &gt; Guided Tours</strong> or the Tour Picker.</li>
+</ul>
+
+<h2 id="map-picker" data-i18n="doc.title.mapPicker">Map Picker</h2>
+<p>Interactive georeferencing tool for setting your site's real-world location.</p>
+<img class="doc-screenshot" src="./assets/docs/map-picker.png" alt="Map picker interface for selecting and georeferencing a site location">
+<ul>
+    <li>Click on a map to set the UTM origin for your environmental model.</li>
+    <li>Automatic UTM zone and CRS detection (including SIRGAS 2000 for Brazilian sites).</li>
+    <li>Aerial imagery overlay for spatial context.</li>
+    <li>Available as an init mode from the Welcome Screen or via <strong>View &gt; Map Picker</strong>.</li>
+</ul>
+
+<!-- ================================================================
+     ADDITIONAL FEATURES (2026-04 cycle)
+     ================================================================ -->
+
+<h2 id="multi-model-tabs" data-i18n="doc.title.multiModelTabs">Multi-Model Tabs</h2>
+<p>Work with multiple environmental models simultaneously — each tab is an isolated namespace for elements, campaigns, scenes, and analytics.</p>
+<ul>
+    <li><strong>Independent state</strong> &mdash; Elements, observations, and interpolations in one tab don't leak into another.</li>
+    <li><strong>Cross-tab lock via BroadcastChannel</strong> &mdash; Prevents concurrent edits of the same model across browser tabs.</li>
+    <li><strong>Per-tab autosave</strong> &mdash; Each tab persists to a dedicated IndexedDB lane.</li>
+    <li><strong>ECBT round-trip preserves tab identity</strong> &mdash; Export and re-import keeps the tab's logical model separate.</li>
+</ul>
+
+<h2 id="uncertainty" data-i18n="doc.title.uncertainty">Uncertainty (UNC-001 — GUM Tier 1)</h2>
+<p>First-order uncertainty propagation for environmental measurements following ISO GUM (Guide to the Expression of Uncertainty in Measurement).</p>
+<ul>
+    <li><strong>Propagation</strong> &mdash; Sum / product / linear formulas with covariance-aware combined standard uncertainty.</li>
+    <li><strong>Quality badge</strong> &mdash; Matrix-agnostic classifier (soil / water / air) decorates every observation with a data-quality indicator.</li>
+    <li><strong>ECBT v3 envelope</strong> &mdash; Uncertainty metadata travels inside exported keys (opt-in via flag).</li>
+    <li>Visible in the Uncertainty Hub panel (ribbon &gt; View) and inline in Data Entry Matrix.</li>
+</ul>
+
+<h2 id="taxonomy" data-i18n="doc.title.taxonomy">Taxonomy / Data Dictionary</h2>
+<p>Regulatory taxonomy layer that adds auxiliary, standard-aligned fields to elements (EPA WQX, ABNT NBR, CETESB DD-256, CONAMA 420).</p>
+<ul>
+    <li><strong>Field resolver</strong> &mdash; Resolves a field by <code>{taxonomy, key, locale}</code> and returns label, unit, valid-range, citation.</li>
+    <li><strong>Picker modal</strong> &mdash; Pick fields from regulatory standards without leaving the form.</li>
+    <li><strong>Domain-aware validation</strong> &mdash; Combines with Validation Profiles for end-to-end compliance checks.</li>
+</ul>
+
+<h2 id="raster-upload" data-i18n="doc.title.rasterUpload">Historical Map Upload &amp; Georeferencing</h2>
+<p>Upload raster maps (PNG/JPEG) and georeference them with 4+ control points using least-squares affine transform. Includes an OCR pipeline for elevation extraction from topographic maps.</p>
+<ul>
+    <li><strong>4-point GCP workflow</strong> &mdash; Click to add control points; enter pixel (X, Y) and UTM (Easting, Northing) for each.</li>
+    <li><strong>RMS gate 5 m</strong> &mdash; Validates georef quality per CETESB mapping guidelines before accepting.</li>
+    <li><strong>TFW world-file export</strong> &mdash; ESRI-compliant sidecar for GIS interoperability.</li>
+    <li><strong>Contour extraction</strong> &mdash; Marching-squares + edge chains turn isolines into <code>generic:isoline</code> elements in the 3D scene.</li>
+    <li><strong>OCR elevation pipeline</strong> &mdash; <code>elevationClassifier</code> reads numeric labels from scanned topographic maps (BR and US formats), <code>contourLabeler</code> matches labels to contour polylines, <code>contourGeoreferencer</code> assigns Z values, simplifies polylines, and exports georeferenced isolines as GeoJSON.</li>
+    <li><strong>GeoJSON export</strong> &mdash; Georeferenced contours exported as <code>FeatureCollection</code> for GIS interoperability.</li>
+    <li>Ribbon &gt; <strong>Data &gt; Historical Map Upload</strong>.</li>
+</ul>
+
+<h2 id="photolog" data-i18n="doc.title.photolog">PhotoLog</h2>
+<p>Field photo registry with EXIF GPS extraction, AI vision analysis, and 3D scene markers.</p>
+<ul>
+    <li><strong>Capture sources</strong> &mdash; Camera, upload, clipboard paste.</li>
+    <li><strong>Offline-first</strong> &mdash; IDB stores photos locally; Supabase sync when online.</li>
+    <li><strong>EXIF GPS</strong> &mdash; Auto-positions photos as 3D markers in the scene at their capture location.</li>
+    <li><strong>AI vision analysis</strong> &mdash; Describes the photo, detects families (buildings, vehicles, vegetation), flags anomalies.</li>
+    <li>Access via <strong>Data &gt; PhotoLog</strong> or the PhotoLog button in Files.</li>
+</ul>
+
+<h2 id="diagrams" data-i18n="doc.title.diagrams">Technical Diagrams (ISA S5.1)</h2>
+<p>Canvas-based technical diagram editor with process-industry symbology (ISA S5.1 / P&amp;ID / FSM / DFD).</p>
+<ul>
+    <li>Drag-and-drop symbol palette (tanks, valves, pumps, instruments, transmitters).</li>
+    <li>Connections with automatic orthogonal routing.</li>
+    <li>Pan, zoom, grid snap.</li>
+    <li>Export PNG or SVG for reports and proposals.</li>
+</ul>
+
+<h2 id="impact-estimator" data-i18n="doc.title.impactEstimator">Impact Estimator</h2>
+<p>Environmental impact estimator with financial formulas (passivo / ativo) traced to CONAMA, CNJ, and INSS benchmarks. Integrates with UNC-001 Monte Carlo for probabilistic risk quantification.</p>
+<ul>
+    <li><strong>Scenario comparison</strong> &mdash; Run baseline vs. intervention and quantify net benefit via <code>compareScenarios</code>.</li>
+    <li><strong>Family aggregation</strong> &mdash; Roll up impact across wells, plumes, tanks, etc. using <code>aggregateByFamily</code>.</li>
+    <li><strong>Traced benchmarks</strong> &mdash; Every number carries a citation (regulation or jurisprudence).</li>
+    <li><strong>Uncertainty integration</strong> &mdash; Wires into UNC-001 Monte Carlo (soil/groundwater/occupational matrices) to produce IC95 confidence intervals, <code>probExceedance</code>, and risk class (green &lt;5% / yellow &lt;20% / red &ge;20%).</li>
+    <li>Results rendered as HUD card with risk class indicator. Integrates with the EIS score and Environmental Valuation.</li>
+</ul>
+
+<h2 id="environmental-valuation" data-i18n="doc.title.envValuation">Environmental Valuation (ENV-VAL-001)</h2>
+<p>Project valuation engine for environmental investments using VPL (NPV), CRF (capital recovery factor), VPLA (equivalent annual value), and MAC curve.</p>
+<ul>
+    <li><strong>VPL / NPV</strong> &mdash; Discounted cash-flow of remediation costs vs. avoided passivo.</li>
+    <li><strong>CRF</strong> &mdash; Annualized capital charge for equipment + infrastructure.</li>
+    <li><strong>VPLA</strong> &mdash; Equivalent annual value for comparing projects of different lifespans.</li>
+    <li><strong>MAC curve</strong> &mdash; Marginal abatement cost curve for multiple interventions.</li>
+    <li>Visible as a HUD card (<code>env-valuation-hud-mount</code>) and in project reports.</li>
+</ul>
+
+<h2 id="cost-analysis" data-i18n="doc.title.costAnalysis">Cost Analysis (CAPEX + OPEX)</h2>
+<p>Cost roll-up across the PDPL-U hierarchy (site &rarr; area &rarr; zone &rarr; element) with dashboard visualization.</p>
+<ul>
+    <li><strong>Four-level roll-up</strong> &mdash; L1 site, L2 area, L3 zone, L4 element.</li>
+    <li><strong>CAPEX vs. OPEX split</strong> &mdash; Separate capital and operational aggregates.</li>
+    <li><strong>Cost Centers</strong> &mdash; Assign elements to cost centers for accounting and EVA (Earned Value Analysis).</li>
+    <li><strong>PDF export</strong> &mdash; Ready-to-sign proposals with cost charts.</li>
+</ul>
+
+<h2 id="purpose" data-i18n="doc.title.purpose">Purpose Module</h2>
+<p>Track the real-world EIS impact of every modeled action and collect micro-feedback from stakeholders.</p>
+<ul>
+    <li><strong>Purpose snapshots</strong> &mdash; Capture EIS score over time and correlate with interventions.</li>
+    <li><strong>Micro-feedback toast</strong> &mdash; Lightweight thumbs-up / thumbs-down on outputs (reports, AI suggestions) for RLHF signal (F4.6).</li>
+    <li><strong>Community impact</strong> &mdash; Roll up individual snapshots into aggregate environmental outcomes.</li>
+</ul>
+
+<!-- ================================================================
+     TOOLS EXPANDED
+     ================================================================ -->
+
+<h2 id="automation" data-i18n="doc.title.automation">Automation Bot Manager</h2>
+<p>Event-driven automation engine that reacts to file uploads, AI photo tags, map interpolation completion, and other triggers.</p>
+<ul>
+    <li><strong>Triggers</strong> &mdash; File upload, campaign import, AI photo classification, interpolation refresh, schedule.</li>
+    <li><strong>Actions</strong> &mdash; Run validation profile, create element, notify stakeholder, export report, enqueue pipeline.</li>
+    <li><strong>Chainable</strong> &mdash; Multi-step workflows with conditional branching (BPMN integration).</li>
+    <li>Access via <strong>Tools &gt; Automation</strong> in the ribbon.</li>
+</ul>
+
+<h2 id="radar" data-i18n="doc.title.radar">Model Radar (Broadcasting)</h2>
+<p>Broadcast your model's state to stakeholders via time-limited <code>share_code</code> URLs — no account required for viewers.</p>
+<ul>
+    <li><strong>Broadcast profiles</strong> &mdash; Define what to share (layers, cameras, analytics) and for how long.</li>
+    <li><strong>Heartbeat</strong> &mdash; Viewers see live updates when the model changes.</li>
+    <li><strong>Public broadcast page</strong> &mdash; <code>broadcast.html?code=&lt;share_code&gt;</code> served read-only.</li>
+    <li><strong>Roles</strong> &mdash; Optional downgrade to observer-only mode for regulators and auditors.</li>
+</ul>
+
+<h2 id="sample-files" data-i18n="doc.title.sampleFiles">Sample Files (Public Catalog)</h2>
+<p>Read-only catalog of reference files hosted on Supabase Storage — aerial images, templates, demos — available to every user without authentication.</p>
+<ul>
+    <li><strong>Aerial reference</strong> &mdash; Default aerial photo for overlay fallback, AI recognition, or raster upload demos.</li>
+    <li><strong>Use in dropdown</strong> &mdash; Select a consumer action (aerial overlay, raster upload, AI recognition, automation input) and the sample is auto-piped into the right modal / handler.</li>
+    <li><strong>No login required</strong> &mdash; Samples are public CDN URLs; workable offline in combination with Service Worker cache.</li>
+    <li>Appears in the Files panel alongside your private files, tagged <code>sample</code>.</li>
+</ul>
+
+<h2 id="datastudio" data-i18n="doc.title.datastudio">DataStudio (SQL over your model)</h2>
+<p>Run client-side SQL queries against your environmental model — elements, campaigns, observations, edges, layers — without round-tripping to a server.</p>
+<ul>
+    <li><strong>Schema panel</strong> &mdash; Browse all queryable tables with column types.</li>
+    <li><strong>Query editor</strong> &mdash; Syntax-highlighted SQL editor with autocomplete for tables and columns.</li>
+    <li><strong>Results grid</strong> &mdash; Tabular results with sorting, filtering, and CSV export.</li>
+    <li><strong>History</strong> &mdash; All runs persisted locally; re-run or bookmark queries.</li>
+    <li>Shell is modular: <em>Collection</em>, <em>Processing</em>, and <em>Analytics</em> modules compose the interface.</li>
+</ul>
+
+<h2 id="customize" data-i18n="doc.title.customize">UI Customization</h2>
+<p>Personalize the interface: fonts, color palettes, density, home-screen card layout, and default panels.</p>
+<ul>
+    <li><strong>Fonts</strong> &mdash; Choose from curated typefaces optimized for technical readability.</li>
+    <li><strong>Palette</strong> &mdash; Dark, light, or custom palettes with tokens applied globally via CSS variables.</li>
+    <li><strong>Density</strong> &mdash; Compact / comfortable / spacious spacing.</li>
+    <li><strong>Home cards</strong> &mdash; Reorder and toggle the home-screen cards relevant to your workflow.</li>
+    <li>Settings persist in <code>localStorage.ecbyts-customize</code>.</li>
+</ul>
+
+<h2 id="error-reporting" data-i18n="doc.title.errorReporting">Error Reporting &amp; Bug Reports</h2>
+<p>Capture runtime errors and user-submitted bug reports with automatic screenshot, stack trace deduplication, and Supabase ingest.</p>
+<ul>
+    <li><strong>Global error boundary</strong> &mdash; <code>window.onerror</code> and <code>onunhandledrejection</code> log to a buffer, flushed in batches.</li>
+    <li><strong>Bug report modal</strong> &mdash; User describes the issue; screenshot captured automatically via DOM snapshot.</li>
+    <li><strong>Dedup &amp; classifier</strong> &mdash; Collapses identical stack traces; classifies as bug / feature request / question.</li>
+    <li><strong>Admin inbox</strong> &mdash; Reports visible in the admin module with triage workflow.</li>
+    <li>LGPD-aware: PII is redacted from DOM screenshots before upload.</li>
+</ul>
+
+<h2 id="libraries-marketplace" data-i18n="doc.title.librariesMarketplace">Libraries Marketplace (v2)</h2>
+<p>Install and monetize curated libraries of environmental data, ML models, pipelines, and AI services — all under AGPL-3.0-compatible licenses.</p>
+<ul>
+    <li><strong>Marketplace</strong> &mdash; Browse public libraries with reviews, ratings, and preview before install.</li>
+    <li><strong>Installed libraries</strong> &mdash; Manage versions, permissions, and update notifications.</li>
+    <li><strong>Import file</strong> &mdash; Side-load a <code>.ecolib</code> library package into your workspace.</li>
+    <li><strong>AI Service listings</strong> &mdash; Automated API execution billed per output token in $ECBT.</li>
+    <li><strong>Consultoria Diretoria</strong> &mdash; Human-hours bookable at R$ 500/HH (4 h/week, 4 h minimum per contract).</li>
+    <li>Access via the Libraries galeria in the ribbon.</li>
+</ul>
+<div class="info-card tip">
+    <h4>License Compatibility</h4>
+    <p>Every marketplace library is evaluated for AGPL-3.0 compatibility before listing. MIT / BSD / Apache / GPL-2.0 / MPL-2.0 are accepted; SSPL / PolyForm / proprietary are blocked.</p>
+</div>
+
+<h2 id="inspector" data-i18n="doc.title.inspector">Inspector</h2>
+<p>Review the selected element, its observations, relationships, campaigns, hierarchy, costs, and operational metadata in one side panel.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from the Actions workspace, element cards, context menus, or the selected element panel.</li>
+    <li><strong>Main action</strong> &mdash; Select an element, inspect linked records, then jump back to the model or related data.</li>
+    <li><strong>Limit</strong> &mdash; Inspector content depends on the active model and selected element; empty selections should not imply missing data.</li>
+</ul>
+
+<h2 id="simulation" data-i18n="doc.title.simulation">Simulation Lab</h2>
+<p>Run local environmental simulation routines with explicit parameters, consent, and browser-side execution boundaries.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from simulation actions, modal launchers, or supported workflow steps.</li>
+    <li><strong>Main action</strong> &mdash; Choose a model, review parameters, accept execution responsibility, and run the simulation.</li>
+    <li><strong>Limit</strong> &mdash; Prototype solvers are educational and must be validated by qualified professionals before engineering use.</li>
+</ul>
+
+<h2 id="ai-agents" data-i18n="doc.title.aiAgents">AI Agents</h2>
+<p>Use specialized assistants for general questions, regulatory analysis, campaigns, and occupational/environmental workflows.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from assistant controls, agent menus, command palette actions, or AI panels.</li>
+    <li><strong>Main action</strong> &mdash; Pick the agent scope, review the proposed action, and confirm before write operations.</li>
+    <li><strong>Limit</strong> &mdash; Agent output is AI-generated guidance and does not replace professional validation or regulatory review.</li>
+</ul>
+
+<h2 id="document-assessment" data-i18n="doc.title.documentAssessment">Document Assessment</h2>
+<p>Assess uploaded environmental documents for structure, evidence, decisions, coordinates, labels, and extractable observations.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Use from ingestion, file preview, assessment actions, or document track panels.</li>
+    <li><strong>Main action</strong> &mdash; Load a document, run assessment, review extracted findings, and accept or reject decisions.</li>
+    <li><strong>Limit</strong> &mdash; OCR and AI extraction can miss context; keep the source document as the evidence anchor.</li>
+</ul>
+
+<h2 id="chemistry" data-i18n="doc.title.chemistry">Chemistry Registry</h2>
+<p>Search, normalize, and validate chemical parameter metadata such as names, aliases, and CAS references.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from chemistry actions, parameter editors, or validation workflows.</li>
+    <li><strong>Main action</strong> &mdash; Match a parameter, review aliases and identifiers, then reuse the normalized name in observations.</li>
+    <li><strong>Limit</strong> &mdash; Registry matches support data quality; legal limit interpretation still depends on the selected framework.</li>
+</ul>
+
+<h2 id="field-metadata" data-i18n="doc.title.fieldMetadata">Field Metadata</h2>
+<p>Attach provenance, confidence, source, and validation notes to fields that affect model quality and auditability.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Field metadata appears near editable fields, popovers, and selected data cells.</li>
+    <li><strong>Main action</strong> &mdash; Open the metadata popover, review source information, and add traceability notes when needed.</li>
+    <li><strong>Limit</strong> &mdash; Metadata improves audit trails only when users keep source and decision notes current.</li>
+</ul>
+
+<h2 id="merge-diff" data-i18n="doc.title.mergeDiff">Model Merge and Diff</h2>
+<p>Compare two model states, inspect changes, and merge accepted differences with explicit review.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from merge actions, import flows, or collaboration review tasks.</li>
+    <li><strong>Main action</strong> &mdash; Load base and incoming models, inspect changed entities, then accept or reject each group.</li>
+    <li><strong>Limit</strong> &mdash; Never merge regulatory evidence blindly; review geometry, timestamps, and source ownership first.</li>
+</ul>
+
+<h2 id="notifications" data-i18n="doc.title.notifications">Notifications</h2>
+<p>Review operational alerts, system messages, marketplace updates, and priority events generated by the workspace.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Use notification panels, badges, top-bar indicators, and contextual alerts.</li>
+    <li><strong>Main action</strong> &mdash; Open the alert, inspect priority and source, then navigate to the affected object or workflow.</li>
+    <li><strong>Limit</strong> &mdash; Some notifications depend on Supabase access and may be unavailable offline.</li>
+</ul>
+
+<h2 id="notification-rules" data-i18n="doc.title.notificationRules">Notification Rules</h2>
+<p>Configure thresholds and rule-driven alerts for data quality, compliance, sensors, marketplace events, and operational changes.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from notification settings, governance controls, or advanced configuration actions.</li>
+    <li><strong>Main action</strong> &mdash; Define the trigger, scope, severity, and destination before enabling the rule.</li>
+    <li><strong>Limit</strong> &mdash; Rules should be tested with known data before they are used for operational escalation.</li>
+</ul>
+
+<h2 id="wallet" data-i18n="doc.title.wallet">Wallet and Credits</h2>
+<p>Manage credits, payments, premium access, marketplace transactions, and blockchain-linked account actions.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from wallet actions, account controls, credits badges, marketplace flows, or premium gates.</li>
+    <li><strong>Main action</strong> &mdash; Review balance, transaction context, and any signing or payment requirement before proceeding.</li>
+    <li><strong>Limit</strong> &mdash; Blockchain and payment actions must be verified against the active environment before use.</li>
+</ul>
+
+<h2 id="history-recovery" data-i18n="doc.title.historyRecovery">History, Undo and Recovery</h2>
+<p>Inspect recent changes, undo safe operations, and recover workspace state after editing, import, or autosave events.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Use the ribbon history actions, model status indicators, and recovery prompts.</li>
+    <li><strong>Main action</strong> &mdash; Review the change description, confirm the affected objects, and apply undo or recovery.</li>
+    <li><strong>Limit</strong> &mdash; Destructive operations require explicit confirmation; recovery is only as good as the latest persisted state.</li>
+</ul>
+
+<h2 id="imagery" data-i18n="doc.title.imagery">Imagery Layers</h2>
+<p>Add, inspect, and manage raster imagery used as aerial context, georeference support, or visual evidence in the model.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from imagery actions, raster upload, aerial tools, or scene layer controls.</li>
+    <li><strong>Main action</strong> &mdash; Add an image, align it to the model, adjust visibility, and document its source.</li>
+    <li><strong>Limit</strong> &mdash; Cross-origin imagery can taint canvas analysis; keep source metadata for auditability.</li>
+</ul>
+
+<h2 id="organization-management" data-i18n="doc.title.organizationManagement">Organization Management</h2>
+<p>Manage organization-level workspace context, members, scopes, and model ownership boundaries.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from organization actions, account menus, workspace loader, or admin-linked flows.</li>
+    <li><strong>Main action</strong> &mdash; Select the organization context, review membership, and switch model scope deliberately.</li>
+    <li><strong>Limit</strong> &mdash; Organization operations may require hosted services and permissions outside a local-only workspace.</li>
+</ul>
+
+<h2 id="ownership-access" data-i18n="doc.title.ownershipAccess">Ownership and Access</h2>
+<p>Review who owns a model, who can edit it, and which actions require role checks or explicit transfer.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from ownership actions, model settings, sharing flows, and role-guarded panels.</li>
+    <li><strong>Main action</strong> &mdash; Confirm owner, role, and target scope before changing access or transferring responsibility.</li>
+    <li><strong>Limit</strong> &mdash; Access decisions affect auditability and legal defensibility; avoid ambiguous ownership states.</li>
+</ul>
+
+<h2 id="presets" data-i18n="doc.title.presets">Presets</h2>
+<p>Apply saved configurations for model views, workflows, validation profiles, visuals, and operational defaults.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from preset actions, scene controls, validation setup, or workflow launchers.</li>
+    <li><strong>Main action</strong> &mdash; Choose a preset, preview the affected settings, and apply only to the intended scope.</li>
+    <li><strong>Limit</strong> &mdash; Presets accelerate setup but should not override site-specific technical judgment.</li>
+</ul>
+
+<h2 id="health-export" data-i18n="doc.title.healthExport">Health Export</h2>
+<p>Export occupational health, exposure, or monitoring data in a structured package suitable for review and integration.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from health export actions, occupational modules, or compliance workflows.</li>
+    <li><strong>Main action</strong> &mdash; Select scope, anonymization mode, period, and output format before exporting.</li>
+    <li><strong>Limit</strong> &mdash; Health data can be sensitive; validate LGPD/privacy requirements before sharing files.</li>
+</ul>
+
+<h2 id="accessibility" data-i18n="doc.title.accessibility">Accessibility</h2>
+<p>Use accessibility helpers for labels, keyboard flow, modal behavior, and form readability across the interface.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Accessibility behavior appears in forms, modals, custom controls, and validation feedback.</li>
+    <li><strong>Main action</strong> &mdash; Navigate with keyboard, verify labels, and keep focus movement predictable.</li>
+    <li><strong>Limit</strong> &mdash; Automated checks do not replace manual testing with real assistive technologies.</li>
+</ul>
+
+<h2 id="background-analysis" data-i18n="doc.title.backgroundAnalysis">Background Analysis</h2>
+<p>Compare observations against background conditions to support environmental interpretation and anomaly review.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from analytics, hypothesis testing, or parameter review flows.</li>
+    <li><strong>Main action</strong> &mdash; Select reference data, compare current readings, and review flagged deviations.</li>
+    <li><strong>Limit</strong> &mdash; Background definitions are technical assumptions and must be justified for each site.</li>
+</ul>
+
+<h2 id="decision-rules" data-i18n="doc.title.decisionRules">Decision Rules</h2>
+<p>Define deterministic rules that classify data quality, compliance, recommendations, or next actions from model evidence.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from governance, validation, uncertainty, or advanced rule configuration panels.</li>
+    <li><strong>Main action</strong> &mdash; Choose inputs, thresholds, rule priority, and expected outcome before enabling the rule.</li>
+    <li><strong>Limit</strong> &mdash; Rules must remain explainable and traceable; avoid hidden logic for regulatory decisions.</li>
+</ul>
+
+<h2 id="dama-quality" data-i18n="doc.title.damaQuality">DAMA Data Quality</h2>
+<p>Evaluate data quality dimensions using DAMA-inspired criteria and link issues back to source fields and records.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from data quality, validation, ingestion, or EIS-adjacent workflows.</li>
+    <li><strong>Main action</strong> &mdash; Run checks, inspect failed dimensions, and resolve source data issues before export.</li>
+    <li><strong>Limit</strong> &mdash; Quality scoring indicates risk; it does not certify technical correctness by itself.</li>
+</ul>
+
+<h2 id="ecbt-validator" data-i18n="doc.title.ecbtValidator">ECBT Validator</h2>
+<p>Validate model packages, exported data, and imported structures against ECBT expectations before use or sharing.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from import/export, validation, or advanced model integrity actions.</li>
+    <li><strong>Main action</strong> &mdash; Select a model or package, run validation, then fix blocking errors before continuing.</li>
+    <li><strong>Limit</strong> &mdash; Passing schema validation does not guarantee that domain assumptions are correct.</li>
+</ul>
+
+<h2 id="ledger-summary" data-i18n="doc.title.ledgerSummary">Ledger Summary</h2>
+<p>Summarize integrity records, hashes, signatures, and audit-relevant events linked to the active model.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from blockchain, audit, governance, or model integrity workflows.</li>
+    <li><strong>Main action</strong> &mdash; Review recorded events, compare hashes, and export supporting evidence when needed.</li>
+    <li><strong>Limit</strong> &mdash; Ledger summaries prove recorded state, not the technical truth of unverified source data.</li>
+</ul>
+
+<h2 id="parameter-groups" data-i18n="doc.title.parameterGroups">Parameter Groups</h2>
+<p>Organize parameters into operational groups for filters, reports, analytics, and regulatory interpretation.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from parameter configuration, SAO matrices, analytics, or report setup.</li>
+    <li><strong>Main action</strong> &mdash; Create or select a group, assign parameters, and reuse the group in analysis flows.</li>
+    <li><strong>Limit</strong> &mdash; Grouping changes how data is interpreted; keep names and inclusion criteria explicit.</li>
+</ul>
+
+<h2 id="sao-heatmap" data-i18n="doc.title.saoHeatmap">SAO Heatmap</h2>
+<p>Visualize source-activity-object relationships as heatmaps to identify concentration, exposure, or management priorities.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from SAO tools, analytics, or environmental matrix review flows.</li>
+    <li><strong>Main action</strong> &mdash; Select matrix, parameter, scope, and campaign range, then inspect hotspots.</li>
+    <li><strong>Limit</strong> &mdash; Heatmaps are prioritization aids; review raw observations before making decisions.</li>
+</ul>
+
+<h2 id="sdg-alignment" data-i18n="doc.title.sdgAlignment">SDG Alignment</h2>
+<p>Map environmental and occupational evidence to Sustainable Development Goal indicators and confidence levels.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from EIS, governance, ESG, or impact reporting workflows.</li>
+    <li><strong>Main action</strong> &mdash; Review mapped SDGs, inspect confidence, and document why each alignment applies.</li>
+    <li><strong>Limit</strong> &mdash; SDG alignment is a reporting interpretation and should be backed by auditable evidence.</li>
+</ul>
+
+<h2 id="spatial-clustering" data-i18n="doc.title.spatialClustering">Spatial Clustering</h2>
+<p>Cluster spatial observations or document-extracted locations to identify groups, duplicates, and likely site patterns.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from ingestion, spatial tools, document assessment, or analytics flows.</li>
+    <li><strong>Main action</strong> &mdash; Choose spatial inputs, run clustering, and review grouped records before accepting them.</li>
+    <li><strong>Limit</strong> &mdash; Clusters are sensitive to distance thresholds, projection, and coordinate quality.</li>
+</ul>
+
+<h2 id="optimization" data-i18n="doc.title.optimization">Optimization</h2>
+<p>Explore candidate decisions, resource allocation, or scenario improvements when a workflow exposes optimization controls.</p>
+<ul>
+    <li><strong>Where</strong> &mdash; Open from optimization actions, scenario workflows, or cost and remediation decision panels.</li>
+    <li><strong>Main action</strong> &mdash; Define objective, constraints, candidate options, and review recommended trade-offs.</li>
+    <li><strong>Limit</strong> &mdash; Optimization output is decision support; constraints and assumptions must be reviewed before adoption.</li>
+</ul>
+
+<!-- ================================================================
+     CONTRIBUTING
+     ================================================================ -->
+
+<h2 id="contributing" data-i18n="doc.title.contributing">How to Contribute</h2>
+<p>ecbyts is an open-source project distributed under <strong>AGPL-3.0-only</strong>. For the authoritative legal terms, refer to the repository <code>LICENSE</code> file. Contributions are welcome from diverse backgrounds &mdash; you do not need to be a software developer to help. Below are five contributor profiles with guidance tailored to each.</p>
+
+<h3 id="contributing-developer" data-i18n="doc.title.contributingDeveloper">&#9654; Developer</h3>
+<div class="info-card highlight">
+    <h4>Software Engineers &amp; Programmers</h4>
+    <p>Fork or clone the repository from <a href="https://github.com/calvinsiost/ecbyts_open" style="color: var(--accent);">GitHub</a> and submit Pull Requests. The codebase uses <strong>vanilla JS</strong> (ES modules) with no build step and no frameworks.</p>
+    <ul>
+        <li>Read the <code>ADR.md</code> in each <code>core/</code> module before modifying &mdash; it documents architectural decisions and trade-offs.</li>
+        <li>Follow the coding conventions: max ~30 lines per function, descriptive names, JSDoc with bilingual comments (English headers, Portuguese explanations).</li>
+        <li>No emojis in UI code &mdash; use SVG icons or HTML entities.</li>
+        <li>Register all <code>window.*</code> handlers in <code>utils/handlers/index.js</code>.</li>
+    </ul>
+</div>
+
+<h3 id="contributing-dev-toolkit" data-i18n="doc.title.contributingDevToolkit">&#9654; Dev Prompt Toolkit</h3>
+<div class="info-card highlight">
+    <h4>23 Ready-to-Use Prompts for the Full Dev Lifecycle</h4>
+    <p>A curated set of AI-assisted development prompts organized into 6 lifecycle phases. Copy any prompt, paste into your AI assistant, and adapt to your task.</p>
+    <table>
+        <tr><th>Phase</th><th>Prompts</th><th>Purpose</th></tr>
+        <tr><td><strong>Plan</strong></td><td>3</td><td>Architecture review, spec creation, dependency audit</td></tr>
+        <tr><td><strong>Build</strong></td><td>4</td><td>Module scaffolding, UI implementation, API integration, migration</td></tr>
+        <tr><td><strong>Validate</strong></td><td>3</td><td>Test generation, E2E journeys, accessibility audit</td></tr>
+        <tr><td><strong>Maintain</strong></td><td>3</td><td>Bug triage, performance profiling, i18n coverage</td></tr>
+        <tr><td><strong>Meta</strong></td><td>3</td><td>Documentation generation, changelog drafting, release checklist</td></tr>
+        <tr><td><strong>Security</strong></td><td>3</td><td>CSP audit, API key rotation, LGPD compliance scan</td></tr>
+    </table>
+    <p>All prompts follow the project conventions: vanilla JS (ES modules), no build step, bilingual comments (EN headers / PT explanations), and max ~30 lines per function. See <code>docs/DEV_PROMPT_TOOLKIT.md</code> for the full catalog.</p>
+</div>
+
+<h3 id="contributing-vibecoder" data-i18n="doc.title.contributingVibeCoder">&#9654; Vibe Coder</h3>
+<div class="info-card highlight">
+    <h4>AI-Assisted Contributors</h4>
+    <p>No traditional programming background? No problem. Use AI tools (GitHub Copilot, Claude, ChatGPT) to contribute effectively.</p>
+    <ul>
+        <li>Start with GitHub Issues tagged <strong>Good First Issue</strong> &mdash; these are scoped for newcomers.</li>
+        <li>Use the built-in AI Assistant (<strong>AI Assistant (floating widget)</strong>) to explore and understand the codebase.</li>
+        <li>Only vanilla JS knowledge is needed &mdash; no React, no Angular, no frameworks.</li>
+        <li>The <code>CLAUDE.md</code> file at the project root is your guide &mdash; it explains the full architecture and patterns.</li>
+    </ul>
+</div>
+
+<h3 id="contributing-orgao" data-i18n="doc.title.contributingRegulatory">&#9654; Regulatory Body</h3>
+<div class="info-card highlight">
+    <h4>CONAMA, CETESB, IBAMA &amp; Other Agencies</h4>
+    <p>Environmental regulatory agencies can contribute normative data that improves compliance validation for all users.</p>
+    <ul>
+        <li>Provide threshold values (VR, VP, VI) and reference standards for soil and groundwater quality.</li>
+        <li>Share compliance rules and regulatory schemas in JSON format for automated validation via the Domain Validator Engine.</li>
+        <li>Review and validate the environmental glossary and regulatory references in the platform.</li>
+        <li>Contact us via GitHub Issues with the label <strong>documentation</strong>.</li>
+    </ul>
+</div>
+
+<h3 id="contributing-usuario" data-i18n="doc.title.contributingEndUser">&#9654; End User</h3>
+<div class="info-card highlight">
+    <h4>Environmental Engineers &amp; Consultants</h4>
+    <p>Your domain expertise is more valuable than code. Help us build the right tool for real-world environmental work.</p>
+    <ul>
+        <li>File bug reports via <a href="https://github.com/calvinsiost/ecbyts_open/issues" style="color: var(--accent);">GitHub Issues</a> with detailed descriptions and screenshots.</li>
+        <li>Suggest features based on your field experience &mdash; what workflows are missing? What data formats do you use?</li>
+        <li>Share anonymized real-world use cases that help us test with realistic data.</li>
+        <li>Domain expertise is valued over code &mdash; you know what environmental professionals actually need.</li>
+    </ul>
+</div>
+
+<h3 id="contributing-financeiro" data-i18n="doc.title.contributingSponsor">&#9654; Financial Sponsor</h3>
+<div class="info-card highlight">
+    <h4>Support Independent Development</h4>
+    <p>ecbyts is distributed under <strong>AGPL-3.0-only</strong> and developed independently. Financial sponsorship accelerates development and helps sustain long-term maintenance. As with the rest of the documentation, the repository <code>LICENSE</code> file is the authoritative source for legal terms.</p>
+    <ul>
+        <li>Sponsors receive recognition in the project credits and documentation.</li>
+        <li>Sponsorship funds go directly to development &mdash; no corporate overhead.</li>
+        <li>Contact us via <a href="https://github.com/sponsors/calvinsiost" style="color: var(--accent);">GitHub Sponsors</a> or open an issue for partnership inquiries.</li>
+    </ul>
+</div>
+
+<!-- ================================================================
+     PLATFORM
+     ================================================================ -->
+
+<h2 id="admin-module" data-i18n="doc.title.adminModule">Admin Module</h2>
+<p>Comprehensive administration panel for platform operators covering <strong>14 management areas</strong>. Access is restricted to users with the <code>admin</code> role in Supabase.</p>
+
+<h3>Management Areas</h3>
+<div class="feature-grid">
+    <div class="feature-card"><span class="icon">&#9679;</span><h4>Users</h4><p>User management, roles, quotas, and activity logs</p></div>
+    <div class="feature-card"><span class="icon">&#9650;</span><h4>Subscriptions</h4><p>Plan management, billing, Stripe &amp; MercadoPago integration</p></div>
+    <div class="feature-card"><span class="icon">&#9670;</span><h4>Projects</h4><p>Global project registry, storage metrics, ownership transfers</p></div>
+    <div class="feature-card"><span class="icon">&#9733;</span><h4>Libraries</h4><p>Marketplace content, reviews, publishing approvals</p></div>
+    <div class="feature-card"><span class="icon">&#9632;</span><h4>AI &amp; LLM</h4><p>Provider config, token usage, fine-tuning jobs, prompt templates</p></div>
+    <div class="feature-card"><span class="icon">&#9678;</span><h4>Infrastructure</h4><p>Edge Functions, storage buckets, database health, CDN cache</p></div>
+</div>
+<ul>
+    <li><strong>Audit Trail</strong> &mdash; Every admin action is logged with timestamp, actor, and before/after state for LGPD compliance.</li>
+    <li><strong>Dashboard KPIs</strong> &mdash; Real-time metrics: active users, MRR, storage usage, AI call volume, error rates.</li>
+    <li><strong>Bulk Operations</strong> &mdash; Mass quota adjustment, user exports, subscription migrations.</li>
+    <li><strong>Feature Flags</strong> &mdash; Toggle experimental features per user or tier without redeployment.</li>
+</ul>
+
+<div class="info-card warning">
+    <h4>Admin Access</h4>
+    <p>The Admin Module is only available to users with the <code>service_role</code> or <code>admin</code> flag in Supabase. Regular users see no admin UI elements. All admin routes are protected by Row Level Security (RLS) policies.</p>
+</div>
+
+<h2 id="data-sovereignty" data-i18n="doc.title.dataSovereignty">Data Sovereignty &amp; Transparency</h2>
+<p>ecbyts is built on the principle that <strong>environmental data is a public asset</strong>. The platform provides a framework for radical transparency and friction-less data sharing between regulators, stakeholders, and AI systems.</p>
+<ul>
+    <li><strong>Universal interoperability</strong> &mdash; JSON-based schemas and alphanumeric ECBT keys ensure data is never siloed. Transitioning between platforms is facilitated by open-format standards.</li>
+    <li><strong>Cryptographic integrity</strong> &mdash; Trust is mathematically enforced. Every record is secured via SHA-256 hashing and provenance chains, with optional blockchain notarization.</li>
+    <li><strong>Machine-centric design</strong> &mdash; Every data structure is strictly typed, enabling LLMs to perform complex reasoning, querying, and automated reporting without custom adapters.</li>
+    <li><strong>Regulatory alignment</strong> &mdash; First-class support for Brazilian (CONAMA, CETESB, IBAMA) and international standards ensures compliance is built into the data model.</li>
+</ul>
+
+<h2 id="esg-framework" data-i18n="doc.title.esgFramework">ESG Economic Framework</h2>
+<p>ecbyts integrates a reporting-based incentive layer grounded in ESG conceptual models. This structure enables the tokenization of environmental performance and alignment with international H&amp;S protocols.</p>
+<ul>
+    <li><strong>Performance-Indexed Assets</strong> &mdash; Proposed cryptocurrency framework where asset valuation is indexed to corporate socio-environmental metrics.</li>
+    <li><strong>Monetization Pathways</strong> &mdash; Data structures designed for market-based pricing, subscription models, and participant ecosystem integration.</li>
+    <li><strong>Post-IPCC Integration</strong> &mdash; Postulated integration of environmental digital twin assets with updated IPCC regulatory and reporting protocols.</li>
+</ul>
+
+<div class="info-card highlight">
+    <h4>Why ESG Matters Here</h4>
+    <p>Environmental monitoring data has economic value. By structuring data for interoperability and cryptographic integrity from the start, ecbyts enables market-based incentives that reward transparency and compliance &mdash; not just measure it.</p>
+</div>
+
+<h2 id="security" data-i18n="doc.title.security">Security &amp; Data Integrity</h2>
+<p>Multi-layered security architecture protecting environmental data integrity and user privacy. 4-phase hardening roadmap from CAPTCHA to fraud detection.</p>
+<ul>
+    <li><strong>Content Security Policy (CSP)</strong> &mdash; Restricted origins for scripts, images, and connections. No wildcard CORS.</li>
+    <li><strong>API server isolation</strong> &mdash; Bound to loopback only. CORS restricted to server origin.</li>
+    <li><strong>ECDSA P-256 key vault</strong> &mdash; Private keys wrapped with AES-GCM encryption (never stored as plaintext).</li>
+    <li><strong>LLM API key encryption</strong> &mdash; User API keys encrypted with per-user PBKDF2 salt.</li>
+    <li><strong>hCaptcha CAPTCHA</strong> &mdash; Bot protection on login, registration, and password reset forms. Invisible mode for authenticated users.</li>
+    <li><strong>MFA / TOTP</strong> &mdash; Optional multi-factor authentication via authenticator apps (Google Authenticator, Authy). TOTP with 6-digit codes and 30s rotation.</li>
+    <li><strong>LGPD Audit Trail</strong> &mdash; Full data processing log for Brazilian General Data Protection Law compliance. Records consent, data access, and deletion requests.</li>
+    <li><strong>Credential fraud detection</strong> &mdash; Behavioral analysis detecting suspicious login patterns, impossible travel, and credential stuffing attempts.</li>
+    <li><strong>EcoTools sandbox</strong> &mdash; External tools run in iframe without <code>allow-same-origin</code>.</li>
+    <li><strong>Atomic quota enforcement</strong> &mdash; Supabase RPC with row-level locking prevents race conditions.</li>
+    <li><strong>Security logging</strong> &mdash; Structured logs with automatic sensitive field stripping.</li>
+</ul>
+
+<h2 id="authentication" data-i18n="doc.title.authentication">Authentication &amp; SSO</h2>
+<p>Supabase-powered authentication with multiple sign-in methods.</p>
+<img class="doc-screenshot" src="./assets/docs/auth-modal.png" alt="Authentication modal with sign-in and SSO options">
+<ul>
+    <li><strong>SSO providers</strong> &mdash; Google, GitHub, and Microsoft (Azure AD) single sign-on.</li>
+    <li><strong>Email/password</strong> &mdash; Traditional registration with email verification.</li>
+    <li><strong>Login throttle</strong> &mdash; Rate-limited to 5 attempts per 10 minutes per IP. Exponential backoff with user-friendly countdown.</li>
+    <li><strong>MFA enrollment</strong> &mdash; Optional TOTP-based multi-factor authentication via the security settings panel.</li>
+    <li><strong>LGPD compliance</strong> &mdash; Consent management, data portability (JSON export of personal data), and right-to-deletion enforcement.</li>
+    <li><strong>Academic credential verification</strong> &mdash; Upload diplomas for EIS score credential multiplier (verified via Gemini Vision).</li>
+    <li><strong>Professional tier</strong> &mdash; Stripe checkout for premium features and higher usage quotas.</li>
+</ul>
+
+<div class="info-card highlight">
+    <h4>First Login</h4>
+    <p>Click the auth button in the titlebar to open the SSO modal. Choose a provider or register with email. Authentication is optional &mdash; the platform works fully offline without an account.</p>
+</div>
+
+<!-- ================================================================
+     REFERENCE
+     ================================================================ -->
+
+<h2 id="shortcuts" data-i18n="doc.title.shortcuts">Keyboard Shortcuts</h2>
+<table>
+    <tr><th>Shortcut</th><th>Action</th></tr>
+    <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Undo</td></tr>
+    <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd></td><td>Redo</td></tr>
+    <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>Export Key (save)</td></tr>
+    <tr><td><kbd>Ctrl</kbd> + <kbd>E</kbd></td><td>Export JSON</td></tr>
+    <tr><td><kbd>Ctrl</kbd> + <kbd>I</kbd></td><td>Import Key</td></tr>
+    <tr><td><kbd>Delete</kbd></td><td>Remove selected element</td></tr>
+    <tr><td><kbd>Escape</kbd></td><td>Deselect / Close modal</td></tr>
+    <tr><td><kbd>F11</kbd></td><td>Toggle fullscreen</td></tr>
+    <tr><td><kbd>G</kbd></td><td>Toggle grid</td></tr>
+    <tr><td><kbd>1</kbd> &ndash; <kbd>8</kbd></td><td>Switch toolbar group focus</td></tr>
+</table>
+
+<h2 id="glossary" data-i18n="doc.title.glossary">Environmental Glossary</h2>
+<table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td><strong>CONAMA</strong></td><td>Conselho Nacional do Meio Ambiente &mdash; Brazilian National Environment Council. Sets environmental standards and resolutions (e.g., CONAMA 420/2009 for soil quality).</td></tr>
+    <tr><td><strong>CETESB</strong></td><td>Companhia Ambiental do Estado de S&atilde;o Paulo &mdash; S&atilde;o Paulo state environmental agency. Publishes reference cleanup values for contaminated sites.</td></tr>
+    <tr><td><strong>IBAMA</strong></td><td>Instituto Brasileiro do Meio Ambiente &mdash; Federal environmental enforcement agency.</td></tr>
+    <tr><td><strong>VR</strong></td><td>Valor de Refer&ecirc;ncia &mdash; Natural background concentration (CETESB DD-256/2016).</td></tr>
+    <tr><td><strong>VP</strong></td><td>Valor de Preven&ccedil;&atilde;o &mdash; Prevention threshold; monitoring required (CONAMA 420 Anexo II).</td></tr>
+    <tr><td><strong>VI</strong></td><td>Valor de Interven&ccedil;&atilde;o &mdash; Intervention threshold; remediation required (CONAMA 420 Anexo II).</td></tr>
+    <tr><td><strong>CMA</strong></td><td>Concentra&ccedil;&atilde;o M&aacute;xima Aceit&aacute;vel &mdash; Site-specific risk-based threshold from assessment campaigns.</td></tr>
+    <tr><td><strong>Plume</strong></td><td>A 3D volume of contaminated groundwater or soil, typically spreading from a source area following groundwater flow direction.</td></tr>
+    <tr><td><strong>Monitoring Well</strong></td><td>A vertical borehole drilled to collect groundwater samples and measure water table levels.</td></tr>
+    <tr><td><strong>Observation</strong></td><td>A single measurement: parameter (what) + value (how much) + timestamp (when) at a specific location.</td></tr>
+    <tr><td><strong>Campaign</strong></td><td>A field sampling event &mdash; a specific date when a team collected data from multiple monitoring points.</td></tr>
+    <tr><td><strong>GAC</strong></td><td>Gerenciamento de &Aacute;reas Contaminadas &mdash; Contaminated Areas Management. Brazilian regulatory framework for contaminated site investigation and remediation (CONAMA, CETESB).</td></tr>
+    <tr><td><strong>EDD</strong></td><td>Electronic Data Deliverable &mdash; Standard format for laboratory analytical results.</td></tr>
+    <tr><td><strong>PDPL-U / PDPLU</strong></td><td>The core ecbyts organizing model for elements, observations, and exports: Ponto, Data, Parametro, Leitura, Unidade.</td></tr>
+    <tr><td><strong>ESH</strong></td><td>Environment, Safety &amp; Health &mdash; Domain for the SAO (Systematic Assessment of Operations) matrices.</td></tr>
+    <tr><td><strong>IDW</strong></td><td>Inverse Distance Weighting &mdash; Spatial interpolation method where nearby points have more influence.</td></tr>
+    <tr><td><strong>Kriging</strong></td><td>Geostatistical interpolation method providing best linear unbiased estimates with uncertainty quantification.</td></tr>
+    <tr><td><strong>ECBT</strong></td><td>The unified export/import format for ecbyts models. Encodes elements, campaigns, observations, and optionally blockchain integrity proofs. Replaces the legacy ECO1 prefix.</td></tr>
+    <tr><td><strong>Merkle Tree</strong></td><td>A binary hash tree structure where any modification to a leaf node changes the root hash, enabling efficient data integrity verification.</td></tr>
+    <tr><td><strong>EIS</strong></td><td>EnviroTech Integrity Score &mdash; A composite metric (0&ndash;5) evaluating the technical quality and trustworthiness of an environmental model.</td></tr>
+    <tr><td><strong>Digital Twin</strong></td><td>A virtual replica of a physical environmental site that evolves with real data over time.</td></tr>
+    <tr><td><strong>BCF</strong></td><td>BIM Collaboration Format &mdash; Standard for 3D-anchored issue tracking, adapted for environmental site issues.</td></tr>
+    <tr><td><strong>BPMN</strong></td><td>Business Process Model and Notation &mdash; Standard for workflow automation, adapted for environmental pipelines.</td></tr>
+    <tr><td><strong>MCP</strong></td><td>Model Context Protocol &mdash; Open standard for AI agent&ndash;tool communication. ecbyts exposes an MCP server for external AI integration.</td></tr>
+    <tr><td><strong>Dynamic Dispatch</strong></td><td>Registry-based action resolution where 442+ platform actions are discovered and executed by the AI assistant based on semantic intent matching.</td></tr>
+    <tr><td><strong>Fine-Tuning</strong></td><td>Process of specializing a pre-trained language model (Qwen2.5) on domain-specific environmental data for improved accuracy.</td></tr>
+    <tr><td><strong>Symbology Profile</strong></td><td>A visual mapping standard that controls element colors, icons, and 3D shapes for consistent site representation.</td></tr>
+    <tr><td><strong>Veo 2</strong></td><td>Google&rsquo;s AI video generation model used to create photorealistic environmental site fly-through videos from scene descriptions.</td></tr>
+    <tr><td><strong>LGPD</strong></td><td>Lei Geral de Prote&ccedil;&atilde;o de Dados &mdash; Brazilian General Data Protection Law (equivalent to GDPR).</td></tr>
+    <tr><td><strong>hCaptcha</strong></td><td>Privacy-focused CAPTCHA service used for bot protection on authentication forms.</td></tr>
+    <tr><td><strong>LoRA</strong></td><td>Low-Rank Adaptation &mdash; Efficient fine-tuning technique that trains small adapter weights instead of modifying the full model.</td></tr>
+    <tr><td><strong>TOTP</strong></td><td>Time-based One-Time Password &mdash; Standard for multi-factor authentication (RFC 6238).</td></tr>
+</table>
+
+<h2 id="parameters" data-i18n="doc.title.parameters">Common Parameters</h2>
+<p>Environmental parameters available for observations. Custom parameters can also be added.</p>
+<table>
+    <tr><th>Category</th><th>Parameters</th></tr>
+    <tr><td><strong>Organic Compounds</strong></td><td>Benzene, Toluene, Ethylbenzene, Xylenes (BTEX), TPH, PAHs, VOCs, SVOCs</td></tr>
+    <tr><td><strong>Inorganics / Metals</strong></td><td>Lead, Arsenic, Chromium, Mercury, Cadmium, Zinc, Copper, Nickel</td></tr>
+    <tr><td><strong>Physical-Chemical</strong></td><td>pH, Temperature, Dissolved Oxygen, Conductivity, ORP, Turbidity</td></tr>
+    <tr><td><strong>Nutrients</strong></td><td>Nitrate, Nitrite, Ammonia, Phosphate, Total Nitrogen, Total Phosphorus</td></tr>
+    <tr><td><strong>Hydrogeological</strong></td><td>Water Table Level, Hydraulic Conductivity, Porosity, Gradient</td></tr>
+    <tr><td><strong>Microbiology</strong></td><td>Total Coliforms, E. coli, Fecal Coliforms, Heterotrophic Plate Count</td></tr>
+    <tr><td><strong>Safety &amp; GHG</strong></td><td>Incident rates, near-miss frequency, GHG emissions (CO2e), noise levels</td></tr>
+</table>
+
+<div class="info-card highlight">
+    <h4>Custom Parameters</h4>
+    <p>Need a parameter not in the default list? Add custom parameters via the configuration. Custom parameters support user-defined names, units, regulatory limits, and custom fields (sample depth, detection limit, fraction).</p>
+</div>
+
+<h2 id="tech-stack" data-i18n="doc.title.techStack">Technology Stack</h2>
+<table>
+    <tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
+    <tr><td>3D Rendering</td><td>Three.js 0.160.0</td><td>WebGL scene, meshes, orthographic camera</td></tr>
+    <tr><td>Charts</td><td>Chart.js 4.4.1</td><td>Scatter plots, histograms, time series</td></tr>
+    <tr><td>Language</td><td>Vanilla JavaScript</td><td>ES modules, no framework, no build step</td></tr>
+    <tr><td>Auth &amp; Database</td><td>Supabase</td><td>SSO (Google, GitHub, Microsoft), PostgreSQL, 17 Edge Functions</td></tr>
+    <tr><td>AI / LLM</td><td>Multi-provider</td><td>442 registered actions, 18 categories, 3-tier prompt, MCP server</td></tr>
+    <tr><td>ML</td><td>SimpleNN + Qwen2.5</td><td>6 solvers, fine-tuning pipeline, Transformers.js</td></tr>
+    <tr><td>Payments</td><td>Stripe + MercadoPago</td><td>4-tier freemium, marketplace checkout</td></tr>
+    <tr><td>Cryptography</td><td>Web Crypto API</td><td>SHA-256, ECDSA P-256, AES-GCM, hCaptcha</td></tr>
+    <tr><td>Video</td><td>Google Veo 2</td><td>AI-generated environmental site videos</td></tr>
+    <tr><td>Storage</td><td>IndexedDB + Supabase Storage</td><td>Model persistence, cloud files, key management</td></tr>
+    <tr><td>Typography</td><td>Inter, JetBrains Mono</td><td>Google Fonts</td></tr>
+    <tr><td>Server</td><td>serve (npx)</td><td>Zero-config static file server</td></tr>
+</table>
+
+<div class="info-card highlight">
+    <h4>Platform Metrics</h4>
+    <p><strong>560+ source files</strong> &bull; <strong>222+ tests</strong> &bull; <strong>442 LLM actions</strong> &bull; <strong>17 Edge Functions</strong> &bull; <strong>6 ML solvers</strong> &bull; <strong>16 locales</strong> &bull; <strong>50 guided tours</strong></p>
+</div>
+
+<div class="info-card highlight">
+    <h4>No Build Step</h4>
+    <p>ecbyts has no bundler, no transpiler, and no build process. ES modules are loaded directly by the browser, making the codebase easy to audit, fork, and contribute to.</p>
+</div>
+
+<h2 id="data-model" data-i18n="doc.title.dataModel">Data Model (ECBT Schema)</h2>
+<p>Models are represented as validated JSON objects with the following top-level structure:</p>
+
+<pre tabindex="0" role="region" aria-label="ECBT JSON schema example"><code>{
+    "ecbyts": "0.2.0",
+    "timestamp": "2026-02-07T12:00:00Z",
+    "project": {
+        "name": "Site Investigation",
+        "author": "Environmental Engineer",
+        "coordinateSystem": { "system": "UTM", "zone": 23, "hemisphere": "S" },
+        "areas": [{ "area": "Area A", "subarea": "Subarea 1" }]
+    },
+    "elements": [{ "family": "well", "id": "el_1", "name": "PM-01", ... }],
+    "campaigns": [{ "id": "camp_1", "name": "Q1 2026", "startDate": "2026-01-01" }],
+    "scenes": [{ "id": "scene_1", "name": "Overview", "viewStart": {}, "viewEnd": {} }],
+    "families": {},
+    "edges": [{ "id": "edge_1", "sourceId": "el_1", "targetId": "el_2", "type": "monitors" }],
+    "areasTree": []
+}</code></pre>
+
+<ul>
+    <li><strong>elements</strong> &mdash; Array of site elements with family, position, properties, and nested observations.</li>
+    <li><strong>campaigns</strong> &mdash; Sampling events with dates, team info, and visibility toggles.</li>
+    <li><strong>scenes</strong> &mdash; Saved camera viewpoints with start/end states and per-element visibility.</li>
+    <li><strong>edges</strong> &mdash; Directed relationships between elements (monitors, flows_to, contains, etc.).</li>
+    <li><strong>families</strong> &mdash; Custom family definitions extending the default PDPL-U set.</li>
+    <li><strong>areasTree</strong> &mdash; Hierarchical project organization (controladora &gt; area &gt; subarea).</li>
+</ul>
+
+<div class="info-card highlight">
+    <h4>ECBT Blockchain Extensions</h4>
+    <p>Blockchain-verified models add <code>chain</code> (hash provenance), <code>merkle</code> (content integrity root), <code>author</code> (key ID), and <code>verification</code> (ECDSA signature) fields. The schema version jumps to 3.0.0 for blockchain models.</p>
+</div>
+
+<!-- BEGIN GENERATED: discoverable-panels -->
+<!-- AUTO-GERADO — NÃO EDITAR À MÃO.
+     Fonte de verdade: src/app/js/utils/ui/_panelDiscoveryRegistry.ts (ORPHAN_PANELS_REGISTRY)
+     Regerar:          node scripts/docs/gen-panels-doc.mjs
+     Gate:             tests/docs-panels-coverage.test.mjs (falha se um painel do registry sumir daqui) -->
+<h2 id="discoverable-panels" data-i18n="doc.title.discoverablePanels">Discoverable Panels &mdash; Painéis Descobríveis</h2>
+<p>Panels that ship with ecbyts but have no fixed toolbar home &mdash; reach them from the top ribbon <strong>More</strong> menu (menu <strong>Mais</strong>). This list is generated from the panel discovery registry, so it never drifts from the code. <em>Painéis que existem no ecbyts mas não têm lugar fixo na barra &mdash; abra-os pelo menu <strong>Mais</strong> do ribbon superior.</em></p>
+<h3>Data &mdash; Dados</h3>
+<table>
+    <tr><th>Panel / Painel</th><th>How to open / Como abrir</th><th>Icon</th></tr>
+    <tr data-panel-id="model_discovery"><td><span data-i18n="panel.modelDiscovery.title" data-icon="search">Descobrir Modelos</span></td><td>Menu Mais &rarr; Descobrir Modelos</td><td><code>search</code></td></tr>
+    <tr data-panel-id="frontier_catalogs"><td><span data-i18n="panel.frontierCatalogs.title" data-icon="book-open">Catálogos do ECBT</span></td><td>Menu Mais &rarr; Catálogos do ECBT</td><td><code>book-open</code></td></tr>
+    <tr data-panel-id="budget"><td><span data-i18n="panel.budget.title" data-icon="dollar-sign">Orçamento Cotado</span></td><td>Menu Mais &rarr; Orçamento Cotado</td><td><code>dollar-sign</code></td></tr>
+</table>
+<h3>Monitoring &mdash; Monitoramento</h3>
+<table>
+    <tr><th>Panel / Painel</th><th>How to open / Como abrir</th><th>Icon</th></tr>
+    <tr data-panel-id="training"><td><span data-i18n="panel.training.title" data-icon="book-open">Treinamento</span></td><td>Menu Mais &rarr; Treinamento</td><td><code>book-open</code></td></tr>
+    <tr data-panel-id="health"><td><span data-i18n="panel.health.title" data-icon="heart">Saúde Ocupacional</span></td><td>Menu Mais &rarr; Saúde Ocupacional</td><td><code>heart</code></td></tr>
+    <tr data-panel-id="risk_assessment"><td><span data-i18n="panel.riskAssessment.title" data-icon="shield-alert">Avaliação de Risco CETESB</span></td><td>Menu Mais &rarr; Avaliação de Risco CETESB</td><td><code>shield-alert</code></td></tr>
+</table>
+<h3>Governance &mdash; Governança</h3>
+<table>
+    <tr><th>Panel / Painel</th><th>How to open / Como abrir</th><th>Icon</th></tr>
+    <tr data-panel-id="timekeeper"><td><span data-i18n="panel.timekeeper.title" data-icon="clock">Timekeeper</span></td><td>Menu Mais &rarr; Timekeeper</td><td><code>clock</code></td></tr>
+    <tr data-panel-id="ecbt_score"><td><span data-i18n="panel.ecbtScore.title" data-icon="dollar-sign">ECBT Score (Veredito da Área)</span></td><td>Menu Mais &rarr; ECBT Score (Veredito da Área)</td><td><code>dollar-sign</code></td></tr>
+</table>
+<!-- END GENERATED: discoverable-panels -->
+
+<!-- ---- Footer ---- -->
+<div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 12px;">
+    <p>ecbyts v0.3.0 &mdash; Environmental Digital Twin Platform</p>
+    <p style="margin-top: 4px;">Distributed under AGPL-3.0-only &mdash; see repository <code>LICENSE</code> for authoritative terms &mdash; <a href="./api-docs.html" style="color: var(--accent); text-decoration: underline;">API Reference</a></p>
+</div>
+
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<!-- CCC-001 CC-S1 Fase C-prep: sidebar scroll script extraído para arquivo
+     externo (CSP script-src-elem sem unsafe-inline). -->
+<script src="./js/boot/docs-sidebar.js" defer></script>
+
+<footer style="text-align:center;padding:24px;color:var(--text-muted);font-size:0.85rem;border-top:1px solid var(--border-color);margin-top:40px;">
+    <a href="/terms.html">Termos de Uso</a>
+    &nbsp;|&nbsp;
+    <a href="/privacy.html">Política de Privacidade</a>
+    &nbsp;|&nbsp;
+    <a href="/">ecbyts</a>
+</footer>
+
+<script type="module" src="./js/utils/i18n/docsInit.js"></script>
+<script type="module" src="./js/utils/docs/videoEmbeds.js"></script>
+</body>
+</html>

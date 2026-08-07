@@ -1,0 +1,1087 @@
+[
+    {
+        "codigo_ibge": "2100055",
+        "nome": "Açailândia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100105",
+        "nome": "Afonso Cunha",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100154",
+        "nome": "Água Doce do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100204",
+        "nome": "Alcântara",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100303",
+        "nome": "Aldeias Altas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100402",
+        "nome": "Altamira do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100436",
+        "nome": "Alto Alegre do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100477",
+        "nome": "Alto Alegre do Pindaré",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100501",
+        "nome": "Alto Parnaíba",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100550",
+        "nome": "Amapá do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100600",
+        "nome": "Amarante do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100709",
+        "nome": "Anajatuba",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100808",
+        "nome": "Anapurus",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100832",
+        "nome": "Apicum-Açu",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100873",
+        "nome": "Araguanã",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100907",
+        "nome": "Araioses",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2100956",
+        "nome": "Arame",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101004",
+        "nome": "Arari",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101103",
+        "nome": "Axixá",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101202",
+        "nome": "Bacabal",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101251",
+        "nome": "Bacabeira",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101301",
+        "nome": "Bacuri",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101350",
+        "nome": "Bacurituba",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101400",
+        "nome": "Balsas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101509",
+        "nome": "Barão de Grajaú",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101608",
+        "nome": "Barra do Corda",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101707",
+        "nome": "Barreirinhas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101772",
+        "nome": "Bela Vista do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101731",
+        "nome": "Belágua",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101806",
+        "nome": "Benedito Leite",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101905",
+        "nome": "Bequimão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101939",
+        "nome": "Bernardo do Mearim",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2101970",
+        "nome": "Boa Vista do Gurupi",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102002",
+        "nome": "Bom Jardim",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102036",
+        "nome": "Bom Jesus das Selvas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102077",
+        "nome": "Bom Lugar",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102101",
+        "nome": "Brejo",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102150",
+        "nome": "Brejo de Areia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102200",
+        "nome": "Buriti",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102309",
+        "nome": "Buriti Bravo",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102325",
+        "nome": "Buriticupu",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102358",
+        "nome": "Buritirana",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102374",
+        "nome": "Cachoeira Grande",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102408",
+        "nome": "Cajapió",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102507",
+        "nome": "Cajari",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102556",
+        "nome": "Campestre do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102606",
+        "nome": "Cândido Mendes",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102705",
+        "nome": "Cantanhede",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102754",
+        "nome": "Capinzal do Norte",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102804",
+        "nome": "Carolina",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2102903",
+        "nome": "Carutapera",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103000",
+        "nome": "Caxias",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103109",
+        "nome": "Cedral",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103125",
+        "nome": "Central do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103158",
+        "nome": "Centro do Guilherme",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103174",
+        "nome": "Centro Novo do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103208",
+        "nome": "Chapadinha",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103257",
+        "nome": "Cidelândia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103307",
+        "nome": "Codó",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103406",
+        "nome": "Coelho Neto",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103505",
+        "nome": "Colinas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103554",
+        "nome": "Conceição do Lago-Açu",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103604",
+        "nome": "Coroatá",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103703",
+        "nome": "Cururupu",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103752",
+        "nome": "Davinópolis",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103802",
+        "nome": "Dom Pedro",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2103901",
+        "nome": "Duque Bacelar",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104008",
+        "nome": "Esperantinópolis",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104057",
+        "nome": "Estreito",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104073",
+        "nome": "Feira Nova do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104081",
+        "nome": "Fernando Falcão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104099",
+        "nome": "Formosa da Serra Negra",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104107",
+        "nome": "Fortaleza dos Nogueiras",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104206",
+        "nome": "Fortuna",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104305",
+        "nome": "Godofredo Viana",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104404",
+        "nome": "Gonçalves Dias",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104503",
+        "nome": "Governador Archer",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104552",
+        "nome": "Governador Edison Lobão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104602",
+        "nome": "Governador Eugênio Barros",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104628",
+        "nome": "Governador Luiz Rocha",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104651",
+        "nome": "Governador Newton Bello",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104677",
+        "nome": "Governador Nunes Freire",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104701",
+        "nome": "Graça Aranha",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104800",
+        "nome": "Grajaú",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2104909",
+        "nome": "Guimarães",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105005",
+        "nome": "Humberto de Campos",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105104",
+        "nome": "Icatu",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105153",
+        "nome": "Igarapé do Meio",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105203",
+        "nome": "Igarapé Grande",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105302",
+        "nome": "Imperatriz",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105351",
+        "nome": "Itaipava do Grajaú",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105401",
+        "nome": "Itapecuru Mirim",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105427",
+        "nome": "Itinga do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105450",
+        "nome": "Jatobá",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105476",
+        "nome": "Jenipapo dos Vieiras",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105500",
+        "nome": "João Lisboa",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105609",
+        "nome": "Joselândia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105658",
+        "nome": "Junco do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105708",
+        "nome": "Lago da Pedra",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105807",
+        "nome": "Lago do Junco",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105948",
+        "nome": "Lago dos Rodrigues",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105906",
+        "nome": "Lago Verde",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105922",
+        "nome": "Lagoa do Mato",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105963",
+        "nome": "Lagoa Grande do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2105989",
+        "nome": "Lajeado Novo",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106003",
+        "nome": "Lima Campos",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106102",
+        "nome": "Loreto",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106201",
+        "nome": "Luís Domingues",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106300",
+        "nome": "Magalhães de Almeida",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106326",
+        "nome": "Maracaçumé",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106359",
+        "nome": "Marajá do Sena",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106375",
+        "nome": "Maranhãozinho",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106409",
+        "nome": "Mata Roma",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106508",
+        "nome": "Matinha",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106607",
+        "nome": "Matões",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106631",
+        "nome": "Matões do Norte",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106672",
+        "nome": "Milagres do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106706",
+        "nome": "Mirador",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106755",
+        "nome": "Miranda do Norte",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106805",
+        "nome": "Mirinzal",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2106904",
+        "nome": "Monção",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107001",
+        "nome": "Montes Altos",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107100",
+        "nome": "Morros",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107209",
+        "nome": "Nina Rodrigues",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107258",
+        "nome": "Nova Colinas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107308",
+        "nome": "Nova Iorque",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107357",
+        "nome": "Nova Olinda do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107407",
+        "nome": "Olho d'Água das Cunhãs",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107456",
+        "nome": "Olinda Nova do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107506",
+        "nome": "Paço do Lumiar",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107605",
+        "nome": "Palmeirândia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107704",
+        "nome": "Paraibano",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107803",
+        "nome": "Parnarama",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2107902",
+        "nome": "Passagem Franca",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108009",
+        "nome": "Pastos Bons",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108058",
+        "nome": "Paulino Neves",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108108",
+        "nome": "Paulo Ramos",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108207",
+        "nome": "Pedreiras",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108256",
+        "nome": "Pedro do Rosário",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108306",
+        "nome": "Penalva",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108405",
+        "nome": "Peri Mirim",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108454",
+        "nome": "Peritoró",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108504",
+        "nome": "Pindaré-Mirim",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108603",
+        "nome": "Pinheiro",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108702",
+        "nome": "Pio XII",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108801",
+        "nome": "Pirapemas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2108900",
+        "nome": "Poção de Pedras",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109007",
+        "nome": "Porto Franco",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109056",
+        "nome": "Porto Rico do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109106",
+        "nome": "Presidente Dutra",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109205",
+        "nome": "Presidente Juscelino",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109239",
+        "nome": "Presidente Médici",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109270",
+        "nome": "Presidente Sarney",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109304",
+        "nome": "Presidente Vargas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109403",
+        "nome": "Primeira Cruz",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109452",
+        "nome": "Raposa",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109502",
+        "nome": "Riachão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109551",
+        "nome": "Ribamar Fiquene",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109601",
+        "nome": "Rosário",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109700",
+        "nome": "Sambaíba",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109759",
+        "nome": "Santa Filomena do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109809",
+        "nome": "Santa Helena",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2109908",
+        "nome": "Santa Inês",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110005",
+        "nome": "Santa Luzia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110039",
+        "nome": "Santa Luzia do Paruá",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110104",
+        "nome": "Santa Quitéria do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110203",
+        "nome": "Santa Rita",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110237",
+        "nome": "Santana do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110278",
+        "nome": "Santo Amaro do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110302",
+        "nome": "Santo Antônio dos Lopes",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110401",
+        "nome": "São Benedito do Rio Preto",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110500",
+        "nome": "São Bento",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110609",
+        "nome": "São Bernardo",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110658",
+        "nome": "São Domingos do Azeitão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110708",
+        "nome": "São Domingos do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110807",
+        "nome": "São Félix de Balsas",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110856",
+        "nome": "São Francisco do Brejão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2110906",
+        "nome": "São Francisco do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111003",
+        "nome": "São João Batista",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111029",
+        "nome": "São João do Carú",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111052",
+        "nome": "São João do Paraíso",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111078",
+        "nome": "São João do Soter",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111102",
+        "nome": "São João dos Patos",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111201",
+        "nome": "São José de Ribamar",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111250",
+        "nome": "São José dos Basílios",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111300",
+        "nome": "São Luís",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111409",
+        "nome": "São Luís Gonzaga do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111508",
+        "nome": "São Mateus do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111532",
+        "nome": "São Pedro da Água Branca",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111573",
+        "nome": "São Pedro dos Crentes",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111607",
+        "nome": "São Raimundo das Mangabeiras",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111631",
+        "nome": "São Raimundo do Doca Bezerra",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111672",
+        "nome": "São Roberto",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111706",
+        "nome": "São Vicente Ferrer",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111722",
+        "nome": "Satubinha",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111748",
+        "nome": "Senador Alexandre Costa",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111763",
+        "nome": "Senador La Rocque",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111789",
+        "nome": "Serrano do Maranhão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111805",
+        "nome": "Sítio Novo",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111904",
+        "nome": "Sucupira do Norte",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2111953",
+        "nome": "Sucupira do Riachão",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112001",
+        "nome": "Tasso Fragoso",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112100",
+        "nome": "Timbiras",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112209",
+        "nome": "Timon",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112233",
+        "nome": "Trizidela do Vale",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112274",
+        "nome": "Tufilândia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112308",
+        "nome": "Tuntum",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112407",
+        "nome": "Turiaçu",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112456",
+        "nome": "Turilândia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112506",
+        "nome": "Tutóia",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112605",
+        "nome": "Urbano Santos",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112704",
+        "nome": "Vargem Grande",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112803",
+        "nome": "Viana",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112852",
+        "nome": "Vila Nova dos Martírios",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2112902",
+        "nome": "Vitória do Mearim",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2113009",
+        "nome": "Vitorino Freire",
+        "uf": "MA"
+    },
+    {
+        "codigo_ibge": "2114007",
+        "nome": "Zé Doca",
+        "uf": "MA"
+    }
+]

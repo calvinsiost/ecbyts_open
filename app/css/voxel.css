@@ -1,0 +1,224 @@
+/* ================================================================
+   VOXEL CONTROLS — Inline ribbon controls for voxel geology
+   Controles minimos do modulo de voxelizacao
+   ================================================================ */
+
+.voxel-controls-inline {
+    align-items: center;
+    gap: 6px;
+}
+
+.voxel-controls-inline .voxel-slider-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--neutral-500, #6b7280);
+}
+
+.voxel-controls-inline .voxel-slider-group label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.voxel-controls-inline input[type="range"] {
+    width: 60px;
+    height: 4px;
+    accent-color: var(--accent-primary, #6366f1);
+    cursor: pointer;
+}
+
+.voxel-controls-inline .voxel-res-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    min-width: 24px;
+    text-align: center;
+    color: var(--primary-text, #1f2937);
+}
+
+.voxel-controls-inline .voxel-stats {
+    font-size: var(--text-xs);
+    color: var(--neutral-400, #9ca3af);
+    white-space: nowrap;
+}
+
+.voxel-controls-inline .toolbar-btn.active {
+    background: var(--accent-primary, #6366f1);
+    color: #fff;
+}
+
+.voxel-controls-inline .voxel-vis-btn:not(.active) {
+    opacity: 0.4;
+}
+
+/* Mode toggle buttons */
+.voxel-controls-inline [data-voxel-mode] {
+    padding: 2px 6px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+}
+
+.voxel-controls-inline [data-voxel-mode].active {
+    background: var(--accent-blue, #3b82f6);
+    color: #fff;
+}
+
+/* ================================================================
+   SIDE PANEL — Volume card & layer inline controls
+   Controles inline no painel lateral (ao selecionar volume ou layer)
+   ================================================================ */
+
+/* Volume mode badge (Solid/Voxels) */
+.volume-mode-badge {
+    font-size: var(--text-xs, 10px);
+    padding: 1px var(--space-1);
+    border-radius: 3px;
+    background: var(--accent-blue, #3b82f6);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: var(--space-1);
+}
+
+.volume-card-zones {
+    font-size: var(--text-xs);
+    color: var(--neutral-400, #9ca3af);
+    margin-left: auto;
+    margin-right: var(--space-1);
+}
+
+/* Shared inline controls (volume + layer) */
+.volume-inline-controls,
+.layer-inline-controls {
+    padding: 6px var(--space-2);
+    border-top: 1px solid var(--neutral-200, #374151);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+[data-theme="dark"] .volume-inline-controls,
+[data-theme="dark"] .layer-inline-controls {
+    border-top-color: var(--neutral-600, #4b5563);
+}
+
+.volume-control-row,
+.layer-control-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-sm);
+}
+
+.volume-control-row label,
+.layer-control-row label {
+    min-width: 50px;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--neutral-500, #6b7280);
+    white-space: nowrap;
+}
+
+.volume-control-row input[type="range"],
+.layer-control-row input[type="range"] {
+    flex: 1;
+    height: 4px;
+    accent-color: var(--accent-primary, #6366f1);
+    cursor: pointer;
+}
+
+.volume-control-row select,
+.layer-control-row select {
+    flex: 1;
+    font-size: var(--text-sm);
+    padding: 2px var(--space-1);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--neutral-300, #d1d5db);
+    background: var(--neutral-0, #fff);
+    color: var(--primary-text, #1f2937);
+}
+
+[data-theme="dark"] .volume-control-row select,
+[data-theme="dark"] .layer-control-row select {
+    background: var(--neutral-700, #374151);
+    border-color: var(--neutral-600, #4b5563);
+    color: var(--primary-text, #f3f4f6);
+}
+
+.volume-res-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    min-width: 24px;
+    text-align: center;
+}
+
+/* Mode toggle buttons in volume card */
+.volume-mode-group {
+    display: flex;
+    gap: 2px;
+}
+
+.volume-mode-btn {
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    border: 1px solid var(--neutral-300, #d1d5db);
+    background: var(--neutral-0, #fff);
+    color: var(--primary-text, #1f2937);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+[data-theme="dark"] .volume-mode-btn {
+    background: var(--neutral-700, #374151);
+    border-color: var(--neutral-600, #4b5563);
+    color: var(--primary-text, #f3f4f6);
+}
+
+.volume-mode-btn.active {
+    background: var(--accent-blue, #3b82f6);
+    color: #fff;
+    border-color: var(--accent-blue, #3b82f6);
+}
+
+/* Layer stats row */
+.layer-inline-stats {
+    font-size: var(--text-xs);
+    color: var(--neutral-400, #9ca3af);
+    text-align: center;
+    padding-top: 2px;
+}
+
+/* Voxel edit mode indicator */
+.voxel-edit-indicator {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(99, 102, 241, 0.9);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-base);
+    z-index: 20;
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    pointer-events: none;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.voxel-edit-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.voxel-edit-hint {
+    font-size: var(--text-sm);
+    opacity: 0.85;
+}

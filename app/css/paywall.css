@@ -1,0 +1,179 @@
+/* ================================================================
+   PAYWALL MODAL — Upgrade prompt on quota exceeded
+   ================================================================ */
+
+/* ---------- Blocked metric info bar ---------- */
+.paywall-blocked-info {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: 14px var(--space-4);
+    margin: 0 0 18px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: var(--radius-sm, 6px);
+}
+
+.paywall-blocked-icon {
+    flex-shrink: 0;
+    font-size: 20px;
+    color: var(--accent-red);
+}
+
+.paywall-blocked-info strong {
+    color: var(--primary-text, #eee);
+}
+
+.paywall-blocked-sub {
+    font-size: 12.5px;
+    color: var(--text-secondary, #aaa);
+}
+
+/* ---------- Plan comparison table ---------- */
+.paywall-plans {
+    overflow-x: auto;
+    margin-bottom: 18px;
+}
+
+.paywall-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-md);
+}
+
+.paywall-table th {
+    text-align: center;
+    padding: 10px var(--space-3);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color, #333);
+    color: var(--primary-text, #eee);
+    vertical-align: bottom;
+}
+
+.paywall-table th:first-child {
+    text-align: left;
+}
+
+.paywall-plan-highlight {
+    background: rgba(79, 195, 247, 0.08);
+    border-radius: var(--radius-sm, 6px) var(--radius-sm, 6px) 0 0;
+}
+
+.paywall-price {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    color: var(--accent-blue, #4fc3f7);
+}
+
+.paywall-table td {
+    padding: 7px var(--space-3);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.06));
+    color: var(--primary-text, #ddd);
+}
+
+.paywall-table td:first-child {
+    text-align: left;
+    color: var(--text-secondary, #aaa);
+    font-size: var(--text-base);
+}
+
+.paywall-metric-label {
+    white-space: nowrap;
+}
+
+.paywall-row-blocked {
+    background: rgba(239, 68, 68, 0.06);
+}
+
+.paywall-row-blocked td:first-child {
+    color: var(--accent-red);
+    font-weight: 600;
+}
+
+/* ---------- CTA buttons ---------- */
+.paywall-cta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-3);
+}
+
+.paywall-btn {
+    flex: 1;
+    min-width: 160px;
+    padding: 10px var(--space-5);
+    border: none;
+    border-radius: var(--radius-sm, 6px);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.paywall-btn--stripe {
+    background: var(--accent-blue, #4fc3f7);
+    color: #fff;
+}
+
+.paywall-btn--stripe:hover {
+    background: #039be5;
+}
+
+.paywall-btn--mp {
+    background: #009ee3;
+    color: #fff;
+}
+
+.paywall-btn--mp:hover {
+    background: #0077b5;
+}
+
+.paywall-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ---------- Footer ---------- */
+.paywall-footer {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary, #666);
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------
+   RESPONSIVE — paywall mobile breakpoints (T8.5)
+   ---------------------------------------------------------------- */
+@media (max-width: 640px) {
+    .paywall-table {
+        font-size: 0.8em;
+    }
+
+    .paywall-table th,
+    .paywall-table td {
+        padding: 6px var(--space-2);
+    }
+
+    .paywall-cta {
+        flex-direction: column;
+    }
+
+    .paywall-btn {
+        min-width: unset;
+        width: 100%;
+        padding: 12px var(--space-4);
+        font-size: 1em;
+    }
+
+    .paywall-btn + .paywall-btn {
+        margin-top: var(--space-2);
+    }
+
+    .paywall-blocked-info {
+        padding: 10px var(--space-3);
+    }
+
+    .paywall-blocked-sub {
+        font-size: 11.5px;
+    }
+}

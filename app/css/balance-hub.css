@@ -1,0 +1,386 @@
+/* ================================================================
+   BALANCE HUB (CBMD-001 F4) — modal 3 abas Saldos / Histórico / Alertas
+   Ownership: .balance-hub-* (ver docs/CLAUDE_REFERENCE.md § CSS File Ownership)
+   Base do modal: .ecbt-overlay/.ecbt-dialog--xl (design-tokens.css).
+   ================================================================ */
+
+/* === TABLIST (WAI-ARIA tabs) === */
+.balance-hub-tablist {
+    display: flex;
+    gap: 4px;
+    padding: 10px 20px 0;
+    border-bottom: 1px solid var(--border-color, #333);
+}
+
+.balance-hub-tab {
+    background: none;
+    border: 1px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-radius: 8px 8px 0 0;
+    color: var(--text-secondary, #9db2c4);
+    font-size: 0.85rem;
+    font-family: inherit;
+    padding: 8px 14px;
+    min-height: 40px;
+    cursor: pointer;
+}
+
+.balance-hub-tab:hover {
+    background: var(--hover-bg, rgba(255, 255, 255, 0.06));
+    color: var(--ecbt-dialog-fg, #e8ecf2);
+}
+
+.balance-hub-tab.active {
+    color: var(--ecbt-dialog-fg, #e8ecf2);
+    border-bottom-color: var(--accent-bright, #60a5fa);
+    font-weight: 600;
+}
+
+.balance-hub-tab:focus-visible {
+    outline: 2px solid var(--accent-bright, #60a5fa);
+    outline-offset: -2px;
+}
+
+/* === PANELS === */
+.balance-hub-panel {
+    padding: 16px 20px 20px;
+    display: grid;
+    gap: 12px;
+    align-content: start;
+}
+
+/* O display:grid acima vence o UA default de [hidden] — sem esta regra os
+   painéis já visitados (lazy-mounted) ficariam empilhados visíveis
+   (bug pego no gate visual Playwright 2026-08-05). */
+.balance-hub-panel[hidden] {
+    display: none;
+}
+
+.balance-hub-panel:focus-visible {
+    outline: 2px solid var(--accent-bright, #60a5fa);
+    outline-offset: -2px;
+}
+
+.balance-hub-empty {
+    padding: 18px 12px;
+    border: 1px dashed var(--border-color, #3a4656);
+    border-radius: 10px;
+    color: var(--text-secondary, #9db2c4);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* === ABA SALDOS === */
+.balance-hub-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.balance-hub-row-label {
+    font-size: 0.82rem;
+    color: var(--text-secondary, #9db2c4);
+}
+
+.balance-hub-row-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.balance-hub-quota {
+    display: grid;
+    gap: 6px;
+}
+
+/* Progressbar da cota — altura explícita (nunca colapsa a 0px). */
+.balance-hub-progress {
+    height: 12px;
+    min-height: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+}
+
+.balance-hub-progress-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: var(--accent-bright, #60a5fa);
+    transition: width 0.25s ease;
+}
+
+.balance-hub-progress-fill[data-tier='ok'] {
+    background: linear-gradient(90deg, var(--success, #34a06f), var(--success-bright, #64cc9f));
+}
+
+.balance-hub-progress-fill[data-tier='warn'] {
+    background: linear-gradient(90deg, var(--warning, #b8860b), var(--warning-bright, #e8b64c));
+}
+
+.balance-hub-progress-fill[data-tier='critical'] {
+    background: linear-gradient(90deg, var(--error, #a83a3a), var(--error-bright, #e56a6a));
+}
+
+.balance-hub-alert {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid transparent;
+}
+
+.balance-hub-alert[data-tier='warn'] {
+    background: rgba(232, 182, 76, 0.14);
+    border-color: rgba(232, 182, 76, 0.45);
+    color: var(--warning-soft, #f0cd7e);
+}
+
+.balance-hub-alert[data-tier='critical'] {
+    background: rgba(229, 106, 106, 0.14);
+    border-color: rgba(229, 106, 106, 0.5);
+    color: var(--error-soft, #f3a0a0);
+}
+
+.balance-hub-topup {
+    justify-self: start;
+    min-height: 40px;
+}
+
+/* === ABA HISTÓRICO === */
+.balance-hub-hist-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 10px;
+}
+
+.balance-hub-hist-toolbar label {
+    display: grid;
+    gap: 4px;
+    font-size: 0.78rem;
+    color: var(--text-secondary, #9db2c4);
+}
+
+.balance-hub-period {
+    background: var(--bg-primary, #121220);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 6px;
+    color: var(--text-primary, #e0e0e0);
+    padding: 6px 10px;
+    font-size: 0.82rem;
+    font-family: inherit;
+    min-height: 36px;
+}
+
+/* Table com scroll horizontal interno (nunca estoura o modal). */
+.balance-hub-table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+}
+
+.balance-hub-table caption {
+    text-align: left;
+    font-size: 0.75rem;
+    color: var(--text-secondary, #9db2c4);
+    padding-bottom: 6px;
+}
+
+.balance-hub-table th,
+.balance-hub-table td {
+    padding: 7px 10px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.balance-hub-table th {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary, #9db2c4);
+    border-bottom-color: var(--border-color, #3a4656);
+}
+
+.balance-hub-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.balance-hub-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* === ABA ALERTAS === */
+.balance-hub-alerts-intro {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--text-secondary, #9db2c4);
+    line-height: 1.45;
+}
+
+.balance-hub-fieldset {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 10px 14px 12px;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.balance-hub-fieldset legend {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary, #9db2c4);
+    padding: 0 6px;
+}
+
+.balance-hub-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.86rem;
+    min-height: 32px;
+    cursor: pointer;
+}
+
+.balance-hub-check input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-bright, #60a5fa);
+    cursor: pointer;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+    .balance-hub-tablist {
+        padding: 8px 12px 0;
+        overflow-x: auto;
+    }
+
+    .balance-hub-panel {
+        padding: 12px;
+    }
+
+    .balance-hub-hist-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .balance-hub-topup {
+        justify-self: stretch;
+        width: 100%;
+    }
+}
+
+/* === F12 — Coluna NFSe do Histórico (badge WCAG 1.4.1 + ações) === */
+.balance-hub-nfse-cell {
+    white-space: nowrap;
+}
+
+.balance-hub-nfse-none {
+    color: var(--text-muted, #94a3b8);
+}
+
+.balance-hub-nfse-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.balance-hub-nfse-icon {
+    font-size: 11px;
+    line-height: 1;
+}
+
+/* WCAG 1.4.1: cor NUNCA é o único canal (ícone + rótulo sempre presentes).
+   Tiers alinhados ao catálogo de _nfseStatusBadgePure.ts. */
+.nfse-badge--info {
+    color: var(--accent-soft, #93c5fd);
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.nfse-badge--pending {
+    color: var(--warning-soft, #fcd34d);
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+.nfse-badge--success {
+    color: var(--success-soft, #86efac);
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+.nfse-badge--danger {
+    color: var(--error-soft, #fca5a5);
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.nfse-badge--neutral {
+    color: var(--text-secondary, #cbd5e1);
+    background: rgba(148, 163, 184, 0.15);
+    border-color: rgba(148, 163, 184, 0.4);
+}
+
+.balance-hub-nfse-actions {
+    display: inline-flex;
+    gap: 6px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* === F12.6 — mini-modal de cancelamento (motivo obrigatório) === */
+.balance-hub-nfse-cancel-modal {
+    margin-top: 12px;
+    padding: 12px;
+    border: 1px solid var(--border-color, #334155);
+    border-radius: 8px;
+    background: var(--bg-secondary, #1e293b);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.balance-hub-nfse-cancel-reason {
+    width: 100%;
+    resize: vertical;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #334155);
+    background: var(--bg-primary, #0f172a);
+    color: var(--text-primary, #e2e8f0);
+}
+
+.balance-hub-nfse-cancel-error {
+    margin: 0;
+    color: var(--error-soft, #fca5a5);
+    font-size: 12px;
+}
+
+.balance-hub-nfse-cancel-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .balance-hub-nfse-cell {
+        white-space: normal;
+    }
+}

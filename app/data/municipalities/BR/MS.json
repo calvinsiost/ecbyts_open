@@ -1,0 +1,397 @@
+[
+    {
+        "codigo_ibge": "5000203",
+        "nome": "Água Clara",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5000252",
+        "nome": "Alcinópolis",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5000609",
+        "nome": "Amambai",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5000708",
+        "nome": "Anastácio",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5000807",
+        "nome": "Anaurilândia",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5000856",
+        "nome": "Angélica",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5000906",
+        "nome": "Antônio João",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5001003",
+        "nome": "Aparecida do Taboado",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5001102",
+        "nome": "Aquidauana",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5001243",
+        "nome": "Aral Moreira",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5001508",
+        "nome": "Bandeirantes",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5001904",
+        "nome": "Bataguassu",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002001",
+        "nome": "Batayporã",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002100",
+        "nome": "Bela Vista",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002159",
+        "nome": "Bodoquena",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002209",
+        "nome": "Bonito",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002308",
+        "nome": "Brasilândia",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002407",
+        "nome": "Caarapó",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002605",
+        "nome": "Camapuã",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002704",
+        "nome": "Campo Grande",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002803",
+        "nome": "Caracol",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002902",
+        "nome": "Cassilândia",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5002951",
+        "nome": "Chapadão do Sul",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003108",
+        "nome": "Corguinho",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003157",
+        "nome": "Coronel Sapucaia",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003207",
+        "nome": "Corumbá",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003256",
+        "nome": "Costa Rica",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003306",
+        "nome": "Coxim",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003454",
+        "nome": "Deodápolis",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003488",
+        "nome": "Dois Irmãos do Buriti",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003504",
+        "nome": "Douradina",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003702",
+        "nome": "Dourados",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003751",
+        "nome": "Eldorado",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003801",
+        "nome": "Fátima do Sul",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5003900",
+        "nome": "Figueirão",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004007",
+        "nome": "Glória de Dourados",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004106",
+        "nome": "Guia Lopes da Laguna",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004304",
+        "nome": "Iguatemi",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004403",
+        "nome": "Inocência",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004502",
+        "nome": "Itaporã",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004601",
+        "nome": "Itaquiraí",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004700",
+        "nome": "Ivinhema",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004809",
+        "nome": "Japorã",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5004908",
+        "nome": "Jaraguari",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005004",
+        "nome": "Jardim",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005103",
+        "nome": "Jateí",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005152",
+        "nome": "Juti",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005202",
+        "nome": "Ladário",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005251",
+        "nome": "Laguna Carapã",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005400",
+        "nome": "Maracaju",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005608",
+        "nome": "Miranda",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005681",
+        "nome": "Mundo Novo",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005707",
+        "nome": "Naviraí",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5005806",
+        "nome": "Nioaque",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006002",
+        "nome": "Nova Alvorada do Sul",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006200",
+        "nome": "Nova Andradina",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006259",
+        "nome": "Novo Horizonte do Sul",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006275",
+        "nome": "Paraíso das Águas",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006309",
+        "nome": "Paranaíba",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006358",
+        "nome": "Paranhos",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006408",
+        "nome": "Pedro Gomes",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006606",
+        "nome": "Ponta Porã",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5006903",
+        "nome": "Porto Murtinho",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007109",
+        "nome": "Ribas do Rio Pardo",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007208",
+        "nome": "Rio Brilhante",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007307",
+        "nome": "Rio Negro",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007406",
+        "nome": "Rio Verde de Mato Grosso",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007505",
+        "nome": "Rochedo",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007554",
+        "nome": "Santa Rita do Pardo",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007695",
+        "nome": "São Gabriel do Oeste",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007802",
+        "nome": "Selvíria",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007703",
+        "nome": "Sete Quedas",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007901",
+        "nome": "Sidrolândia",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007935",
+        "nome": "Sonora",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007950",
+        "nome": "Tacuru",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5007976",
+        "nome": "Taquarussu",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5008008",
+        "nome": "Terenos",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5008305",
+        "nome": "Três Lagoas",
+        "uf": "MS"
+    },
+    {
+        "codigo_ibge": "5008404",
+        "nome": "Vicentina",
+        "uf": "MS"
+    }
+]

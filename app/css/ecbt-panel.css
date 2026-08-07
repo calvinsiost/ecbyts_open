@@ -1,0 +1,433 @@
+/* ECBT Score panel — "Veredito da Área" modal styling.
+   Namespace: .ecbt-panel-*  (over the shared .ecbt-overlay / .ecbt-dialog tokens).
+   File owner: app/css/ecbt-panel.css (CLAUDE.md File Ownership rule).
+*/
+
+.ecbt-panel-overlay {
+    z-index: 9000;
+}
+
+.ecbt-panel-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    min-width: 720px;
+    padding: var(--space-4) var(--space-5);
+}
+
+.ecbt-panel-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: var(--space-2);
+}
+.ecbt-panel-header h2 {
+    margin: 0;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.92);
+}
+.ecbt-panel-subtitle {
+    flex: 1;
+    color: rgba(148, 163, 184, 0.85);
+    font-size: var(--text-base);
+}
+.ecbt-panel-close {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: var(--radius-md);
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: var(--text-2xl);
+    line-height: 1;
+}
+.ecbt-panel-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+.ecbt-panel-audit-trail {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #fff;
+    border-radius: var(--radius-md);
+    padding: var(--space-1) 10px;
+    cursor: pointer;
+    font-size: var(--text-base);
+    font-family: inherit;
+    margin-right: 6px;
+    transition: background 0.15s, border-color 0.15s;
+}
+.ecbt-panel-audit-trail:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.46);
+}
+.ecbt-panel-audit-trail:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+.ecbt-panel-body {
+    min-height: 220px;
+}
+
+.ecbt-panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 14px;
+}
+
+.ecbt-panel-block {
+    background: rgba(15, 20, 30, 0.66);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+.ecbt-panel-block header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: var(--space-1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.ecbt-panel-block h3 {
+    margin: 0;
+    font-size: var(--text-md);
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 700;
+}
+.ecbt-panel-sub,
+.ecbt-panel-mode {
+    font-size: var(--text-xs);
+    color: rgba(148, 163, 184, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.ecbt-panel-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+}
+.ecbt-panel-bar--thin {
+    height: 6px;
+    flex: 1;
+}
+.ecbt-panel-bar--thin > span {
+    display: block;
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.2s ease-out;
+}
+
+.ecbt-panel-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: var(--text-base);
+}
+.ecbt-panel-key {
+    color: rgba(148, 163, 184, 0.85);
+}
+.ecbt-panel-value {
+    color: rgba(255, 255, 255, 0.92);
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-weight: 600;
+}
+
+.ecbt-panel-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 48px;
+    gap: 6px;
+    align-items: center;
+    font-size: var(--text-sm);
+}
+
+.ecbt-panel-veto {
+    background: rgba(239, 68, 68, 0.16);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: rgba(252, 165, 165, 0.96);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-align: center;
+}
+
+.ecbt-panel-block--monetary {
+    border: 2px solid rgba(255, 255, 255, 0.08);
+}
+.ecbt-panel-big {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-weight: 800;
+    font-size: 28px;
+    text-align: center;
+    padding: 6px 0;
+    letter-spacing: -0.5px;
+}
+.ecbt-panel-band {
+    font-size: var(--text-sm);
+    color: rgba(203, 213, 225, 0.88);
+    text-align: center;
+    font-family: 'JetBrains Mono', Consolas, monospace;
+}
+
+.ecbt-panel-hidden {
+    display: none;
+}
+
+/* F8 addendum — netZero banner + compensation chips */
+.ecbt-panel-netzero-banner {
+    background: rgba(34, 197, 94, 0.16);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: rgba(187, 247, 208, 0.96);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-align: center;
+    margin: 2px 0 6px;
+}
+
+.ecbt-panel-comp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.06);
+}
+.ecbt-panel-comp-label {
+    font-size: var(--text-xs);
+    color: rgba(203, 213, 225, 0.88);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    width: 100%;
+}
+.ecbt-panel-comp-chip {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    color: rgba(187, 247, 208, 0.94);
+    padding: 2px 6px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    font-family: 'JetBrains Mono', Consolas, monospace;
+}
+
+@media (max-width: 800px) {
+    .ecbt-panel-dialog {
+        min-width: 0;
+        width: 95vw;
+    }
+    .ecbt-panel-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   ERP / DRE report (ERP-DRE-001 §11.4 MI-5).
+   Only present in the DOM when CONFIG.FEATURES.ERP_DRE === true.
+   ============================================================ */
+
+.ecbt-panel-dre-trigger {
+    background: rgba(96, 165, 250, 0.16);
+    border: 1px solid rgba(96, 165, 250, 0.4);
+    color: #dbeafe;
+    border-radius: var(--radius-md);
+    padding: var(--space-1) 10px;
+    cursor: pointer;
+    font-size: var(--text-base);
+    font-family: inherit;
+    margin-right: 6px;
+    transition: background 0.15s, border-color 0.15s;
+}
+.ecbt-panel-dre-trigger:hover {
+    background: rgba(96, 165, 250, 0.28);
+    border-color: rgba(96, 165, 250, 0.6);
+}
+.ecbt-panel-dre-trigger:focus-visible {
+    outline: 2px solid rgba(96, 165, 250, 0.6);
+    outline-offset: 2px;
+}
+
+.ecbt-panel-dre {
+    margin-top: var(--space-3);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--space-3);
+}
+
+.erp-dre {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+.erp-dre-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+.erp-dre-title {
+    margin: 0;
+    font-size: var(--text-md);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+}
+.erp-dre-toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+.erp-dre-std-label {
+    font-size: var(--text-xs);
+    color: rgba(148, 163, 184, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.erp-dre-standard {
+    background: rgba(15, 20, 30, 0.85);
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-md);
+    padding: 4px 8px;
+    font-family: inherit;
+    font-size: var(--text-sm);
+    cursor: pointer;
+}
+.erp-dre-standard:focus-visible {
+    outline: 2px solid rgba(96, 165, 250, 0.6);
+    outline-offset: 1px;
+}
+
+.erp-dre-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+.erp-dre-row > td {
+    padding: 6px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.erp-dre-row--emphasis > td {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.03);
+}
+.erp-dre-label {
+    color: rgba(226, 232, 240, 0.9);
+}
+.erp-dre-amount {
+    text-align: right;
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    color: rgba(226, 232, 240, 0.92);
+    white-space: nowrap;
+}
+.erp-dre-amount--neg {
+    color: #fca5a5;
+}
+.erp-dre-row--clickable {
+    cursor: pointer;
+}
+.erp-dre-row--clickable:hover > td {
+    background: rgba(96, 165, 250, 0.08);
+}
+.erp-dre-row--clickable:focus-visible {
+    outline: 2px solid rgba(96, 165, 250, 0.6);
+    outline-offset: -2px;
+}
+.erp-dre-caret {
+    display: inline-block;
+    width: 1em;
+    color: rgba(148, 163, 184, 0.85);
+    font-size: 0.8em;
+}
+.erp-dre-drill-cell {
+    padding: 8px 12px 10px 26px;
+    background: rgba(10, 14, 22, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.erp-dre-drill-line {
+    font-size: var(--text-xs);
+    color: rgba(148, 163, 184, 0.92);
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    line-height: 1.6;
+    word-break: break-word;
+}
+.erp-dre-drill-line strong {
+    color: rgba(203, 213, 225, 0.95);
+}
+
+.erp-dre-reconciliation {
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px dashed rgba(255, 255, 255, 0.12);
+}
+.erp-dre-recon-title {
+    margin: 0 0 var(--space-1);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: rgba(148, 163, 184, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.erp-dre-empty {
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: rgba(96, 165, 250, 0.08);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: #cdddf5;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+/* ERP-DRE-001 RF-2/RF-4/RF-10/RF-11 — toolbar buttons + empty-state actions. */
+.erp-dre-actions,
+.erp-dre-export {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1, 6px);
+    margin-left: auto;
+}
+.erp-dre-export {
+    margin-left: var(--space-2, 10px);
+}
+.erp-dre-export-label {
+    font-size: var(--text-xs, 11px);
+    color: rgba(148, 163, 184, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.erp-dre-btn {
+    background: rgba(15, 20, 30, 0.85);
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-md, 6px);
+    padding: 4px 10px;
+    font-family: inherit;
+    font-size: var(--text-sm, 13px);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+.erp-dre-btn:hover {
+    background: rgba(96, 165, 250, 0.18);
+    border-color: rgba(96, 165, 250, 0.5);
+}
+.erp-dre-btn:focus-visible {
+    outline: 2px solid rgba(96, 165, 250, 0.6);
+    outline-offset: 1px;
+}
+.erp-dre-empty-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2, 10px);
+    margin-top: 12px;
+}

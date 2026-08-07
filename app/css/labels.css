@@ -1,0 +1,338 @@
+/* ================================================================
+   3D LABELS — CSS2DRenderer Overlay Styles
+   ================================================================
+
+   Estilos para labels 3D renderizadas via CSS2DRenderer do Three.js.
+   Labels sao elementos DOM posicionados sobre o canvas WebGL,
+   sempre viradas para a camera (billboard).
+
+   Categorias:
+   - .label-3d-name   — nome do elemento (poço, pluma, etc.)
+   - .label-3d-obs    — valor da última observação
+   - .label-3d-geo    — nome da camada geológica (litologia)
+   - .label-3d-title  — título do modelo
+
+   ================================================================ */
+
+/* ---- Base ---- */
+.label-3d {
+    pointer-events: none;
+    white-space: nowrap;
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
+    line-height: 1.2;
+    font-size: var(--text-sm);
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.65);
+    /* HUD-UX-PAIN-DRAIN-001 W4.1 (D22): borda sutil separa o chip do
+       terreno claro (marrom/bege) onde o fundo preto translúcido se
+       fundia com sombras do modelo. */
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    text-shadow:
+        0 0 3px rgba(0, 0, 0, 0.9),
+        0 1px 2px rgba(0, 0, 0, 0.7);
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* ---- Element Name ---- */
+.label-3d-name {
+    font-weight: 600;
+    font-size: var(--text-xs, 10px);
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+}
+
+/* ---- Observation Value ---- */
+.label-3d-obs {
+    font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+    font-size: var(--text-xs, 10px);
+    color: #7dffb3;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 1px var(--space-1);
+}
+
+/* ---- Geology Layer ---- */
+.label-3d-geo {
+    font-size: var(--text-xs, 10px);
+    font-style: italic;
+    border-left: 2px solid currentColor;
+    padding-left: var(--space-1);
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0.85;
+}
+
+/* ---- Model Title (CSS2DObject em 3D, modo legado anchor='world') ---- */
+.label-3d-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+/* ---- Model Title Overlay (screen-space, anchor !== 'world') ----
+   Overlay estável em relação ao viewport; ancora em canto/centro do canvas-container.
+   pointer-events: none para não bloquear orbit/click no canvas 3D. */
+.model-title-overlay {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    max-width: calc(100% - 40px);
+}
+
+.model-title-text,
+.model-subtitle-text {
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+    text-align: center;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.model-title-text {
+    font-weight: 700;
+}
+
+.model-subtitle-text {
+    font-weight: 400;
+    opacity: 0.92;
+}
+
+/* Alinhar subtitle com title para anchors laterais */
+.model-title-anchor-top-left,
+.model-title-anchor-bottom-left {
+    align-items: flex-start;
+}
+.model-title-anchor-top-right,
+.model-title-anchor-bottom-right {
+    align-items: flex-end;
+}
+
+.model-title-anchor-top-left {
+    top: 16px;
+    left: 16px;
+}
+.model-title-anchor-top-center {
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.model-title-anchor-top-right {
+    top: 16px;
+    right: 16px;
+}
+.model-title-anchor-bottom-left {
+    bottom: 16px;
+    left: 16px;
+}
+.model-title-anchor-bottom-center {
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.model-title-anchor-bottom-right {
+    bottom: 16px;
+    right: 16px;
+}
+
+/* ---- Hidden (LOD culling) ---- */
+.label-3d-hidden {
+    display: none !important;
+}
+
+/* ---- Boundary Auto Label (SPEC_BOUNDARY_3D_LABELS_AUTO) ----
+   Chip flat semi-transparente flutuando no centróide de polígonos
+   boundary (municípios, áreas, sites). Auto-criada via meshFactory
+   quando element.meta.label ou element.name é presente.
+   Fade-in 200ms (controlado inline via style.transition no manager.js).
+   LOD via style.opacity (0 quando câmera >50km do centróide). */
+.boundary-label-chip {
+    font-weight: 600;
+    font-size: var(--text-xs, 11px);
+    letter-spacing: 0.2px;
+    background: rgba(30, 30, 46, 0.3);
+    color: #ffffff;
+    padding: 2px var(--space-2);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    text-shadow:
+        0 0 4px rgba(0, 0, 0, 0.95),
+        0 1px 2px rgba(0, 0, 0, 0.8);
+    max-width: clamp(160px, 60vw, 220px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ================================================================
+   LABEL SETTINGS MODAL
+   ================================================================ */
+
+/* Global toggle */
+.label-settings-global {
+    padding: var(--space-2) 0 var(--space-3);
+    border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1));
+    margin-bottom: var(--space-3);
+}
+
+.label-toggle-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    cursor: pointer;
+    font-size: var(--text-lg);
+    font-weight: 600;
+}
+
+.label-toggle-text {
+    color: var(--text-primary, #e0e0e0);
+}
+
+/* Category card */
+.label-category-card {
+    border: 1px solid var(--border-color, rgba(255,255,255,0.1));
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-2);
+    overflow: hidden;
+    background: var(--surface-secondary, rgba(255,255,255,0.03));
+}
+
+.label-category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: background 0.15s;
+}
+
+.label-category-header:hover {
+    background: var(--surface-hover, rgba(255,255,255,0.06));
+}
+
+.label-category-icon {
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+}
+
+.label-category-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.label-category-name {
+    flex: 1;
+    font-size: var(--text-md);
+    font-weight: 500;
+    color: var(--text-primary, #e0e0e0);
+}
+
+.label-category-toggle {
+    display: flex;
+    align-items: center;
+}
+
+/* Category body (settings) */
+.label-category-body {
+    padding: var(--space-2) var(--space-3) var(--space-3);
+    border-top: 1px solid var(--border-color, rgba(255,255,255,0.08));
+}
+
+/* Setting row */
+.label-setting-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    font-size: var(--text-base);
+    color: var(--text-secondary, #aaa);
+}
+
+.label-setting-row label {
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.label-setting-row input[type="range"] {
+    flex: 1;
+    max-width: clamp(80px, 30vw, 120px);
+    accent-color: var(--accent-color, #4a90d9);
+}
+
+.label-setting-row input[type="color"] {
+    width: 28px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid var(--border-color, rgba(255,255,255,0.15));
+    border-radius: 3px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.label-setting-row input[type="text"],
+.label-setting-row select {
+    flex: 1;
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-base);
+    border: 1px solid var(--border-color, rgba(255,255,255,0.15));
+    border-radius: 3px;
+    background: var(--input-bg, rgba(0,0,0,0.2));
+    color: var(--text-primary, #e0e0e0);
+}
+
+.label-setting-value {
+    min-width: 35px;
+    text-align: right;
+    font-family: monospace;
+    font-size: var(--text-sm);
+    opacity: 0.8;
+}
+
+.label-color-options {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.label-color-options label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-width: auto;
+    cursor: pointer;
+}
+
+/* Footer */
+.label-settings-footer {
+    padding: var(--space-3) 0 var(--space-1);
+    border-top: 1px solid var(--border-color, rgba(255,255,255,0.1));
+    margin-top: var(--space-2);
+    text-align: right;
+}
+
+.label-settings-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.label-settings-footer .btn svg {
+    width: 14px;
+    height: 14px;
+}

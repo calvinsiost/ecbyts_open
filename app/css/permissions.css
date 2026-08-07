@@ -1,0 +1,161 @@
+/* ================================================================
+   PERMISSIONS MODAL — RBAC access rules management
+   Usa classes .ecbt-* (design-tokens.css) como base.
+   ================================================================ */
+
+/* --- Rule row --- */
+.perm-rule {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--bg-primary, #121220);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color, #333);
+}
+
+.perm-rule-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.perm-rule-email {
+    font-weight: 600;
+    font-size: var(--text-md);
+    color: var(--text-primary, #e0e0e0);
+}
+
+.perm-rule-role {
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.perm-rule-meta {
+    font-size: var(--text-base);
+    color: var(--text-tertiary, #666);
+}
+
+/* --- Rule action buttons --- */
+.perm-rule-btn {
+    padding: var(--space-1) 10px;
+    border-radius: var(--radius-lg);
+    border: 1px solid;
+    background: transparent;
+    cursor: pointer;
+    font-size: var(--text-base);
+    transition: all 0.15s ease;
+}
+.perm-rule-btn--edit {
+    color: var(--accent-bright, #60a5fa);
+    border-color: var(--accent-bright, #60a5fa);
+}
+.perm-rule-btn--edit:hover { background: rgba(96, 165, 250, 0.1); }
+
+.perm-rule-btn--remove {
+    color: #f87171;
+    border-color: #f87171;
+}
+.perm-rule-btn--remove:hover { background: rgba(248, 113, 113, 0.1); }
+
+/* --- Add rule button --- */
+.perm-add-btn {
+    padding: 6px var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--accent-bright, #60a5fa);
+    background: transparent;
+    color: var(--accent-bright, #60a5fa);
+    cursor: pointer;
+    font-size: var(--text-md);
+    transition: all 0.15s ease;
+}
+.perm-add-btn:hover { background: rgba(96, 165, 250, 0.1); }
+
+/* --- Form panel --- */
+.perm-form {
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.perm-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.perm-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.perm-form-field label {
+    font-size: var(--text-base);
+    color: var(--text-tertiary, #666);
+}
+
+.perm-form-field input,
+.perm-form-field select {
+    width: 100%;
+    padding: 6px var(--space-2);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color, #333);
+    background: var(--bg-primary, #121220);
+    color: var(--text-primary, #e0e0e0);
+    font-size: var(--text-md);
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.perm-form-field input:focus,
+.perm-form-field select:focus {
+    border-color: var(--accent-bright, #60a5fa);
+    outline: none;
+}
+
+/* --- Overrides grid --- */
+.perm-overrides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.perm-override-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-base);
+}
+
+.perm-override-label {
+    min-width: 50px;
+    color: var(--text-secondary, #aaa);
+}
+
+.perm-override-item select {
+    flex: 1;
+    padding: 3px 6px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color, #333);
+    background: var(--bg-primary, #121220);
+    color: var(--text-primary, #e0e0e0);
+    font-size: var(--text-base);
+}
+
+/* --- Empty state --- */
+.perm-empty {
+    opacity: 0.6;
+    font-size: var(--text-md);
+    color: var(--text-tertiary, #666);
+}
+
+/* --- Rules list --- */
+.perm-rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}

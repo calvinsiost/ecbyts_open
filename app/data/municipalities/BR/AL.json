@@ -1,0 +1,512 @@
+[
+    {
+        "codigo_ibge": "2700102",
+        "nome": "Água Branca",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2700201",
+        "nome": "Anadia",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2700300",
+        "nome": "Arapiraca",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2700409",
+        "nome": "Atalaia",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2700508",
+        "nome": "Barra de Santo Antônio",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2700607",
+        "nome": "Barra de São Miguel",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2700706",
+        "nome": "Batalha",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2700805",
+        "nome": "Belém",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2700904",
+        "nome": "Belo Monte",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701001",
+        "nome": "Boca da Mata",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701100",
+        "nome": "Branquinha",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701209",
+        "nome": "Cacimbinhas",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701308",
+        "nome": "Cajueiro",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701357",
+        "nome": "Campestre",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701407",
+        "nome": "Campo Alegre",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701506",
+        "nome": "Campo Grande",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701605",
+        "nome": "Canapi",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701704",
+        "nome": "Capela",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701803",
+        "nome": "Carneiros",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2701902",
+        "nome": "Chã Preta",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702009",
+        "nome": "Coité do Nóia",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702108",
+        "nome": "Colônia Leopoldina",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702207",
+        "nome": "Coqueiro Seco",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702306",
+        "nome": "Coruripe",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702355",
+        "nome": "Craíbas",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702405",
+        "nome": "Delmiro Gouveia",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702504",
+        "nome": "Dois Riachos",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702553",
+        "nome": "Estrela de Alagoas",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702603",
+        "nome": "Feira Grande",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702702",
+        "nome": "Feliz Deserto",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702801",
+        "nome": "Flexeiras",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2702900",
+        "nome": "Girau do Ponciano",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703007",
+        "nome": "Ibateguara",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703106",
+        "nome": "Igaci",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703205",
+        "nome": "Igreja Nova",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703304",
+        "nome": "Inhapi",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703403",
+        "nome": "Jacaré dos Homens",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703502",
+        "nome": "Jacuípe",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703601",
+        "nome": "Japaratinga",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703700",
+        "nome": "Jaramataia",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703759",
+        "nome": "Jequiá da Praia",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703809",
+        "nome": "Joaquim Gomes",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2703908",
+        "nome": "Jundiá",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704005",
+        "nome": "Junqueiro",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704104",
+        "nome": "Lagoa da Canoa",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704203",
+        "nome": "Limoeiro de Anadia",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704302",
+        "nome": "Maceió",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704401",
+        "nome": "Major Isidoro",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704906",
+        "nome": "Mar Vermelho",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704500",
+        "nome": "Maragogi",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704609",
+        "nome": "Maravilha",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704708",
+        "nome": "Marechal Deodoro",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2704807",
+        "nome": "Maribondo",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705002",
+        "nome": "Mata Grande",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705101",
+        "nome": "Matriz de Camaragibe",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705200",
+        "nome": "Messias",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705309",
+        "nome": "Minador do Negrão",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705408",
+        "nome": "Monteirópolis",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705507",
+        "nome": "Murici",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705606",
+        "nome": "Novo Lino",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705705",
+        "nome": "Olho d'Água das Flores",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705804",
+        "nome": "Olho d'Água do Casado",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2705903",
+        "nome": "Olho d'Água Grande",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706000",
+        "nome": "Olivença",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706109",
+        "nome": "Ouro Branco",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706208",
+        "nome": "Palestina",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706307",
+        "nome": "Palmeira dos Índios",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706406",
+        "nome": "Pão de Açúcar",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706422",
+        "nome": "Pariconha",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706448",
+        "nome": "Paripueira",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706505",
+        "nome": "Passo de Camaragibe",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706604",
+        "nome": "Paulo Jacinto",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706703",
+        "nome": "Penedo",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706802",
+        "nome": "Piaçabuçu",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2706901",
+        "nome": "Pilar",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707008",
+        "nome": "Pindoba",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707107",
+        "nome": "Piranhas",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707206",
+        "nome": "Poço das Trincheiras",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707305",
+        "nome": "Porto Calvo",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707404",
+        "nome": "Porto de Pedras",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707503",
+        "nome": "Porto Real do Colégio",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707602",
+        "nome": "Quebrangulo",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707701",
+        "nome": "Rio Largo",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707800",
+        "nome": "Roteiro",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2707909",
+        "nome": "Santa Luzia do Norte",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708006",
+        "nome": "Santana do Ipanema",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708105",
+        "nome": "Santana do Mundaú",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708204",
+        "nome": "São Brás",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708303",
+        "nome": "São José da Laje",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708402",
+        "nome": "São José da Tapera",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708501",
+        "nome": "São Luís do Quitunde",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708600",
+        "nome": "São Miguel dos Campos",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708709",
+        "nome": "São Miguel dos Milagres",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708808",
+        "nome": "São Sebastião",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708907",
+        "nome": "Satuba",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2708956",
+        "nome": "Senador Rui Palmeira",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2709004",
+        "nome": "Tanque d'Arca",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2709103",
+        "nome": "Taquarana",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2709152",
+        "nome": "Teotônio Vilela",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2709202",
+        "nome": "Traipu",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2709301",
+        "nome": "União dos Palmares",
+        "uf": "AL"
+    },
+    {
+        "codigo_ibge": "2709400",
+        "nome": "Viçosa",
+        "uf": "AL"
+    }
+]

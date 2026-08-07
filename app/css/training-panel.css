@@ -1,0 +1,1625 @@
+/* ================================================================
+   TRAINING PANEL — Training Module LMS MVP styles
+   ================================================================
+   Layout: slide-in right panel, 480px width, responsive.
+   Tabs: My Courses, Catalog, Certificates.
+
+   Must NOT define: .btn-* base, .modal-* base, .form-* base
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   PANEL SHELL
+   ---------------------------------------------------------------- */
+
+.training-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 480px;
+    max-width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background: var(--panel-bg, #091522);
+    border-left: 1px solid var(--border-color, #2b3c56);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Keep Training above generic deep-link overlays (9000), below auth/tour/loading. */
+    z-index: 9001;
+    font-family: inherit;
+    color: var(--text-primary, #e2e8f0);
+    box-shadow: var(--training-panel-shadow-01, -4px 0 16px color-mix(in srgb, var(--shadow-color, rgb(0, 0, 0)) 35%, transparent));
+    /* TRAINING-LEARNER-MIN-001 DoD#5 (contraste AA): o painel é dark-chrome em
+       TODOS os temas (bg #091522 nunca muda). Escopar os tokens de texto para
+       garantir claro-sobre-escuro mesmo quando o tema global é light (onde
+       --text-primary vira #1b252e, invisível sobre o bg escuro do painel).
+       Não afeta .lms-lesson (renderizado fora do DOM do painel, via .ecbt-dialog). */
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #7c8aa0;
+    --neutral-700: #334155;
+}
+
+.training-panel--teacher-focus {
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    height: auto;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 24%, transparent);
+    border-radius: var(--radius-lg, 10px);
+}
+
+.training-panel-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: color-mix(in srgb, var(--shadow-color, rgb(2, 8, 16)) 42%, transparent);
+    backdrop-filter: saturate(0.8) brightness(0.82);
+    pointer-events: none;
+}
+
+.training-panel-scrim--teacher-focus {
+    background: color-mix(in srgb, var(--shadow-color, rgb(2, 8, 16)) 84%, transparent);
+    backdrop-filter: saturate(0.42) brightness(0.46) blur(4px);
+    pointer-events: auto;
+}
+
+.training-panel *,
+.training-panel *::before,
+.training-panel *::after {
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------
+   HEADER
+   ---------------------------------------------------------------- */
+
+.training-panel-header {
+    padding: 14px var(--space-4);
+    border-bottom: 1px solid var(--border-color, #2b3c56);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--panel-header-bg, #0d1b2a);
+}
+
+.training-panel-title {
+    font-weight: 600;
+    font-size: var(--text-base, 15px);
+    color: var(--text-primary, #e2e8f0);
+}
+
+.training-panel-close {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-2xl, 22px);
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: var(--radius-md);
+    transition: color 0.15s, background 0.15s;
+}
+
+.training-panel-close:hover {
+    color: var(--text-primary, #e2e8f0);
+    background: var(--neutral-700, #334155);
+}
+
+/* ----------------------------------------------------------------
+   TABS
+   ---------------------------------------------------------------- */
+
+.training-panel-tabs {
+    display: flex;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--border-color, #2b3c56);
+    background: var(--panel-header-bg, #0d1b2a);
+    overflow-x: auto;
+}
+
+.training-tab-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: var(--space-2) 10px;
+    font-size: var(--text-base);
+    font-weight: 500;
+    text-align: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary, #94a3b8);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.training-tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    margin-left: 6px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 18%, transparent);
+    color: currentColor;
+    font-size: var(--text-xs, 11px);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.training-tab-btn:hover {
+    color: var(--text-primary, #e2e8f0);
+    background: var(--neutral-700, #334155);
+}
+
+.training-panel-tabs .training-tab-btn[aria-selected='false'] {
+    color: var(--text-secondary, #94a3b8);
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    font-weight: 500;
+}
+
+.training-panel-tabs .training-tab-btn.active,
+.training-panel-tabs .training-tab-btn[aria-selected='true'] {
+    color: var(--accent-bright, #3b6bff);
+    background: color-mix(in srgb, var(--accent-color, rgb(59, 130, 246)) 20%, transparent);
+    border-color: var(--accent-bright, #3b6bff);
+    box-shadow: var(--training-panel-shadow-02, inset 0 -2px 0 var(--accent-bright, #3b6bff));
+    font-weight: 800;
+}
+
+/* ----------------------------------------------------------------
+   BODY & SECTIONS
+   ---------------------------------------------------------------- */
+
+.training-panel-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: var(--space-3) var(--space-4);
+}
+
+@media (min-width: 641px) {
+    .training-panel--teacher-focus {
+        left: 24px;
+        right: 24px;
+        width: auto;
+        max-width: none;
+        box-shadow: var(--training-panel-shadow-03, 0 20px 56px color-mix(in srgb, var(--shadow-color, rgb(0, 0, 0)) 56%, transparent));
+    }
+
+    .training-panel--teacher-focus .training-panel-body {
+        padding: 16px 20px 22px;
+    }
+
+    .training-panel--teacher-focus .training-tab-content {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.74fr) minmax(380px, 1fr);
+        gap: 14px;
+        align-items: start;
+    }
+
+    .training-panel--teacher-focus .training-teacher-focus-bar,
+    .training-panel--teacher-focus .training-teacher-workspace-guide,
+    .training-panel--teacher-focus .training-teacher-home {
+        grid-column: 1 / -1;
+    }
+}
+
+.training-tab-section {
+    margin-bottom: var(--space-4);
+}
+
+.training-tab-header {
+    font-weight: 600;
+    font-size: var(--text-md);
+    color: var(--text-primary, #e2e8f0);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color, #2b3c56);
+}
+
+.training-tab-content {
+    min-height: 120px;
+}
+
+/* ----------------------------------------------------------------
+   EMPTY STATE
+   ---------------------------------------------------------------- */
+
+.training-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px var(--space-4);
+    text-align: center;
+    color: var(--text-secondary, #94a3b8);
+}
+
+.training-empty-icon {
+    font-size: var(--text-3xl, 28px);
+    margin-bottom: 10px;
+    color: var(--accent-bright, #3b6bff);
+    opacity: 0.6;
+}
+
+.training-empty-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+    color: var(--text-primary, #e2e8f0);
+}
+
+.training-empty-subtitle {
+    font-size: var(--text-base);
+    opacity: 0.8;
+}
+
+.training-empty-detail {
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    line-height: 1.45;
+    color: var(--text-muted, #7c8aa0);
+}
+
+.training-empty-actions {
+    margin-top: var(--space-3);
+}
+
+/* ----------------------------------------------------------------
+   LMS CARDS
+   ---------------------------------------------------------------- */
+
+.training-subsection {
+    display: grid;
+    gap: 10px;
+    margin-bottom: var(--space-4);
+}
+
+.training-subsection > h3 {
+    margin: 2px 0 0;
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--text-secondary, #94a3b8);
+    text-transform: uppercase;
+}
+
+.training-learner-home,
+.training-teacher-home {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-3);
+    align-items: center;
+    margin-bottom: 10px;
+    padding: var(--space-3);
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 35%, transparent);
+    border-radius: var(--radius-lg, 8px);
+    background: color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 8%, transparent);
+}
+
+.training-learner-home strong,
+.training-teacher-home strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-base);
+}
+
+.training-learner-home p,
+.training-teacher-home p {
+    margin: 0;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    line-height: 1.4;
+}
+
+.training-teacher-home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.training-teacher-focus-bar {
+    display: grid;
+    gap: 3px;
+    margin-bottom: 10px;
+    padding: 12px 14px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 34%, transparent);
+    border-radius: var(--radius-lg, 8px);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 14%, transparent), color-mix(in srgb, var(--text-secondary, rgb(15, 23, 42)) 68%, transparent));
+}
+
+.training-teacher-focus-bar span {
+    color: var(--accent-bright, #3b6bff);
+    font-size: var(--text-xs, 11px);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.training-teacher-focus-bar strong {
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-lg);
+    line-height: 1.25;
+}
+
+.training-teacher-focus-bar p {
+    max-width: var(--ecbt-content-readable);
+    margin: 0;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    line-height: 1.4;
+}
+
+.training-teacher-class-door {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 0.32fr);
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 16px;
+    border: 1px solid color-mix(in srgb, var(--success-color, rgb(45, 212, 191)) 35%, transparent);
+    border-radius: var(--radius-lg, 14px);
+    background:
+        radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--success-color, rgb(45, 212, 191)) 18%, transparent), transparent 36%),
+        linear-gradient(135deg, color-mix(in srgb, var(--accent-color, rgb(14, 165, 233)) 16%, transparent), color-mix(in srgb, var(--text-secondary, rgb(15, 23, 42)) 90%, transparent));
+    box-shadow: var(--training-panel-shadow-04, 0 16px 36px color-mix(in srgb, var(--shadow-color, rgb(0, 0, 0)) 22%, transparent));
+}
+
+.training-teacher-class-door-copy {
+    min-width: 0;
+}
+
+.training-teacher-class-door-copy > span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--success-color, #5eead4);
+    font-size: var(--text-xs, 11px);
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.training-teacher-class-door-copy > strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-primary, #e2e8f0);
+    font-size: clamp(18px, 2.8vw, 30px);
+    line-height: 1.08;
+}
+
+.training-teacher-class-door-copy > p {
+    max-width: var(--ecbt-content-readable);
+    margin: 0;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-base);
+    line-height: 1.45;
+}
+
+/* RF-8e (TRAINING-LEARNER-MIN-001): a rota agora é <ol> com <li> + aria-current. */
+.training-teacher-class-door-route {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.training-teacher-class-door-route li,
+.training-teacher-class-door-route span {
+    display: inline-flex;
+    gap: 7px;
+    align-items: center;
+    min-height: 34px;
+    padding: 6px 10px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 20%, transparent);
+    border-radius: 999px;
+    color: var(--text-primary, #e2e8f0);
+    background: color-mix(in srgb, var(--shadow-color, rgb(2, 8, 23)) 42%, transparent);
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+.training-teacher-class-door-route b {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: var(--accent-color, #042f2e);
+    background: var(--success-color, #5eead4);
+    font-size: var(--text-xs, 11px);
+}
+
+.training-teacher-class-door-action {
+    display: grid;
+    gap: 8px;
+    justify-items: stretch;
+}
+
+.training-action-btn--class-door {
+    min-height: 52px;
+    border-color: color-mix(in srgb, var(--success-color, rgb(45, 212, 191)) 58%, transparent);
+    background: linear-gradient(135deg, var(--accent-color, #0f766e), var(--accent-color, #2563eb));
+    font-size: var(--text-base);
+    font-weight: 850;
+    box-shadow: var(--training-panel-shadow-05, 0 14px 24px color-mix(in srgb, var(--accent-color, rgb(37, 99, 235)) 26%, transparent));
+}
+
+.training-teacher-class-door-action small {
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-xs, 11px);
+    line-height: 1.35;
+    text-align: center;
+}
+
+.training-teacher-workspace-guide {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: stretch;
+    margin-bottom: 10px;
+    padding: 12px 14px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 26%, transparent);
+    border-radius: var(--radius-lg, 8px);
+    background: color-mix(in srgb, var(--border-color, rgb(8, 19, 34)) 88%, transparent);
+}
+
+.training-teacher-workspace-copy {
+    min-width: 0;
+}
+
+.training-teacher-workspace-copy span {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--accent-bright, #3b6bff);
+    font-size: var(--text-xs, 11px);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.training-teacher-workspace-copy strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-base);
+    line-height: 1.25;
+}
+
+.training-teacher-workspace-copy p {
+    max-width: var(--ecbt-modal-xl);
+    margin: 0 0 3px;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    line-height: 1.38;
+}
+
+.training-teacher-saved-note {
+    display: grid;
+    gap: 2px;
+    margin: 8px 0 0;
+    padding: 8px 10px;
+    border: 1px solid color-mix(in srgb, var(--warning-color, rgb(245, 158, 11)) 28%, transparent);
+    border-radius: var(--radius-md, 8px);
+    background: color-mix(in srgb, var(--warning-color, rgb(245, 158, 11)) 10%, transparent);
+}
+
+.training-teacher-saved-note strong {
+    margin: 0;
+    color: var(--info-color, #fde68a);
+    font-size: var(--text-sm);
+}
+
+.training-teacher-saved-note span {
+    margin: 0;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    line-height: 1.35;
+    text-transform: none;
+}
+
+.training-teacher-next-action {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid color-mix(in srgb, var(--success-color, rgb(34, 197, 94)) 28%, transparent);
+    border-radius: var(--radius-md, 8px);
+    background: color-mix(in srgb, var(--success-color, rgb(6, 78, 59)) 18%, transparent);
+}
+
+.training-teacher-next-action span {
+    margin-bottom: 3px;
+    color: var(--success-color, #6ee7b7);
+}
+
+.training-teacher-next-action strong {
+    margin-bottom: 3px;
+}
+
+.training-teacher-next-action p {
+    margin: 0;
+}
+
+.training-teacher-workspace-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(92px, 1fr));
+    gap: 8px;
+    min-width: min(100%, 390px);
+}
+
+.training-teacher-workspace-grid span {
+    display: grid;
+    align-content: center;
+    min-height: 58px;
+    padding: 8px 10px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 18%, transparent);
+    border-radius: var(--radius-md, 8px);
+    color: var(--text-secondary, #94a3b8);
+    background: color-mix(in srgb, var(--surface-inverse, rgb(255, 255, 255)) 4%, transparent);
+    font-size: var(--text-xs, 11px);
+    line-height: 1.25;
+}
+
+.training-teacher-workspace-grid strong {
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-xl, 20px);
+    line-height: 1;
+}
+
+.training-teacher-journey {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: var(--space-3);
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 20%, transparent);
+    border-radius: var(--radius-lg, 8px);
+    background: color-mix(in srgb, var(--text-secondary, rgb(15, 23, 42)) 64%, transparent);
+}
+
+.training-teacher-journey-head {
+    display: grid;
+    grid-template-columns: minmax(140px, 0.7fr) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.training-teacher-journey-head::-webkit-details-marker {
+    display: none;
+}
+
+.training-teacher-journey-title {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+}
+
+.training-teacher-journey-title strong {
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-base);
+}
+
+.training-teacher-journey-title em,
+.training-teacher-journey-open {
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-xs, 11px);
+    font-style: normal;
+    white-space: nowrap;
+}
+
+.training-teacher-journey-preview {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+}
+
+.training-teacher-journey-preview b {
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-sm);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.training-teacher-journey-preview small {
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-xs, 11px);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.training-teacher-journey-open {
+    padding: 6px 8px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 24%, transparent);
+    border-radius: var(--radius-md, 8px);
+    background: color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 8%, transparent);
+    color: var(--accent-bright, #3b6bff);
+    font-weight: 700;
+}
+
+.training-teacher-journey[open] .training-teacher-journey-open {
+    background: color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 16%, transparent);
+}
+
+.training-teacher-step-list {
+    display: grid;
+    gap: 8px;
+    margin: 2px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.training-teacher-step {
+    min-height: 44px;
+    padding: 0;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 16%, transparent);
+    border-radius: var(--radius-md, 8px);
+    background: color-mix(in srgb, var(--surface-inverse, rgb(255, 255, 255)) 3%, transparent);
+    overflow: hidden;
+}
+
+/* RF-8e: item informativo da jornada (não é mais <button> com ação). */
+.training-teacher-step-button {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    gap: 9px;
+    align-items: start;
+    width: 100%;
+    min-height: 44px;
+    padding: 9px;
+    border: 0;
+    color: inherit;
+    background: transparent;
+    text-align: left;
+    cursor: default;
+}
+
+.training-teacher-step.current {
+    border-color: color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 55%, transparent);
+    background: color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 10%, transparent);
+}
+
+.training-teacher-step.done {
+    border-color: color-mix(in srgb, var(--success-color, rgb(34, 197, 94)) 34%, transparent);
+    background: color-mix(in srgb, var(--success-color, rgb(34, 197, 94)) 8%, transparent);
+}
+
+.training-teacher-step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 18%, transparent);
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-xs, 11px);
+    font-weight: 700;
+}
+
+.training-teacher-step.current .training-teacher-step-number {
+    background: var(--accent-bright, #3b6bff);
+    color: var(--surface-inverse, #fff);
+}
+
+.training-teacher-step.done .training-teacher-step-number {
+    background: color-mix(in srgb, var(--success-color, rgb(34, 197, 94)) 90%, transparent);
+    color: var(--success-color, #052e16);
+}
+
+.training-teacher-step-copy {
+    min-width: 0;
+}
+
+.training-teacher-step-copy strong {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-sm);
+    line-height: 1.25;
+}
+
+.training-teacher-step-copy span {
+    display: block;
+    margin: 0;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-xs, 11px);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.training-teacher-step-state {
+    align-self: start;
+    max-width: var(--ecbt-input-xs);
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-xs, 11px);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: right;
+}
+
+.training-course-card {
+    display: grid;
+    gap: 9px;
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid var(--border-color, #2b3c56);
+    border-radius: var(--radius-xl);
+    background: var(--panel-card-bg, #0e1c2d);
+}
+
+.training-course-card.creator {
+    gap: 10px;
+    padding: 0;
+    overflow: hidden;
+    border-color: color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 28%, transparent);
+    background: color-mix(in srgb, var(--accent-color, rgb(12, 27, 45)) 90%, transparent);
+}
+
+.training-course-card-main {
+    display: grid;
+    gap: 9px;
+    padding: var(--space-3);
+    border: 0;
+    color: inherit;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+
+.training-course-card-main:hover {
+    background: color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 8%, transparent);
+    box-shadow: var(--training-panel-shadow-06, inset 3px 0 0 var(--accent-bright, #3b6bff));
+}
+
+.training-course-card-main:focus-visible {
+    outline: 2px solid var(--accent-bright, #3b6bff);
+    outline-offset: -2px;
+}
+
+.training-course-card h3 {
+    margin: 0;
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-lg);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.training-course-card p {
+    margin: 0;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-base);
+    line-height: 1.45;
+}
+
+.training-card-topline,
+.training-card-meta,
+.training-card-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.training-card-topline {
+    justify-content: space-between;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+}
+
+.training-card-badges {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
+}
+
+.training-card-meta {
+    flex-wrap: wrap;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+}
+
+.training-card-meta span {
+    max-width: 100%;
+    padding: 2px 6px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 20%, transparent);
+    border-radius: 999px;
+    overflow-wrap: anywhere;
+}
+
+.training-card-open-hint {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 28px;
+    padding: 4px 8px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 30%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 10%, transparent);
+    color: var(--accent-bright, #3b6bff);
+    font-size: var(--text-sm);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.training-card-next-step {
+    display: grid;
+    gap: 2px;
+    padding: 8px 10px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 18%, transparent);
+    border-radius: var(--radius-md, 8px);
+    background: color-mix(in srgb, var(--surface-inverse, rgb(255, 255, 255)) 4%, transparent);
+}
+
+.training-card-next-step span {
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-xs, 11px);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.training-card-next-step strong {
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-sm);
+    line-height: 1.35;
+}
+
+.training-pill {
+    max-width: 60%;
+    padding: 2px 7px;
+    border-radius: 999px;
+    color: var(--accent-contrast, #dff7ef);
+    background: color-mix(in srgb, var(--success-color, rgb(16, 185, 129)) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--success-color, rgb(16, 185, 129)) 32%, transparent);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.training-pill--draft {
+    color: var(--info-color, #fde68a);
+    background: color-mix(in srgb, var(--warning-color, rgb(245, 158, 11)) 16%, transparent);
+    border-color: color-mix(in srgb, var(--warning-color, rgb(245, 158, 11)) 36%, transparent);
+}
+
+.training-pill--latest {
+    color: var(--accent-color, #bfdbfe);
+    background: color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 16%, transparent);
+    border-color: color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 36%, transparent);
+}
+
+.training-pill--file {
+    color: var(--info-color, #ccfbf1);
+    background: color-mix(in srgb, var(--success-color, rgb(20, 184, 166)) 18%, transparent);
+    border-color: color-mix(in srgb, var(--success-color, rgb(20, 184, 166)) 38%, transparent);
+}
+
+.training-pill--published,
+.training-pill--active {
+    color: var(--success-color, #bbf7d0);
+    background: color-mix(in srgb, var(--success-color, rgb(34, 197, 94)) 16%, transparent);
+    border-color: color-mix(in srgb, var(--success-color, rgb(34, 197, 94)) 34%, transparent);
+}
+
+.training-progress-row {
+    width: 100%;
+}
+
+.training-progress-bar {
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 18%, transparent);
+}
+
+.training-progress-bar > span {
+    display: block;
+    height: 100%;
+    min-width: 0;
+    border-radius: var(--radius-sm, inherit);
+    background: var(--accent-bright, #3b6bff);
+}
+
+.training-card-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.training-course-card.creator .training-card-actions {
+    padding: 0 var(--space-3) var(--space-3);
+}
+
+.training-course-card.creator .training-action-btn--open-class {
+    flex: 1 1 220px;
+    justify-content: center;
+    min-height: 40px;
+    box-shadow: var(--training-panel-shadow-07, 0 10px 24px color-mix(in srgb, var(--accent-color, rgb(59, 130, 246)) 18%, transparent));
+}
+
+.training-action-btn--next {
+    min-width: 180px;
+    min-height: 44px;
+    box-shadow: var(--training-panel-shadow-08, 0 10px 24px color-mix(in srgb, var(--success-color, rgb(34, 197, 94)) 18%, transparent));
+}
+
+.training-action-btn--file-open {
+    min-width: 170px;
+    min-height: 44px;
+    box-shadow: var(--training-panel-shadow-09, 0 10px 24px color-mix(in srgb, var(--success-color, rgb(20, 184, 166)) 18%, transparent));
+}
+
+.training-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 7px var(--space-3);
+    border: 1px solid var(--accent-bright, #3b6bff);
+    border-radius: var(--radius-lg);
+    color: var(--surface-inverse, #ffffff);
+    background: var(--accent-bright, #3b6bff);
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.training-action-btn.secondary {
+    color: var(--text-primary, #e2e8f0);
+    background: transparent;
+    border-color: var(--border-color, #2b3c56);
+}
+
+/* TRAINING-LEARNER-MIN-001 DoD (Pixels-Over-DOM 2026-07-10/11): no tema dark,
+   --accent-bright vira #4fc3f7 (ciano claro), pensado como cor de TEXTO/borda
+   sobre fundo escuro (ver app/css/styles.css:415). Usado como FUNDO sólido com
+   texto branco (.training-action-btn base), o contraste medido cai para 2.00:1
+   (falha WCAG AA, mínimo 4.5:1 p/ texto 12px/600). Fix isolado ao módulo de
+   treinamento (não mexe na variável global, que outros ~40 usos dependem):
+   reusa o mesmo azul #2563eb já documentado em styles.css como "5.17:1 sobre
+   branco" para o fundo do CTA primário no dark, preservando a cor ciano em
+   todo o resto (borda ainda usa --accent-bright).
+   Não regride tema claro nem high-contrast — só sobrescreve o background do
+   CTA preenchido quando data-theme="dark".
+   DoD#5 (2026-07-22): estendido ao .training-action-btn BASE (não só .primary)
+   e ao step-number .current — mesmo padrão de violação (branco sobre #4fc3f7). */
+[data-theme='dark'] .training-action-btn.primary,
+[data-theme='dark'] .training-action-btn:not(.secondary) {
+    background: #2563eb;
+}
+
+[data-theme='dark'] .training-teacher-step.current .training-teacher-step-number {
+    background: #2563eb;
+}
+
+.training-action-btn:hover {
+    filter: brightness(1.08);
+}
+
+/* ----------------------------------------------------------------
+   TRAINING-LEARNER-MIN-001 — jornada do aluno minimalista
+   (hero resume-first, switch instrutor, trilha com check, detalhes)
+   ---------------------------------------------------------------- */
+
+.training-panel-mode {
+    display: flex;
+    justify-content: flex-end;
+    padding: 4px var(--space-3);
+    border-bottom: 1px solid var(--border-color, #2b3c56);
+    background: var(--panel-header-bg, #0d1b2a);
+}
+
+.training-instructor-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 6px;
+    border: 0;
+    border-radius: var(--radius-md, 8px);
+    background: transparent;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-xs, 11px);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.training-instructor-toggle:hover {
+    color: var(--text-primary, #e2e8f0);
+}
+
+.training-instructor-toggle-track {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 16px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--text-secondary, rgb(148, 163, 184)) 35%, transparent);
+    transition: background 0.15s;
+}
+
+.training-instructor-toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--surface-inverse, #fff);
+    transition: left 0.15s;
+}
+
+.training-instructor-toggle[aria-checked='true'] {
+    color: var(--accent-bright, #3b6bff);
+}
+
+.training-instructor-toggle[aria-checked='true'] .training-instructor-toggle-track {
+    background: var(--accent-bright, #3b6bff);
+}
+
+.training-instructor-toggle[aria-checked='true'] .training-instructor-toggle-thumb {
+    left: 14px;
+}
+
+.training-hero {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 14px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 40%, transparent);
+    border-radius: var(--radius-lg, 10px);
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent-color, rgb(59, 107, 255)) 14%, transparent),
+        transparent
+    );
+}
+
+.training-hero-kicker {
+    color: var(--accent-bright, #3b6bff);
+    font-size: var(--text-xs, 11px);
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.training-hero h3 {
+    margin: 0;
+    color: var(--text-primary, #e2e8f0);
+    font-size: var(--text-xl, 19px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.training-hero-next {
+    margin: 0;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    line-height: 1.4;
+}
+
+.training-hero-counter {
+    color: var(--text-secondary, #94a3b8);
+    font-variant-numeric: tabular-nums;
+}
+
+.training-hero .training-card-actions {
+    justify-content: flex-start;
+}
+
+.training-link-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 2px 4px;
+    border: 0;
+    background: transparent;
+    color: var(--accent-bright, #3b6bff);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.training-link-btn:hover {
+    filter: brightness(1.15);
+}
+
+.training-learning-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+/* RF-3: 1 linha de valor visível; resto atrás de "Detalhes". */
+.training-card-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.training-card-details {
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 16%, transparent);
+    border-radius: var(--radius-md, 8px);
+}
+
+.training-card-details summary {
+    padding: 6px 10px;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.training-card-details-body {
+    display: grid;
+    gap: 4px;
+    padding: 0 10px 8px;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+}
+
+/* RF-7: trilha com check por lição concluída. */
+.training-lessons {
+    border-top: 1px dashed color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 22%, transparent);
+    padding-top: 6px;
+}
+
+.training-lessons summary {
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.training-lesson-list {
+    display: grid;
+    gap: 4px;
+    margin: 6px 0 0;
+    padding: 0 0 0 2px;
+    list-style: none;
+}
+
+.training-lesson-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    line-height: 1.35;
+}
+
+.training-lesson-list li.done {
+    color: var(--text-primary, #e2e8f0);
+}
+
+.training-lesson-list li[aria-current='step'] {
+    color: var(--accent-bright, #3b6bff);
+    font-weight: 700;
+}
+
+.training-lesson-check {
+    display: inline-flex;
+    flex: 0 0 16px;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 40%, transparent);
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+.training-lesson-list li.done .training-lesson-check {
+    border-color: transparent;
+    background: color-mix(in srgb, var(--success-color, rgb(34, 197, 94)) 85%, transparent);
+    color: var(--surface-inverse, #052e16);
+}
+
+/* T7.3: checklist "Comece aqui" (usuario novo) — mesma trilha visual do
+   RF-7 (training-lesson-list/training-lesson-check), sem <details>: fica
+   sempre aberta enquanto aparece (some sozinha quando os 3 passos fecham). */
+.training-onboarding-checklist {
+    border: 1px solid color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 22%, transparent);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin: 10px 0;
+}
+
+.training-onboarding-checklist h4 {
+    margin: 0 0 6px;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--text-primary, #e2e8f0);
+}
+
+.training-onboarding-checklist .training-lesson-list {
+    margin-top: 0;
+}
+
+/* T8.2: "Dicas que você já viu" — agrega as dicas de intenção (T8.1) vistas
+   na 1ª abertura de módulos-chave. <details> fechado por padrão (fica atrás
+   de 1 clique, RF-8f: sem poluição) — o próprio render some a seção quando
+   a lista está vazia. */
+.training-hints-seen {
+    border-top: 1px dashed color-mix(in srgb, var(--accent-color, rgb(148, 163, 184)) 22%, transparent);
+    padding-top: 6px;
+    margin: 10px 0;
+}
+
+.training-hints-seen summary {
+    color: var(--text-secondary, #94a3b8);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.training-hints-seen-list {
+    display: grid;
+    gap: 4px;
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.training-hint-seen-item {
+    text-align: left;
+    padding: 2px 0;
+}
+
+/* RF-2: badge de curso já inscrito no catálogo. */
+.training-pill--enrolled {
+    color: var(--accent-color, #bfdbfe);
+    background: color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 16%, transparent);
+    border-color: color-mix(in srgb, var(--accent-color, rgb(96, 165, 250)) 36%, transparent);
+}
+
+.training-action-btn[aria-busy='true'] {
+    opacity: 0.65;
+    cursor: progress;
+}
+
+/* ----------------------------------------------------------------
+   RESPONSIVE
+   ---------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+    .training-panel {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        width: 100dvw;
+        max-width: 100dvw;
+        height: 100dvh;
+        border-left: 0;
+        border-radius: 0;
+    }
+
+    .training-panel-tabs {
+        gap: 6px;
+        padding: 6px var(--space-2);
+        overflow-x: hidden;
+    }
+
+    .training-tab-btn {
+        min-width: 0;
+        min-height: 44px;
+        padding: 6px var(--space-2);
+        font-size: var(--text-sm);
+        line-height: 1.2;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .training-tab-count {
+        min-width: 16px;
+        height: 16px;
+        margin-left: 4px;
+        padding: 0 4px;
+    }
+
+    .training-panel-body {
+        padding: 10px var(--space-3);
+    }
+
+    .training-course-card {
+        padding: 11px;
+    }
+
+    .training-card-topline {
+        align-items: flex-start;
+    }
+
+    .training-card-actions {
+        justify-content: stretch;
+    }
+
+    .training-action-btn {
+        flex: 1 1 120px;
+        min-height: 44px;
+    }
+
+    .training-learner-home,
+    .training-teacher-home,
+    .training-teacher-class-door,
+    .training-teacher-workspace-guide,
+    .training-teacher-next-action {
+        grid-template-columns: 1fr;
+    }
+
+    .training-teacher-class-door {
+        padding: 13px;
+    }
+
+    .training-teacher-class-door-action {
+        justify-items: stretch;
+    }
+
+    .training-teacher-home-actions {
+        justify-content: stretch;
+    }
+
+    .training-teacher-home-actions .training-action-btn {
+        flex: 1 1 100%;
+    }
+
+    .training-action-btn--class-door {
+        width: 100%;
+    }
+
+    .training-teacher-workspace-grid {
+        grid-template-columns: 1fr;
+        min-width: 0;
+    }
+
+    .training-teacher-journey-head {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+    }
+
+    .training-teacher-journey-open {
+        justify-self: start;
+    }
+
+    .training-teacher-step-button {
+        grid-template-columns: 28px minmax(0, 1fr);
+    }
+
+    .training-teacher-step-state {
+        grid-column: 2;
+        max-width: none;
+        text-align: left;
+    }
+}
+
+/* ================================================================
+   LMS LESSON PLAYER (Fase B) — reader markdown + quiz inline.
+   Owns: .lms-lesson, .lms-q. Base: .ecbt-overlay / .ecbt-dialog.
+   ================================================================ */
+.lms-lesson { display: flex; flex-direction: column; gap: var(--space-3); padding: 18px 22px; max-height: 82vh; }
+.lms-lesson-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.lms-lesson-header h2 { margin: 0; font-size: var(--text-md, 17px); }
+.lms-lesson-header-actions { display: inline-flex; align-items: center; gap: var(--space-2); flex: 0 0 auto; }
+.lms-lesson-dock-toggle {
+    font-size: var(--text-base); padding: var(--space-1) 10px; border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--neutral-300, #d1d5db); background: var(--surface-1, #fff);
+    color: var(--neutral-700, #374151); cursor: pointer; white-space: nowrap;
+}
+.lms-lesson-dock-toggle:hover { background: var(--neutral-100, #f3f4f6); }
+
+/* ---- Layout configurável da tela de lição (centro vs painel lateral) ---- */
+/* Painel lateral: container transparente que NÃO captura clique → o app fica
+   interativo ("treinar on flight"); só o diálogo à direita recebe eventos. */
+.lms-lesson-sidedock {
+    position: fixed; inset: 0; background: transparent; pointer-events: none;
+}
+.lms-lesson--side {
+    pointer-events: auto; position: absolute;
+    top: 48px; right: 10px; bottom: 32px;
+    width: clamp(320px, 30vw, 460px); max-width: none; max-height: none;
+    display: flex; flex-direction: column;
+    box-shadow: var(--training-panel-shadow-10, -6px 0 28px color-mix(in srgb, var(--shadow-color, rgb(0, 0, 0)) 35%, transparent));
+}
+.lms-lesson--side .lms-lesson-body { flex: 1 1 auto; min-height: 0; }
+@media (max-width: 640px) {
+    /* Em telas estreitas o painel lateral ocupa quase tudo (mas sem backdrop). */
+    .lms-lesson--side { left: 8px; right: 8px; width: auto; }
+}
+.lms-lesson-close { background: transparent; border: none; font-size: var(--text-3xl); line-height: 1; cursor: pointer; color: var(--neutral-600, #6b7280); padding: 0 var(--space-2); }
+.lms-lesson-body { overflow-y: auto; line-height: 1.6; font-size: var(--text-lg); }
+.lms-lesson-body h3 { font-size: var(--text-base, 15px); margin: 14px 0 6px; }
+.lms-lesson-body h4 { font-size: var(--text-md); margin: var(--space-3) 0 var(--space-1); color: var(--neutral-700, #374151); }
+.lms-lesson-body ul { margin: 6px 0 6px 18px; }
+.lms-lesson-body li { margin: 3px 0; }
+.lms-lesson-actions { display: flex; align-items: center; gap: var(--space-3); border-top: 1px solid var(--neutral-200, #e5e7eb); padding-top: var(--space-3); }
+.lms-q { border: 1px solid var(--neutral-200, #e5e7eb); border-radius: var(--radius-md, 8px); padding: 10px 14px; margin: var(--space-2) 0; }
+.lms-q legend { font-weight: 600; font-size: var(--text-md); padding: 0 var(--space-1); }
+.lms-q label { display: block; padding: var(--space-1) 0; cursor: pointer; font-size: var(--text-md); }
+.lms-q input { margin-right: var(--space-2); }
+#lms-quiz-result { font-size: var(--text-md); font-weight: 600; }
+
+/* B5 (a11y): .lms-sr-only (conteúdo só para leitores de tela — anúncios
+   aria-live de reorder) movido para design-tokens.css — primitivo a11y
+   compartilhado, carregado globalmente. Ver nota no design-tokens.css. */
+/* foco visível nos controles da lição (WCAG 2.4.7). */
+.lms-lesson :focus-visible, .lms-lesson--side :focus-visible {
+    outline: 2px solid var(--brand-500, #3b82f6); outline-offset: 2px;
+}
+
+/* B7: modo foco — esconde o HUD do canto direito enquanto a lição lateral está
+   aberta, para o diálogo não sobrepor bússola/custos/ECBT. Classe training-owned
+   aplicada por lmsManager aos painéis de HUD; reversível ao fechar/centralizar. */
+.lms-hud-focus-hidden { display: none !important; }
+
+/* LMS video lesson (YouTube embed, Fase C) — responsive 16:9. */
+.lms-video-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-md, 8px); overflow: hidden; background: var(--shadow-color, #000); }
+.lms-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.lms-video-caption { font-size: var(--text-base); color: var(--neutral-600, #6b7280); margin: var(--space-2) 0 0; }
+/* B6 (WCAG 1.2.2): transcrição + nota de legendas. */
+.lms-video-cc-note { font-size: var(--text-base); color: var(--neutral-500, #9ca3af); margin: var(--space-2) 0 0; font-style: italic; }
+.lms-video-transcript { margin: 10px 0 0; border: 1px solid var(--neutral-200, #e5e7eb); border-radius: var(--radius-md, 8px); }
+.lms-video-transcript summary { cursor: pointer; padding: var(--space-2) var(--space-3); font-size: var(--text-md); font-weight: 600; }
+.lms-video-transcript-body { padding: var(--space-1) var(--space-3) var(--space-3); font-size: var(--text-md); line-height: 1.55; max-height: 220px; overflow-y: auto; }
+
+/* B9 (WCAG 2.5.8): alvos de toque ≥ 44px no mobile para as setas de reorder. */
+@media (max-width: 640px) {
+    .lms-ord-btns button { width: 44px; height: 44px; font-size: var(--text-lg); }
+    .lms-ord-item { gap: var(--space-3); }
+}
+
+/* Facade click-to-load (evita o muro anti-bot do YouTube ao auto-embedar). */
+.lms-video-facade {
+    position: absolute; inset: 0; width: 100%; height: 100%; border: 0; cursor: pointer;
+    background-color: var(--shadow-color, #000); background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+}
+.lms-video-facade::after {
+    content: ''; position: absolute; inset: 0; background: color-mix(in srgb, var(--shadow-color, rgb(0, 0, 0)) 28%, transparent);
+    transition: background 0.15s ease;
+}
+.lms-video-facade:hover::after { background: color-mix(in srgb, var(--shadow-color, rgb(0, 0, 0)) 12%, transparent); }
+.lms-video-play {
+    position: relative; z-index: 1; display: flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px; border-radius: 50%;
+    background: color-mix(in srgb, var(--danger-color, rgb(220, 38, 38)) 92%, transparent); color: var(--surface-inverse, #fff); font-size: var(--text-3xl, 26px); padding-left: var(--space-1);
+    box-shadow: var(--training-panel-shadow-11, 0 2px 10px color-mix(in srgb, var(--shadow-color, rgb(0, 0, 0)) 40%, transparent));
+}
+.lms-video-facade:focus-visible { outline: 2px solid var(--brand-500, #2563eb); outline-offset: 2px; }
+
+/* Navegação entre lições "‹ / ›" + indicador "Lição X de N". */
+.lms-nav-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--neutral-300, #d1d5db); background: var(--surface-1, #fff);
+    color: var(--neutral-700, #374151); font-size: var(--text-2xl); line-height: 1; cursor: pointer;
+}
+.lms-nav-btn:hover:not([disabled]) { background: var(--neutral-100, #f3f4f6); }
+.lms-nav-btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+.lms-nav-indicator { font-size: var(--text-base); color: var(--neutral-600, #6b7280); white-space: nowrap; }
+.lms-nav-spacer { flex: 1 1 auto; }
+
+/* Lição model-quiz (pergunta sobre os poços reais destacados no 3D). */
+.lms-mq-intro { font-size: var(--text-lg); line-height: 1.55; margin: 0 0 var(--space-3); }
+.lms-mq-options { display: flex; flex-direction: column; gap: 6px; }
+.lms-mq-option {
+    display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 10px;
+    border: 1px solid var(--neutral-200, #e5e7eb); border-radius: var(--radius-md, 8px);
+    cursor: pointer; font-size: var(--text-md);
+}
+.lms-mq-option:hover { background: var(--neutral-100, #f3f4f6); }
+.lms-mq-name { flex: 1 1 auto; }
+.lms-mq-focus {
+    font-size: var(--text-sm); padding: 2px var(--space-2); border-radius: var(--radius-lg); cursor: pointer;
+    border: 1px solid var(--neutral-300, #d1d5db); background: var(--surface-1, #fff);
+    color: var(--neutral-600, #6b7280);
+}
+.lms-mq-focus:hover { background: var(--neutral-100, #f3f4f6); }
+.lms-mq-result { font-size: var(--text-md); font-weight: 600; margin: 10px 0 0; min-height: 18px; }
+
+/* Caso Ambiental Interativo (LMS-INTERACTIVE-ASSESS-001 F3). */
+.lms-case-scenario { font-size: var(--text-sm, 13.5px); line-height: 1.55; margin: 0 0 var(--space-3); }
+.lms-case-meta { display: flex; gap: 14px; flex-wrap: wrap; font-size: var(--text-base); color: var(--neutral-600, #6b7280); margin: 0 0 var(--space-3); }
+.lms-case-cat { border: 1px solid var(--neutral-200, #e5e7eb); border-radius: var(--radius-md, 8px); padding: var(--space-2) 10px; margin: 0 0 10px; }
+.lms-case-cat legend { font-weight: 600; font-size: var(--text-base); padding: 0 var(--space-1); color: var(--neutral-700, #374151); }
+.lms-case-action {
+    display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); width: 100%;
+    text-align: left; padding: 7px 10px; margin: var(--space-1) 0; cursor: pointer; font-size: var(--text-md);
+    border: 1px solid var(--neutral-300, #d1d5db); border-radius: var(--radius-md, 8px);
+    background: var(--surface-1, #fff); color: var(--neutral-800, #1f2937);
+}
+.lms-case-action:hover { background: var(--neutral-100, #f3f4f6); }
+.lms-case-cost { font-size: var(--text-sm); color: var(--neutral-500, #9ca3af); white-space: nowrap; }
+.lms-case-history { margin-top: var(--space-3); border-top: 1px solid var(--neutral-200, #e5e7eb); padding-top: 10px; }
+.lms-case-history h4 { margin: 0 0 6px; font-size: var(--text-md); }
+.lms-case-hist { display: flex; flex-direction: column; gap: 1px; padding: 6px var(--space-2); border-radius: var(--radius-lg); margin: var(--space-1) 0; font-size: var(--text-base); border-left: 3px solid var(--neutral-300, #d1d5db); background: var(--neutral-50, #f9fafb); }
+.lms-case-hist.ok { border-left-color: var(--success-color, #16a34a); }
+.lms-case-hist.warn { border-left-color: var(--accent-orange); }
+.lms-case-hist span { color: var(--neutral-600, #6b7280); }
+.lms-case-scorecard { display: flex; align-items: baseline; gap: 14px; padding: 14px; border-radius: var(--radius-md, 8px); margin: var(--space-1) 0 var(--space-3); color: var(--surface-inverse, #fff); }
+.lms-case-band { font-size: var(--text-4xl, 34px); font-weight: 800; line-height: 1; }
+.lms-case-overall { font-size: var(--text-2xl); font-weight: 600; }
+.lms-case-band-a { background: var(--accent-green); }
+.lms-case-band-b { background: var(--success-color, #16a34a); }
+.lms-case-band-c { background: var(--warning-color, #ca8a04); }
+.lms-case-band-d { background: var(--danger-color, #ea580c); }
+.lms-case-band-f { background: var(--danger-color, #dc2626); }
+.lms-case-dims { display: flex; flex-direction: column; gap: var(--space-1); }
+.lms-case-dim { display: flex; justify-content: space-between; font-size: var(--text-md); padding: var(--space-1) 6px; border-bottom: 1px solid var(--neutral-100, #f3f4f6); }
+.lms-case-veto { color: var(--danger-color, #dc2626); font-weight: 600; font-size: var(--text-md); margin: 10px 0 0; }
+.lms-case-summary { font-size: var(--text-md); color: var(--neutral-700, #374151); margin: var(--space-2) 0 0; }
+
+/* Lição interativa (guided tour no app real). */
+.lms-interactive-hint {
+    margin-top: 14px; padding: var(--space-3) 14px; border-radius: var(--radius-md, 8px);
+    background: var(--brand-50, #eff6ff); border: 1px solid var(--brand-200, #bfdbfe);
+    color: var(--brand-800, #1e40af); font-size: var(--text-md); line-height: 1.55;
+}
+
+/* Ordenação: emergência / checklist (LMS-INTERACTIVE-ASSESS-001 F5). */
+.lms-ord-help { font-size: var(--text-md); color: var(--neutral-700, #374151); margin: var(--space-2) 0 6px; }
+.lms-ord-list { list-style: none; margin: 0; padding: 0; }
+.lms-ord-item {
+    display: flex; align-items: center; gap: 10px; padding: var(--space-2) 10px; margin: 6px 0;
+    border: 1px solid var(--neutral-300, #d1d5db); border-radius: var(--radius-md, 8px);
+    background: var(--surface-1, #fff);
+}
+.lms-ord-pos {
+    flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%; display: inline-flex;
+    align-items: center; justify-content: center; font-size: var(--text-base); font-weight: 700;
+    background: var(--brand-100, #dbeafe); color: var(--brand-800, #1e40af);
+}
+.lms-ord-label { flex: 1; font-size: var(--text-md); color: var(--neutral-800, #1f2937); }
+.lms-ord-btns { display: inline-flex; gap: var(--space-1); }
+.lms-ord-btns button {
+    width: 28px; height: 28px; border: 1px solid var(--neutral-300, #d1d5db); border-radius: var(--radius-lg);
+    background: var(--neutral-50, #f9fafb); cursor: pointer; font-size: var(--text-base); color: var(--neutral-700, #374151);
+}
+.lms-ord-btns button:disabled { opacity: 0.4; cursor: not-allowed; }
+.lms-ord-btns button:not(:disabled):hover { background: var(--neutral-100, #f3f4f6); }
+
+/* Competências & badges (LMS-INTERACTIVE-ASSESS-001 F6 / RF-13). */
+.lms-comp-open {
+    margin-right: var(--space-2); padding: 5px var(--space-3); font-size: var(--text-base); font-weight: 600; cursor: pointer;
+    border: 1px solid var(--brand-300, #93c5fd); border-radius: var(--radius-md, 8px);
+    background: var(--brand-50, #eff6ff); color: var(--brand-800, #1e40af);
+}
+.lms-comp-open:hover { background: var(--brand-100, #dbeafe); }
+.lms-comp-title { font-size: var(--text-lg); margin: 0 0 14px; color: var(--neutral-800, #1f2937); }
+.lms-comp-rows { display: flex; flex-direction: column; gap: var(--space-2); margin: 0 0 14px; }
+.lms-comp-row { display: flex; align-items: center; gap: 10px; }
+.lms-comp-name { flex: 0 0 150px; font-size: var(--text-md); color: var(--neutral-700, #374151); }
+.lms-comp-bar { flex: 1; height: 10px; border-radius: var(--radius-lg); background: var(--neutral-200, #e5e7eb); overflow: hidden; }
+.lms-comp-fill { display: block; height: 100%; border-radius: var(--radius-lg); transition: width 0.3s; }
+.lms-comp-lvl-0 { background: var(--neutral-300, #d1d5db); }
+.lms-comp-lvl-1 { background: var(--accent-orange); }
+.lms-comp-lvl-2 { background: var(--border-color, #6b7280); }
+.lms-comp-lvl-3 { background: var(--accent-green); }
+.lms-comp-level { flex: 0 0 64px; text-align: right; font-size: var(--text-base); font-weight: 600; color: var(--neutral-600, #6b7280); }
+.lms-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: 6px; }
+.lms-badge {
+    display: inline-flex; align-items: center; padding: 5px var(--space-3); border-radius: 999px;
+    font-size: var(--text-base); font-weight: 700; color: var(--surface-inverse, #fff);
+}
+.lms-badge-1 { background: var(--accent-orange); }
+.lms-badge-2 { background: var(--border-color, #6b7280); }
+.lms-badge-3 { background: var(--accent-green); }
+.lms-comp-empty { font-size: var(--text-md); color: var(--neutral-600, #6b7280); }

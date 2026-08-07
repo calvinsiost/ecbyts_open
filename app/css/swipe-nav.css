@@ -1,0 +1,199 @@
+/* ================================================================
+   SWIPE NAVIGATION — Horizontal carousel for view groups
+   Navegacao por carrossel horizontal entre grupos de views
+
+   Ownership: .swipe-*, #swipe-*
+   ================================================================ */
+
+/* --- Nav Bar (tab strip above carousel) --- */
+
+.swipe-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    background: var(--bg-secondary, #0f2035);
+    border-bottom: 1px solid var(--border-color, rgba(255,255,255,.08));
+    position: relative;
+    flex-shrink: 0;
+    z-index: 5;
+    max-width: 100%;
+}
+
+.swipe-nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1, 4px);
+    max-width: clamp(320px, 90vw, 600px);
+    width: 100%;
+    position: relative;
+    padding: 0 var(--space-3, 12px);
+}
+
+.swipe-nav-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1, 4px);
+    height: 36px;
+    padding: 0 var(--space-3, 12px);
+    background: none;
+    border: none;
+    color: var(--text-secondary, rgba(255,255,255,.5));
+    font-family: inherit;
+    font-size: var(--text-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+    white-space: nowrap;
+    position: relative;
+}
+
+.swipe-nav-tab:hover {
+    color: var(--text-primary, rgba(255,255,255,.85));
+}
+
+.swipe-nav-tab[aria-selected="true"] {
+    color: var(--accent-color, #5eead4);
+}
+
+.swipe-nav-tab .swipe-nav-icon {
+    font-size: var(--text-lg);
+    line-height: 1;
+}
+
+/* Sliding indicator (underline) */
+.swipe-nav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent-color, #5eead4);
+    border-radius: 3px 3px 0 0;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, width;
+}
+
+/* --- Swipe Container (carousel viewport) --- */
+
+.swipe-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- Swipe Track (holds all panes, moves via transform) --- */
+
+.swipe-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+/* Disable transition during drag gesture */
+.swipe-track.swipe-dragging {
+    transition: none;
+}
+
+/* --- Swipe Pane (each group's content area) --- */
+
+.swipe-pane {
+    flex-shrink: 0;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* When active, allow vertical scroll within pane */
+.swipe-pane.swipe-pane--active {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Model pane: never scrolls (Three.js canvas handles its own), flex column for canvas */
+.swipe-pane[data-group="model"] {
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Data Studio pane: flex column to fill height */
+.swipe-pane[data-group="datastudio"] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Group-specific chrome visibility --- */
+
+/* Actions: hide all workspace chrome, full width */
+#app.view-group-actions #menubar,
+#app.view-group-actions #toolbar,
+#app.view-group-actions #ticker-bar,
+#app.view-group-actions #left-panel,
+#app.view-group-actions #right-panel,
+#app.view-group-actions #resize-handle-left,
+#app.view-group-actions #resize-handle-right,
+#app.view-group-actions #min-tabs-left,
+#app.view-group-actions #min-tabs-right,
+#app.view-group-actions #min-tabs-bottom,
+#app.view-group-actions #constellation-hud {
+    display: none !important;
+}
+
+#app.view-group-actions {
+    grid-template-rows: 40px 0px 0px 0px 1fr 26px;
+}
+
+#app.view-group-actions #main-area {
+    grid-column: 1 / -1;
+}
+
+/* Hide view-mode badge outside model group (prevents confusing navigation) */
+#app.view-group-actions #main-overlay-controls,
+#app.view-group-datastudio #main-overlay-controls {
+    display: none !important;
+}
+
+/* Data Studio: hide model chrome, keep statusbar */
+#app.view-group-datastudio #menubar,
+#app.view-group-datastudio #toolbar,
+#app.view-group-datastudio #ticker-bar,
+#app.view-group-datastudio #left-panel,
+#app.view-group-datastudio #right-panel,
+#app.view-group-datastudio #resize-handle-left,
+#app.view-group-datastudio #resize-handle-right,
+#app.view-group-datastudio #min-tabs-left,
+#app.view-group-datastudio #min-tabs-right,
+#app.view-group-datastudio #min-tabs-bottom,
+#app.view-group-datastudio #constellation-hud {
+    display: none !important;
+}
+
+#app.view-group-datastudio {
+    grid-template-rows: 40px 0px 0px 0px 1fr 26px;
+}
+
+#app.view-group-datastudio #main-area {
+    grid-column: 1 / -1;
+}
+
+/* --- Responsive: mobile --- */
+
+@media (max-width: 480px) {
+    .swipe-nav-tab {
+        font-size: var(--text-sm);
+        padding: 0 var(--space-2, 8px);
+    }
+
+    .swipe-nav-tab .swipe-nav-label {
+        display: none;
+    }
+
+    .swipe-nav-tab .swipe-nav-icon {
+        font-size: var(--text-2xl);
+    }
+}

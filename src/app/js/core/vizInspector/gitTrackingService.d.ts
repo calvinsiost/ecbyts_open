@@ -1,0 +1,9 @@
+export function normalizeGitCommit(...args: any[]): any;
+export function createCommit(...args: any[]): any;
+export function createCheckpoint(...args: any[]): any;
+export function getHistory(...args: any[]): any;
+export function getDiff(...args: any[]): any;
+export function revertCommit(...args: any[]): any;
+export function restoreCheckpointState(...args: any[]): any;
+export function getElementProvenanceFromHistory(...args: any[]): any;
+export function getCommitBlameFromHistory(...args: any[]): any;

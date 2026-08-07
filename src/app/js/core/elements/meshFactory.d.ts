@@ -1,0 +1,9 @@
+export function getCachedGeometry(...args: any[]): any;
+export function getCachedMaterial(...args: any[]): any;
+export function disposeMesh(...args: any[]): any;
+export function updateMesh(...args: any[]): any;
+export function loadOverlayTexture(...args: any[]): any;
+export function createMesh(...args: any[]): any;
+export function rebuildBoundaryGeometry(...args: any[]): any;
+export function rebuildRiverGeometry(...args: any[]): any;
+export function rebuildExtrudedGeometry(...args: any[]): any;

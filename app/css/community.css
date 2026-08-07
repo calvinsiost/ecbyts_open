@@ -1,0 +1,244 @@
+/* ================================================================
+   COMMUNITY PANEL — Hall dos Guardioes
+   Namespace: .community-*
+   ================================================================ */
+
+.community-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* --- Tabs --- */
+
+.community-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--neutral-200);
+    padding: 0 var(--space-2);
+    flex-shrink: 0;
+}
+
+.community-tab {
+    flex: 1;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--neutral-500);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+
+.community-tab:hover {
+    color: var(--text-muted);
+}
+
+.community-tab.active {
+    color: var(--accent-primary, #60a5fa);
+    border-bottom-color: var(--accent-primary, #60a5fa);
+}
+
+/* --- Content area --- */
+
+.community-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-3);
+}
+
+.community-loading,
+.community-empty {
+    text-align: center;
+    color: var(--neutral-500);
+    font-size: var(--text-sm);
+    padding: var(--space-6) var(--space-4);
+}
+
+.community-subsection-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--neutral-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: var(--space-3) 0 var(--space-2);
+}
+
+.community-subsection-title:first-child {
+    margin-top: 0;
+}
+
+/* --- Top Contributors --- */
+
+.community-contributor {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+}
+
+.community-contributor:hover {
+    background: var(--neutral-100);
+}
+
+.community-rank {
+    width: 28px;
+    font-weight: 600;
+    color: var(--neutral-500);
+    font-size: var(--text-xs);
+}
+
+.community-rank-1 .community-rank { color: #fbbf24; }
+.community-rank-2 .community-rank { color: #94a3b8; }
+.community-rank-3 .community-rank { color: #d97706; }
+
+.community-contributor-name {
+    flex: 1;
+    color: var(--text-muted);
+}
+
+.community-contributor-score {
+    font-weight: 600;
+    color: var(--neutral-400);
+    font-size: var(--text-xs);
+}
+
+/* --- Badges --- */
+
+.community-badge-catalog {
+    margin-top: var(--space-4);
+}
+
+.community-badge-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.community-badge-locked {
+    opacity: 0.5;
+}
+
+.community-badge-earned {
+    background: rgba(96, 165, 250, 0.08);
+}
+
+.community-badge-date {
+    margin-left: auto;
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+}
+
+/* --- My Journey --- */
+
+.community-journey-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+}
+
+.community-journey-tier {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+}
+
+.community-journey-tier.seed { color: var(--neutral-400); background: var(--neutral-100); }
+.community-journey-tier.rising { color: #60a5fa; background: rgba(96, 165, 250, 0.1); }
+.community-journey-tier.active { color: #34d399; background: rgba(52, 211, 153, 0.1); }
+.community-journey-tier.trusted { color: #fbbf24; background: rgba(251, 191, 36, 0.1); }
+.community-journey-tier.vanguard { color: #a78bfa; background: rgba(167, 139, 250, 0.1); }
+
+.community-journey-score {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.community-journey-stats {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.community-journey-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--neutral-500);
+}
+
+/* --- Tier progression path --- */
+
+.community-tier-path {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-left: var(--space-2);
+}
+
+.community-tier-step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    position: relative;
+    padding-left: var(--space-3);
+}
+
+.community-tier-step::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    width: 1px;
+    height: 100%;
+    background: var(--neutral-300);
+}
+
+.community-tier-step:last-child::before {
+    display: none;
+}
+
+.community-tier-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--neutral-400);
+    flex-shrink: 0;
+}
+
+.community-tier-reached .community-tier-dot {
+    background: var(--accent-primary, #60a5fa);
+    border-color: var(--accent-primary, #60a5fa);
+}
+
+.community-tier-locked .community-tier-dot {
+    background: transparent;
+}
+
+.community-tier-name {
+    flex: 1;
+    color: var(--text-muted);
+}
+
+.community-tier-locked .community-tier-name {
+    color: var(--neutral-500);
+}
+
+.community-tier-threshold {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+}

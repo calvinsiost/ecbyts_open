@@ -1,0 +1,12 @@
+export const LIBRARY_COMMUNITY_MODERATION_STATE_KEY: string;
+export function saveEnrichment(...args: any[]): any;
+export function loadEnrichments(...args: any[]): any;
+export function getEnrichmentForElement(...args: any[]): any;
+export function clearEnrichments(...args: any[]): any;
+export function createEnrichmentStore(...args: any[]): any;
+export function createLibraryCommunityModerationStore(...args: any[]): any;
+export function createPersistentLibraryCommunityModerationStore(...args: any[]): any;
+export function saveLibraryCommunityModerationState(...args: any[]): any;
+export function loadLibraryCommunityModerationState(...args: any[]): any;
+export function loadLibraryCommunityModerationStore(...args: any[]): any;
+export function clearLibraryCommunityModerationState(...args: any[]): any;

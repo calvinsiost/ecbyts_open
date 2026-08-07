@@ -1,0 +1,2487 @@
+[
+    {
+        "codigo_ibge": "4300034",
+        "nome": "Aceguá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300059",
+        "nome": "Água Santa",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300109",
+        "nome": "Agudo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300208",
+        "nome": "Ajuricaba",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300307",
+        "nome": "Alecrim",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300406",
+        "nome": "Alegrete",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300455",
+        "nome": "Alegria",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300471",
+        "nome": "Almirante Tamandaré do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300505",
+        "nome": "Alpestre",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300554",
+        "nome": "Alto Alegre",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300570",
+        "nome": "Alto Feliz",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300604",
+        "nome": "Alvorada",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300638",
+        "nome": "Amaral Ferrador",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300646",
+        "nome": "Ametista do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300661",
+        "nome": "André da Rocha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300703",
+        "nome": "Anta Gorda",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300802",
+        "nome": "Antônio Prado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300851",
+        "nome": "Arambaré",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300877",
+        "nome": "Araricá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4300901",
+        "nome": "Aratiba",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301008",
+        "nome": "Arroio do Meio",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301073",
+        "nome": "Arroio do Padre",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301057",
+        "nome": "Arroio do Sal",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301206",
+        "nome": "Arroio do Tigre",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301107",
+        "nome": "Arroio dos Ratos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301305",
+        "nome": "Arroio Grande",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301404",
+        "nome": "Arvorezinha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301503",
+        "nome": "Augusto Pestana",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301552",
+        "nome": "Áurea",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301602",
+        "nome": "Bagé",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301636",
+        "nome": "Balneário Pinhal",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301651",
+        "nome": "Barão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301701",
+        "nome": "Barão de Cotegipe",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301750",
+        "nome": "Barão do Triunfo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301859",
+        "nome": "Barra do Guarita",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301875",
+        "nome": "Barra do Quaraí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301909",
+        "nome": "Barra do Ribeiro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301925",
+        "nome": "Barra do Rio Azul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301958",
+        "nome": "Barra Funda",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4301800",
+        "nome": "Barracão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302006",
+        "nome": "Barros Cassal",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302055",
+        "nome": "Benjamin Constant do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302105",
+        "nome": "Bento Gonçalves",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302154",
+        "nome": "Boa Vista das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302204",
+        "nome": "Boa Vista do Buricá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302220",
+        "nome": "Boa Vista do Cadeado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302238",
+        "nome": "Boa Vista do Incra",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302253",
+        "nome": "Boa Vista do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302303",
+        "nome": "Bom Jesus",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302352",
+        "nome": "Bom Princípio",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302378",
+        "nome": "Bom Progresso",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302402",
+        "nome": "Bom Retiro do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302451",
+        "nome": "Boqueirão do Leão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302501",
+        "nome": "Bossoroca",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302584",
+        "nome": "Bozano",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302600",
+        "nome": "Braga",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302659",
+        "nome": "Brochier",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302709",
+        "nome": "Butiá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302808",
+        "nome": "Caçapava do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4302907",
+        "nome": "Cacequi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303004",
+        "nome": "Cachoeira do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303103",
+        "nome": "Cachoeirinha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303202",
+        "nome": "Cacique Doble",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303301",
+        "nome": "Caibaté",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303400",
+        "nome": "Caiçara",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303509",
+        "nome": "Camaquã",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303558",
+        "nome": "Camargo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303608",
+        "nome": "Cambará do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303673",
+        "nome": "Campestre da Serra",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303707",
+        "nome": "Campina das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303806",
+        "nome": "Campinas do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4303905",
+        "nome": "Campo Bom",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304002",
+        "nome": "Campo Novo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304101",
+        "nome": "Campos Borges",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304200",
+        "nome": "Candelária",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304309",
+        "nome": "Cândido Godói",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304358",
+        "nome": "Candiota",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304408",
+        "nome": "Canela",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304507",
+        "nome": "Canguçu",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304606",
+        "nome": "Canoas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304614",
+        "nome": "Canudos do Vale",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304622",
+        "nome": "Capão Bonito do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304630",
+        "nome": "Capão da Canoa",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304655",
+        "nome": "Capão do Cipó",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304663",
+        "nome": "Capão do Leão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304689",
+        "nome": "Capela de Santana",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304697",
+        "nome": "Capitão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304671",
+        "nome": "Capivari do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304713",
+        "nome": "Caraá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304705",
+        "nome": "Carazinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304804",
+        "nome": "Carlos Barbosa",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304853",
+        "nome": "Carlos Gomes",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304903",
+        "nome": "Casca",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4304952",
+        "nome": "Caseiros",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305009",
+        "nome": "Catuípe",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305108",
+        "nome": "Caxias do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305116",
+        "nome": "Centenário",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305124",
+        "nome": "Cerrito",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305132",
+        "nome": "Cerro Branco",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305157",
+        "nome": "Cerro Grande",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305173",
+        "nome": "Cerro Grande do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305207",
+        "nome": "Cerro Largo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305306",
+        "nome": "Chapada",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305355",
+        "nome": "Charqueadas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305371",
+        "nome": "Charrua",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305405",
+        "nome": "Chiapetta",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305439",
+        "nome": "Chuí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305447",
+        "nome": "Chuvisca",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305454",
+        "nome": "Cidreira",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305504",
+        "nome": "Ciríaco",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305587",
+        "nome": "Colinas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305603",
+        "nome": "Colorado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305702",
+        "nome": "Condor",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305801",
+        "nome": "Constantina",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305835",
+        "nome": "Coqueiro Baixo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305850",
+        "nome": "Coqueiros do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305871",
+        "nome": "Coronel Barros",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305900",
+        "nome": "Coronel Bicaco",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305934",
+        "nome": "Coronel Pilar",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305959",
+        "nome": "Cotiporã",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4305975",
+        "nome": "Coxilha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306007",
+        "nome": "Crissiumal",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306056",
+        "nome": "Cristal",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306072",
+        "nome": "Cristal do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306106",
+        "nome": "Cruz Alta",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306130",
+        "nome": "Cruzaltense",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306205",
+        "nome": "Cruzeiro do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306304",
+        "nome": "David Canabarro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306320",
+        "nome": "Derrubadas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306353",
+        "nome": "Dezesseis de Novembro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306379",
+        "nome": "Dilermando de Aguiar",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306403",
+        "nome": "Dois Irmãos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306429",
+        "nome": "Dois Irmãos das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306452",
+        "nome": "Dois Lajeados",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306502",
+        "nome": "Dom Feliciano",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306601",
+        "nome": "Dom Pedrito",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306551",
+        "nome": "Dom Pedro de Alcântara",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306700",
+        "nome": "Dona Francisca",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306734",
+        "nome": "Doutor Maurício Cardoso",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306759",
+        "nome": "Doutor Ricardo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306767",
+        "nome": "Eldorado do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306809",
+        "nome": "Encantado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306908",
+        "nome": "Encruzilhada do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306924",
+        "nome": "Engenho Velho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306957",
+        "nome": "Entre Rios do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306932",
+        "nome": "Entre-Ijuís",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4306973",
+        "nome": "Erebango",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307005",
+        "nome": "Erechim",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307054",
+        "nome": "Ernestina",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307203",
+        "nome": "Erval Grande",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307302",
+        "nome": "Erval Seco",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307401",
+        "nome": "Esmeralda",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307450",
+        "nome": "Esperança do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307500",
+        "nome": "Espumoso",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307559",
+        "nome": "Estação",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307609",
+        "nome": "Estância Velha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307708",
+        "nome": "Esteio",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307807",
+        "nome": "Estrela",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307815",
+        "nome": "Estrela Velha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307831",
+        "nome": "Eugênio de Castro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307864",
+        "nome": "Fagundes Varela",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307906",
+        "nome": "Farroupilha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308003",
+        "nome": "Faxinal do Soturno",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308052",
+        "nome": "Faxinalzinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308078",
+        "nome": "Fazenda Vilanova",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308102",
+        "nome": "Feliz",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308201",
+        "nome": "Flores da Cunha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308250",
+        "nome": "Floriano Peixoto",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308300",
+        "nome": "Fontoura Xavier",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308409",
+        "nome": "Formigueiro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308433",
+        "nome": "Forquetinha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308458",
+        "nome": "Fortaleza dos Valos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308508",
+        "nome": "Frederico Westphalen",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308607",
+        "nome": "Garibaldi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308656",
+        "nome": "Garruchos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308706",
+        "nome": "Gaurama",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308805",
+        "nome": "General Câmara",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308854",
+        "nome": "Gentil",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4308904",
+        "nome": "Getúlio Vargas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309001",
+        "nome": "Giruá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309050",
+        "nome": "Glorinha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309100",
+        "nome": "Gramado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309126",
+        "nome": "Gramado dos Loureiros",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309159",
+        "nome": "Gramado Xavier",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309209",
+        "nome": "Gravataí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309258",
+        "nome": "Guabiju",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309308",
+        "nome": "Guaíba",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309407",
+        "nome": "Guaporé",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309506",
+        "nome": "Guarani das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309555",
+        "nome": "Harmonia",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4307104",
+        "nome": "Herval",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309571",
+        "nome": "Herveiras",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309605",
+        "nome": "Horizontina",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309654",
+        "nome": "Hulha Negra",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309704",
+        "nome": "Humaitá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309753",
+        "nome": "Ibarama",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309803",
+        "nome": "Ibiaçá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309902",
+        "nome": "Ibiraiaras",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4309951",
+        "nome": "Ibirapuitã",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310009",
+        "nome": "Ibirubá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310108",
+        "nome": "Igrejinha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310207",
+        "nome": "Ijuí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310306",
+        "nome": "Ilópolis",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310330",
+        "nome": "Imbé",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310363",
+        "nome": "Imigrante",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310405",
+        "nome": "Independência",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310413",
+        "nome": "Inhacorá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310439",
+        "nome": "Ipê",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310462",
+        "nome": "Ipiranga do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310504",
+        "nome": "Iraí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310538",
+        "nome": "Itaara",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310553",
+        "nome": "Itacurubi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310579",
+        "nome": "Itapuca",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310603",
+        "nome": "Itaqui",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310652",
+        "nome": "Itati",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310702",
+        "nome": "Itatiba do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310751",
+        "nome": "Ivorá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310801",
+        "nome": "Ivoti",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310850",
+        "nome": "Jaboticaba",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310876",
+        "nome": "Jacuizinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4310900",
+        "nome": "Jacutinga",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311007",
+        "nome": "Jaguarão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311106",
+        "nome": "Jaguari",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311122",
+        "nome": "Jaquirana",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311130",
+        "nome": "Jari",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311155",
+        "nome": "Jóia",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311205",
+        "nome": "Júlio de Castilhos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311239",
+        "nome": "Lagoa Bonita do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311270",
+        "nome": "Lagoa dos Três Cantos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311304",
+        "nome": "Lagoa Vermelha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311254",
+        "nome": "Lagoão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311403",
+        "nome": "Lajeado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311429",
+        "nome": "Lajeado do Bugre",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311502",
+        "nome": "Lavras do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311601",
+        "nome": "Liberato Salzano",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311627",
+        "nome": "Lindolfo Collor",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311643",
+        "nome": "Linha Nova",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311718",
+        "nome": "Maçambará",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311700",
+        "nome": "Machadinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311734",
+        "nome": "Mampituba",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311759",
+        "nome": "Manoel Viana",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311775",
+        "nome": "Maquiné",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311791",
+        "nome": "Maratá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311809",
+        "nome": "Marau",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311908",
+        "nome": "Marcelino Ramos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4311981",
+        "nome": "Mariana Pimentel",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312005",
+        "nome": "Mariano Moro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312054",
+        "nome": "Marques de Souza",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312104",
+        "nome": "Mata",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312138",
+        "nome": "Mato Castelhano",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312153",
+        "nome": "Mato Leitão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312179",
+        "nome": "Mato Queimado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312203",
+        "nome": "Maximiliano de Almeida",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312252",
+        "nome": "Minas do Leão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312302",
+        "nome": "Miraguaí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312351",
+        "nome": "Montauri",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312377",
+        "nome": "Monte Alegre dos Campos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312385",
+        "nome": "Monte Belo do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312401",
+        "nome": "Montenegro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312427",
+        "nome": "Mormaço",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312443",
+        "nome": "Morrinhos do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312450",
+        "nome": "Morro Redondo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312476",
+        "nome": "Morro Reuter",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312500",
+        "nome": "Mostardas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312609",
+        "nome": "Muçum",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312617",
+        "nome": "Muitos Capões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312625",
+        "nome": "Muliterno",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312658",
+        "nome": "Não-Me-Toque",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312674",
+        "nome": "Nicolau Vergueiro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312708",
+        "nome": "Nonoai",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312757",
+        "nome": "Nova Alvorada",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312807",
+        "nome": "Nova Araçá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312906",
+        "nome": "Nova Bassano",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4312955",
+        "nome": "Nova Boa Vista",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313003",
+        "nome": "Nova Bréscia",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313011",
+        "nome": "Nova Candelária",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313037",
+        "nome": "Nova Esperança do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313060",
+        "nome": "Nova Hartz",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313086",
+        "nome": "Nova Pádua",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313102",
+        "nome": "Nova Palma",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313201",
+        "nome": "Nova Petrópolis",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313300",
+        "nome": "Nova Prata",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313334",
+        "nome": "Nova Ramada",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313359",
+        "nome": "Nova Roma do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313375",
+        "nome": "Nova Santa Rita",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313490",
+        "nome": "Novo Barreiro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313391",
+        "nome": "Novo Cabrais",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313409",
+        "nome": "Novo Hamburgo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313425",
+        "nome": "Novo Machado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313441",
+        "nome": "Novo Tiradentes",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313466",
+        "nome": "Novo Xingu",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313508",
+        "nome": "Osório",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313607",
+        "nome": "Paim Filho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313656",
+        "nome": "Palmares do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313706",
+        "nome": "Palmeira das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313805",
+        "nome": "Palmitinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313904",
+        "nome": "Panambi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4313953",
+        "nome": "Pantano Grande",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314001",
+        "nome": "Paraí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314027",
+        "nome": "Paraíso do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314035",
+        "nome": "Pareci Novo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314050",
+        "nome": "Parobé",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314068",
+        "nome": "Passa Sete",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314076",
+        "nome": "Passo do Sobrado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314100",
+        "nome": "Passo Fundo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314134",
+        "nome": "Paulo Bento",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314159",
+        "nome": "Paverama",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314175",
+        "nome": "Pedras Altas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314209",
+        "nome": "Pedro Osório",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314308",
+        "nome": "Pejuçara",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314407",
+        "nome": "Pelotas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314423",
+        "nome": "Picada Café",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314456",
+        "nome": "Pinhal",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314464",
+        "nome": "Pinhal da Serra",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314472",
+        "nome": "Pinhal Grande",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314498",
+        "nome": "Pinheirinho do Vale",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314506",
+        "nome": "Pinheiro Machado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314548",
+        "nome": "Pinto Bandeira",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314555",
+        "nome": "Pirapó",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314605",
+        "nome": "Piratini",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314704",
+        "nome": "Planalto",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314753",
+        "nome": "Poço das Antas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314779",
+        "nome": "Pontão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314787",
+        "nome": "Ponte Preta",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314803",
+        "nome": "Portão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4314902",
+        "nome": "Porto Alegre",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315008",
+        "nome": "Porto Lucena",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315057",
+        "nome": "Porto Mauá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315073",
+        "nome": "Porto Vera Cruz",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315107",
+        "nome": "Porto Xavier",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315131",
+        "nome": "Pouso Novo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315149",
+        "nome": "Presidente Lucena",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315156",
+        "nome": "Progresso",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315172",
+        "nome": "Protásio Alves",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315206",
+        "nome": "Putinga",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315305",
+        "nome": "Quaraí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315313",
+        "nome": "Quatro Irmãos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315321",
+        "nome": "Quevedos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315354",
+        "nome": "Quinze de Novembro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315404",
+        "nome": "Redentora",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315453",
+        "nome": "Relvado",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315503",
+        "nome": "Restinga Sêca",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315552",
+        "nome": "Rio dos Índios",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315602",
+        "nome": "Rio Grande",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315701",
+        "nome": "Rio Pardo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315750",
+        "nome": "Riozinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315800",
+        "nome": "Roca Sales",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315909",
+        "nome": "Rodeio Bonito",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4315958",
+        "nome": "Rolador",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316006",
+        "nome": "Rolante",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316105",
+        "nome": "Ronda Alta",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316204",
+        "nome": "Rondinha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316303",
+        "nome": "Roque Gonzales",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316402",
+        "nome": "Rosário do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316428",
+        "nome": "Sagrada Família",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316436",
+        "nome": "Saldanha Marinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316451",
+        "nome": "Salto do Jacuí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316477",
+        "nome": "Salvador das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316501",
+        "nome": "Salvador do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316600",
+        "nome": "Sananduva",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317103",
+        "nome": "Sant'Ana do Livramento",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316709",
+        "nome": "Santa Bárbara do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316733",
+        "nome": "Santa Cecília do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316758",
+        "nome": "Santa Clara do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316808",
+        "nome": "Santa Cruz do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316972",
+        "nome": "Santa Margarida do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316907",
+        "nome": "Santa Maria",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4316956",
+        "nome": "Santa Maria do Herval",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317202",
+        "nome": "Santa Rosa",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317251",
+        "nome": "Santa Tereza",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317301",
+        "nome": "Santa Vitória do Palmar",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317004",
+        "nome": "Santana da Boa Vista",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317400",
+        "nome": "Santiago",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317509",
+        "nome": "Santo Ângelo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317608",
+        "nome": "Santo Antônio da Patrulha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317707",
+        "nome": "Santo Antônio das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317558",
+        "nome": "Santo Antônio do Palma",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317756",
+        "nome": "Santo Antônio do Planalto",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317806",
+        "nome": "Santo Augusto",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317905",
+        "nome": "Santo Cristo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4317954",
+        "nome": "Santo Expedito do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318002",
+        "nome": "São Borja",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318051",
+        "nome": "São Domingos do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318101",
+        "nome": "São Francisco de Assis",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318200",
+        "nome": "São Francisco de Paula",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318309",
+        "nome": "São Gabriel",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318408",
+        "nome": "São Jerônimo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318424",
+        "nome": "São João da Urtiga",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318432",
+        "nome": "São João do Polêsine",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318440",
+        "nome": "São Jorge",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318457",
+        "nome": "São José das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318465",
+        "nome": "São José do Herval",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318481",
+        "nome": "São José do Hortêncio",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318499",
+        "nome": "São José do Inhacorá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318507",
+        "nome": "São José do Norte",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318606",
+        "nome": "São José do Ouro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318614",
+        "nome": "São José do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318622",
+        "nome": "São José dos Ausentes",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318705",
+        "nome": "São Leopoldo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318804",
+        "nome": "São Lourenço do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4318903",
+        "nome": "São Luiz Gonzaga",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319000",
+        "nome": "São Marcos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319109",
+        "nome": "São Martinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319125",
+        "nome": "São Martinho da Serra",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319158",
+        "nome": "São Miguel das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319208",
+        "nome": "São Nicolau",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319307",
+        "nome": "São Paulo das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319356",
+        "nome": "São Pedro da Serra",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319364",
+        "nome": "São Pedro das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319372",
+        "nome": "São Pedro do Butiá",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319406",
+        "nome": "São Pedro do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319505",
+        "nome": "São Sebastião do Caí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319604",
+        "nome": "São Sepé",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319703",
+        "nome": "São Valentim",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319711",
+        "nome": "São Valentim do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319737",
+        "nome": "São Valério do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319752",
+        "nome": "São Vendelino",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319802",
+        "nome": "São Vicente do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4319901",
+        "nome": "Sapiranga",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320008",
+        "nome": "Sapucaia do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320107",
+        "nome": "Sarandi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320206",
+        "nome": "Seberi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320230",
+        "nome": "Sede Nova",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320263",
+        "nome": "Segredo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320305",
+        "nome": "Selbach",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320321",
+        "nome": "Senador Salgado Filho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320354",
+        "nome": "Sentinela do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320404",
+        "nome": "Serafina Corrêa",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320453",
+        "nome": "Sério",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320503",
+        "nome": "Sertão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320552",
+        "nome": "Sertão Santana",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320578",
+        "nome": "Sete de Setembro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320602",
+        "nome": "Severiano de Almeida",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320651",
+        "nome": "Silveira Martins",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320677",
+        "nome": "Sinimbu",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320701",
+        "nome": "Sobradinho",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320800",
+        "nome": "Soledade",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320859",
+        "nome": "Tabaí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4320909",
+        "nome": "Tapejara",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321006",
+        "nome": "Tapera",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321105",
+        "nome": "Tapes",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321204",
+        "nome": "Taquara",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321303",
+        "nome": "Taquari",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321329",
+        "nome": "Taquaruçu do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321352",
+        "nome": "Tavares",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321402",
+        "nome": "Tenente Portela",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321436",
+        "nome": "Terra de Areia",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321451",
+        "nome": "Teutônia",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321469",
+        "nome": "Tio Hugo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321477",
+        "nome": "Tiradentes do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321493",
+        "nome": "Toropi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321501",
+        "nome": "Torres",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321600",
+        "nome": "Tramandaí",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321626",
+        "nome": "Travesseiro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321634",
+        "nome": "Três Arroios",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321667",
+        "nome": "Três Cachoeiras",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321709",
+        "nome": "Três Coroas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321808",
+        "nome": "Três de Maio",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321832",
+        "nome": "Três Forquilhas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321857",
+        "nome": "Três Palmeiras",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321907",
+        "nome": "Três Passos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4321956",
+        "nome": "Trindade do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322004",
+        "nome": "Triunfo",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322103",
+        "nome": "Tucunduva",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322152",
+        "nome": "Tunas",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322186",
+        "nome": "Tupanci do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322202",
+        "nome": "Tupanciretã",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322251",
+        "nome": "Tupandi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322301",
+        "nome": "Tuparendi",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322327",
+        "nome": "Turuçu",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322343",
+        "nome": "Ubiretama",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322350",
+        "nome": "União da Serra",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322376",
+        "nome": "Unistalda",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322400",
+        "nome": "Uruguaiana",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322509",
+        "nome": "Vacaria",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322533",
+        "nome": "Vale do Sol",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322541",
+        "nome": "Vale Real",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322525",
+        "nome": "Vale Verde",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322558",
+        "nome": "Vanini",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322608",
+        "nome": "Venâncio Aires",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322707",
+        "nome": "Vera Cruz",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322806",
+        "nome": "Veranópolis",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322855",
+        "nome": "Vespasiano Corrêa",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4322905",
+        "nome": "Viadutos",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323002",
+        "nome": "Viamão",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323101",
+        "nome": "Vicente Dutra",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323200",
+        "nome": "Victor Graeff",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323309",
+        "nome": "Vila Flores",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323358",
+        "nome": "Vila Lângaro",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323408",
+        "nome": "Vila Maria",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323457",
+        "nome": "Vila Nova do Sul",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323507",
+        "nome": "Vista Alegre",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323606",
+        "nome": "Vista Alegre do Prata",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323705",
+        "nome": "Vista Gaúcha",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323754",
+        "nome": "Vitória das Missões",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323770",
+        "nome": "Westfália",
+        "uf": "RS"
+    },
+    {
+        "codigo_ibge": "4323804",
+        "nome": "Xangri-lá",
+        "uf": "RS"
+    }
+]

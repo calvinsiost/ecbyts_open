@@ -1,0 +1,185 @@
+/* feedback-widget.css — Universal Like/Dislike Widget
+ * Spec: docs/specs/features/SPEC_UNIVERSAL_FEEDBACK_WIDGET.md
+ *
+ * Owned by this file per CLAUDE.md CSS File Ownership rule.
+ * Never define .feedback-* selectors outside this file.
+ */
+
+.feedback-widget {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-1, #3a3a3a);
+    font-size: var(--text-sm);
+    line-height: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.feedback-widget.feedback-variant-compact {
+    gap: 2px;
+    padding: 1px var(--space-1);
+    font-size: var(--text-xs);
+}
+
+.feedback-btn {
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-2, #d4d4d4);
+    cursor: pointer;
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.feedback-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.feedback-btn:focus-visible {
+    outline: 2px solid var(--primary-500, #3b82f6);
+    outline-offset: 1px;
+}
+
+.feedback-btn:active {
+    transform: scale(0.95);
+}
+
+.feedback-btn.feedback-btn-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.feedback-btn-voted.feedback-up {
+    background: rgba(34, 197, 94, 0.25);
+    color: var(--accent-green);
+}
+
+.feedback-btn-voted.feedback-down {
+    background: rgba(239, 68, 68, 0.25);
+    color: var(--accent-red);
+}
+
+.feedback-count {
+    font-size: var(--text-xs);
+    color: var(--text-3, #9ca3af);
+    font-family: ui-monospace, 'Cascadia Code', Menlo, monospace;
+    min-width: 0;
+    padding: 0 2px;
+}
+
+.feedback-count:empty {
+    display: none;
+}
+
+/* Mount inside EIS modal header (last NN output) */
+.eis-modal-header .feedback-widget {
+    margin-left: var(--space-3);
+    vertical-align: middle;
+}
+
+/* ============================================================
+   H-008 (HUD Audit 2026-06-05, claude - ui):
+   Antes os botões "Útil/Não útil" na statusbar tinham border e
+   background transparentes → apareciam como texto puro, sem
+   affordance de clique. Usuário leigo nunca percebia que era
+   widget de retorno (RLHF signal perdido).
+   Fix: pílula sutil visível + setas ↑/↓ via ::before + hover
+   com cores semânticas (verde/vermelho) + estado persistente
+   após voto. Nielsen H6 Recognition + WCAG 4.1.2 Name/Role/Value.
+   ============================================================ */
+
+/* Mount inside statusbar (global) — pílula sutil visível */
+#statusbar .feedback-widget {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1px var(--space-1);
+    gap: 2px;
+}
+
+#statusbar .feedback-btn {
+    font-size: var(--text-xs);
+    padding: 1px 6px 1px var(--space-1);
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* Seta ↑ antes do botão "Útil" (HTML entity, no emoji per Calvin) */
+#statusbar .feedback-btn.feedback-up::before {
+    content: '\2191'; /* ↑ */
+    font-weight: 700;
+    font-size: var(--text-sm);
+    opacity: 0.65;
+    transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+/* Seta ↓ antes do botão "Não útil" */
+#statusbar .feedback-btn.feedback-down::before {
+    content: '\2193'; /* ↓ */
+    font-weight: 700;
+    font-size: var(--text-sm);
+    opacity: 0.65;
+    transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+/* Hover semântico: verde para Útil, vermelho para Não útil */
+#statusbar .feedback-btn.feedback-up:hover {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: rgba(34, 197, 94, 0.35);
+    color: #4ade80;
+}
+#statusbar .feedback-btn.feedback-up:hover::before {
+    opacity: 1;
+    color: var(--accent-green);
+}
+
+#statusbar .feedback-btn.feedback-down:hover {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.35);
+    color: #f87171;
+}
+#statusbar .feedback-btn.feedback-down:hover::before {
+    opacity: 1;
+    color: var(--accent-red);
+}
+
+/* Estado persistente após voto (aria-pressed="true" controlado por JS futuro;
+   por enquanto reutiliza .feedback-btn-voted-persistent que pode ser adicionado
+   pelo manager de feedback). */
+#statusbar .feedback-btn-voted-persistent.feedback-up {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: rgba(34, 197, 94, 0.6);
+    color: var(--accent-green);
+}
+#statusbar .feedback-btn-voted-persistent.feedback-down {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: rgba(239, 68, 68, 0.6);
+    color: var(--accent-red);
+}
+
+/* Responsive: shrink in mobile (esconde seta + counter) */
+@media (max-width: 640px) {
+    #statusbar .feedback-widget {
+        gap: 2px;
+    }
+    .feedback-count {
+        display: none;
+    }
+    #statusbar .feedback-btn.feedback-up::before,
+    #statusbar .feedback-btn.feedback-down::before {
+        display: none;
+    }
+}

@@ -1,0 +1,15 @@
+export const VIEW_GROUPS: Readonly<Record<string, any>>;
+export const VIEW_MODES: Readonly<Record<string, any>>;
+export function initViewRouter(...args: any[]): any;
+export function initSwipeNavigation(...args: any[]): Promise<any>;
+export function applySavedView(...args: any[]): Promise<any>;
+export function onSceneReady(...args: any[]): any;
+export function onDataStudioReady(...args: any[]): any;
+export function switchGroup(...args: any[]): Promise<any>;
+export function switchView(...args: any[]): Promise<any>;
+export function getCurrentGroup(...args: any[]): any;
+export function getCurrentView(...args: any[]): any;
+export function isSceneReady(...args: any[]): boolean;
+export function markSceneReady(...args: any[]): any;
+export function isDataStudioReady(...args: any[]): boolean;
+export function getGroupOrder(...args: any[]): any[];

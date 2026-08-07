@@ -1,0 +1,12 @@
+export function showMoreObservations(...args: any[]): any;
+export function showAllObservations(...args: any[]): any;
+export function toggleObsCampaign(...args: any[]): any;
+export function expandObservation(...args: any[]): any;
+export function updateFamiliesList(...args: any[]): any;
+export function updateElementsList(...args: any[]): any;
+export function highlightSelectedElement(...args: any[]): any;
+export function highlightSelectedLayer(...args: any[]): any;
+export function updateElementDetails(...args: any[]): any;
+export function updateCampaignsList(...args: any[]): any;
+export function updateScenesList(...args: any[]): any;
+export function updateStatusBar(...args: any[]): any;

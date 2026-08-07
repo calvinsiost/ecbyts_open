@@ -1,0 +1,358 @@
+/* This file is part of ecbyts/ECBT (Environmental & Occupational Core Byte Tools).
+ * Copyright (C) 2026 Calvin Stefan Iost
+ * Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0-only).
+ * See LICENSE file or https://www.gnu.org/licenses/agpl-3.0.txt
+ *
+ * ACTION-PLAN-001 (FASE 2 UI) — estilo da aba "Plano de Ação" do painel
+ * constellation. Segue a paleta escura das outras abas (preset/inspector).
+ */
+
+#constellation-view-action-plan {
+    overflow: auto;
+    font-family: inherit;
+    color: #e5e7eb;
+}
+
+.ap-root {
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+/* ---- Toolbar ---- */
+.ap-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+.ap-heading {
+    font-size: 13px;
+    font-weight: 700;
+}
+.ap-spacer {
+    flex: 1;
+}
+.ap-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #e5e7eb;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s;
+    font-family: inherit;
+}
+.ap-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #475569;
+}
+.ap-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+.ap-btn--primary {
+    background: #1e40af;
+    border-color: #1e40af;
+    color: #fff;
+}
+.ap-btn--primary:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+.ap-btn:focus-visible,
+.ap-mini:focus-visible,
+.ap-filter:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 1px;
+}
+
+/* ---- Progress / KPI ---- */
+.ap-progress {
+    margin-bottom: 10px;
+}
+.ap-progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+.ap-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+    transition: width 0.25s ease;
+}
+.ap-progress-stats {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    opacity: 0.92;
+    align-items: center;
+}
+.ap-stat--overdue b {
+    color: #f87171;
+}
+.ap-gut-dist {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ---- Filters ---- */
+.ap-filters {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+.ap-filter {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e5e7eb;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-family: inherit;
+}
+.ap-filter--text {
+    min-width: 130px;
+}
+.ap-filter--check {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* ---- Table ---- */
+.ap-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+}
+.ap-table th,
+.ap-table td {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid #1f2937;
+    vertical-align: top;
+}
+.ap-table thead th {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    opacity: 0.7;
+    font-weight: 700;
+    border-bottom: 2px solid #334155;
+}
+.ap-cell-title {
+    font-weight: 600;
+    max-width: var(--ecbt-input-xl, 240px);
+}
+.ap-row:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+.ap-row--overdue {
+    background: rgba(220, 38, 38, 0.08);
+}
+.ap-overdue-text {
+    color: #f87171;
+    font-weight: 600;
+}
+.ap-cell-actions {
+    white-space: nowrap;
+}
+.ap-mini {
+    background: rgba(255, 255, 255, 0.06);
+    color: #cbd5e1;
+    border: 1px solid #334155;
+    border-radius: 3px;
+    padding: 2px 7px;
+    font-size: 10.5px;
+    cursor: pointer;
+    margin-right: 3px;
+    font-family: inherit;
+}
+.ap-mini:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+.ap-empty {
+    padding: 24px 12px;
+    text-align: center;
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+/* ---- Priority chips (GUT) — não-só-cor: sempre acompanha texto ---- */
+.ap-chip {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-size: 10.5px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+.ap-chip--alta {
+    background: rgba(220, 38, 38, 0.18);
+    color: #fca5a5;
+    border-color: rgba(220, 38, 38, 0.5);
+}
+.ap-chip--media {
+    background: rgba(234, 179, 8, 0.18);
+    color: #fde68a;
+    border-color: rgba(234, 179, 8, 0.5);
+}
+.ap-chip--baixa {
+    background: rgba(34, 197, 94, 0.16);
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.45);
+}
+
+/* ---- Status badges ---- */
+.ap-status {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #334155;
+}
+.ap-status--concluida,
+.ap-status--verificada {
+    background: rgba(34, 197, 94, 0.16);
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.45);
+}
+.ap-status--cancelada {
+    background: rgba(148, 163, 184, 0.16);
+    color: #cbd5e1;
+}
+.ap-status--pendente_verificacao,
+.ap-status--reaberta {
+    background: rgba(234, 179, 8, 0.16);
+    color: #fde68a;
+    border-color: rgba(234, 179, 8, 0.45);
+}
+
+.ap-error {
+    margin-top: 8px;
+    color: #fca5a5;
+    font-size: 11.5px;
+    min-height: 16px;
+}
+
+/* ---- Modal (cadastro/edição) — overlay próprio ---- */
+.ap-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+.ap-modal {
+    background: #0f172a;
+    color: #e5e7eb;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+    width: min(640px, 100%);
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+}
+.ap-modal-head {
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #1f2937;
+}
+.ap-modal-body {
+    padding: 14px 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ap-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+}
+.ap-field > span {
+    font-size: 11px;
+    opacity: 0.8;
+    font-weight: 600;
+}
+.ap-field input,
+.ap-field textarea,
+.ap-field select {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e5e7eb;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 12px;
+    font-family: inherit;
+}
+.ap-field textarea {
+    resize: vertical;
+}
+.ap-field-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.ap-gut-row {
+    align-items: flex-end;
+}
+.ap-gut-preview {
+    flex: 0 0 auto;
+    min-width: 90px;
+    text-align: center;
+}
+.ap-gut-preview b {
+    font-size: 13px;
+    color: #93c5fd;
+}
+.ap-permit {
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 8px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ap-permit legend {
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0.85;
+    padding: 0 6px;
+}
+.ap-hidden {
+    display: none !important;
+}
+.ap-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 16px;
+    border-top: 1px solid #1f2937;
+}
+.ap-modal-error {
+    padding: 0 16px 12px;
+    color: #fca5a5;
+    font-size: 11.5px;
+    min-height: 14px;
+}

@@ -1,0 +1,796 @@
+/* ================================================================
+   RESPONSIVE — Mobile & Tablet Overrides
+   ================================================================
+
+   Y8: Canonical breakpoint reference (CSS vars can't be used in
+   @media queries, so these are documented as constants):
+
+   --bp-sm:  480px   (small phone — minimal UI)
+   --bp-md:  768px   (tablet portrait — body.mobile threshold)
+   --bp-lg:  1024px  (tablet landscape / desktop — body.tablet threshold)
+   --bp-xl:  1400px  (wide desktop — expanded sidebars)
+
+   All module CSS files should use these values consistently.
+   Primary selectors: body.mobile / body.tablet (set via mobileMenu.js).
+   @media queries used as JS-free fallback.
+
+   Este arquivo é carregado POR ÚLTIMO no index.html para que
+   suas regras tenham precedência sobre os estilos desktop.
+   ================================================================ */
+
+/* ================================================================
+   1. MOBILE — body.mobile OU viewport < 768px
+   ================================================================ */
+
+/* ---- Grid principal: colapsar para 1 coluna ---- */
+body.mobile #app {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 48px 0px 0px 1fr 0px !important;
+    height: calc(100vh - 56px) !important; /* espaço para bottom nav */
+}
+
+/* Forçar todos os elementos grid para coluna única */
+body.mobile #titlebar   { grid-column: 1 !important; grid-row: 1 !important; }
+body.mobile #menubar    { grid-column: 1 !important; display: none !important; }
+body.mobile #toolbar    { grid-column: 1 !important; display: none !important; }
+body.mobile #main-area  { grid-column: 1 !important; grid-row: 4 !important; }
+body.mobile #statusbar  { display: none !important; }
+body.mobile .resize-handle { display: none !important; }
+
+/* ---- Titlebar mobile ---- */
+body.mobile #titlebar {
+    height: 48px;
+    padding: 0 var(--space-2) !important;
+    gap: var(--space-2);
+}
+
+body.mobile #titlebar .version { display: none; }
+body.mobile #titlebar .language-selector { display: none; }
+body.mobile #titlebar .titlebar-chip:not(#auth-button) { display: none; }
+
+/* ---- R1: Touch targets >= 44px (iOS HIG / Material minimum) ---- */
+body.mobile button,
+body.mobile [role="button"],
+body.mobile .tab-btn,
+body.mobile .panel-tab,
+body.mobile .constellation-tab,
+body.mobile a.clickable,
+body.mobile select {
+    min-height: 44px;
+    min-width: 44px;
+}
+/* RED-A1: Constellation tabs use padding instead of raw min-height */
+body.mobile .constellation-tab {
+    min-height: 0;
+    padding: var(--space-2) var(--space-3);
+}
+
+/* Hamburger visível */
+body.mobile .mobile-hamburger {
+    display: flex !important;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--window-text);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+body.mobile .mobile-hamburger:active {
+    background: var(--ecbt-surface-raised, var(--window-dark-2));
+}
+
+/* ---- Paineis como drawers off-canvas ---- */
+body.mobile #left-panel,
+body.mobile #right-panel {
+    position: fixed !important;
+    top: 48px !important;
+    bottom: 56px !important;
+    width: 85vw !important;
+    max-width: clamp(220px, 80vw, 320px) !important;
+    z-index: 500 !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: var(--ecbt-surface-body, var(--window-dark)) !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25) !important;
+    overflow-y: auto !important;
+}
+
+body.mobile #left-panel {
+    left: 0 !important;
+    right: auto !important;
+    transform: translateX(-100%) !important;
+}
+
+body.mobile #right-panel {
+    right: 0 !important;
+    left: auto !important;
+    transform: translateX(100%) !important;
+}
+
+body.mobile #left-panel.drawer-open {
+    transform: translateX(0) !important;
+}
+
+body.mobile #right-panel.drawer-open {
+    transform: translateX(0) !important;
+}
+
+/* Quando minimizado no desktop, garantir que no mobile funcione */
+body.mobile #left-panel.panel-minimized,
+body.mobile #right-panel.panel-minimized {
+    display: flex !important;
+}
+
+/* Ocultar min-tabs (replaced by bottom nav) */
+body.mobile .min-tabs { display: none !important; }
+
+/* ---- Drawer backdrop ---- */
+body.mobile #drawer-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 499;
+    -webkit-tap-highlight-color: transparent;
+}
+body.mobile #drawer-backdrop.active {
+    display: block;
+}
+
+/* ---- Mobile menu overlay ---- */
+body.mobile #mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 800;
+    background: var(--ecbt-surface-body, var(--window-dark));
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    display: block;
+}
+
+body.mobile #mobile-menu-overlay.open {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--window-border);
+    height: 48px;
+}
+
+.mobile-menu-header .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    color: var(--window-text);
+}
+
+.mobile-menu-close {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--window-text);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+}
+
+.mobile-menu-tabs {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-2) 0;
+}
+
+.mobile-menu-tab {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 14px var(--space-5);
+    background: none;
+    border: none;
+    color: var(--window-text);
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    min-height: 48px;
+    border-bottom: 1px solid var(--window-border);
+}
+
+.mobile-menu-tab:active {
+    background: var(--ecbt-surface-raised, var(--window-dark-2));
+}
+
+.mobile-menu-tab .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-300);
+}
+
+/* Seção de ações extras no menu */
+.mobile-menu-extras {
+    padding: var(--space-3) var(--space-4);
+    border-top: 1px solid var(--window-border);
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.mobile-menu-extras .language-selector {
+    display: flex !important;
+    gap: var(--space-2);
+}
+
+/* #mobile-lang-grid tem classes `language-selector mobile-lang-grid`. A regra
+   acima (.mobile-menu-extras .language-selector → flex !important, espec. 0,2,0)
+   clobbava o `.mobile-lang-grid { display: grid !important }` (espec. 0,1,0) →
+   as ~16 línguas viravam UMA linha flex sem wrap → overflow horizontal (idiomas
+   cortados na borda, medido +414px @390). Restaura o grid 2-col pretendido via
+   seletor por ID (vence por especificidade). Conflito de precedência frágil =
+   SPEC_ARCH_CSS_CASCADE_LAYERS §1 (caso real). */
+body.mobile #mobile-lang-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-1);
+}
+
+/* ---- Bottom navigation bar ---- */
+body.mobile .mobile-bottom-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: var(--ecbt-surface-body, var(--window-dark));
+    border-top: 1px solid var(--window-border);
+    z-index: 600;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 var(--space-1);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.mobile-nav-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    color: var(--window-muted);
+    font-size: var(--text-xs);
+    font-family: inherit;
+    padding: 6px 0;
+    min-height: 44px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-btn:active {
+    color: var(--primary-300);
+}
+
+.mobile-nav-btn .icon {
+    width: 22px;
+    height: 22px;
+}
+
+.mobile-nav-btn span:last-child {
+    font-size: var(--text-xs);
+    line-height: 1;
+}
+
+/* ---- AI FAB e chat: reposicionar acima da bottom nav ---- */
+body.mobile .ai-widget-fab {
+    bottom: 68px !important;
+}
+
+body.mobile .llm-chat-panel {
+    bottom: 64px !important;
+    max-height: calc(100vh - 120px) !important;
+}
+
+/* ---- Touch-friendly sizing ---- */
+body.mobile .btn,
+body.mobile button:not(.mobile-nav-btn):not(.mobile-menu-tab):not(.mobile-hamburger):not(.mobile-menu-close):not(.credits-hub-btn):not(.credits-hub-btn-icon) {
+    min-height: 40px;
+}
+
+body.mobile button.tour-first-action-cta {
+    min-height: 46px !important;
+}
+
+body.mobile .view-btn {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: var(--text-2xl) !important;
+}
+
+body.mobile .section-header {
+    min-height: 44px;
+    padding: var(--space-3) var(--space-4);
+}
+
+body.mobile .tab {
+    min-height: 40px;
+    padding: var(--space-2) var(--space-3);
+}
+
+/* Prevenir zoom iOS em inputs */
+body.mobile input,
+body.mobile select,
+body.mobile textarea {
+    font-size: var(--text-xl) !important;
+}
+
+/* ---- Canvas / 3D ---- */
+body.mobile #coord-display { display: none !important; }
+
+body.mobile #geo-hud-header {
+    opacity: 1 !important;
+    background: rgba(255, 255, 255, 0.06);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.mobile .geo-hud-btn {
+    min-width: 18px;
+    min-height: 18px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+body.mobile #constellation-hud {
+    bottom: 0 !important;
+}
+
+body.mobile #view-controls,
+body.mobile #scene-hud {
+    bottom: 8px !important;
+    left: 8px !important;
+}
+
+/* Mobile: os botões do scene-hud sobem para 44px (touch target iOS), e 8 por
+   linha somam ~392px > viewport 390px → clipavam à direita (botão inalcançável).
+   Fluid bound + wrap (SPEC_ARCH_CSS_CASCADE_LAYERS R16.2-b): largura nunca
+   excede o viewport e os botões reflowam para nova linha em vez de cortar. */
+body.mobile #scene-hud {
+    max-width: calc(100vw - 16px);
+}
+body.mobile #scene-hud .scene-hud-row {
+    flex-wrap: wrap;
+}
+
+/* ---- Modais: full-screen no mobile ---- */
+body.mobile .modal-overlay.active {
+    align-items: stretch !important;
+}
+
+body.mobile .modal {
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+body.mobile .modal-large {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+body.mobile .modal-body {
+    max-height: none !important;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Header action rows: os botões de ação no header de modais/painéis somam mais
+   que a largura do viewport mobile (medido @390: calculator +95px, EIS +123px) →
+   o botão mais à direita clipava/ficava inalcançável. Wrap reflowa para nova linha
+   em vez de cortar (SPEC_ARCH_CSS_CASCADE_LAYERS §16.2 R16.2-b; mesmo padrão do
+   #scene-hud). Mobile-scoped; no-op em quem já cabe ou não é flex. */
+body.mobile .modal-header-actions,
+body.mobile .calculator-header-actions,
+body.mobile .eis-header-actions,
+body.mobile .inspector-header-actions,
+body.mobile .interpolation-header-actions,
+body.mobile .viz-settings-header-actions,
+body.mobile .credits-hub-header-actions,
+body.mobile .clipplanes-header-actions,
+body.mobile .equipment-hud-header-actions,
+body.mobile .ecbt-edetails-header-actions,
+body.mobile .home-header-actions,
+body.mobile .llm-chat-header-actions {
+    flex-wrap: wrap;
+}
+
+/* Form grids empilhados */
+body.mobile .form-row,
+body.mobile .obs-position-grid,
+body.mobile .obs-time-grid,
+body.mobile .checkbox-grid,
+body.mobile .filters-grid,
+body.mobile .form-grid {
+    grid-template-columns: 1fr !important;
+}
+
+/* ---- Panel headers no drawer ---- */
+body.mobile .panel-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--ecbt-surface-body, var(--window-dark));
+}
+
+/* ---- Panel drawers: tab rail horizontal no mobile ----
+   Desktop: .tabs tem largura fixa ~40px (rail vertical).
+   Mobile: drawer usa flex-direction:column — .tabs precisa ocupar
+   100% de largura como barra horizontal de abas, não o rail estreito. */
+body.mobile #left-panel .tabs,
+body.mobile #right-panel .tabs {
+    flex-direction: row !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 44px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-bottom: 1px solid var(--window-border) !important;
+    flex-shrink: 0 !important;
+    scrollbar-width: none !important;
+    background: color-mix(in srgb, var(--neutral-100) 68%, transparent) !important;
+}
+
+body.mobile #left-panel .tabs::-webkit-scrollbar,
+body.mobile #right-panel .tabs::-webkit-scrollbar {
+    display: none;
+}
+
+body.mobile #left-panel .tabs > .tab[data-tab],
+body.mobile #right-panel .tabs > .tab[data-tab] {
+    writing-mode: horizontal-tb !important;
+    text-orientation: initial !important;
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 44px !important;
+    max-width: var(--ecbt-input-xs) !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: none !important;
+    padding: 2px 6px !important;
+    font-size: 9px !important;
+    gap: 2px !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-bottom: 2px solid transparent !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+body.mobile #left-panel .tabs > .tab[data-tab]::before,
+body.mobile #right-panel .tabs > .tab[data-tab]::before {
+    writing-mode: horizontal-tb !important;
+    font-size: 9px !important;
+    min-width: 18px !important;
+    height: 18px !important;
+    border-radius: 9px !important;
+}
+
+body.mobile #left-panel .tabs > .tab[data-tab].active,
+body.mobile #right-panel .tabs > .tab[data-tab].active {
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: var(--primary-500) !important;
+    background: var(--neutral-0) !important;
+}
+
+body.mobile #left-panel .tabs > .tab[data-tab]:hover,
+body.mobile #right-panel .tabs > .tab[data-tab]:hover {
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: var(--neutral-300) !important;
+}
+
+/* Panel content preenche o espaço restante do drawer */
+body.mobile #left-panel .panel-content,
+body.mobile #right-panel .panel-content {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    min-height: 0 !important;
+    width: 100% !important;
+}
+
+/* ================================================================
+   2. TABLET — body.tablet OU viewport 768px–1023px
+   ================================================================ */
+
+/* Paineis mais estreitos */
+body.tablet #app {
+    --left-panel-width: 220px !important;
+    --right-panel-width: 240px !important;
+}
+
+/* Toolbar compacta */
+body.tablet .toolbar-btn {
+    min-width: 40px;
+    font-size: var(--text-xs);
+    padding: 3px;
+}
+body.tablet .toolbar-btn .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Titlebar compacto */
+body.tablet #titlebar {
+    padding: 0 var(--space-3);
+}
+body.tablet #titlebar .version { display: none; }
+
+/* Inputs — prevenir zoom */
+body.tablet input,
+body.tablet select,
+body.tablet textarea {
+    font-size: var(--text-xl) !important;
+}
+
+/* ================================================================
+   3. DESKTOP-ONLY OVERRIDES (esconder elementos mobile)
+   ================================================================ */
+
+/* Hamburger, bottom nav, drawer backdrop, menu overlay: escondidos sem classe mobile */
+.mobile-hamburger,
+.mobile-bottom-nav,
+#drawer-backdrop,
+#mobile-menu-overlay {
+    display: none;
+}
+
+/* ================================================================
+   4. MEDIA QUERY FALLBACKS — responsividade mesmo sem JS
+   ================================================================ */
+
+/* Tablet fallback: paineis mais estreitos quando JS nao setou body.tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #app {
+        --left-panel-width: 220px !important;
+        --right-panel-width: 240px !important;
+    }
+    .toolbar-btn {
+        min-width: 40px;
+        font-size: var(--text-xs);
+    }
+    .modal-body {
+        max-height: clamp(200px, 55vh, 420px);
+    }
+}
+
+/* Mobile fallback: esconder elementos desktop mesmo sem JS — merged 2026-05-01 */
+/* (este bloco antes existia 2× em 545+642; consolidado per CT-3 gate)         */
+
+/* ================================================================
+   SYMBOLOGY MODAL — Responsive overrides
+   Corrige overflow/truncation em viewports tablet e mobile.
+   ================================================================ */
+
+/* ---- Tablet: reduce fixed widths + truncation ---- */
+@media (max-width: 900px) {
+    .sym-sidebar { width: 150px; min-width: 0; }
+    .sym-row-label { width: 110px; min-width: 80px; }
+    .sym-form-label { width: 120px; min-width: 80px; }
+    .sym-rule-name  { width: 90px; }
+    .sym-rule-param { width: 80px; }
+    .sym-rule-family { width: 70px; }
+
+    /* Itens da lista com texto truncado */
+    .sym-profile-item span,
+    .sym-profile-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: clamp(80px, 30vw, 110px);
+    }
+}
+
+/* ================================================================
+   CONSOLIDATED Mobile (max 600px) — merged 2026-05-01 per CT-3 gate
+   Originally 4 separate blocks at lines 572/617/670/690. Combined here
+   into single block below for Mobile responsive overrides:
+   - Sym modal sidebar stack
+   - UX-12 modals overflow
+   - Showcase grid single-column
+   - App header hard mobile overflow fix
+   ================================================================ */
+@media (max-width: 600px) {
+    /* (originally line 572) Mobile: stack sym sidebar above content */
+    .sym-body { flex-direction: column; }
+    .sym-sidebar {
+        width: 100%;
+        max-height: 120px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color, #2d3144);
+    }
+    .sym-profile-list {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: var(--space-1);
+        padding: var(--space-1);
+        max-height: 80px;
+    }
+    .sym-profile-item { flex-shrink: 0; white-space: nowrap; }
+    .sym-row-label,
+    .sym-form-label {
+        width: auto;
+        min-width: 60px;
+        max-width: var(--ecbt-input-sm);
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+    .sym-style-row { flex-wrap: wrap; }
+    .sym-rule-name,
+    .sym-rule-family,
+    .sym-rule-param,
+    .sym-rule-op,
+    .sym-rule-val {
+        width: auto;
+        min-width: 50px;
+        flex: 1;
+    }
+
+    /* (originally line 617) UX-12 Fix 1 — Modais full viewport em mobile */
+    .modal-content,
+    .modal,
+    .async-dialog,
+    .checkout-modal,
+    .credential-modal,
+    .ai-img-modal,
+    .domain-editor-modal,
+    .simulation-panel,
+    .photolog-modal,
+    .showcase-dialog {
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        width: 100vw !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* (originally line 670) UX-12 Fix 4 — Showcase grid single-column */
+    .showcase-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .showcase-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .showcase-search {
+        flex: 1 1 auto;
+    }
+
+    /* (originally line 690) Hard mobile overflow fix at ≤600px */
+    /* Body never scrolls horizontally; viewport is the boundary */
+    html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    /* App header: hide non-essentials in mobile */
+    #app.home-redesign-v2 #app-header {
+        gap: var(--space-1);
+        padding: 0 var(--space-2);
+        overflow: hidden;
+    }
+    #app.home-redesign-v2 #app-header .ah-center {
+        display: none !important;
+    }
+    #app.home-redesign-v2 #app-header .ah-left {
+        gap: 4px;
+        min-width: 0;
+    }
+    #app.home-redesign-v2 #app-header .ah-brand {
+        display: none;
+    }
+    #app.home-redesign-v2 #app-header .ligero-link {
+        flex-shrink: 1;
+        margin-inline-start: 4px;
+    }
+    #app.home-redesign-v2 #app-header .ligero-logo {
+        height: 16px;
+    }
+    #app.home-redesign-v2 #app-header .ah-right {
+        gap: 2px;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+    #app.home-redesign-v2 #app-header .ah-auth-label,
+    #app.home-redesign-v2 #app-header .ah-lang-code {
+        display: none;
+    }
+    #app.home-redesign-v2 #app-header .ah-btn {
+        min-width: 36px;
+        min-height: 36px;
+        padding: var(--space-1) 6px;
+    }
+    /* Swipe-track is intentionally 300% wide for the carousel — confine
+       its horizontal overflow to the viewport instead of leaking to body. */
+    #swipe-container {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+}
+
+/* ================================================================
+   UX-12 (2026-04-25, restored 2026-04-26) — Mobile-first responsive fixes
+   Top 3 painful breakpoints: modals overflow, toolbar overflow,
+   bottom panel collapse on small viewports.
+   ================================================================ */
+
+/* Tablet (768–1023): a statusbar (#statusbar tem overflow:hidden) é mostrada mas
+   seus itens de menor prioridade não cabem → ficam clipados, escondendo status
+   útil (medido @768: .status-legal-links +104px, #status-field-mode +42px). Esconde
+   os legal links nessa faixa — são tech-debt (TODO UI-BOTTOM-001-P2: mover p/ Help)
+   e redundantes com /terms.html + /privacy.html. Abaixo de 767px a statusbar já é
+   oculta (bloco abaixo). SPEC_ARCH_CSS_CASCADE_LAYERS §16.2 (responsividade). */
+@media (max-width: 1023px) {
+    .status-legal-links { display: none; }
+}
+
+/* Fix 2 — Toolbar e ribbon wrap em mobile (vez de scroll horizontal cortado) +
+   Mobile fallback: esconder elementos desktop mesmo sem JS (merged 2026-05-01 per CT-3 gate) */
+@media (max-width: 767px) {
+    /* Hide desktop UI on mobile (originally line 545) */
+    #menubar    { display: none !important; }
+    #toolbar    { display: none !important; }
+    #statusbar  { display: none !important; }
+    .resize-handle { display: none !important; }
+
+    /* Toolbar/ribbon wrap (originally line 642) */
+    #ribbon-main,
+    .ribbon-panel,
+    .toolbar-row {
+        flex-wrap: wrap !important;
+        overflow-x: visible !important;
+    }
+    #ribbon-main button,
+    .ribbon-panel button {
+        min-width: 44px;
+        min-height: 44px; /* WCAG 2.1 AA touch target */
+    }
+}
+
+/* Fix 3 — Bottom panel collapse default em <800px (libera espaço para 3D) */
+@media (max-width: 800px) {
+    #main-area {
+        --bottom-panel-height: 28px;
+    }
+    #constellation-hud:not(.constellation-collapsed) {
+        max-height: min(40vh, 240px);
+    }
+}
+
+/* (Hard mobile overflow + showcase grid — moved to consolidated 600px block above 2026-05-01) */

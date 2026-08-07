@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+title: >-
+  Volve Field Dataset Subset — Environmental Digital Twin Integrity
+  Analysis
+message: >-
+  If you use this dataset, please cite it using the metadata below.
+type: dataset
+authors:
+  - given-names: Calvin Stefan
+    family-names: Iost
+    affiliation: "Escola Politécnica da Universidade de São Paulo (USP)"
+    orcid: "https://orcid.org/0000-0003-0828-6042"
+  - given-names: Ana Carolina
+    family-names: Russo
+    affiliation: "Escola Politécnica da Universidade de São Paulo (USP)"
+    orcid: "https://orcid.org/0000-0003-0276-1690"
+  - given-names: Talita dos Santos
+    family-names: Sturba
+    orcid: "https://orcid.org/0009-0009-5399-1614"
+  - given-names: Amilton Barbosa
+    family-names: Botelho Junior
+    orcid: "https://orcid.org/0000-0002-3421-6286"
+repository-code: "https://github.com/calvinsiost/ecbyts_open"
+url: "https://www.ecbt.ai"
+abstract: >-
+  Curated subset of the Equinor Volve field dataset prepared for
+  environmental and occupational digital-twin integrity analysis.
+  Includes environmental and petrophysical records, production data,
+  and baseline marine survey data used to demonstrate the ECBT
+  framework for auditable environmental records, blockchain anchoring,
+  and non-compensatory integrity scoring with metrological uncertainty
+  propagation.
+keywords:
+  - digital-twin
+  - environmental-monitoring
+  - volve-field
+  - offshore
+  - environmental-liabilities
+  - integrity-score
+  - blockchain
+  - metrological-uncertainty
+  - petrophysics
+  - marine-baseline
+license: CC-BY-4.0
+version: 1.0.0

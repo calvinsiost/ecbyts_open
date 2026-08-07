@@ -1,0 +1,222 @@
+/* ================================================================
+   LIBRARY VISUAL INDICATORS — SPEC_LIBRARY_VISUAL_INDICATORS_9_69
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   SeenIndicator dots
+   ---------------------------------------------------------------- */
+.seen-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.seen-dot {
+    display: inline-block;
+    border-radius: 50%;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.seen-dot--unseen {
+    background: var(--accent-primary, #60a5fa);
+}
+
+.seen-dot--seen {
+    background: var(--accent-green, #34d399);
+}
+
+.seen-dot--updated {
+    background: var(--accent-primary, #60a5fa);
+    position: relative;
+}
+
+.seen-dot--pulse {
+    animation: seen-dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes seen-dot-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.25);
+        opacity: 0.85;
+    }
+}
+
+.seen-dot-refresh {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* Tooltip on hover (CSS-only) */
+.seen-indicator--tooltip {
+    cursor: help;
+}
+
+.seen-indicator--tooltip::after {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--space-1) var(--space-2);
+    background: var(--neutral-900, #111318);
+    color: var(--text, #e0e0e0);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-md, 4px);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    z-index: 100;
+    border: 1px solid var(--neutral-700, #2a2d35);
+}
+
+.seen-indicator--tooltip:hover::after {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------------
+   CategoryBadge
+   ---------------------------------------------------------------- */
+.library-category-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: var(--accent-red, #ef4444);
+    color: #fff;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------------
+   LibraryToolbar
+   ---------------------------------------------------------------- */
+.library-toolbar-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--neutral-850, #181b21);
+    border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+    flex-wrap: wrap;
+}
+
+.library-toolbar-indicator .btn-sm {
+    font-size: var(--text-sm);
+    padding: var(--space-1) 10px;
+    border-radius: var(--radius-md, 4px);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    background: var(--input-bg, rgba(255, 255, 255, 0.05));
+    color: var(--text-primary, #e0e0e0);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    white-space: nowrap;
+}
+
+.library-toolbar-indicator .btn-sm:hover {
+    background: var(--neutral-700, rgba(255, 255, 255, 0.1));
+    border-color: var(--neutral-500);
+}
+
+.library-toolbar-indicator .btn-sm.btn-primary {
+    background: var(--accent-primary, #60a5fa);
+    border-color: var(--accent-primary, #60a5fa);
+    color: #fff;
+}
+
+.library-toolbar-indicator .btn-sm.btn-primary:hover {
+    opacity: 0.85;
+}
+
+.library-toolbar-indicator .btn-sm.btn-danger {
+    border-color: var(--accent-red, #ef4444);
+    color: var(--accent-red, #ef4444);
+    background: transparent;
+}
+
+.library-toolbar-indicator .btn-sm.btn-danger:hover {
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.library-toolbar-dropdown {
+    position: relative;
+}
+
+.library-toolbar-select {
+    padding: var(--space-1) var(--space-2);
+    background: var(--input-bg, rgba(255, 255, 255, 0.06));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: var(--radius-md, 4px);
+    color: var(--text-primary, #e0e0e0);
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+
+.library-toolbar-select:focus {
+    outline: none;
+    border-color: var(--accent-primary, #60a5fa);
+}
+
+/* ----------------------------------------------------------------
+   ClearConfirmModal extras
+   ---------------------------------------------------------------- */
+.clear-modal-message {
+    font-size: var(--text-md);
+    color: var(--text-muted, #d1d5db);
+    margin: 0 0 var(--space-2);
+    line-height: 1.5;
+}
+
+.clear-modal-hint {
+    font-size: var(--text-base);
+    color: var(--neutral-400, #9ca3af);
+    margin: 0 0 var(--space-3);
+    line-height: 1.4;
+}
+
+.clear-modal-count {
+    font-size: var(--text-base);
+    color: var(--accent-primary, #60a5fa);
+    font-weight: 600;
+    margin: 0 0 var(--space-1);
+}
+
+/* ----------------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------------- */
+@media (max-width: 640px) {
+    .library-toolbar-indicator {
+        gap: 6px;
+        padding: 6px var(--space-2);
+    }
+
+    .library-toolbar-indicator .btn-sm {
+        padding: 3px var(--space-2);
+        font-size: var(--text-xs);
+    }
+
+    .library-toolbar-select {
+        padding: 3px 6px;
+        font-size: 0.75rem;
+    }
+}

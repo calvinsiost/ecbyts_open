@@ -1,0 +1,265 @@
+/* ================================================================
+   WHAT-IF SIMULATOR — Slider-based inference UI styles
+   Estilos do simulador What-If com sliders e barras de resultado
+   ================================================================ */
+
+/* Header */
+.nn-whatif-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+}
+
+.nn-whatif-header h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin: 0;
+    font-size: var(--text-lg);
+    flex: 1;
+}
+
+.nn-whatif-hint {
+    font-size: var(--text-sm);
+    color: var(--window-muted);
+    margin: 0 0 var(--space-3);
+}
+
+/* Main 2-column panel: inputs (left) | outputs (right) */
+.nn-whatif-panel {
+    display: flex;
+    gap: var(--space-5);
+    min-height: 300px;
+}
+
+.nn-whatif-inputs,
+.nn-whatif-outputs {
+    flex: 1;
+}
+
+.nn-whatif-section-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--window-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+/* ----------------------------------------------------------------
+   Input sliders
+   ---------------------------------------------------------------- */
+
+.nn-whatif-slider-group {
+    margin-bottom: 14px;
+}
+
+.nn-whatif-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-1);
+}
+
+.nn-whatif-slider-name {
+    font-size: var(--text-base);
+    font-family: monospace;
+    font-weight: 500;
+    color: var(--window-text);
+}
+
+.nn-whatif-slider-value {
+    font-size: var(--text-base);
+    font-family: monospace;
+    color: var(--primary-text);
+    font-weight: 600;
+}
+
+.nn-whatif-slider {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--neutral-200);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.nn-whatif-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    border: 2px solid var(--neutral-0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+}
+
+.nn-whatif-slider::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.15);
+}
+
+.nn-whatif-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    border: 2px solid var(--neutral-0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+}
+
+.nn-whatif-slider-range {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-xs);
+    color: var(--neutral-400);
+    margin-top: 2px;
+}
+
+/* ----------------------------------------------------------------
+   Output bars
+   ---------------------------------------------------------------- */
+
+.nn-whatif-output-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: 10px;
+}
+
+.nn-whatif-output-name {
+    font-size: var(--text-base);
+    font-family: monospace;
+    color: var(--window-text);
+    flex: 0 0 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nn-whatif-output-bar-wrap {
+    flex: 1;
+    height: 14px;
+    background: var(--neutral-100);
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.nn-whatif-output-bar {
+    height: 100%;
+    border-radius: 7px;
+    transition: width 0.15s ease-out;
+}
+
+.nn-whatif-bar-env {
+    background: var(--accent-blue);
+}
+
+.nn-whatif-bar-geo {
+    background: var(--accent-primary);
+}
+
+.nn-whatif-output-value {
+    font-size: var(--text-base);
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--primary-text);
+    flex: 0 0 90px;
+    text-align: right;
+}
+
+/* ----------------------------------------------------------------
+   Confidence bar
+   ---------------------------------------------------------------- */
+
+.nn-whatif-confidence-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding-top: 10px;
+    border-top: 1px solid var(--neutral-200);
+}
+
+.nn-whatif-confidence-label {
+    font-size: var(--text-base);
+    color: var(--window-muted);
+    flex: 0 0 80px;
+}
+
+.nn-whatif-confidence-bar {
+    flex: 1;
+    height: 10px;
+    background: var(--neutral-100);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.nn-whatif-confidence-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-yellow), var(--accent-green));
+    transition: width 0.15s ease-out;
+}
+
+.nn-whatif-confidence-value {
+    font-size: var(--text-base);
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--window-text);
+    flex: 0 0 40px;
+    text-align: right;
+}
+
+/* ----------------------------------------------------------------
+   Footer with plume connection and actions
+   ---------------------------------------------------------------- */
+
+.nn-whatif-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--neutral-200);
+}
+
+.nn-whatif-plume-connect {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    color: var(--window-text);
+}
+
+.nn-whatif-plume-connect label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--window-muted);
+}
+
+.nn-whatif-plume-connect select {
+    font-size: var(--text-base);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--neutral-300);
+    background: var(--neutral-0);
+    color: var(--window-text);
+}
+
+.nn-whatif-actions {
+    display: flex;
+    gap: 6px;
+}
