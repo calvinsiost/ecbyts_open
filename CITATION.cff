@@ -1,7 +1,5 @@
 cff-version: 1.2.0
-title: >-
-  Volve Field Dataset Subset — Environmental Digital Twin Integrity
-  Analysis
+title: Environmental Digital Twin
 message: >-
   If you use this dataset, please cite it using the metadata below.
 type: dataset
@@ -10,16 +8,6 @@ authors:
     family-names: Iost
     affiliation: "Escola Politécnica da Universidade de São Paulo (USP)"
     orcid: "https://orcid.org/0000-0003-0828-6042"
-  - given-names: Ana Carolina
-    family-names: Russo
-    affiliation: "Escola Politécnica da Universidade de São Paulo (USP)"
-    orcid: "https://orcid.org/0000-0003-0276-1690"
-  - given-names: Talita dos Santos
-    family-names: Sturba
-    orcid: "https://orcid.org/0009-0009-5399-1614"
-  - given-names: Amilton Barbosa
-    family-names: Botelho Junior
-    orcid: "https://orcid.org/0000-0002-3421-6286"
 repository-code: "https://github.com/calvinsiost/ecbyts_open"
 url: "https://www.ecbt.ai"
 abstract: >-
