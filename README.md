@@ -151,9 +151,7 @@ governed by the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## Citation
 
-> Iost, Calvin Stefan; Russo, Ana Carolina; Sturba, Talita dos Santos;
-> Botelho Junior, Amilton Barbosa (2026). ecbyts — Open Architecture for
-> Trusted Environmental and Occupational Digital Twins.
+> Iost, C. S. *Environmental Digital Twin* (Version 1.0.0).
 > https://github.com/calvinsiost/ecbyts_open
 
 ## Research context
